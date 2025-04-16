@@ -38,7 +38,15 @@
                 "addressRegion": "BC",
                 "addressCountry": "CA"
             },
-            "areaServed": ["Prince George", "Vanderhoof", "Fort St. James", "Quesnel", "Burns Lake"]
+            "areaServed": ["Prince George", "Vanderhoof", "Fort St. James", "Quesnel", "Burns Lake"],
+            "openingHours": "Mo-Fr 10:00-16:00",
+            "openingHoursSpecification": {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+                "opens": "10:00",
+                "closes": "16:00",
+                "timeZone": "America/Vancouver"
+            }
         },
         "serviceType": ["AI Phone Answering", "Lead Capture", "Business Automation"],
         "hasOfferCatalog": {
@@ -49,7 +57,8 @@
                     "@type": "Offer",
                     "itemOffered": {
                         "@type": "Service",
-                        "name": "AI Phone Answering"
+                        "name": "AI Phone Answering",
+                        "description": "24/7 AI phone answering service for your business"
                     }
                 },
                 {
@@ -327,6 +336,7 @@
             <div class="text-center">
                 <p>&copy; 2024 Gentoolink Web Services Inc. All rights reserved.</p>
                 <p class="mt-2">Serving trades across Northern BC: Prince George, Vanderhoof, Fort St. James, Quesnel, Burns Lake</p>
+                <p class="mt-2">Business Hours: Monday to Friday, 10am to 4pm PST | AI Employee Service: 24/7</p>
             </div>
         </div>
     </footer>
