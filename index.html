@@ -3,84 +3,105 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="AI Automation for Plumbers, Electricians, Roofers - Never miss another lead with our automated follow-up and social media solutions">
-    <meta property="og:title" content="Gentoolink Web Services Inc. - AI Automation for Tradespeople">
-    <meta property="og:description" content="Automate your lead follow-ups and social media to grow your business">
-    <meta property="og:type" content="website">
-    <title>Gentoolink Web Services Inc. | Never Miss Another Lead</title>
+    <meta name="description" content="Gentoolink Web Services - AI-powered automation solutions for tradespeople">
+    <title>Home | Gentoolink Web Services Inc.</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1a365d', // Dark blue
+                        secondary: '#2b6cb0', // Medium blue
+                        accent: '#4299e1', // Light blue
+                    }
+                }
+            }
+        }
+    </script>
 </head>
 <body class="bg-gray-50">
     <!-- Navigation -->
     <nav class="bg-white shadow-md">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-16">
+            <div class="flex justify-between h-20">
                 <div class="flex items-center">
-                    <span class="text-xl font-bold text-blue-600">Gentoolink</span>
+                    <img src="assets/images/gentoolink-logo.png" alt="Gentoolink Logo" class="h-16">
                 </div>
                 <div class="hidden sm:flex items-center space-x-8">
-                    <a href="index.html" class="text-gray-700 hover:text-blue-600">Home</a>
-                    <a href="services.html" class="text-gray-700 hover:text-blue-600">Services</a>
-                    <a href="how-it-works.html" class="text-gray-700 hover:text-blue-600">How It Works</a>
-                    <a href="contact.html" class="text-gray-700 hover:text-blue-600">Contact</a>
+                    <a href="index.html" class="text-primary hover:text-secondary font-medium">Home</a>
+                    <a href="services.html" class="text-primary hover:text-secondary font-medium">Services</a>
+                    <a href="how-it-works.html" class="text-primary hover:text-secondary font-medium">How It Works</a>
+                    <a href="media.html" class="text-primary hover:text-secondary font-medium">Media</a>
+                    <a href="contact.html" class="text-primary hover:text-secondary font-medium">Contact</a>
                 </div>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="py-20 bg-gradient-to-r from-blue-600 to-blue-800 text-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center">
-                <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">
-                    Never Miss Another Lead
-                </h1>
-                <p class="text-xl sm:text-2xl mb-8 max-w-3xl mx-auto">
-                    Automate your follow-ups and social media to grow your business while you focus on what you do best
-                </p>
-                <a href="contact.html" class="bg-white text-blue-600 px-8 py-3 rounded-full text-lg font-semibold hover:bg-blue-50 transition duration-300">
-                    Get a Free Demo
-                </a>
-            </div>
+    <section class="bg-gradient-to-r from-primary to-secondary text-white py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6">What if your business never had to pick up the phone ever again?</h1>
+            <p class="text-xl md:text-2xl mb-8">Have AI capture leads and conversationally convert them into customers!</p>
+            <a href="contact.html" class="bg-white text-primary px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition duration-300">Get Started</a>
         </div>
     </section>
 
-    <!-- Benefits Section -->
+    <!-- Features Section -->
     <section class="py-16">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-white p-6 rounded-lg shadow-md">
-                    <div class="text-4xl mb-4">🕒</div>
-                    <h3 class="text-xl font-semibold mb-2">Save Time</h3>
-                    <p class="text-gray-600">Automate repetitive tasks and focus on your craft</p>
+                <div class="bg-white p-8 rounded-lg shadow-md">
+                    <i class="fas fa-phone text-secondary text-4xl mb-4"></i>
+                    <h3 class="text-2xl font-bold text-primary mb-4">Capture and Convert Inbound Calls</h3>
+                    <p class="text-gray-600">The average business misses around 40% of its inbound calls. Don't miss out on potential new revenue every single day.</p>
                 </div>
-                <div class="bg-white p-6 rounded-lg shadow-md">
-                    <div class="text-4xl mb-4">📈</div>
-                    <h3 class="text-xl font-semibold mb-2">Book More Jobs</h3>
-                    <p class="text-gray-600">Never let a potential customer slip through the cracks</p>
+
+                <div class="bg-white p-8 rounded-lg shadow-md">
+                    <i class="fas fa-comments text-secondary text-4xl mb-4"></i>
+                    <h3 class="text-2xl font-bold text-primary mb-4">Multi-Channel Lead Capture</h3>
+                    <p class="text-gray-600">Unlock the power of Text Messaging, Facebook Messaging, Instagram DM, and Google Business Chat - all in one place!</p>
                 </div>
-                <div class="bg-white p-6 rounded-lg shadow-md">
-                    <div class="text-4xl mb-4">💼</div>
-                    <h3 class="text-xl font-semibold mb-2">Grow Your Business</h3>
-                    <p class="text-gray-600">Scale your operations without adding more stress</p>
+
+                <div class="bg-white p-8 rounded-lg shadow-md">
+                    <i class="fas fa-clock text-secondary text-4xl mb-4"></i>
+                    <h3 class="text-2xl font-bold text-primary mb-4">24/7 Service</h3>
+                    <p class="text-gray-600">People get frustrated when they get sent to voicemail. Serve your prospective customers at any time, even multiple calls at once!</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Audio Section -->
-    <section class="py-16 bg-white">
+    <!-- Testimonials Section -->
+    <section class="bg-gray-100 py-16">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-center mb-8">Listen to Our Story</h2>
-            <div class="max-w-2xl mx-auto">
-                <iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/2046918041&color=%235c91ae&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
-                <div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;">
-                    <a href="https://soundcloud.com/ken-mcgonigal" title="Ken McGonigal" target="_blank" style="color: #cccccc; text-decoration: none;">Ken McGonigal</a> · 
-                    <a href="https://soundcloud.com/ken-mcgonigal/gentoolink-web-services" title="Gentoolink Web Services" target="_blank" style="color: #cccccc; text-decoration: none;">Gentoolink Web Services</a>
+            <h2 class="text-3xl font-bold text-primary text-center mb-12">What Our Clients Say</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-lg shadow-md">
+                    <p class="text-gray-600 mb-4">"Ken McGonigal has done an amazing job designing and maintaining our webpage. We have been searching a long time for just the right person to help us get to the next level in our exposure to our target audience and he is spot on! Highly recommend Ken for your webpage needs."</p>
+                    <p class="font-semibold text-primary">Ron D.</p>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-md">
+                    <p class="text-gray-600 mb-4">"A wonderful experience dealing with this company. Very professional. They developed a wonderful website for and do the updates. It's been a seamless experience for me."</p>
+                    <p class="font-semibold text-primary">Bill T.</p>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-md">
+                    <p class="text-gray-600 mb-4">"Ken is excellent with computers and is able to assist with services that are computer related. I have used Ken and Gentoolink for several years, and frankly he is exceptional."</p>
+                    <p class="font-semibold text-primary">Charles G.</p>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="bg-primary text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold mb-6">Ready to Get Started?</h2>
+            <p class="text-xl mb-8">Call our AI assistant at (778) 644-0139 to book a consultation</p>
+            <a href="contact.html" class="bg-white text-primary px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition duration-300">Contact Us</a>
         </div>
     </section>
 

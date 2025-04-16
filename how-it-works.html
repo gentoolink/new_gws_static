@@ -3,76 +3,157 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="How Gentoolink Web Services' AI automation works for tradespeople - Simple 4-step process to grow your business">
+    <meta name="description" content="Gentoolink Web Services - AI-powered automation solutions for tradespeople">
     <title>How It Works | Gentoolink Web Services Inc.</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1a365d', // Dark blue
+                        secondary: '#2b6cb0', // Medium blue
+                        accent: '#4299e1', // Light blue
+                    }
+                }
+            }
+        }
+    </script>
 </head>
 <body class="bg-gray-50">
     <!-- Navigation -->
     <nav class="bg-white shadow-md">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-16">
+            <div class="flex justify-between h-20">
                 <div class="flex items-center">
-                    <span class="text-xl font-bold text-blue-600">Gentoolink</span>
+                    <img src="assets/images/gentoolink-logo.png" alt="Gentoolink Logo" class="h-16">
                 </div>
                 <div class="hidden sm:flex items-center space-x-8">
-                    <a href="index.html" class="text-gray-700 hover:text-blue-600">Home</a>
-                    <a href="services.html" class="text-gray-700 hover:text-blue-600">Services</a>
-                    <a href="how-it-works.html" class="text-gray-700 hover:text-blue-600">How It Works</a>
-                    <a href="contact.html" class="text-gray-700 hover:text-blue-600">Contact</a>
+                    <a href="index.html" class="text-primary hover:text-secondary font-medium">Home</a>
+                    <a href="services.html" class="text-primary hover:text-secondary font-medium">Services</a>
+                    <a href="how-it-works.html" class="text-primary hover:text-secondary font-medium">How It Works</a>
+                    <a href="media.html" class="text-primary hover:text-secondary font-medium">Media</a>
+                    <a href="contact.html" class="text-primary hover:text-secondary font-medium">Contact</a>
                 </div>
             </div>
         </div>
     </nav>
 
-    <!-- How It Works Section -->
+    <!-- Header -->
+    <section class="bg-gradient-to-r from-primary to-secondary text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-6">How It Works</h1>
+            <p class="text-xl">Simple steps to transform your business with AI automation</p>
+        </div>
+    </section>
+
+    <!-- Process Steps -->
     <section class="py-16">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-center mb-12">How It Works</h2>
-            
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                <!-- Step 1 -->
-                <div class="bg-white p-6 rounded-lg shadow-md text-center">
-                    <div class="text-4xl mb-4">📅</div>
-                    <div class="text-2xl font-bold text-blue-600 mb-2">1</div>
-                    <h3 class="text-xl font-semibold mb-2">Book a Call</h3>
-                    <p class="text-gray-600">Schedule a quick consultation to discuss your business needs and goals</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-lg shadow-md">
+                    <div class="text-4xl font-bold text-primary mb-4">1</div>
+                    <h3 class="text-2xl font-bold text-primary mb-4">Initial Consultation</h3>
+                    <p class="text-gray-600 mb-4">We'll discuss your business needs and goals to understand how our AI employee can best serve you.</p>
+                    <ul class="space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-secondary mt-1 mr-2"></i>
+                            <span>Business analysis</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-secondary mt-1 mr-2"></i>
+                            <span>Goal setting</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-secondary mt-1 mr-2"></i>
+                            <span>Customization planning</span>
+                        </li>
+                    </ul>
                 </div>
 
-                <!-- Step 2 -->
-                <div class="bg-white p-6 rounded-lg shadow-md text-center">
-                    <div class="text-4xl mb-4">⚙️</div>
-                    <div class="text-2xl font-bold text-blue-600 mb-2">2</div>
-                    <h3 class="text-xl font-semibold mb-2">We Set It Up</h3>
-                    <p class="text-gray-600">Our team configures your automation systems and trains you on how to use them</p>
+                <div class="bg-white p-8 rounded-lg shadow-md">
+                    <div class="text-4xl font-bold text-primary mb-4">2</div>
+                    <h3 class="text-2xl font-bold text-primary mb-4">AI Employee Setup</h3>
+                    <p class="text-gray-600 mb-4">We'll customize your AI employee to match your business personality and needs.</p>
+                    <ul class="space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-secondary mt-1 mr-2"></i>
+                            <span>Personality selection</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-secondary mt-1 mr-2"></i>
+                            <span>Business training</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-secondary mt-1 mr-2"></i>
+                            <span>Integration setup</span>
+                        </li>
+                    </ul>
                 </div>
 
-                <!-- Step 3 -->
-                <div class="bg-white p-6 rounded-lg shadow-md text-center">
-                    <div class="text-4xl mb-4">🤖</div>
-                    <div class="text-2xl font-bold text-blue-600 mb-2">3</div>
-                    <h3 class="text-xl font-semibold mb-2">Leads Get Followed Up</h3>
-                    <p class="text-gray-600">Our AI system automatically follows up with leads and manages your social media</p>
-                </div>
-
-                <!-- Step 4 -->
-                <div class="bg-white p-6 rounded-lg shadow-md text-center">
-                    <div class="text-4xl mb-4">💰</div>
-                    <div class="text-2xl font-bold text-blue-600 mb-2">4</div>
-                    <h3 class="text-xl font-semibold mb-2">You Close More Jobs</h3>
-                    <p class="text-gray-600">Focus on your work while we help you convert more leads into paying customers</p>
+                <div class="bg-white p-8 rounded-lg shadow-md">
+                    <div class="text-4xl font-bold text-primary mb-4">3</div>
+                    <h3 class="text-2xl font-bold text-primary mb-4">Go Live & Support</h3>
+                    <p class="text-gray-600 mb-4">Your AI employee goes live and we provide ongoing support to ensure success.</p>
+                    <ul class="space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-secondary mt-1 mr-2"></i>
+                            <span>System activation</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-secondary mt-1 mr-2"></i>
+                            <span>Performance monitoring</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-secondary mt-1 mr-2"></i>
+                            <span>Continuous optimization</span>
+                        </li>
+                    </ul>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <div class="mt-16 text-center">
-                <h3 class="text-2xl font-bold mb-4">Ready to Get Started?</h3>
-                <p class="text-gray-600 mb-8">Join hundreds of tradespeople who are already growing their business with our automation solutions</p>
-                <a href="contact.html" class="bg-blue-600 text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-blue-700 transition duration-300">
-                    Schedule Your Free Consultation
-                </a>
+    <!-- Benefits Section -->
+    <section class="bg-gray-100 py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-primary text-center mb-12">Benefits of AI Automation</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white p-8 rounded-lg shadow-md">
+                    <i class="fas fa-clock text-secondary text-4xl mb-4"></i>
+                    <h3 class="text-2xl font-bold text-primary mb-4">24/7 Availability</h3>
+                    <p class="text-gray-600">Your AI employee never sleeps, ensuring you never miss a potential customer.</p>
+                </div>
+
+                <div class="bg-white p-8 rounded-lg shadow-md">
+                    <i class="fas fa-chart-line text-secondary text-4xl mb-4"></i>
+                    <h3 class="text-2xl font-bold text-primary mb-4">Increased Revenue</h3>
+                    <p class="text-gray-600">Capture more leads and convert more customers with automated follow-ups.</p>
+                </div>
+
+                <div class="bg-white p-8 rounded-lg shadow-md">
+                    <i class="fas fa-users text-secondary text-4xl mb-4"></i>
+                    <h3 class="text-2xl font-bold text-primary mb-4">Better Customer Service</h3>
+                    <p class="text-gray-600">Provide instant responses and consistent service across all channels.</p>
+                </div>
+
+                <div class="bg-white p-8 rounded-lg shadow-md">
+                    <i class="fas fa-brain text-secondary text-4xl mb-4"></i>
+                    <h3 class="text-2xl font-bold text-primary mb-4">Smart Insights</h3>
+                    <p class="text-gray-600">Get detailed reports and insights to improve your business operations.</p>
+                </div>
             </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="bg-primary text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold mb-6">Ready to Get Started?</h2>
+            <p class="text-xl mb-8">Call our AI assistant at (778) 644-0139 to book a consultation</p>
+            <a href="contact.html" class="bg-white text-primary px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition duration-300">Contact Us</a>
         </div>
     </section>
 

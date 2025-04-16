@@ -3,90 +3,173 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="AI Automation Services for Tradespeople - Missed Call Text-Back, Social Media Automation, Google Business Optimization, and Website Setup">
+    <meta name="description" content="Gentoolink Web Services - AI-powered automation solutions for tradespeople">
     <title>Services | Gentoolink Web Services Inc.</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1a365d', // Dark blue
+                        secondary: '#2b6cb0', // Medium blue
+                        accent: '#4299e1', // Light blue
+                    }
+                }
+            }
+        }
+    </script>
 </head>
 <body class="bg-gray-50">
     <!-- Navigation -->
     <nav class="bg-white shadow-md">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-16">
+            <div class="flex justify-between h-20">
                 <div class="flex items-center">
-                    <span class="text-xl font-bold text-blue-600">Gentoolink</span>
+                    <img src="assets/images/gentoolink-logo.png" alt="Gentoolink Logo" class="h-16">
                 </div>
                 <div class="hidden sm:flex items-center space-x-8">
-                    <a href="index.html" class="text-gray-700 hover:text-blue-600">Home</a>
-                    <a href="services.html" class="text-gray-700 hover:text-blue-600">Services</a>
-                    <a href="how-it-works.html" class="text-gray-700 hover:text-blue-600">How It Works</a>
-                    <a href="contact.html" class="text-gray-700 hover:text-blue-600">Contact</a>
+                    <a href="index.html" class="text-primary hover:text-secondary font-medium">Home</a>
+                    <a href="services.html" class="text-primary hover:text-secondary font-medium">Services</a>
+                    <a href="how-it-works.html" class="text-primary hover:text-secondary font-medium">How It Works</a>
+                    <a href="media.html" class="text-primary hover:text-secondary font-medium">Media</a>
+                    <a href="contact.html" class="text-primary hover:text-secondary font-medium">Contact</a>
                 </div>
             </div>
         </div>
     </nav>
 
-    <!-- Services Section -->
+    <!-- Services Header -->
+    <section class="bg-gradient-to-r from-primary to-secondary text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-6">All The Features You Need In One Place</h1>
+            <p class="text-xl">Here's everything your new AI employee can do (but only if you want!)</p>
+        </div>
+    </section>
+
+    <!-- Services Grid -->
     <section class="py-16">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-center mb-12">Our Services</h2>
-            
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <!-- Service 1 -->
-                <div class="bg-white p-6 rounded-lg shadow-md">
-                    <div class="text-4xl mb-4">📞</div>
-                    <h3 class="text-xl font-semibold mb-2">Missed Call Text-Back + AI Assistant</h3>
-                    <p class="text-gray-600 mb-4">Never miss a potential customer again. Our HighLevel-based system automatically follows up with missed calls using AI-powered responses.</p>
-                    <ul class="list-disc list-inside text-gray-600">
-                        <li>Instant automated responses</li>
-                        <li>AI-powered conversation handling</li>
-                        <li>24/7 lead capture</li>
+                <div class="bg-white p-8 rounded-lg shadow-md">
+                    <i class="fas fa-phone text-secondary text-4xl mb-4"></i>
+                    <h3 class="text-2xl font-bold text-primary mb-4">Conversational Phone Calls</h3>
+                    <p class="text-gray-600 mb-4">Live voice conversations with all your inbound calls.</p>
+                    <ul class="space-y-2 mb-6">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-secondary mt-1 mr-2"></i>
+                            <span>Custom working hours</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-secondary mt-1 mr-2"></i>
+                            <span>Route inbound calls</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-secondary mt-1 mr-2"></i>
+                            <span>Email summaries</span>
+                        </li>
                     </ul>
                 </div>
 
-                <!-- Service 2 -->
-                <div class="bg-white p-6 rounded-lg shadow-md">
-                    <div class="text-4xl mb-4">📱</div>
-                    <h3 class="text-xl font-semibold mb-2">Social Media Auto-Posting</h3>
-                    <p class="text-gray-600 mb-4">Maintain a strong online presence without the hassle. Our SocialChannel Pro integration keeps your social media active and engaging.</p>
-                    <ul class="list-disc list-inside text-gray-600">
-                        <li>Automated content scheduling</li>
-                        <li>Industry-specific post templates</li>
-                        <li>Performance analytics</li>
+                <div class="bg-white p-8 rounded-lg shadow-md">
+                    <i class="fas fa-comments text-secondary text-4xl mb-4"></i>
+                    <h3 class="text-2xl font-bold text-primary mb-4">Multi-Channel Communication</h3>
+                    <p class="text-gray-600 mb-4">Capture leads from your website, social media, Google, and more!</p>
+                    <ul class="space-y-2 mb-6">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-secondary mt-1 mr-2"></i>
+                            <span>Text messaging</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-secondary mt-1 mr-2"></i>
+                            <span>Facebook messaging</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-secondary mt-1 mr-2"></i>
+                            <span>Google Business Chat</span>
+                        </li>
                     </ul>
                 </div>
 
-                <!-- Service 3 -->
-                <div class="bg-white p-6 rounded-lg shadow-md">
-                    <div class="text-4xl mb-4">🔍</div>
-                    <h3 class="text-xl font-semibold mb-2">Google Business Optimization</h3>
-                    <p class="text-gray-600 mb-4">Get found by more local customers. We optimize your Google Business Profile to improve visibility and attract more leads.</p>
-                    <ul class="list-disc list-inside text-gray-600">
-                        <li>Profile optimization</li>
-                        <li>Review management</li>
-                        <li>Local SEO improvements</li>
+                <div class="bg-white p-8 rounded-lg shadow-md">
+                    <i class="fas fa-cog text-secondary text-4xl mb-4"></i>
+                    <h3 class="text-2xl font-bold text-primary mb-4">Customization & Personalization</h3>
+                    <p class="text-gray-600 mb-4">Choose from personalities like calm and composed, expressive and cheerful, and more.</p>
+                    <ul class="space-y-2 mb-6">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-secondary mt-1 mr-2"></i>
+                            <span>Tone customization</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-secondary mt-1 mr-2"></i>
+                            <span>Simple prompting</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-secondary mt-1 mr-2"></i>
+                            <span>Business-specific training</span>
+                        </li>
                     </ul>
                 </div>
 
-                <!-- Service 4 -->
-                <div class="bg-white p-6 rounded-lg shadow-md">
-                    <div class="text-4xl mb-4">🌐</div>
-                    <h3 class="text-xl font-semibold mb-2">Website or Landing Page Setup</h3>
-                    <p class="text-gray-600 mb-4">Create a professional online presence with our custom website or landing page solutions.</p>
-                    <ul class="list-disc list-inside text-gray-600">
-                        <li>Mobile-responsive design</li>
-                        <li>Lead capture forms</li>
-                        <li>Service showcase</li>
+                <div class="bg-white p-8 rounded-lg shadow-md">
+                    <i class="fas fa-chart-line text-secondary text-4xl mb-4"></i>
+                    <h3 class="text-2xl font-bold text-primary mb-4">Sales & Marketing Automation</h3>
+                    <p class="text-gray-600 mb-4">Generate sales with the push of a button and effortlessly scale your online reputation.</p>
+                    <ul class="space-y-2 mb-6">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-secondary mt-1 mr-2"></i>
+                            <span>Email & text campaigns</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-secondary mt-1 mr-2"></i>
+                            <span>Review management</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-secondary mt-1 mr-2"></i>
+                            <span>Lead nurturing</span>
+                        </li>
                     </ul>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <div class="text-center mt-12">
-                <a href="contact.html" class="bg-blue-600 text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-blue-700 transition duration-300">
-                    Get Started Today
-                </a>
+    <!-- Pricing Section -->
+    <section class="bg-gray-100 py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-primary">Essential Plan</h2>
+                <p class="text-xl text-gray-600 mt-4">Just $397 / Month!</p>
             </div>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <i class="fas fa-robot text-secondary text-3xl mb-4"></i>
+                    <p class="font-semibold">AI Employee</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <i class="fas fa-phone text-secondary text-3xl mb-4"></i>
+                    <p class="font-semibold">Inbound Voice Calls</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <i class="fas fa-envelope text-secondary text-3xl mb-4"></i>
+                    <p class="font-semibold">Call Summaries</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <i class="fas fa-shield-alt text-secondary text-3xl mb-4"></i>
+                    <p class="font-semibold">Money-Back Guarantee</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="bg-primary text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold mb-6">Ready to Get Started?</h2>
+            <p class="text-xl mb-8">Call our AI assistant at (778) 644-0139 to book a consultation</p>
+            <a href="contact.html" class="bg-white text-primary px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition duration-300">Contact Us</a>
         </div>
     </section>
 
