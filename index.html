@@ -76,6 +76,16 @@
             }
         }
     </script>
+    <style>
+        .mobile-menu {
+            display: none;
+        }
+        @media (max-width: 640px) {
+            .mobile-menu.active {
+                display: block;
+            }
+        }
+    </style>
 </head>
 <body class="bg-gray-50">
     <!-- Navigation -->
@@ -83,10 +93,18 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-20">
                 <div class="flex items-center">
-                    <a href="index.html" aria-label="Gentoolink Web Services Home">
+                    <a href="index.html" aria-label="Gentoolink Web Services Home" class="flex items-center">
                         <img src="assets/images/gentoolink-logo.png" alt="Gentoolink Web Services Logo - Serving Northern BC" class="h-16" width="64" height="64">
+                        <span class="ml-4 text-2xl font-bold text-primary">Gentoolink</span>
                     </a>
                 </div>
+                <!-- Mobile menu button -->
+                <div class="flex items-center sm:hidden">
+                    <button type="button" class="text-primary hover:text-secondary focus:outline-none" aria-label="Toggle menu" onclick="toggleMenu()">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+                <!-- Desktop menu -->
                 <div class="hidden sm:flex items-center space-x-8">
                     <a href="index.html" class="text-primary hover:text-secondary font-medium" aria-current="page">Home</a>
                     <a href="services.html" class="text-primary hover:text-secondary font-medium">Services</a>
@@ -95,8 +113,24 @@
                     <a href="contact.html" class="text-primary hover:text-secondary font-medium">Contact</a>
                 </div>
             </div>
+            <!-- Mobile menu -->
+            <div class="mobile-menu sm:hidden bg-white py-4">
+                <div class="flex flex-col space-y-4">
+                    <a href="index.html" class="text-primary hover:text-secondary font-medium px-4 py-2 bg-gray-50" aria-current="page">Home</a>
+                    <a href="services.html" class="text-primary hover:text-secondary font-medium px-4 py-2">Services</a>
+                    <a href="how-it-works.html" class="text-primary hover:text-secondary font-medium px-4 py-2">How It Works</a>
+                    <a href="media.html" class="text-primary hover:text-secondary font-medium px-4 py-2">Media</a>
+                    <a href="contact.html" class="text-primary hover:text-secondary font-medium px-4 py-2">Contact</a>
+                </div>
+            </div>
         </div>
     </nav>
+    <script>
+        function toggleMenu() {
+            const menu = document.querySelector('.mobile-menu');
+            menu.classList.toggle('active');
+        }
+    </script>
 
     <!-- Hero Section -->
     <section class="bg-gradient-to-r from-primary to-secondary text-white py-20" role="banner">
