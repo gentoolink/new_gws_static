@@ -35,6 +35,15 @@
                         primary: '#1a365d', // Dark blue
                         secondary: '#2b6cb0', // Medium blue
                         accent: '#4299e1', // Light blue
+                    },
+                    keyframes: {
+                        wave: {
+                            '0%, 100%': { transform: 'rotate(12deg)' },
+                            '50%': { transform: 'rotate(-12deg)' },
+                        }
+                    },
+                    animation: {
+                        'wave': 'wave 1s ease-in-out infinite',
                     }
                 }
             }
@@ -62,11 +71,54 @@
         </div>
     </nav>
 
-    <!-- Header -->
+    <!-- Hero Section -->
     <section class="bg-gradient-to-r from-primary to-secondary text-white py-20" role="banner">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 class="text-4xl md:text-6xl font-bold mb-6">How It Works</h1>
-            <p class="text-xl md:text-2xl">Simple steps to transform your business with AI automation</p>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between">
+                <div class="text-center md:text-left md:w-1/2 mb-8 md:mb-0">
+                    <h1 class="text-4xl md:text-6xl font-bold mb-6">How It Works</h1>
+                    <p class="text-xl md:text-2xl mb-8">Simple steps to implement AI automation in your business</p>
+                    <p class="text-lg mb-8">Transform your business with our AI-powered solutions</p>
+                    <a href="contact.html" class="bg-white text-primary px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition duration-300" aria-label="Contact Gentoolink Web Services">Get Started</a>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <div class="relative w-64 h-64">
+                        <!-- Speech Balloon -->
+                        <div class="absolute top-0 left-0 transform -translate-x-8 -translate-y-4 bg-white rounded-lg p-4 shadow-lg">
+                            <p class="text-primary font-semibold">Hello!</p>
+                            <div class="absolute -bottom-2 right-0 w-4 h-4 bg-white transform rotate-45 translate-x-2"></div>
+                        </div>
+                        <!-- Robot Head -->
+                        <div class="absolute top-0 left-1/2 transform -translate-x-1/2 w-32 h-32 bg-white rounded-lg flex items-center justify-center shadow-lg">
+                            <!-- Eyes -->
+                            <div class="flex space-x-4">
+                                <div class="w-6 h-6 bg-secondary rounded-full shadow-inner"></div>
+                                <div class="w-6 h-6 bg-secondary rounded-full shadow-inner"></div>
+                            </div>
+                            <!-- Antenna -->
+                            <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 w-2 h-4 bg-white rounded-t-full"></div>
+                        </div>
+                        <!-- Robot Body -->
+                        <div class="absolute top-32 left-1/2 transform -translate-x-1/2 w-40 h-40 bg-white rounded-lg flex flex-col items-center justify-center shadow-lg">
+                            <!-- Screen -->
+                            <div class="w-24 h-16 bg-secondary rounded-lg mb-2 flex items-center justify-center shadow-inner">
+                                <div class="w-4 h-4 bg-white rounded-full animate-pulse"></div>
+                            </div>
+                            <!-- Buttons -->
+                            <div class="flex space-x-2">
+                                <div class="w-4 h-4 bg-accent rounded-full shadow-inner"></div>
+                                <div class="w-4 h-4 bg-accent rounded-full shadow-inner"></div>
+                                <div class="w-4 h-4 bg-accent rounded-full shadow-inner"></div>
+                            </div>
+                        </div>
+                        <!-- Robot Arms -->
+                        <div class="absolute top-40 left-1/2 transform -translate-x-1/2 flex justify-between w-48">
+                            <div class="w-4 h-16 bg-white rounded-full transform -rotate-12 shadow-lg"></div>
+                            <div class="w-4 h-16 bg-white rounded-full transform rotate-12 shadow-lg animate-wave"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
