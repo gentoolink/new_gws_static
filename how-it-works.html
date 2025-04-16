@@ -3,8 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Gentoolink Web Services - AI-powered automation solutions for tradespeople">
-    <title>How It Works | Gentoolink Web Services Inc.</title>
+    <meta name="description" content="Learn how Gentoolink Web Services implements AI automation for tradespeople. Simple 3-step process: Initial Consultation, AI Employee Setup, and Go Live with ongoing support.">
+    <meta name="keywords" content="AI automation process, trades automation implementation, AI employee setup, business automation steps, AI automation support">
+    <meta name="author" content="Gentoolink Web Services Inc.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://gentoolinkwebservices.com/how-it-works" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://gentoolinkwebservices.com/how-it-works">
+    <meta property="og:title" content="How AI Automation Works | Gentoolink Web Services">
+    <meta property="og:description" content="Learn how we implement AI automation for tradespeople in 3 simple steps. Transform your business with our proven process.">
+    <meta property="og:image" content="https://gentoolinkwebservices.com/assets/images/gentoolink-logo.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://gentoolinkwebservices.com/how-it-works">
+    <meta property="twitter:title" content="How AI Automation Works | Gentoolink Web Services">
+    <meta property="twitter:description" content="Learn how we implement AI automation for tradespeople in 3 simple steps. Transform your business with our proven process.">
+    <meta property="twitter:image" content="https://gentoolinkwebservices.com/assets/images/gentoolink-logo.png">
+
+    <title>How AI Automation Works | Gentoolink Web Services</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -24,16 +43,18 @@
 </head>
 <body class="bg-gray-50">
     <!-- Navigation -->
-    <nav class="bg-white shadow-md">
+    <nav class="bg-white shadow-md" role="navigation" aria-label="Main navigation">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-20">
                 <div class="flex items-center">
-                    <img src="assets/images/gentoolink-logo.png" alt="Gentoolink Logo" class="h-16">
+                    <a href="index.html" aria-label="Gentoolink Web Services Home">
+                        <img src="assets/images/gentoolink-logo.png" alt="Gentoolink Web Services Logo" class="h-16" width="64" height="64">
+                    </a>
                 </div>
                 <div class="hidden sm:flex items-center space-x-8">
                     <a href="index.html" class="text-primary hover:text-secondary font-medium">Home</a>
                     <a href="services.html" class="text-primary hover:text-secondary font-medium">Services</a>
-                    <a href="how-it-works.html" class="text-primary hover:text-secondary font-medium">How It Works</a>
+                    <a href="how-it-works.html" class="text-primary hover:text-secondary font-medium" aria-current="page">How It Works</a>
                     <a href="media.html" class="text-primary hover:text-secondary font-medium">Media</a>
                     <a href="contact.html" class="text-primary hover:text-secondary font-medium">Contact</a>
                 </div>
@@ -42,73 +63,83 @@
     </nav>
 
     <!-- Header -->
-    <section class="bg-gradient-to-r from-primary to-secondary text-white py-16">
+    <section class="bg-gradient-to-r from-primary to-secondary text-white py-20" role="banner">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 class="text-4xl md:text-5xl font-bold mb-6">How It Works</h1>
-            <p class="text-xl">Simple steps to transform your business with AI automation</p>
+            <h1 class="text-4xl md:text-6xl font-bold mb-6">How It Works</h1>
+            <p class="text-xl md:text-2xl">Simple steps to transform your business with AI automation</p>
         </div>
     </section>
 
     <!-- Process Steps -->
-    <section class="py-16">
+    <section class="py-16" aria-labelledby="process-heading">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 id="process-heading" class="sr-only">Implementation Process</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Step 1 -->
                 <div class="bg-white p-8 rounded-lg shadow-md">
-                    <div class="text-4xl font-bold text-primary mb-4">1</div>
-                    <h3 class="text-2xl font-bold text-primary mb-4">Initial Consultation</h3>
-                    <p class="text-gray-600 mb-4">We'll discuss your business needs and goals to understand how our AI employee can best serve you.</p>
+                    <div class="flex items-center mb-6">
+                        <div class="bg-secondary text-white rounded-full w-12 h-12 flex items-center justify-center text-2xl font-bold mr-4">1</div>
+                        <h3 class="text-2xl font-bold text-primary">Initial Consultation</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">We start by understanding your business needs and goals.</p>
                     <ul class="space-y-2">
                         <li class="flex items-start">
-                            <i class="fas fa-check text-secondary mt-1 mr-2"></i>
+                            <i class="fas fa-check text-secondary mt-1 mr-2" aria-hidden="true"></i>
                             <span>Business analysis</span>
                         </li>
                         <li class="flex items-start">
-                            <i class="fas fa-check text-secondary mt-1 mr-2"></i>
+                            <i class="fas fa-check text-secondary mt-1 mr-2" aria-hidden="true"></i>
                             <span>Goal setting</span>
                         </li>
                         <li class="flex items-start">
-                            <i class="fas fa-check text-secondary mt-1 mr-2"></i>
-                            <span>Customization planning</span>
+                            <i class="fas fa-check text-secondary mt-1 mr-2" aria-hidden="true"></i>
+                            <span>Process mapping</span>
                         </li>
                     </ul>
                 </div>
 
+                <!-- Step 2 -->
                 <div class="bg-white p-8 rounded-lg shadow-md">
-                    <div class="text-4xl font-bold text-primary mb-4">2</div>
-                    <h3 class="text-2xl font-bold text-primary mb-4">AI Employee Setup</h3>
-                    <p class="text-gray-600 mb-4">We'll customize your AI employee to match your business personality and needs.</p>
+                    <div class="flex items-center mb-6">
+                        <div class="bg-secondary text-white rounded-full w-12 h-12 flex items-center justify-center text-2xl font-bold mr-4">2</div>
+                        <h3 class="text-2xl font-bold text-primary">AI Employee Setup</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">We customize your AI employee to match your business perfectly.</p>
                     <ul class="space-y-2">
                         <li class="flex items-start">
-                            <i class="fas fa-check text-secondary mt-1 mr-2"></i>
+                            <i class="fas fa-check text-secondary mt-1 mr-2" aria-hidden="true"></i>
                             <span>Personality selection</span>
                         </li>
                         <li class="flex items-start">
-                            <i class="fas fa-check text-secondary mt-1 mr-2"></i>
-                            <span>Business training</span>
+                            <i class="fas fa-check text-secondary mt-1 mr-2" aria-hidden="true"></i>
+                            <span>Knowledge training</span>
                         </li>
                         <li class="flex items-start">
-                            <i class="fas fa-check text-secondary mt-1 mr-2"></i>
+                            <i class="fas fa-check text-secondary mt-1 mr-2" aria-hidden="true"></i>
                             <span>Integration setup</span>
                         </li>
                     </ul>
                 </div>
 
+                <!-- Step 3 -->
                 <div class="bg-white p-8 rounded-lg shadow-md">
-                    <div class="text-4xl font-bold text-primary mb-4">3</div>
-                    <h3 class="text-2xl font-bold text-primary mb-4">Go Live & Support</h3>
-                    <p class="text-gray-600 mb-4">Your AI employee goes live and we provide ongoing support to ensure success.</p>
+                    <div class="flex items-center mb-6">
+                        <div class="bg-secondary text-white rounded-full w-12 h-12 flex items-center justify-center text-2xl font-bold mr-4">3</div>
+                        <h3 class="text-2xl font-bold text-primary">Go Live & Support</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">We launch your AI employee and provide ongoing support.</p>
                     <ul class="space-y-2">
                         <li class="flex items-start">
-                            <i class="fas fa-check text-secondary mt-1 mr-2"></i>
-                            <span>System activation</span>
+                            <i class="fas fa-check text-secondary mt-1 mr-2" aria-hidden="true"></i>
+                            <span>System testing</span>
                         </li>
                         <li class="flex items-start">
-                            <i class="fas fa-check text-secondary mt-1 mr-2"></i>
+                            <i class="fas fa-check text-secondary mt-1 mr-2" aria-hidden="true"></i>
                             <span>Performance monitoring</span>
                         </li>
                         <li class="flex items-start">
-                            <i class="fas fa-check text-secondary mt-1 mr-2"></i>
-                            <span>Continuous optimization</span>
+                            <i class="fas fa-check text-secondary mt-1 mr-2" aria-hidden="true"></i>
+                            <span>Ongoing support</span>
                         </li>
                     </ul>
                 </div>
@@ -117,48 +148,45 @@
     </section>
 
     <!-- Benefits Section -->
-    <section class="bg-gray-100 py-16">
+    <section class="bg-gray-100 py-16" aria-labelledby="benefits-heading">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-primary text-center mb-12">Benefits of AI Automation</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="bg-white p-8 rounded-lg shadow-md">
-                    <i class="fas fa-clock text-secondary text-4xl mb-4"></i>
-                    <h3 class="text-2xl font-bold text-primary mb-4">24/7 Availability</h3>
-                    <p class="text-gray-600">Your AI employee never sleeps, ensuring you never miss a potential customer.</p>
+            <h2 id="benefits-heading" class="text-3xl font-bold text-primary text-center mb-12">Benefits of AI Automation</h2>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="bg-white p-8 rounded-lg shadow-md text-center">
+                    <i class="fas fa-clock text-secondary text-4xl mb-4" aria-hidden="true"></i>
+                    <h3 class="text-xl font-bold text-primary mb-4">24/7 Availability</h3>
+                    <p class="text-gray-600">Never miss a call or lead again with round-the-clock service</p>
                 </div>
-
-                <div class="bg-white p-8 rounded-lg shadow-md">
-                    <i class="fas fa-chart-line text-secondary text-4xl mb-4"></i>
-                    <h3 class="text-2xl font-bold text-primary mb-4">Increased Revenue</h3>
-                    <p class="text-gray-600">Capture more leads and convert more customers with automated follow-ups.</p>
+                <div class="bg-white p-8 rounded-lg shadow-md text-center">
+                    <i class="fas fa-chart-line text-secondary text-4xl mb-4" aria-hidden="true"></i>
+                    <h3 class="text-xl font-bold text-primary mb-4">Increased Revenue</h3>
+                    <p class="text-gray-600">Convert more leads and grow your business with AI automation</p>
                 </div>
-
-                <div class="bg-white p-8 rounded-lg shadow-md">
-                    <i class="fas fa-users text-secondary text-4xl mb-4"></i>
-                    <h3 class="text-2xl font-bold text-primary mb-4">Better Customer Service</h3>
-                    <p class="text-gray-600">Provide instant responses and consistent service across all channels.</p>
+                <div class="bg-white p-8 rounded-lg shadow-md text-center">
+                    <i class="fas fa-headset text-secondary text-4xl mb-4" aria-hidden="true"></i>
+                    <h3 class="text-xl font-bold text-primary mb-4">Better Customer Service</h3>
+                    <p class="text-gray-600">Provide consistent, high-quality service to every customer</p>
                 </div>
-
-                <div class="bg-white p-8 rounded-lg shadow-md">
-                    <i class="fas fa-brain text-secondary text-4xl mb-4"></i>
-                    <h3 class="text-2xl font-bold text-primary mb-4">Smart Insights</h3>
-                    <p class="text-gray-600">Get detailed reports and insights to improve your business operations.</p>
+                <div class="bg-white p-8 rounded-lg shadow-md text-center">
+                    <i class="fas fa-lightbulb text-secondary text-4xl mb-4" aria-hidden="true"></i>
+                    <h3 class="text-xl font-bold text-primary mb-4">Smart Insights</h3>
+                    <p class="text-gray-600">Get valuable data and insights to improve your business</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- CTA Section -->
-    <section class="bg-primary text-white py-16">
+    <section class="bg-primary text-white py-16" aria-labelledby="cta-heading">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-3xl font-bold mb-6">Ready to Get Started?</h2>
+            <h2 id="cta-heading" class="text-3xl font-bold mb-6">Ready to Get Started?</h2>
             <p class="text-xl mb-8">Call our AI assistant at (778) 644-0139 to book a consultation</p>
-            <a href="contact.html" class="bg-white text-primary px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition duration-300">Contact Us</a>
+            <a href="contact.html" class="bg-white text-primary px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition duration-300" aria-label="Contact Gentoolink Web Services">Contact Us</a>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-8">
+    <footer class="bg-gray-800 text-white py-8" role="contentinfo">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center">
                 <p>&copy; 2024 Gentoolink Web Services Inc. All rights reserved.</p>

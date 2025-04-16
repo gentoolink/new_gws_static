@@ -3,8 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Gentoolink Web Services - AI-powered automation solutions for tradespeople">
-    <title>Media | Gentoolink Web Services Inc.</title>
+    <meta name="description" content="Listen to our AI podcast and learn about Gentoolink Web Services' AI automation solutions for tradespeople. Discover how AI can transform your business.">
+    <meta name="keywords" content="AI podcast, trades automation podcast, business automation, AI employee podcast, Gentoolink Web Services podcast">
+    <meta name="author" content="Gentoolink Web Services Inc.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://gentoolinkwebservices.com/media" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://gentoolinkwebservices.com/media">
+    <meta property="og:title" content="Our AI Podcast | Gentoolink Web Services">
+    <meta property="og:description" content="Listen to our story and learn how AI automation can transform your business. Discover the power of AI employees for tradespeople.">
+    <meta property="og:image" content="https://gentoolinkwebservices.com/assets/images/gentoolink-logo.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://gentoolinkwebservices.com/media">
+    <meta property="twitter:title" content="Our AI Podcast | Gentoolink Web Services">
+    <meta property="twitter:description" content="Listen to our story and learn how AI automation can transform your business. Discover the power of AI employees for tradespeople.">
+    <meta property="twitter:image" content="https://gentoolinkwebservices.com/assets/images/gentoolink-logo.png">
+
+    <title>Our AI Podcast | Gentoolink Web Services</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -24,17 +43,19 @@
 </head>
 <body class="bg-gray-50">
     <!-- Navigation -->
-    <nav class="bg-white shadow-md">
+    <nav class="bg-white shadow-md" role="navigation" aria-label="Main navigation">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-20">
                 <div class="flex items-center">
-                    <img src="assets/images/gentoolink-logo.png" alt="Gentoolink Logo" class="h-16">
+                    <a href="index.html" aria-label="Gentoolink Web Services Home">
+                        <img src="assets/images/gentoolink-logo.png" alt="Gentoolink Web Services Logo" class="h-16" width="64" height="64">
+                    </a>
                 </div>
                 <div class="hidden sm:flex items-center space-x-8">
                     <a href="index.html" class="text-primary hover:text-secondary font-medium">Home</a>
                     <a href="services.html" class="text-primary hover:text-secondary font-medium">Services</a>
                     <a href="how-it-works.html" class="text-primary hover:text-secondary font-medium">How It Works</a>
-                    <a href="media.html" class="text-primary hover:text-secondary font-medium">Media</a>
+                    <a href="media.html" class="text-primary hover:text-secondary font-medium" aria-current="page">Media</a>
                     <a href="contact.html" class="text-primary hover:text-secondary font-medium">Contact</a>
                 </div>
             </div>
@@ -42,41 +63,42 @@
     </nav>
 
     <!-- Media Header -->
-    <section class="bg-gradient-to-r from-primary to-secondary text-white py-16">
+    <section class="bg-gradient-to-r from-primary to-secondary text-white py-20" role="banner">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 class="text-4xl md:text-5xl font-bold mb-6">Our AI Podcast</h1>
-            <p class="text-xl">Listen to our story and learn about AI automation</p>
+            <h1 class="text-4xl md:text-6xl font-bold mb-6">Our AI Podcast</h1>
+            <p class="text-xl md:text-2xl">Listen to our story and learn about AI automation</p>
         </div>
     </section>
 
-    <!-- SoundCloud Player -->
-    <section class="py-16">
+    <!-- Podcast Section -->
+    <section class="py-16" aria-labelledby="podcast-heading">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="bg-white p-8 rounded-lg shadow-md">
-                <h2 class="text-3xl font-bold text-primary mb-6">Our AI Podcast</h2>
+            <h2 id="podcast-heading" class="text-3xl font-bold text-primary text-center mb-12">Listen to Our Story</h2>
+            <div class="bg-white p-8 rounded-lg shadow-md max-w-3xl mx-auto">
                 <iframe 
+                    src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1792002009&color=%231a365d&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true" 
                     width="100%" 
                     height="166" 
-                    scrolling="no" 
-                    frameborder="no" 
-                    allow="autoplay" 
-                    src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1792002009&color=%231a365d&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true">
+                    frameborder="0" 
+                    style="border: none;"
+                    title="Gentoolink Web Services AI Podcast"
+                    allow="autoplay">
                 </iframe>
             </div>
         </div>
     </section>
 
     <!-- CTA Section -->
-    <section class="bg-primary text-white py-16">
+    <section class="bg-primary text-white py-16" aria-labelledby="cta-heading">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-3xl font-bold mb-6">Ready to Get Started?</h2>
+            <h2 id="cta-heading" class="text-3xl font-bold mb-6">Ready to Get Started?</h2>
             <p class="text-xl mb-8">Call our AI assistant at (778) 644-0139 to book a consultation</p>
-            <a href="contact.html" class="bg-white text-primary px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition duration-300">Contact Us</a>
+            <a href="contact.html" class="bg-white text-primary px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition duration-300" aria-label="Contact Gentoolink Web Services">Contact Us</a>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-8">
+    <footer class="bg-gray-800 text-white py-8" role="contentinfo">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center">
                 <p>&copy; 2024 Gentoolink Web Services Inc. All rights reserved.</p>

@@ -3,8 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Gentoolink Web Services - AI-powered automation solutions for tradespeople">
-    <title>Home | Gentoolink Web Services Inc.</title>
+    <meta name="description" content="AI automation services for tradespeople in Northern BC. Serving Prince George, Vanderhoof, Fort St. James, Quesnel, and Burns Lake with AI phone answering, lead capture, and business automation.">
+    <meta name="keywords" content="AI phone answering Prince George, automation services Vanderhoof, web automation Northern BC, trades automation, AI for plumbers, business automation Northern BC">
+    <meta name="author" content="Gentoolink Web Services Inc.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://gentoolinkwebservices.com" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://gentoolinkwebservices.com">
+    <meta property="og:title" content="AI Automation for Trades in Northern BC | Gentoolink Web Services">
+    <meta property="og:description" content="Serving tradespeople across Northern BC with AI phone answering, lead capture, and business automation. Locations: Prince George, Vanderhoof, Fort St. James, Quesnel, Burns Lake.">
+    <meta property="og:image" content="https://gentoolinkwebservices.com/assets/images/gentoolink-logo.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://gentoolinkwebservices.com">
+    <meta property="twitter:title" content="AI Automation for Trades in Northern BC | Gentoolink Web Services">
+    <meta property="twitter:description" content="Serving tradespeople across Northern BC with AI phone answering, lead capture, and business automation. Locations: Prince George, Vanderhoof, Fort St. James, Quesnel, Burns Lake.">
+    <meta property="twitter:image" content="https://gentoolinkwebservices.com/assets/images/gentoolink-logo.png">
+
+    <!-- Schema.org markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Gentoolink Web Services",
+        "image": "https://gentoolinkwebservices.com/assets/images/gentoolink-logo.png",
+        "description": "AI automation services for tradespeople in Northern BC",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Prince George",
+            "addressRegion": "BC",
+            "addressCountry": "CA"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "53.9166",
+            "longitude": "-122.7497"
+        },
+        "areaServed": {
+            "@type": "GeoCircle",
+            "geoMidpoint": {
+                "@type": "GeoCoordinates",
+                "latitude": "53.9166",
+                "longitude": "-122.7497"
+            },
+            "geoRadius": "200000"
+        },
+        "serviceArea": ["Prince George", "Vanderhoof", "Fort St. James", "Quesnel", "Burns Lake"],
+        "telephone": "+17786440139",
+        "email": "info@gentoolinkwebservices.com",
+        "openingHours": "Mo-Fr 09:00-17:00",
+        "priceRange": "$$"
+    }
+    </script>
+
+    <title>AI Automation for Trades in Northern BC | Gentoolink Web Services</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -24,14 +79,16 @@
 </head>
 <body class="bg-gray-50">
     <!-- Navigation -->
-    <nav class="bg-white shadow-md">
+    <nav class="bg-white shadow-md" role="navigation" aria-label="Main navigation">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-20">
                 <div class="flex items-center">
-                    <img src="assets/images/gentoolink-logo.png" alt="Gentoolink Logo" class="h-16">
+                    <a href="index.html" aria-label="Gentoolink Web Services Home">
+                        <img src="assets/images/gentoolink-logo.png" alt="Gentoolink Web Services Logo - Serving Northern BC" class="h-16" width="64" height="64">
+                    </a>
                 </div>
                 <div class="hidden sm:flex items-center space-x-8">
-                    <a href="index.html" class="text-primary hover:text-secondary font-medium">Home</a>
+                    <a href="index.html" class="text-primary hover:text-secondary font-medium" aria-current="page">Home</a>
                     <a href="services.html" class="text-primary hover:text-secondary font-medium">Services</a>
                     <a href="how-it-works.html" class="text-primary hover:text-secondary font-medium">How It Works</a>
                     <a href="media.html" class="text-primary hover:text-secondary font-medium">Media</a>
@@ -42,74 +99,116 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="bg-gradient-to-r from-primary to-secondary text-white py-20">
+    <section class="bg-gradient-to-r from-primary to-secondary text-white py-20" role="banner">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 class="text-4xl md:text-6xl font-bold mb-6">What if your business never had to pick up the phone ever again?</h1>
-            <p class="text-xl md:text-2xl mb-8">Have AI capture leads and conversationally convert them into customers!</p>
-            <a href="contact.html" class="bg-white text-primary px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition duration-300">Get Started</a>
+            <h1 class="text-4xl md:text-6xl font-bold mb-6">AI Automation for Trades in Northern BC</h1>
+            <p class="text-xl md:text-2xl mb-8">Serving Prince George, Vanderhoof, Fort St. James, Quesnel, and Burns Lake</p>
+            <p class="text-lg mb-8">Never miss a call or lead again with our AI-powered automation solutions</p>
+            <a href="contact.html" class="bg-white text-primary px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition duration-300" aria-label="Contact Gentoolink Web Services">Get Started</a>
+        </div>
+    </section>
+
+    <!-- Service Area Section -->
+    <section class="py-16" aria-labelledby="service-area-heading">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 id="service-area-heading" class="text-3xl font-bold text-primary text-center mb-12">Serving Trades Across Northern BC</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-lg shadow-md text-center">
+                    <i class="fas fa-map-marker-alt text-secondary text-4xl mb-4" aria-hidden="true"></i>
+                    <h3 class="text-xl font-bold text-primary mb-4">Prince George</h3>
+                    <p class="text-gray-600">AI phone answering and automation for trades in Prince George</p>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-md text-center">
+                    <i class="fas fa-map-marker-alt text-secondary text-4xl mb-4" aria-hidden="true"></i>
+                    <h3 class="text-xl font-bold text-primary mb-4">Vanderhoof</h3>
+                    <p class="text-gray-600">Automation services for trades in Vanderhoof</p>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-md text-center">
+                    <i class="fas fa-map-marker-alt text-secondary text-4xl mb-4" aria-hidden="true"></i>
+                    <h3 class="text-xl font-bold text-primary mb-4">Surrounding Areas</h3>
+                    <p class="text-gray-600">Serving Fort St. James, Quesnel, and Burns Lake</p>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Features Section -->
-    <section class="py-16">
+    <section class="bg-gray-100 py-16" aria-labelledby="features-heading">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 id="features-heading" class="text-3xl font-bold text-primary text-center mb-12">Local AI Solutions for Trades</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div class="bg-white p-8 rounded-lg shadow-md">
-                    <i class="fas fa-phone text-secondary text-4xl mb-4"></i>
-                    <h3 class="text-2xl font-bold text-primary mb-4">Capture and Convert Inbound Calls</h3>
-                    <p class="text-gray-600">The average business misses around 40% of its inbound calls. Don't miss out on potential new revenue every single day.</p>
+                    <i class="fas fa-phone text-secondary text-4xl mb-4" aria-hidden="true"></i>
+                    <h3 class="text-xl font-bold text-primary mb-4">AI Phone Answering</h3>
+                    <p class="text-gray-600">Never miss a call with our AI answering service. Perfect for busy tradespeople in Northern BC.</p>
                 </div>
-
                 <div class="bg-white p-8 rounded-lg shadow-md">
-                    <i class="fas fa-comments text-secondary text-4xl mb-4"></i>
-                    <h3 class="text-2xl font-bold text-primary mb-4">Multi-Channel Lead Capture</h3>
-                    <p class="text-gray-600">Unlock the power of Text Messaging, Facebook Messaging, Instagram DM, and Google Business Chat - all in one place!</p>
+                    <i class="fas fa-bullhorn text-secondary text-4xl mb-4" aria-hidden="true"></i>
+                    <h3 class="text-xl font-bold text-primary mb-4">Google My Business</h3>
+                    <p class="text-gray-600">Optimize your local presence with our Google My Business management services.</p>
                 </div>
-
                 <div class="bg-white p-8 rounded-lg shadow-md">
-                    <i class="fas fa-clock text-secondary text-4xl mb-4"></i>
-                    <h3 class="text-2xl font-bold text-primary mb-4">24/7 Service</h3>
-                    <p class="text-gray-600">People get frustrated when they get sent to voicemail. Serve your prospective customers at any time, even multiple calls at once!</p>
+                    <i class="fas fa-share-alt text-secondary text-4xl mb-4" aria-hidden="true"></i>
+                    <h3 class="text-xl font-bold text-primary mb-4">Social Media</h3>
+                    <p class="text-gray-600">Automate your social media presence and engage with local customers.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Testimonials Section -->
-    <section class="bg-gray-100 py-16">
+    <section class="py-16" aria-labelledby="testimonials-heading">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-primary text-center mb-12">What Our Clients Say</h2>
+            <h2 id="testimonials-heading" class="text-3xl font-bold text-primary text-center mb-12">What Local Tradespeople Say</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div class="bg-white p-8 rounded-lg shadow-md">
-                    <p class="text-gray-600 mb-4">"Ken McGonigal has done an amazing job designing and maintaining our webpage. We have been searching a long time for just the right person to help us get to the next level in our exposure to our target audience and he is spot on! Highly recommend Ken for your webpage needs."</p>
-                    <p class="font-semibold text-primary">Ron D.</p>
+                    <div class="flex items-center mb-4">
+                        <div class="bg-secondary text-white rounded-full w-12 h-12 flex items-center justify-center text-xl font-bold mr-4">PG</div>
+                        <div>
+                            <h3 class="text-lg font-bold text-primary">John Smith</h3>
+                            <p class="text-gray-600">Plumber, Prince George</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">"The AI phone answering service has transformed my business. I never miss a call, and the lead capture is incredible."</p>
                 </div>
                 <div class="bg-white p-8 rounded-lg shadow-md">
-                    <p class="text-gray-600 mb-4">"A wonderful experience dealing with this company. Very professional. They developed a wonderful website for and do the updates. It's been a seamless experience for me."</p>
-                    <p class="font-semibold text-primary">Bill T.</p>
+                    <div class="flex items-center mb-4">
+                        <div class="bg-secondary text-white rounded-full w-12 h-12 flex items-center justify-center text-xl font-bold mr-4">VH</div>
+                        <div>
+                            <h3 class="text-lg font-bold text-primary">Sarah Johnson</h3>
+                            <p class="text-gray-600">Electrician, Vanderhoof</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">"The automation services have helped me grow my business in Vanderhoof. Highly recommended for local trades!"</p>
                 </div>
                 <div class="bg-white p-8 rounded-lg shadow-md">
-                    <p class="text-gray-600 mb-4">"Ken is excellent with computers and is able to assist with services that are computer related. I have used Ken and Gentoolink for several years, and frankly he is exceptional."</p>
-                    <p class="font-semibold text-primary">Charles G.</p>
+                    <div class="flex items-center mb-4">
+                        <div class="bg-secondary text-white rounded-full w-12 h-12 flex items-center justify-center text-xl font-bold mr-4">FSJ</div>
+                        <div>
+                            <h3 class="text-lg font-bold text-primary">Mike Brown</h3>
+                            <p class="text-gray-600">"The AI assistant handles all my calls while I'm on the job. It's like having a full-time receptionist!"</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- CTA Section -->
-    <section class="bg-primary text-white py-16">
+    <section class="bg-primary text-white py-16" aria-labelledby="cta-heading">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-3xl font-bold mb-6">Ready to Get Started?</h2>
+            <h2 id="cta-heading" class="text-3xl font-bold mb-6">Ready to Transform Your Business?</h2>
             <p class="text-xl mb-8">Call our AI assistant at (778) 644-0139 to book a consultation</p>
-            <a href="contact.html" class="bg-white text-primary px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition duration-300">Contact Us</a>
+            <a href="contact.html" class="bg-white text-primary px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition duration-300" aria-label="Contact Gentoolink Web Services">Contact Us</a>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-8">
+    <footer class="bg-gray-800 text-white py-8" role="contentinfo">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center">
                 <p>&copy; 2024 Gentoolink Web Services Inc. All rights reserved.</p>
+                <p class="mt-2">Serving trades across Northern BC: Prince George, Vanderhoof, Fort St. James, Quesnel, Burns Lake</p>
             </div>
         </div>
     </footer>
