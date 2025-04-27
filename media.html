@@ -52,10 +52,19 @@
     <style>
         .mobile-menu {
             display: none;
+            position: fixed;
+            top: 80px;
+            left: 0;
+            right: 0;
+            z-index: 50;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            transform: translateY(-100%);
+            transition: transform 0.3s ease-in-out;
         }
         @media (max-width: 640px) {
             .mobile-menu.active {
                 display: block;
+                transform: translateY(0);
             }
         }
     </style>
@@ -102,6 +111,14 @@
         function toggleMenu() {
             const menu = document.querySelector('.mobile-menu');
             menu.classList.toggle('active');
+            
+            // Close menu when clicking outside
+            document.addEventListener('click', function closeMenu(e) {
+                if (!menu.contains(e.target) && !e.target.closest('button')) {
+                    menu.classList.remove('active');
+                    document.removeEventListener('click', closeMenu);
+                }
+            });
         }
     </script>
 
