@@ -33,6 +33,23 @@
         body {
             padding-top: 80px;
         }
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 80px;
+            left: 0;
+            right: 0;
+            z-index: 50;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            transform: translateY(-100%);
+            transition: transform 0.3s ease-in-out;
+        }
+        @media (max-width: 640px) {
+            .mobile-menu.active {
+                display: block;
+                transform: translateY(0);
+            }
+        }
     </style>
 </head>
 <body class="bg-gray-50">
@@ -46,6 +63,13 @@
                         <span class="ml-4 text-2xl font-bold text-primary">Gentoolink</span>
                     </a>
                 </div>
+                <!-- Mobile menu button -->
+                <div class="flex items-center sm:hidden">
+                    <button type="button" class="text-primary hover:text-secondary focus:outline-none" aria-label="Toggle menu" onclick="toggleMenu()">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+                <!-- Desktop menu -->
                 <div class="hidden sm:flex items-center space-x-8">
                     <a href="index.html" class="text-primary hover:text-secondary font-medium">Home</a>
                     <a href="services.html" class="text-primary hover:text-secondary font-medium">Services</a>
@@ -53,6 +77,17 @@
                     <a href="media.html" class="text-primary hover:text-secondary font-medium">Media</a>
                     <a href="contact.html" class="text-primary hover:text-secondary font-medium">Contact</a>
                     <a href="about.html" class="text-primary hover:text-secondary font-medium" aria-current="page">About</a>
+                </div>
+            </div>
+            <!-- Mobile menu -->
+            <div class="mobile-menu sm:hidden bg-white py-4">
+                <div class="flex flex-col space-y-4">
+                    <a href="index.html" class="text-primary hover:text-secondary font-medium px-4 py-2">Home</a>
+                    <a href="services.html" class="text-primary hover:text-secondary font-medium px-4 py-2">Services</a>
+                    <a href="how-it-works.html" class="text-primary hover:text-secondary font-medium px-4 py-2">How It Works</a>
+                    <a href="media.html" class="text-primary hover:text-secondary font-medium px-4 py-2">Media</a>
+                    <a href="contact.html" class="text-primary hover:text-secondary font-medium px-4 py-2">Contact</a>
+                    <a href="about.html" class="text-primary hover:text-secondary font-medium px-4 py-2 bg-gray-50" aria-current="page">About</a>
                 </div>
             </div>
         </div>
@@ -108,5 +143,19 @@
             </div>
         </div>
     </footer>
+    <script>
+        function toggleMenu() {
+            const menu = document.querySelector('.mobile-menu');
+            menu.classList.toggle('active');
+            
+            // Close menu when clicking outside
+            document.addEventListener('click', function closeMenu(e) {
+                if (!menu.contains(e.target) && !e.target.closest('button')) {
+                    menu.classList.remove('active');
+                    document.removeEventListener('click', closeMenu);
+                }
+            });
+        }
+    </script>
 </body>
 </html> 

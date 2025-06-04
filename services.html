@@ -614,6 +614,218 @@
         </div>
     </footer>
 
+    <!-- Custom Chatbot Widget -->
+    <div id="chat-widget" class="chat-widget">
+        <div id="chat-bubble" class="chat-bubble">
+            <i class="fas fa-comments"></i>
+        </div>
+        <div id="chat-window" class="chat-window hidden">
+            <div class="chat-header">
+                <h3>Ask Ken's Helper</h3>
+                <button id="close-chat" class="close-button">&times;</button>
+            </div>
+            <div id="chat-messages" class="chat-messages">
+                <div class="message bot">
+                    Hi! How can I help you today?
+                </div>
+            </div>
+            <div class="chat-input">
+                <input type="text" id="user-input" placeholder="Type your question...">
+                <button id="send-message">Send</button>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        .chat-widget {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+
+        .chat-bubble {
+            width: 60px;
+            height: 60px;
+            background-color: #2b6cb0;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+            transition: transform 0.2s;
+        }
+
+        .chat-bubble:hover {
+            transform: scale(1.05);
+        }
+
+        .chat-bubble i {
+            color: white;
+            font-size: 24px;
+        }
+
+        .chat-window {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            width: 350px;
+            height: 500px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .chat-header {
+            background: #2b6cb0;
+            color: white;
+            padding: 15px;
+            border-radius: 12px 12px 0 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .chat-header h3 {
+            margin: 0;
+            font-size: 1.1rem;
+        }
+
+        .close-button {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 0;
+            line-height: 1;
+        }
+
+        .chat-messages {
+            flex-grow: 1;
+            padding: 15px;
+            overflow-y: auto;
+        }
+
+        .message {
+            margin-bottom: 10px;
+            padding: 10px 15px;
+            border-radius: 15px;
+            max-width: 80%;
+        }
+
+        .message.bot {
+            background: #f3f4f6;
+            margin-right: auto;
+        }
+
+        .message.user {
+            background: #2b6cb0;
+            color: white;
+            margin-left: auto;
+        }
+
+        .chat-input {
+            padding: 15px;
+            border-top: 1px solid #e5e7eb;
+            display: flex;
+            gap: 10px;
+        }
+
+        .chat-input input {
+            flex-grow: 1;
+            padding: 8px 12px;
+            border: 1px solid #e5e7eb;
+            border-radius: 6px;
+            outline: none;
+        }
+
+        .chat-input button {
+            background: #2b6cb0;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .chat-input button:hover {
+            background: #1a365d;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        @media (max-width: 640px) {
+            .chat-window {
+                width: calc(100% - 40px);
+                height: 60vh;
+                bottom: 80px;
+            }
+        }
+    </style>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const chatBubble = document.getElementById('chat-bubble');
+            const chatWindow = document.getElementById('chat-window');
+            const closeChat = document.getElementById('close-chat');
+            const userInput = document.getElementById('user-input');
+            const sendButton = document.getElementById('send-message');
+            const chatMessages = document.getElementById('chat-messages');
+
+            const faqs = {
+                'what services do you offer': 'We offer website design, Google Business Profile setup, online bookings, review management, social media help, and local SEO services for trades and small businesses.',
+                'how much does a website cost': 'Website packages start at $699, with hosting and support from $25/month. We offer custom solutions based on your needs.',
+                'how do i get started': 'Just email ken@gentoolinkwebservices.com or call +1 (604) 218-7290. We\'ll discuss your needs and provide a free website checkup.',
+                'where are you located': 'We\'re based in Vanderhoof, BC, and serve all of BC with remote support. Our service area includes Prince George, Fort St. James, Quesnel, and Burns Lake.'
+            };
+
+            function toggleChat() {
+                chatWindow.classList.toggle('hidden');
+            }
+
+            function addMessage(text, isUser = false) {
+                const messageDiv = document.createElement('div');
+                messageDiv.className = `message ${isUser ? 'user' : 'bot'}`;
+                messageDiv.textContent = text;
+                chatMessages.appendChild(messageDiv);
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            }
+
+            function handleUserMessage() {
+                const message = userInput.value.trim().toLowerCase();
+                if (!message) return;
+
+                addMessage(userInput.value, true);
+                userInput.value = '';
+
+                let response = "I'm just a simple helper bot! For anything else, please email ken@gentoolinkwebservices.com.";
+                
+                for (const [question, answer] of Object.entries(faqs)) {
+                    if (message.includes(question)) {
+                        response = answer;
+                        break;
+                    }
+                }
+
+                setTimeout(() => addMessage(response), 500);
+            }
+
+            chatBubble.addEventListener('click', toggleChat);
+            closeChat.addEventListener('click', toggleChat);
+            sendButton.addEventListener('click', handleUserMessage);
+            userInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') handleUserMessage();
+            });
+        });
+    </script>
+
     <script>
     function updateServiceCost() {
         const serviceType = document.getElementById('serviceType');
@@ -661,12 +873,6 @@
         document.getElementById('netProfit').innerText = "💰 Net Profit After Service Cost: $" + netProfit.toFixed(2);
         document.getElementById('roiPercent').innerText = "🚀 Estimated ROI: " + Math.round(roi) + "%";
     }
-    </script>
-    <script 
-      src="https://widgets.leadconnectorhq.com/loader.js"  
-      data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js" 
-      data-widget-id="67ad2908a81d1ca671d7648b"   
-    > 
     </script>
 </body>
 </html> 
