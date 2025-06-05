@@ -92,46 +92,37 @@
                     </a>
                 </div>
                 <!-- Mobile menu button -->
-                <div class="flex items-center sm:hidden">
+                <div class="flex items-center md:hidden">
                     <button type="button" class="text-primary hover:text-secondary focus:outline-none" aria-label="Toggle menu" onclick="toggleMenu()">
                         <i class="fas fa-bars text-2xl"></i>
                     </button>
                 </div>
                 <!-- Desktop menu -->
-                <div class="hidden sm:flex items-center space-x-8">
+                <div class="hidden md:flex items-center space-x-8">
                     <a href="index.html" class="text-primary hover:text-secondary font-medium">Home</a>
                     <a href="services.html" class="text-primary hover:text-secondary font-medium">Services</a>
                     <a href="how-it-works.html" class="text-primary hover:text-secondary font-medium">How It Works</a>
+                    <a href="tech-investment-guide.html" class="text-primary hover:text-secondary font-medium">Tech Guide</a>
                     <a href="media.html" class="text-primary hover:text-secondary font-medium" aria-current="page">Media</a>
                     <a href="contact.html" class="text-primary hover:text-secondary font-medium">Contact</a>
+                    <a href="about.html" class="text-primary hover:text-secondary font-medium">About</a>
                 </div>
             </div>
             <!-- Mobile menu -->
-            <div class="mobile-menu sm:hidden bg-white py-4">
+            <div class="mobile-menu md:hidden bg-white py-4">
                 <div class="flex flex-col space-y-4">
                     <a href="index.html" class="text-primary hover:text-secondary font-medium px-4 py-2">Home</a>
                     <a href="services.html" class="text-primary hover:text-secondary font-medium px-4 py-2">Services</a>
                     <a href="how-it-works.html" class="text-primary hover:text-secondary font-medium px-4 py-2">How It Works</a>
+                    <a href="tech-investment-guide.html" class="text-primary hover:text-secondary font-medium px-4 py-2">Tech Guide</a>
                     <a href="media.html" class="text-primary hover:text-secondary font-medium px-4 py-2 bg-gray-50" aria-current="page">Media</a>
                     <a href="contact.html" class="text-primary hover:text-secondary font-medium px-4 py-2">Contact</a>
+                    <a href="about.html" class="text-primary hover:text-secondary font-medium px-4 py-2">About</a>
                 </div>
             </div>
         </div>
     </nav>
-    <script>
-        function toggleMenu() {
-            const menu = document.querySelector('.mobile-menu');
-            menu.classList.toggle('active');
-            
-            // Close menu when clicking outside
-            document.addEventListener('click', function closeMenu(e) {
-                if (!menu.contains(e.target) && !e.target.closest('button')) {
-                    menu.classList.remove('active');
-                    document.removeEventListener('click', closeMenu);
-                }
-            });
-        }
-    </script>
+    <script src="assets/js/menu.js"></script>
 
     <!-- Media Header -->
     <section class="bg-gradient-to-r from-primary to-secondary text-white py-20" role="banner">
