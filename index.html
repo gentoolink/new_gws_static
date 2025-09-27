@@ -436,6 +436,24 @@ s0.parentNode.insertBefore(s1,s0);
         const carousel = document.getElementById('carousel-container');
         const prevBtn = document.getElementById('prev-btn');
         const nextBtn = document.getElementById('next-btn');
+        let autoScrollInterval;
+
+        const scrollNext = () => {
+            // If we are at the end, scroll to the beginning
+            if (carousel.scrollLeft + carousel.clientWidth >= carousel.scrollWidth - 1) {
+                carousel.scrollTo({ left: 0, behavior: 'smooth' });
+            } else {
+                carousel.scrollBy({ left: 320, behavior: 'smooth' });
+            }
+        };
+
+        const startAutoScroll = () => {
+            autoScrollInterval = setInterval(scrollNext, 3000); // Change slide every 3 seconds
+        };
+
+        const stopAutoScroll = () => {
+            clearInterval(autoScrollInterval);
+        };
 
         nextBtn.addEventListener('click', () => {
             carousel.scrollBy({ left: 320, behavior: 'smooth' });
@@ -444,6 +462,11 @@ s0.parentNode.insertBefore(s1,s0);
         prevBtn.addEventListener('click', () => {
             carousel.scrollBy({ left: -320, behavior: 'smooth' });
         });
+
+        carousel.addEventListener('mouseenter', stopAutoScroll);
+        carousel.addEventListener('mouseleave', startAutoScroll);
+
+        startAutoScroll();
     </script>
 
     <script>
