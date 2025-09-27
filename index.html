@@ -232,6 +232,10 @@
         body {
             padding-top: 80px;
         }
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+        .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
     </style>
 </head>
 <!--Start of Tawk.to Script-->
@@ -371,6 +375,47 @@ s0.parentNode.insertBefore(s1,s0);
         </div>
     </section>
 
+    <!-- Portfolio Carousel Section -->
+    <section class="py-16 bg-gray-50" aria-labelledby="portfolio-heading">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 id="portfolio-heading" class="text-3xl font-bold text-primary text-center mb-12">A Glimpse of Our Work</h2>
+            <div class="relative">
+                <div id="carousel-container" class="flex overflow-x-auto scroll-smooth scrollbar-hide space-x-8 py-4">
+                    <!-- Portfolio items will be injected here -->
+                </div>
+                <!-- Carousel Controls -->
+                <button id="prev-btn" class="absolute top-1/2 left-0 transform -translate-y-1/2 bg-white/70 hover:bg-white rounded-full p-3 shadow-lg -ml-4 md:-ml-6 z-10">
+                    <i class="fas fa-chevron-left text-primary text-xl"></i>
+                </button>
+                <button id="next-btn" class="absolute top-1/2 right-0 transform -translate-y-1/2 bg-white/70 hover:bg-white rounded-full p-3 shadow-lg -mr-4 md:-mr-6 z-10">
+                    <i class="fas fa-chevron-right text-primary text-xl"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const websites = [
+            { name: 'SOS Custom Gutters', url: 'https://soscustomgutters.com' },
+            { name: 'Autism Story Creator', url: 'https://autismstorycreator.com' },
+            { name: 'Fast Local SEO Checker', url: 'https://fastlocalseochecker.com/' },
+            { name: 'Mapes Church', url: 'https://www.mapeschurch.com/' },
+            { name: 'All Points Cycling', url: 'https://allpointscycling.ca/' },
+            { name: 'Your Church Online', url: 'https://yourchurchonline.church' },
+            { name: 'Side Hustle Tax', url: 'https://sidehustletax.ca/' },
+            { name: 'Fix Flow', url: 'https://fixflow.ca/' }
+        ];
+        const container = document.getElementById('carousel-container');
+        websites.forEach(site => {
+            container.innerHTML += `
+                <div class="flex-shrink-0 w-72 bg-white rounded-lg shadow-md p-6 text-center">
+                    <h3 class="text-xl font-bold text-primary mb-4 h-16 flex items-center justify-center">${site.name}</h3>
+                    <a href="${site.url}" target="_blank" rel="noopener noreferrer" class="bg-secondary hover:bg-accent text-white px-6 py-2 rounded-lg font-semibold transition duration-300">Visit Site</a>
+                </div>`;
+        });
+    });
+    </script>
+
     <!-- Footer -->
     <footer class="bg-gray-800 text-white py-8" role="contentinfo">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -386,6 +431,20 @@ s0.parentNode.insertBefore(s1,s0);
             </div>
         </div>
     </footer>
+
+    <script>
+        const carousel = document.getElementById('carousel-container');
+        const prevBtn = document.getElementById('prev-btn');
+        const nextBtn = document.getElementById('next-btn');
+
+        nextBtn.addEventListener('click', () => {
+            carousel.scrollBy({ left: 320, behavior: 'smooth' });
+        });
+
+        prevBtn.addEventListener('click', () => {
+            carousel.scrollBy({ left: -320, behavior: 'smooth' });
+        });
+    </script>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
