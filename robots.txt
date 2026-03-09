@@ -1,0 +1,24 @@
+User-agent: *
+Allow: /
+
+# Major search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# AI crawlers
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: GoogleOther
+Allow: /
+
+Sitemap: https://www.gentoolinkwebservices.com/sitemap.xml
