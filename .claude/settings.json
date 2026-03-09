@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3 -c \":*)",
+      "Bash(grep -rn \"chat bubble\\\\|Smart Chatbot\\\\|Vancouver and Kelowna\\\\|Request Your Free Audit\\\\|Book Your Free AI Audit\" *.html)"
+    ]
+  }
+}
