@@ -33,7 +33,7 @@
     <meta property="twitter:image" content="https://gentoolinkwebservices.com/assets/images/gentoolink-logo.png">
 
     <title>Get Expert Tech Help for Your Business | Contact Us</title>
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <script>
@@ -57,15 +57,14 @@
             left: 0;
             right: 0;
             z-index: 50;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-            transform: translateY(-100%);
-            transition: transform 0.3s ease-in-out;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            background-color: white;
         }
-        @media (max-width: 640px) {
-            .mobile-menu.active {
-                display: block;
-                transform: translateY(0);
-            }
+        .mobile-menu.active {
+            display: block;
+        }
+        @media (min-width: 768px) {
+            .mobile-menu { display: none !important; }
         }
         nav {
             position: fixed;
@@ -107,7 +106,7 @@
             <div class="flex justify-between h-20">
                 <div class="flex items-center">
                     <a href="index.html" aria-label="Gentoolink Web Services Home" class="flex items-center">
-                        <img src="assets/images/gentoolink-logo.png" alt="Gentoolink Web Services Logo - Serving Northern BC" class="h-16" width="64" height="64">
+                        <img src="/assets/images/gentoolink-logo.png" alt="Gentoolink Web Services Logo - Serving Northern BC" class="h-16" style="filter:drop-shadow(0 2px 6px rgba(0,0,0,.25))" width="64" height="64">
                         <span class="ml-4 text-2xl font-bold text-primary">Gentoolink</span>
                     </a>
                 </div>
@@ -115,6 +114,7 @@
                 <div class="hidden md:flex items-center space-x-8">
                     <a href="index.html" class="text-primary hover:text-secondary font-medium">Home</a>
                     <a href="services.html" class="text-primary hover:text-secondary font-medium">Services</a>
+                    <a href="blog.html" class="text-primary hover:text-secondary font-medium">Blog</a>
                     <a href="trades-starter-package.html" class="text-primary hover:text-secondary font-medium">Trades Starter Package</a>
                     <a href="contact.html" class="text-primary hover:text-secondary font-medium">Contact</a>
                 </div>
@@ -131,10 +131,11 @@
                 
             </div>
             <!-- Mobile menu -->
-            <div class="mobile-menu md:hidden bg-white py-4">
+            <div class="mobile-menu bg-white py-4">
                 <div class="flex flex-col space-y-4">
                     <a href="index.html" class="text-primary hover:text-secondary font-medium px-4 py-2">Home</a>
                     <a href="services.html" class="text-primary hover:text-secondary font-medium px-4 py-2">Services</a>
+                    <a href="blog.html" class="text-primary hover:text-secondary font-medium px-4 py-2">Blog</a>
                     <a href="trades-starter-package.html" class="text-primary hover:text-secondary font-medium px-4 py-2">Trades Starter Package</a>
                     <a href="contact.html" class="text-primary hover:text-secondary font-medium px-4 py-2">Contact</a>
                     <a href="tel:6042187290" style="background: #1d4ed8; color: #fff; padding: 1em; border-radius: 8px; text-align: center; font-weight: bold; margin-top: 1em;">
@@ -144,7 +145,7 @@
             </div>
         </div>
     </nav>
-    <script src="assets/js/menu.js"></script>
+    <script src="/assets/js/menu.js"></script>
 
     <div class="bg-yellow-400 text-black text-center py-3 px-4 font-semibold shadow-md">
   💬 New Service: Add a Smart Chatbot to Your Website – Get More Leads While You Work!
@@ -165,12 +166,8 @@
             <h2 id="contact-form-heading" class="text-3xl font-bold text-primary text-center mb-12">📋 Get Your Free Visibility Report</h2>
             <div class="max-w-2xl mx-auto">
                 <!-- Contact Info -->
-                <div class="bg-yellow-100 border-l-4 border-yellow-500 text-yellow-700 p-4 mb-6 rounded-md" role="alert">
-                    <p class="font-bold">Please Note:</p>
-                    <p>You may need to be signed in to a Google account to use this form.</p>
-                </div>
                 <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-                    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdkv0ZjPaUKbPNvPX6ra_rhf7r-8Z5RJW4PTB9cuasXKfCRtA/viewform?embedded=true" width="100%" height="950" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+                    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSea89WfALQtXYZEHz5sihuTph2pSog1rBX7vlY3Wui2Hi4PAg/viewform?embedded=true" width="100%" height="950" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
                 </div>
             </div>
         </div>
@@ -206,5 +203,8 @@
             });
         }
 </script>
+    <!-- Pickaxe AI Chatbot -->
+    <div id="deployment-0e226eab-9b10-421d-95e8-f92ee6b7c70c"></div>
+    <script src="https://studio.pickaxe.co/api/embed/bundle.js" defer></script>
 </body>
 </html> 

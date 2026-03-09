@@ -21,4 +21,4 @@ Allow: /
 User-agent: GoogleOther
 Allow: /
 
-Sitemap: https://www.gentoolinkwebservices.com/sitemap.xml
+Sitemap: https://gentoolinkwebservices.com/sitemap.xml

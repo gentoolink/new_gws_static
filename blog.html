@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog — AI & Web Tips for Northern BC Small Business | Gentoolink</title>
+    <meta name="description" content="Practical AI and web tips for small business owners in Northern BC. Plain English advice from Ken McGonigal in Vanderhoof — no jargon, no fluff.">
+    <link rel="canonical" href="https://gentoolinkwebservices.com/blog.html">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1a365d',
+                        secondary: '#2b6cb0',
+                        accent: '#4299e1',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        nav {
+            position: fixed; top: 0; left: 0; right: 0;
+            z-index: 100; background-color: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        body { padding-top: 80px; }
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 80px;
+            left: 0;
+            right: 0;
+            z-index: 50;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            background-color: white;
+        }
+        .mobile-menu.active {
+            display: block;
+        }
+        @media (min-width: 768px) {
+            .mobile-menu { display: none !important; }
+        }
+        .mobile-phone { display: none; align-items: center; color: #1a365d; font-weight: 500; text-decoration: none; padding: 0.5rem 1rem; margin-left: auto; margin-right: 1rem; }
+        @media (max-width: 768px) { .mobile-phone { display: flex; } }
+    </style>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-S2FCSXLN1E"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-S2FCSXLN1E');
+    </script>
+    <script>
+        function toggleMenu() {
+            var menu = document.querySelector('.mobile-menu');
+            if (menu) menu.classList.toggle('active');
+        }
+    </script>
+</head>
+
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md" role="navigation" aria-label="Main navigation">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20">
+                <div class="flex items-center">
+                    <a href="index.html" aria-label="Gentoolink Web Services Home" class="flex items-center">
+                        <picture><source srcset="/assets/images/gentoolink-logo.webp" type="image/webp"><img src="/assets/images/gentoolink-logo.png" alt="Gentoolink Web Services Logo - Serving Northern BC" class="h-16" style="filter:drop-shadow(0 2px 6px rgba(0,0,0,.25))" width="64" height="64"></picture>
+                        <div style="display:flex;flex-direction:column;line-height:1.15;margin-left:.75rem">
+                            <span style="font-size:1.5rem;font-weight:800;background:linear-gradient(135deg,#9a6e00 0%,#c9960a 30%,#f0c040 55%,#c9960a 75%,#9a6e00 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:-.02em">Gentoolink</span>
+                            <span style="font-size:.65rem;font-weight:700;color:#1a7b8a;letter-spacing:.14em;text-transform:uppercase;margin-top:1px">Web Services</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="flex items-center md:hidden">
+                    <button type="button" class="text-primary hover:text-secondary focus:outline-none" aria-label="Toggle menu" onclick="toggleMenu()">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-primary hover:text-secondary font-medium">Home</a>
+                    <a href="services.html" class="text-primary hover:text-secondary font-medium">Services</a>
+                    <a href="blog.html" class="text-secondary font-semibold border-b-2 border-secondary pb-1">Blog</a>
+                    <a href="trades-starter-package.html" class="text-primary hover:text-secondary font-medium">Trades Starter Package</a>
+                    <a href="contact.html" class="text-primary hover:text-secondary font-medium">Contact</a>
+                </div>
+            </div>
+            <div class="mobile-menu bg-white py-4">
+                <div class="flex flex-col space-y-4">
+                    <a href="index.html" class="text-primary hover:text-secondary font-medium px-4 py-2">Home</a>
+                    <a href="services.html" class="text-primary hover:text-secondary font-medium px-4 py-2">Services</a>
+                    <a href="blog.html" class="text-secondary font-semibold px-4 py-2">Blog</a>
+                    <a href="trades-starter-package.html" class="text-primary hover:text-secondary font-medium px-4 py-2">Trades Starter Package</a>
+                    <a href="contact.html" class="text-primary hover:text-secondary font-medium px-4 py-2">Contact</a>
+                    <a href="tel:6042187290" style="background:#1d4ed8;color:#fff;padding:1em;border-radius:8px;text-align:center;font-weight:bold;margin-top:1em;">
+                        📞 Call Now: (604) 218-7290
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="bg-gradient-to-r from-primary to-secondary text-white py-16">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="text-orange-300 font-semibold uppercase tracking-wide text-sm mb-3">Vanderhoof &amp; Northern BC</p>
+            <h1 class="text-4xl font-bold mb-4">AI &amp; Web Tips for Small Business</h1>
+            <p class="text-xl text-blue-100">Plain English advice on using AI and technology to save time and grow your business — no jargon, no fluff.</p>
+        </div>
+    </section>
+
+    <!-- Blog Posts -->
+    <section class="py-16">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <!-- Post Card -->
+            <article class="bg-white rounded-xl shadow-md overflow-hidden mb-8 hover:shadow-lg transition-shadow duration-300">
+                <div class="p-8">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="bg-secondary text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">AI &amp; Automation</span>
+                        <span class="text-gray-400 text-sm">March 4, 2026 &nbsp;·&nbsp; 6 min read</span>
+                    </div>
+                    <h2 class="text-2xl font-bold text-primary mb-3 hover:text-secondary transition-colors">
+                        <a href="blog-ai-saves-small-business-time.html">5 Ways AI Saves Small Business Owners Time Every Week</a>
+                    </h2>
+                    <p class="text-gray-600 mb-5 leading-relaxed">Running a small business in Northern BC is a full-time job — and then some. AI won't solve everything, but for a lot of business owners, it's quietly handing back 5 to 10 hours a week. Here's where those hours are actually coming from.</p>
+                    <a href="blog-ai-saves-small-business-time.html" class="inline-flex items-center text-secondary font-semibold hover:text-primary transition-colors">
+                        Read the post <i class="fas fa-arrow-right ml-2 text-sm"></i>
+                    </a>
+                </div>
+            </article>
+
+            <!-- More posts coming soon -->
+            <div class="bg-gray-100 rounded-xl p-8 text-center">
+                <p class="text-gray-500 text-lg mb-2">More posts coming soon.</p>
+                <p class="text-gray-400 text-sm">Topics: AI for trades, automating bookings, website hosting in Canada, local SEO for small business, and more.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="bg-primary text-white py-14">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold mb-4">Want to Know What AI Could Do for Your Business?</h2>
+            <p class="text-xl text-blue-200 mb-8">Book a free 30-minute AI Audit — I'll tell you exactly which tools would save you the most time, with no obligation.</p>
+            <a href="contact.html" class="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-lg font-semibold text-lg transition duration-300 inline-block">🤖 Book Your Free AI Audit</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8" role="contentinfo">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="mb-2">Gentoolink Web Services Inc.</p>
+            <p class="mb-2">
+                <a href="mailto:ken@gentoolinkwebservices.com" class="hover:text-accent transition-colors duration-300">ken@gentoolinkwebservices.com</a>
+            </p>
+            <p class="mb-4">
+                <a href="tel:+16042187290" class="hover:text-accent transition-colors duration-300">+1 (604) 218-7290</a>
+            </p>
+            <div class="mt-4">
+                <a href="privacy-policy.html" class="text-sm text-gray-400 hover:text-accent transition-colors duration-300 mt-2 inline-block">Privacy Policy</a>
+            </div>
+        </div>
+    </footer>
+    <script src="/assets/js/menu.js"></script>
+    <!-- Pickaxe AI Chatbot -->
+    <div id="deployment-0e226eab-9b10-421d-95e8-f92ee6b7c70c"></div>
+    <script src="https://studio.pickaxe.co/api/embed/bundle.js" defer></script>
+</body>
+</html>

@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Gentoolink Web Services</title>
-    <meta name="description" content="Learn about Gentoolink Web Services, our mission, and how we help trades in Northern BC succeed online.">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <title>About Ken McGonigal — Local AI Problem-Solver for Northern BC | Gentoolink</title>
+    <meta name="description" content="Meet Ken McGonigal — Vanderhoof-based AI consultant helping Northern BC small businesses save time and grow. Plain English, real results, no jargon.">
+    <link rel="canonical" href="https://gentoolinkwebservices.com/about.html">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <script>
@@ -41,15 +42,14 @@
             left: 0;
             right: 0;
             z-index: 50;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-            transform: translateY(-100%);
-            transition: transform 0.3s ease-in-out;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            background-color: white;
         }
-        @media (max-width: 640px) {
-            .mobile-menu.active {
-                display: block;
-                transform: translateY(0);
-            }
+        .mobile-menu.active {
+            display: block;
+        }
+        @media (min-width: 768px) {
+            .mobile-menu { display: none !important; }
         }
         .mobile-phone {
             display: none;
@@ -67,6 +67,12 @@
             }
         }
     </style>
+    <script>
+        function toggleMenu() {
+            var menu = document.querySelector('.mobile-menu');
+            if (menu) menu.classList.toggle('active');
+        }
+    </script>
 </head>
 
 <script src="https://studio.pickaxe.co/api/embed/bundle.js" defer></script>
@@ -79,8 +85,11 @@
             <div class="flex justify-between h-20">
                 <div class="flex items-center">
                     <a href="index.html" aria-label="Gentoolink Web Services Home" class="flex items-center">
-                        <img src="assets/images/gentoolink-logo.png" alt="Gentoolink Web Services Logo - Serving Northern BC" class="h-16" width="64" height="64">
-                        <span class="ml-4 text-2xl font-bold text-primary">Gentoolink</span>
+                        <picture><source srcset="/assets/images/gentoolink-logo.webp" type="image/webp"><img src="/assets/images/gentoolink-logo.png" alt="Gentoolink Web Services Logo - Serving Northern BC" class="h-16" style="filter:drop-shadow(0 2px 6px rgba(0,0,0,.25))" width="64" height="64"></picture>
+                        <div style="display:flex;flex-direction:column;line-height:1.15;margin-left:.75rem">
+                            <span style="font-size:1.5rem;font-weight:800;background:linear-gradient(135deg,#9a6e00 0%,#c9960a 30%,#f0c040 55%,#c9960a 75%,#9a6e00 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:-.02em">Gentoolink</span>
+                            <span style="font-size:.65rem;font-weight:700;color:#1a7b8a;letter-spacing:.14em;text-transform:uppercase;margin-top:1px">Web Services</span>
+                        </div>
                     </a>
                 </div>
 
@@ -96,15 +105,17 @@
                 <div class="hidden md:flex items-center space-x-8">
                     <a href="index.html" class="text-primary hover:text-secondary font-medium">Home</a>
                     <a href="services.html" class="text-primary hover:text-secondary font-medium">Services</a>
+                    <a href="blog.html" class="text-primary hover:text-secondary font-medium">Blog</a>
                     <a href="trades-starter-package.html" class="text-primary hover:text-secondary font-medium">Trades Starter Package</a>
                     <a href="contact.html" class="text-primary hover:text-secondary font-medium">Contact</a>
                 </div>
             </div>
             <!-- Mobile menu -->
-            <div class="mobile-menu md:hidden bg-white py-4">
+            <div class="mobile-menu bg-white py-4">
                 <div class="flex flex-col space-y-4">
                     <a href="index.html" class="text-primary hover:text-secondary font-medium px-4 py-2">Home</a>
                     <a href="services.html" class="text-primary hover:text-secondary font-medium px-4 py-2">Services</a>
+                    <a href="blog.html" class="text-primary hover:text-secondary font-medium px-4 py-2">Blog</a>
                     <a href="trades-starter-package.html" class="text-primary hover:text-secondary font-medium px-4 py-2">Trades Starter Package</a>
                     <a href="contact.html" class="text-primary hover:text-secondary font-medium px-4 py-2">Contact</a>
                     <a href="tel:6042187290" style="background: #1d4ed8; color: #fff; padding: 1em; border-radius: 8px; text-align: center; font-weight: bold; margin-top: 1em;">
@@ -115,44 +126,52 @@
         </div>
     </nav>
     <main class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <h1 class="text-4xl font-bold text-primary mb-8">About Gentoolink Web Services</h1>
+        <p class="text-secondary font-semibold uppercase tracking-wide text-sm mb-3">Vanderhoof &amp; Northern BC</p>
+        <h1 class="text-4xl font-bold text-primary mb-8">Your Local AI Problem-Solver</h1>
         <div class="prose prose-lg max-w-none text-gray-800">
-            <p class="mb-6">Hi, I'm Ken. I'm not a plumber. Or an electrician. Or a roofer.<br>
-            But I know how frustrating it is when technology gets in the way of your real work.</p>
-            <blockquote class="border-l-4 border-accent pl-4 italic text-gray-700 mb-8">That's why I started Gentoolink Web Services — to take the tech headaches <strong>off your plate</strong>, so you can focus on doing what you do best: serving your customers and getting the job done.</blockquote>
-            <h2 class="text-2xl font-bold text-primary mt-10 mb-4">Why Trades?</h2>
-            <p class="mb-4">Over the years, I've worked with a lot of businesses. But tradespeople?<br>
-            You're the backbone of every community. You don't have time to mess around with websites, Google Business listings, or chasing leads online.</p>
-            <p class="mb-4">You need simple solutions that actually work.<br>
-            Not more apps. Not more "DIY" platforms.<br>
-            You just want the phone to ring and your business to be easy to find.</p>
-            <p class="mb-8">That's where I come in.</p>
+            <p class="mb-6">Hi, I'm Ken. I run a small business in Vanderhoof — just like you.<br>
+            And I know firsthand how much time gets eaten up by things that should just handle themselves: answering the same questions over and over, chasing down follow-ups, missing calls while you're with a customer.</p>
+            <blockquote class="border-l-4 border-accent pl-4 italic text-gray-700 mb-8">That's why I started Gentoolink Web Services — to bring practical AI tools to Northern BC businesses that actually save time and money, explained in plain English, with no big-city price tags.</blockquote>
+
+            <h2 class="text-2xl font-bold text-primary mt-10 mb-4">I Build AI Tools That Work for Real Businesses</h2>
+            <p class="mb-4">AI isn't just for tech giants and Silicon Valley startups. The same tools that big companies use to automate their customer service, follow-ups, and workflows are now accessible to a plumbing shop in Vanderhoof, a bookkeeper in Prince George, or a retailer in Burns Lake.</p>
+            <p class="mb-8">The problem? Most small business owners don't have time to figure out which tools are worth using — or how to set them up. That's exactly where I come in.</p>
+
             <h2 class="text-2xl font-bold text-primary mt-10 mb-4">What I Do (In Plain English)</h2>
             <ul class="mb-8">
-                <li><strong>I build simple, professional websites</strong> that make you look good and bring in calls.</li>
-                <li><strong>I make sure your Google Business profile is dialed in</strong> so locals find you first.</li>
-                <li><strong>I set up AI tools</strong> that answer missed calls, text customers back, and keep you in front of people.</li>
-                <li><strong>I handle the tech stuff</strong> so you don't have to.</li>
+                <li class="mb-3"><strong>AI chatbots &amp; virtual assistants</strong> — I build chat tools for your website or Facebook page that answer customer questions, handle bookings, and capture leads 24/7, so you don't have to.</li>
+                <li class="mb-3"><strong>Automated follow-ups &amp; communications</strong> — Never let a lead go cold again. I set up systems that follow up with customers automatically after a call, booking, or inquiry.</li>
+                <li class="mb-3"><strong>Websites that actually work</strong> — Clean, fast, mobile-friendly sites built to bring in calls and customers, not just look good.</li>
+                <li class="mb-3"><strong>Google Business Profile &amp; local SEO</strong> — I make sure locals find you first when they search for what you offer.</li>
+                <li class="mb-3"><strong>Tech support &amp; systems setup</strong> — From email to CRM to booking tools, I handle the tech so you can handle your business.</li>
             </ul>
-            <blockquote class="border-l-4 border-accent pl-4 italic text-gray-700 mb-8">No complicated jargon. No call centers. You deal with me, directly.</blockquote>
-            <h2 class="text-2xl font-bold text-primary mt-10 mb-4">Local Business Helping Local Businesses</h2>
-            <p class="mb-4">I'm based right here in Northern BC.<br>
-            I know what it's like running a small business in a small town.<br>
-            I'm not some big city agency. I'm your neighbor who happens to know a lot about websites, SEO, and automation.</p>
-            <p class="mb-8">If you've been meaning to "get around to" fixing up your website or getting your Google listing sorted — that's what I'm here for.</p>
-            <h2 class="text-2xl font-bold text-primary mt-10 mb-4">Let's Keep It Simple</h2>
-            <ul class="mb-8 list-disc list-inside">
-                <li>If your phone isn't ringing as much as it should be…</li>
-                <li>If you're tired of missing calls while you're on the job…</li>
-                <li>If you want someone to just "take care of it"…</li>
-            </ul>
-            <blockquote class="border-l-4 border-accent pl-4 italic text-gray-700 mb-8">That's what I do.</blockquote>
+            <blockquote class="border-l-4 border-accent pl-4 italic text-gray-700 mb-8">No jargon. No call centers. No outsourcing to someone who's never heard of Vanderhoof. You deal with me, directly.</blockquote>
+
+            <h2 class="text-2xl font-bold text-primary mt-10 mb-4">Proof I Know What I'm Doing</h2>
+            <p class="mb-4">I've built AI-powered tools for real businesses — not just helped other people set them up. Here are two examples:</p>
+            <div class="bg-blue-50 border-l-4 border-secondary p-4 rounded mb-4">
+                <p class="font-semibold text-primary mb-1"><a href="https://centralbcdirectory.ca" target="_blank" rel="noopener noreferrer" class="hover:text-secondary">centralbcdirectory.ca</a></p>
+                <p class="text-gray-700">An AI-powered local business directory for Central BC. Instead of browsing a list, you just ask it a question — like "where can I get my furnace fixed in Vanderhoof?" — and it finds the right local business for you.</p>
+            </div>
+            <div class="bg-blue-50 border-l-4 border-secondary p-4 rounded mb-8">
+                <p class="font-semibold text-primary mb-1"><a href="https://autismstorycreator.com" target="_blank" rel="noopener noreferrer" class="hover:text-secondary">autismstorycreator.com</a></p>
+                <p class="text-gray-700">An AI tool that generates personalized social stories for children with autism — helping parents and educators create the right content quickly without needing a specialist every time.</p>
+            </div>
+
+            <h2 class="text-2xl font-bold text-primary mt-10 mb-4">Local Business, Helping Local Businesses</h2>
+            <p class="mb-4">I'm based right here in Vanderhoof. I know what it's like to run a small business in a small Northern BC town — the tight budgets, the time pressures, the feeling that technology is always one step ahead of you.</p>
+            <p class="mb-8">I'm not a big-city agency. I'm your neighbour who happens to know a lot about AI, automation, and getting things to actually work. When you hire me, you get me — not a junior contractor who's never seen a Northern BC winter.</p>
+
             <h2 class="text-2xl font-bold text-primary mt-10 mb-4">A Bit About Me</h2>
             <p class="mb-4">Before I started Gentoolink, I served 12 years as a police officer.<br>
             That job taught me a lot about responsibility, clear communication, and showing up when it counts.</p>
-            <p class="mb-4">These days, I'm focused on my family, being active in my church, and helping small businesses succeed.</p>
-            <div class="bg-accent/10 border-l-4 border-accent p-4 rounded mb-4">
+            <p class="mb-4">These days, I'm focused on my family, being active in my community, and helping Northern BC businesses grow.</p>
+            <div class="bg-accent/10 border-l-4 border-accent p-4 rounded mb-8">
                 <span class="font-semibold text-primary">I believe in doing honest work, keeping my word, and supporting my community</span> — values that have always guided me, whether in uniform or behind a computer.
+            </div>
+
+            <div class="text-center mt-10">
+                <a href="contact.html" class="bg-secondary hover:bg-primary text-white px-8 py-3 rounded-lg font-semibold transition duration-300 inline-block">🤖 Book a Free AI Audit</a>
             </div>
         </div>
     </main>
@@ -171,6 +190,9 @@
             </div>
         </div>
     </footer>
-    <script src="assets/js/menu.js"></script>
+    <script src="/assets/js/menu.js"></script>
+    <!-- Pickaxe AI Chatbot -->
+    <div id="deployment-0e226eab-9b10-421d-95e8-f92ee6b7c70c"></div>
+    <script src="https://studio.pickaxe.co/api/embed/bundle.js" defer></script>
 </body>
 </html> 
