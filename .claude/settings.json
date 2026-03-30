@@ -6,7 +6,9 @@
       "Bash(python3 seo_fix_landings.py)",
       "Bash(python3 seo_fix.py)",
       "Bash(python3 seo_fix2.py)",
-      "Bash(rm seo_schema.py)"
+      "Bash(rm seo_schema.py)",
+      "Bash(\"c:/Users/ken/OneDrive/Documents/Github/new_gws_static/assets/css/style.css\")",
+      "Bash(\"c:/Users/ken/OneDrive/Documents/Github/new_gws_static/assets/css/style.css\":*)"
     ]
   }
 }
