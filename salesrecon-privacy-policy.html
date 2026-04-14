@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy – Sales Recon</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: #f5f7fa;
+      color: #1a1a2e;
+      line-height: 1.75;
+    }
+
+    header {
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 60%, #0f3460 100%);
+      color: #fff;
+      padding: 48px 24px 40px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      margin-bottom: 8px;
+    }
+
+    header .subtitle {
+      font-size: 0.95rem;
+      color: #a0aec0;
+    }
+
+    main {
+      max-width: 780px;
+      margin: 48px auto 80px;
+      padding: 0 24px;
+    }
+
+    section {
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 36px 40px;
+      margin-bottom: 24px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.07);
+    }
+
+    h2 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #0f3460;
+      margin-bottom: 16px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #e8edf4;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    p {
+      font-size: 0.97rem;
+      color: #374151;
+      margin-bottom: 14px;
+    }
+
+    p:last-child { margin-bottom: 0; }
+
+    strong {
+      color: #1a1a2e;
+      font-weight: 600;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    ul li {
+      font-size: 0.97rem;
+      color: #374151;
+      padding: 6px 0 6px 22px;
+      position: relative;
+    }
+
+    ul li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: #0f3460;
+      font-weight: 700;
+    }
+
+    .service-list li {
+      border-bottom: 1px solid #f1f5f9;
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+
+    .service-list li:last-child { border-bottom: none; }
+
+    .badge {
+      display: inline-block;
+      background: #e8f0fe;
+      color: #0f3460;
+      font-size: 0.8rem;
+      font-weight: 700;
+      padding: 2px 10px;
+      border-radius: 20px;
+      margin-right: 8px;
+      vertical-align: middle;
+    }
+
+    .contact-box {
+      background: #f0f5ff;
+      border-left: 4px solid #0f3460;
+      border-radius: 8px;
+      padding: 20px 24px;
+    }
+
+    .contact-box a {
+      color: #0f3460;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .contact-box a:hover { text-decoration: underline; }
+
+    footer {
+      text-align: center;
+      font-size: 0.82rem;
+      color: #9ca3af;
+      padding-bottom: 40px;
+    }
+
+    @media (max-width: 600px) {
+      section { padding: 24px 20px; }
+      header h1 { font-size: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Privacy Policy</h1>
+    <p class="subtitle">Sales Recon Chrome Extension &nbsp;·&nbsp; Last updated: April 14, 2026</p>
+  </header>
+
+  <main>
+
+    <section>
+      <h2>Overview</h2>
+      <p>Sales Recon is a Chrome extension that provides AI-powered sales intelligence. This policy explains what data the extension accesses, how it is used, and how it is stored.</p>
+    </section>
+
+    <section>
+      <h2>Data We Access</h2>
+
+      <p><strong>Webpage Content</strong></p>
+      <p>When you explicitly trigger a scan, the extension reads the visible text and meta tags (title, description, keywords) of the active tab. This content is sent to the Pickaxe AI API solely to generate your sales intelligence report. We do not passively monitor your browsing or collect data from pages you have not chosen to scan.</p>
+
+      <p style="margin-top:20px;"><strong>Selling Context</strong></p>
+      <p>A custom prompt you optionally enter to tailor AI responses to your product or role. This is stored locally on your device and included in API requests to Pickaxe.</p>
+
+      <p style="margin-top:20px;"><strong>License Key</strong></p>
+      <p>Your license key is stored locally on your device and sent to Lemon Squeezy solely to verify your subscription. No payment or billing information ever passes through the extension.</p>
+    </section>
+
+    <section>
+      <h2>Data Storage</h2>
+      <p>Your selling context and license key are stored locally on your device using Chrome's built-in storage. <strong>No data is stored on our servers.</strong></p>
+    </section>
+
+    <section>
+      <h2>Third-Party Services</h2>
+      <ul class="service-list">
+        <li><span class="badge">Pickaxe AI</span> Receives page content and selling context to generate reports.</li>
+        <li><span class="badge">Lemon Squeezy</span> Receives your license key for subscription validation.</li>
+      </ul>
+      <p style="margin-top:16px;">We do not sell, share, or transfer your data to any other third parties.</p>
+    </section>
+
+    <section>
+      <h2>Data We Do Not Collect</h2>
+      <ul>
+        <li>Browsing history</li>
+        <li>Personal or identifying information</li>
+        <li>Financial or payment information</li>
+        <li>Data from pages you have not explicitly chosen to scan</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Contact</h2>
+      <div class="contact-box">
+        <p>For privacy-related questions, please reach out at:<br>
+        <a href="mailto:ken@gentoolinkwebservices.com">ken@gentoolinkwebservices.com</a></p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    &copy; 2026 Sales Recon &nbsp;·&nbsp; All rights reserved
+  </footer>
+
+</body>
+</html>
