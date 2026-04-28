@@ -864,3 +864,32 @@ footer .container {
     font-size: 13px;
   }
 }
+
+/* ─── FAQ ───────────────────────────────────────────────── */
+
+.faq-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 16px;
+  margin-top: 40px;
+}
+
+.faq-item {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 24px;
+}
+
+.faq-q {
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--text-primary);
+  margin-bottom: 10px;
+}
+
+.faq-a {
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
