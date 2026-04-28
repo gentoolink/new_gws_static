@@ -144,7 +144,13 @@
 <nav aria-label="Main navigation">
   <div class="container">
     <div class="nav-inner">
-      <a href="/" class="nav-logo" aria-label="Gentoolink Web Services — home">Gentoo<span>link</span></a>
+      <a href="/" class="nav-logo" aria-label="Gentoolink Web Services — home">
+        <picture>
+          <source srcset="/assets/images/gentoolink-logo.webp" type="image/webp">
+          <img src="/assets/images/gentoolink-logo.png" alt="Gentoolink Web Services" class="nav-logo-img">
+        </picture>
+        <span>Gentoo<span>link</span></span>
+      </a>
       <span class="nav-contact">
         <a href="tel:+16042187290">+1 604-218-7290</a>
         &nbsp;·&nbsp;
@@ -458,10 +464,18 @@
 <!-- ─── Footer ────────────────────────────────────────── -->
 <footer>
   <div class="container">
+    <picture>
+      <source srcset="/assets/images/gentoolink-logo.webp" type="image/webp">
+      <img src="/assets/images/gentoolink-logo.png" alt="Gentoolink Web Services" class="footer-logo">
+    </picture>
     <p class="footer-tagline">AI that works. <span>Text to start.</span></p>
     <p class="footer-copy">© 2025 Gentoolink Web Services · Vanderhoof, BC · <a href="tel:+16042187290">+1 604-218-7290</a></p>
   </div>
 </footer>
+
+<!-- Pickaxe AI widget -->
+<script src="https://studio.pickaxe.co/api/embed/bundle.js" defer></script>
+<div id="deployment-b2355a3a-0338-4521-901d-8aa64b486be1"></div>
 
 <script>
   // Smooth scroll polyfill for older Safari
