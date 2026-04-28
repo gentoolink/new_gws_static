@@ -1,536 +1,414 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-S2FCSXLN1E"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-S2FCSXLN1E"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-S2FCSXLN1E');
+  </script>
 
-      gtag('config', 'G-S2FCSXLN1E');
-    </script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="AI agents for small business. Automate customer questions, follow-ups and bookings. Plain English, real results.">
-    <meta name="keywords" content="AI agents small business, small business automation, AI chatbot for business, AI consulting, business AI tools, Gentoolink Web Services">
-    <meta name="author" content="Gentoolink Web Services Inc.">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://gentoolinkwebservices.com/" />
-    
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://gentoolinkwebservices.com">
-    <meta property="og:title" content="AI Agents for Small Business | Gentoolink">
-    <meta property="og:description" content="AI agents for small business. Automate customer questions, follow-ups &amp; bookings so you can focus on the work that pays. Plain English, real results.">
-    <meta property="og:image" content="https://gentoolinkwebservices.com/assets/images/gentoolink-logo.png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Receptionist for Northern BC Businesses | Gentoolink Web Services</title>
+  <meta name="description" content="Gentoolink's AI receptionist answers calls, books appointments, and handles customer questions — by text. No app to download. Serving Vanderhoof, Prince George, Fort St. James, Quesnel, and Burns Lake.">
+  <meta name="keywords" content="AI receptionist Northern BC, AI for small business BC, missed call solution, AI texting receptionist, Vanderhoof BC AI, Prince George small business AI, Gentoolink Web Services">
+  <meta name="author" content="Gentoolink Web Services Inc.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://gentoolinkwebservices.com/" />
 
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://gentoolinkwebservices.com">
-    <meta property="twitter:title" content="AI Agents for Small Business | Gentoolink">
-    <meta property="twitter:description" content="AI agents for small business. Automate customer questions, follow-ups &amp; bookings so you can focus on the work that pays. Plain English, real results.">
-    <meta property="twitter:image" content="https://gentoolinkwebservices.com/assets/images/gentoolink-logo.png">
-    <meta property="twitter:image:alt" content="Gentoolink Web Services Logo">
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://gentoolinkwebservices.com">
+  <meta property="og:title" content="AI Receptionist for Northern BC Businesses | Gentoolink">
+  <meta property="og:description" content="Your business never misses a call again. Gentoolink's AI receptionist answers calls, books appointments, and handles questions by text. No app. Just texting.">
+  <meta property="og:image" content="https://gentoolinkwebservices.com/assets/images/gentoolink-logo.png">
 
-    <!-- Schema.org markup -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "LocalBusiness",
-        "name": "Gentoolink Web Services",
-        "image": "https://gentoolinkwebservices.com/assets/images/gentoolink-logo.png",
-        "description": "Your all-in-one tech partner for trades & small business in BC. Expert help with websites, Google Business Profile, bookings, automation & more.",
-        "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Vanderhoof",
-            "addressRegion": "BC",
-            "addressCountry": "CA"
-        },
-        "geo": {
-            "@type": "GeoCoordinates",
-            "latitude": "54.0166",
-            "longitude": "-124.0166"
-        },
-        "areaServed": {
-            "@type": "GeoCircle",
-            "geoMidpoint": {
-                "@type": "GeoCoordinates",
-                "latitude": "54.0166",
-                "longitude": "-124.0166"
-            },
-            "geoRadius": "200000"
-        },
-        "serviceArea": ["Vanderhoof", "Prince George", "Fort St. James", "Quesnel", "Burns Lake"],
-        "telephone": "+16042187290",
-        "email": "ken@gentoolinkwebservices.com",
-        "openingHours": "Mo-Fr 10:00-16:00",
-        "priceRange": "$$"
-    }
-    </script>
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://gentoolinkwebservices.com">
+  <meta property="twitter:title" content="AI Receptionist for Northern BC Businesses | Gentoolink">
+  <meta property="twitter:description" content="Your business never misses a call again. Gentoolink's AI receptionist answers calls, books appointments, and handles questions by text. No app. Just texting.">
+  <meta property="twitter:image" content="https://gentoolinkwebservices.com/assets/images/gentoolink-logo.png">
+  <meta property="twitter:image:alt" content="Gentoolink Web Services Logo">
 
-    <title>AI Agents for Small Business | Gentoolink</title>
-    <link rel="icon" href="/favicon.ico" type="image/x-icon">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#1a365d', // Dark blue
-                        secondary: '#2b6cb0', // Medium blue
-                        accent: '#4299e1', // Light blue
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        /* Navigation Styles */
-        .main-nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 100;
-            background-color: white;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
+  <!-- Schema.org markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Gentoolink Web Services",
+    "image": "https://gentoolinkwebservices.com/assets/images/gentoolink-logo.png",
+    "description": "AI receptionist and automation tools for Northern BC small businesses. Answers calls, books appointments, and handles customer questions by text — 24/7.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Vanderhoof",
+      "addressRegion": "BC",
+      "addressCountry": "CA"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "54.0166",
+      "longitude": "-124.0166"
+    },
+    "areaServed": {
+      "@type": "GeoCircle",
+      "geoMidpoint": {
+        "@type": "GeoCoordinates",
+        "latitude": "54.0166",
+        "longitude": "-124.0166"
+      },
+      "geoRadius": "200000"
+    },
+    "serviceArea": ["Vanderhoof", "Prince George", "Fort St. James", "Quesnel", "Burns Lake"],
+    "telephone": "+16042187290",
+    "email": "ken@gentoolinkwebservices.com",
+    "openingHours": "Mo-Fr 10:00-16:00",
+    "priceRange": "$$"
+  }
+  </script>
 
-        .nav-container {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 0 1rem;
-        }
-
-        .nav-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            height: 80px;
-        }
-
-        .nav-logo {
-            display: flex;
-            align-items: center;
-            gap: .75rem;
-            text-decoration: none;
-            transition: transform .2s ease;
-        }
-        .nav-logo:hover { transform: scale(1.02); }
-        .nav-logo picture { display: flex; }
-        .nav-logo img {
-            height: 68px;
-            width: 68px;
-            filter: drop-shadow(0 2px 6px rgba(0,0,0,.25));
-            transition: filter .25s ease;
-        }
-        .nav-logo:hover img { filter: drop-shadow(0 4px 12px rgba(184,134,11,.5)); }
-        .nav-logo-text { display: flex; flex-direction: column; line-height: 1.15; }
-        .nav-logo-name {
-            font-size: 1.5rem;
-            font-weight: 800;
-            background: linear-gradient(135deg, #9a6e00 0%, #c9960a 30%, #f0c040 55%, #c9960a 75%, #9a6e00 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            letter-spacing: -.02em;
-        }
-        .nav-logo-sub {
-            font-size: .65rem;
-            font-weight: 700;
-            color: #1a7b8a;
-            letter-spacing: .14em;
-            text-transform: uppercase;
-            margin-top: 1px;
-        }
-
-        /* Desktop Menu */
-        .nav-links {
-            display: none;
-        }
-
-        @media (min-width: 768px) {
-            .nav-links {
-                display: flex !important;
-                align-items: center;
-                gap: 2rem;
-            }
-        }
-
-        .nav-links a {
-            color: #1a365d;
-            font-weight: 500;
-            padding: 0.5rem 1rem;
-            transition: color 0.2s;
-            text-decoration: none;
-        }
-
-        .nav-links a:hover,
-        .nav-links a.active {
-            color: #2b6cb0;
-        }
-
-        /* Mobile Menu Button */
-        .mobile-menu-btn {
-            display: flex;
-            align-items: center;
-            color: #1a365d;
-            background: none;
-            border: none;
-            padding: 0.5rem;
-            cursor: pointer;
-        }
-
-        .mobile-menu-btn:hover {
-            color: #2b6cb0;
-        }
-
-        @media (min-width: 768px) {
-            .mobile-menu-btn {
-                display: none;
-            }
-        }
-
-        /* Mobile Menu */
-        .mobile-menu {
-            display: none;
-            position: absolute;
-            top: 80px;
-            left: 0;
-            right: 0;
-            background-color: white;
-            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
-            padding: 1rem;
-        }
-
-        .mobile-menu.active {
-            display: block;
-        }
-
-        @media (min-width: 768px) {
-            .mobile-menu {
-                display: none !important;
-            }
-        }
-
-        .mobile-menu a {
-            display: block;
-            padding: 0.75rem 1rem;
-            color: #1a365d;
-            font-weight: 500;
-            transition: background-color 0.2s;
-            text-decoration: none;
-        }
-
-        .mobile-menu a:hover,
-        .mobile-menu a.active {
-            background-color: #f3f4f6;
-            color: #2b6cb0;
-        }
-
-        /* Mobile Phone Number */
-        .mobile-phone {
-            display: none;
-            align-items: center;
-            color: #1a365d;
-            font-weight: 500;
-            text-decoration: none;
-            padding: 0.5rem 1rem;
-            margin-left: auto;
-            margin-right: 1rem;
-        }
-
-        @media (max-width: 768px) {
-            .mobile-phone {
-                display: flex;
-            }
-        }
-
-        body {
-            padding-top: 80px;
-        }
-        .scrollbar-hide::-webkit-scrollbar {
-            display: none;
-        }
-        .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
-        #chat-bubble {
-            position: fixed;
-            bottom: 90px;
-            right: 24px;
-            background: #fff;
-            color: #1a1a1a;
-            padding: 10px 16px;
-            border-radius: 18px 18px 4px 18px;
-            box-shadow: 0 4px 16px rgba(0,0,0,.15);
-            font-size: 14px;
-            font-weight: 500;
-            z-index: 9999;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            white-space: nowrap;
-            animation: bubblePop .3s ease;
-        }
-        #chat-bubble-close {
-            background: none;
-            border: none;
-            cursor: pointer;
-            color: #999;
-            font-size: 14px;
-            padding: 0;
-            line-height: 1;
-        }
-        @keyframes bubblePop {
-            from { opacity: 0; transform: scale(.8) translateY(8px); }
-            to   { opacity: 1; transform: scale(1) translateY(0); }
-        }
-    </style>
-    <script>
-        function toggleMenu() {
-            var menu = document.querySelector('.mobile-menu');
-            if (menu) menu.classList.toggle('active');
-        }
-    </script>
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
-<body class="bg-gray-50">
-    <!-- Navigation -->
-    <nav class="main-nav" role="navigation" aria-label="Main navigation">
-        <div class="nav-container">
-            <div class="nav-content">
-                <a href="index.html" class="nav-logo" aria-label="Gentoolink Web Services Home">
-                    <picture><source srcset="/assets/images/gentoolink-logo.webp" type="image/webp"><img src="/assets/images/gentoolink-logo.png" alt="Gentoolink Web Services Logo"></picture>
-                    <div class="nav-logo-text">
-                        <span class="nav-logo-name">Gentoolink</span>
-                        <span class="nav-logo-sub">Web Services</span>
-                    </div>
-                </a>
+<body>
 
-                
+<!-- ─── Nav ──────────────────────────────────────────── -->
+<nav>
+  <div class="container">
+    <div class="nav-inner">
+      <span class="nav-logo">Gentoo<span>link</span></span>
+      <span class="nav-contact">
+        <a href="tel:+16042187290">+1 604-218-7290</a>
+        &nbsp;·&nbsp;
+        <a href="mailto:ken@gentoolinkwebservices.com">ken@gentoolinkwebservices.com</a>
+      </span>
+      <a href="#contact" class="nav-cta">Book a Free Consultation</a>
+    </div>
+  </div>
+</nav>
 
-                <!-- Desktop Menu -->
-                <div class="nav-links">
-                    <a href="index.html" class="text-primary hover:text-secondary font-medium">Home</a>
-                    <a href="services.html" class="text-primary hover:text-secondary font-medium">Services</a>
-                    <a href="blog.html" class="text-primary hover:text-secondary font-medium">Blog</a>
-                    <a href="trades-starter-package.html" class="text-primary hover:text-secondary font-medium">Trades Starter Package</a>
-                    <a href="contact.html" class="text-primary hover:text-secondary font-medium">Contact</a>
-                </div>
-
-                <!-- Mobile Menu Button -->
-                <button class="mobile-menu-btn" aria-label="Toggle menu" onclick="toggleMenu()">
-                    <i class="fas fa-bars text-2xl"></i>
-                </button>
+<!-- ─── Hero ─────────────────────────────────────────── -->
+<section id="hero">
+  <div class="container">
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <div class="hero-eyebrow">AI for Northern BC Businesses</div>
+        <h1>Your business never misses a call again.</h1>
+        <p class="hero-sub">
+          Gentoolink's AI receptionist answers calls, books appointments, and handles customer questions — by text. No app to download. No new habit to form.
+        </p>
+        <a href="#contact" class="btn-primary">Book a Free Consultation</a>
+        <p class="hero-trust">No obligation. We'll tell you plainly if it's a fit or not.</p>
+      </div>
+      <div class="phone-mockup">
+        <div class="phone-frame">
+          <div class="phone-notch"></div>
+          <div class="phone-screen">
+            <div class="chat-header">
+              <div class="chat-name">Miller's Plumbing</div>
+              <div class="chat-status">AI Receptionist · Active</div>
             </div>
-
-            <!-- Mobile Menu -->
-            <div class="mobile-menu">
-                <a href="index.html">Home</a>
-                <a href="services.html">Services</a>
-                <a href="blog.html">Blog</a>
-                <a href="trades-starter-package.html">Trades Starter Package</a>
-                <a href="contact.html">Contact</a>
-                <a href="tel:6042187290" style="background: #1d4ed8; color: #fff; padding: 1em; border-radius: 8px; text-align: center; font-weight: bold; margin-top: 1em;">
-                    📞 Call Now: (604) 218-7290
-                  </a>
-            </div>
+            <div class="chat-time">2:47 PM</div>
+            <div class="bubble incoming">Hi, I need a quote for a leaking water heater. Can someone come out this week?</div>
+            <div class="bubble outgoing">Hi! Thanks for reaching out to Miller's Plumbing. We can definitely help. What's your address and what's the best time — morning or afternoon?</div>
+            <div class="bubble incoming">Morning works. I'm at 142 Spruce Ave in town.</div>
+            <div class="bubble outgoing">Got it. Thursday 9am works — I'll book that in. You'll get a confirmation text shortly. Anything else?</div>
+            <div class="bubble incoming">That's perfect, thank you!</div>
+          </div>
         </div>
-    </nav>
-    <script src="/assets/js/menu.js"></script>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <div class="bg-yellow-400 text-black text-center py-3 px-4 font-semibold shadow-md">
-  🤖 New: Free AI Audit for Small Businesses — Find out what AI can do for yours.
-  <a href="contact.html" class="underline font-bold ml-2">Claim yours →</a>
-</div>
+<!-- ─── Problem ───────────────────────────────────────── -->
+<section id="problem">
+  <div class="container">
+    <div class="section-label">The Problem</div>
+    <h2>You're losing customers every time you don't pick up.</h2>
+    <p class="lead">In Northern BC, you're not always on the phone. Between jobs, driving, meetings — your prospects call somewhere else. They don't leave a message. They just move on.</p>
+    <p class="lead">A missed call isn't just a missed call. It's a job that went to your competitor.</p>
+    <p class="hook">What if every missed call became a text conversation?</p>
+  </div>
+</section>
 
-
-    <!-- Hero Section -->
-    <section class="bg-gradient-to-r from-primary to-secondary text-white py-20" role="banner">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row items-center justify-center md:justify-between text-center md:text-left">
-                <div class="mb-8 md:mb-0 md:mr-12 flex-shrink-0 flex justify-center md:justify-start w-full md:w-auto">
-                    <picture>
-                        <source srcset="/assets/images/construction_crew_docs.webp" type="image/webp">
-                        <img src="/assets/images/construction_crew_docs.png" alt="Contractor using AI tools on his phone" class="w-40 h-40 md:w-56 md:h-56 rounded-full object-cover shadow-lg bg-white/20 p-2" loading="lazy">
-                    </picture>
-                </div>
-                <div class="flex-1">
-                    <p class="text-orange-300 font-semibold uppercase tracking-wide text-sm mb-3">Built for Small Business</p>
-                    <h1 class="text-4xl md:text-5xl font-bold mb-6">AI Agents for Small Business</h1>
-                    <p class="text-xl md:text-2xl mb-8">I help small businesses stop doing things manually — customer questions, follow-ups, bookings, and more. AI agents that actually work, explained in plain English.</p>
-                    <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-                        <a href="contact.html" class="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 rounded-lg font-semibold transition duration-300" aria-label="Book a Free AI Audit">🤖 Book a Free AI Audit</a>
-                        <a href="trades-starter-package.html" class="bg-white/20 hover:bg-white/30 text-white px-8 py-3 rounded-lg font-semibold transition duration-300 border border-white/40" aria-label="See the Trades Starter Package">🔧 Trades Starter Package</a>
-                    </div>
-                </div>
-            </div>
+<!-- ─── Solution ──────────────────────────────────────── -->
+<section id="solution">
+  <div class="container">
+    <div class="solution-inner">
+      <div>
+        <span class="no-app-badge">No app. Just texting.</span>
+        <h2>Your customers already know how to text.</h2>
+        <p class="lead">That's all they need to reach your business. Our AI receptionist handles the rest — 24/7, never misses a call, never drops a lead.</p>
+        <ul class="feature-list">
+          <li>Works on any phone — no app install required</li>
+          <li>Responds instantly, even at 11pm on a Sunday</li>
+          <li>Books appointments, answers questions, captures leads</li>
+          <li>Sounds like your business, not a robot</li>
+        </ul>
+      </div>
+      <div>
+        <div class="step" style="background: var(--bg); border-color: var(--accent-border);">
+          <p style="font-size: 15px; color: var(--text-muted); line-height: 1.7;">
+            "I missed a call while on a job site. The AI caught it, booked the customer for Thursday, and sent me their address. I didn't even know about it until I checked my phone at lunch."
+          </p>
+          <p style="font-size: 13px; color: var(--text-subtle); margin-top: 14px; font-weight: 500;">— Typical outcome within the first week of setup</p>
         </div>
-    </section>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- SEO Quick Checker Section -->
-    <section class="py-12 bg-gradient-to-r from-secondary to-accent text-white" aria-labelledby="seo-checker-heading">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="bg-white/10 backdrop-blur-sm rounded-xl p-8 shadow-lg">
-                <div class="flex flex-col md:flex-row items-center justify-between">
-                    <div class="mb-6 md:mb-0 md:mr-8">
-                        <div class="flex items-center mb-4">
-                            <span class="bg-orange-500 text-white text-sm font-bold px-3 py-1 rounded-full mr-3">Free Tool</span>
-                            <h2 id="seo-checker-heading" class="text-2xl md:text-3xl font-bold">Curious how your business shows up on Google?</h2>
-                        </div>
-                        <p class="text-lg md:text-xl">Check your local search visibility in minutes—no signup needed.</p>
-                    </div>
-                    <a href="https://fastlocalseochecker.com/" target="_blank" rel="noopener noreferrer" class="bg-white text-primary hover:bg-gray-100 px-8 py-3 rounded-lg font-semibold transition duration-300 flex items-center whitespace-nowrap">
-                        <i class="fas fa-search mr-2"></i>
-                        Try our Free SEO Quick Checker
-                    </a>
-                </div>
-            </div>
+<!-- ─── How It Works ──────────────────────────────────── -->
+<section id="how-it-works">
+  <div class="container">
+    <div class="section-label">How It Works</div>
+    <h2>Up and running in days. Not months.</h2>
+    <p class="lead">We keep the setup simple because it needs to work — not impress your IT department.</p>
+    <div class="steps">
+      <div class="step">
+        <div class="step-number">1</div>
+        <h3>Connect</h3>
+        <p>Text us your phone number and tell us what you want the AI to know about your business. That's it.</p>
+      </div>
+      <div class="step">
+        <div class="step-number">2</div>
+        <h3>We Build</h3>
+        <p>We configure your AI receptionist with your info, common questions, booking logic, and your texting style.</p>
+      </div>
+      <div class="step">
+        <div class="step-number">3</div>
+        <h3>Go Live</h3>
+        <p>Calls get routed to your AI receptionist. Customers text it. You get the leads. Simple.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── Services ──────────────────────────────────────── -->
+<section id="services">
+  <div class="container">
+    <div class="section-label">What We Offer</div>
+    <h2>Five ways we put AI to work for your business.</h2>
+
+    <div class="services-grid">
+
+      <!-- AI Receptionist -->
+      <div class="service-card featured">
+        <div class="service-tag">Most Popular</div>
+        <h3>AI Receptionist</h3>
+        <p class="service-desc">Your never-sleeping receptionist.</p>
+        <ul class="service-features">
+          <li>Answers every call with a live text conversation</li>
+          <li>Books appointments and confirms bookings</li>
+          <li>Answers common questions about your business</li>
+          <li>Captures leads and sends them to you immediately</li>
+          <li>Handles after-hours inquiries</li>
+          <li>Never forgets your pricing, hours, or policies</li>
+        </ul>
+        <span class="service-price">$1,500 setup + $149/mo</span>
+      </div>
+
+      <!-- Custom Builds -->
+      <div class="service-card">
+        <div class="service-tag">Custom</div>
+        <h3>Custom AI Builds</h3>
+        <p>Tell us what you need. We'll build it.</p>
+        <p>Every business has unique workflows. We build custom AI agents trained on your data, configured for your process, built around how you actually work.</p>
+        <ul class="service-examples">
+          <li>A letter-writing AI trained on Canadian government format</li>
+          <li>A research agent monitoring regulatory changes for your industry</li>
+          <li>A customer service AI trained on your product catalog</li>
+          <li>A prospecting tool that pulls your exact target market data</li>
+        </ul>
+        <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 12px;">Text us what you're trying to solve → We scope it and give you a clear quote → Build time is days, not months.</p>
+        <span class="service-price">From $1,500 setup + $149/mo</span>
+      </div>
+
+      <!-- Research Assistant -->
+      <div class="service-card">
+        <div class="service-tag">Research</div>
+        <h3>Research Assistant</h3>
+        <p>Know your market before your competitors do.</p>
+        <ul class="service-features">
+          <li>Build prospect lists — names, emails, phone numbers</li>
+          <li>Competitive research on your top 5 competitors</li>
+          <li>Data gathering while you sleep</li>
+          <li>Market analysis before you pitch</li>
+          <li>Industry deep-dives</li>
+        </ul>
+        <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 12px;">Text us what you need → We build and run the workflow → Clean spreadsheet delivered in 24–48 hours.</p>
+        <span class="service-price">From $500/project or $750/mo</span>
+      </div>
+
+      <!-- AI Training -->
+      <div class="service-card">
+        <div class="service-tag">Training</div>
+        <h3>AI Training</h3>
+        <p>Your team becomes your AI team.</p>
+        <p>We spend a weekend with your staff teaching them to build their own AI tools — research automation, vibe coding, thinking with AI as a multiplier. After one session, they never go back.</p>
+        <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 12px;"><strong style="color: var(--text-muted);">Perfect for:</strong> Operations managers, sales teams, anyone who wants to automate themselves out of busywork. Includes custom tools built during the session + 30-day follow-up.</p>
+        <span class="service-price">$2,500 — 2-day intensive</span>
+      </div>
+
+      <!-- AI Coach -->
+      <div class="service-card wide">
+        <div class="service-tag">Consumer</div>
+        <h3>AI Coach — Personal Fitness</h3>
+        <p>Your personal fitness coach. Just text.</p>
+        <p>Stop guessing. Start training. Text your goals, food, and progress — get a coach in your pocket, 24/7. No app, no subscription trap. Just results.</p>
+        <span class="service-price">$47/mo</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─── Pricing ────────────────────────────────────────── -->
+<section id="pricing">
+  <div class="container">
+    <div class="section-label">Pricing</div>
+    <h2>Simple pricing. No surprises.</h2>
+
+    <table class="pricing-table">
+      <thead>
+        <tr>
+          <th>Service</th>
+          <th>Price</th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="td-product">AI Receptionist</td>
+          <td class="td-price">$1,500 setup + $149/mo</td>
+          <td class="td-note">Includes configuration, onboarding, and ongoing optimization</td>
+        </tr>
+        <tr>
+          <td class="td-product">Custom AI Builds — Small</td>
+          <td class="td-price">From $1,500 + $149/mo</td>
+          <td class="td-note">Single-purpose agent, straightforward workflow</td>
+        </tr>
+        <tr>
+          <td class="td-product">Custom AI Builds — Medium</td>
+          <td class="td-price">From $3,500 + $249/mo</td>
+          <td class="td-note">Multi-step workflows, integrations, custom training data</td>
+        </tr>
+        <tr>
+          <td class="td-product">Custom AI Builds — Complex</td>
+          <td class="td-price">From $7,500 + $399/mo</td>
+          <td class="td-note">Full custom builds. Text us for a quote.</td>
+        </tr>
+        <tr>
+          <td class="td-product">Research Assistant</td>
+          <td class="td-price">From $500/project or $750/mo</td>
+          <td class="td-note">Per-project or monthly retainer, depending on volume</td>
+        </tr>
+        <tr>
+          <td class="td-product">AI Training</td>
+          <td class="td-price">$2,500</td>
+          <td class="td-note">2-day intensive, in-person or Zoom. Includes custom tools built during the session + 30-day follow-up.</td>
+        </tr>
+        <tr>
+          <td class="td-product">AI Coach</td>
+          <td class="td-price">$47/mo</td>
+          <td class="td-note">Personal fitness coaching via text. No contract.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="pricing-note">
+      Most businesses recoup the AI Receptionist cost with 1–2 new customers per month. A single missed call is often worth more than a year's subscription.
+    </div>
+  </div>
+</section>
+
+<!-- ─── About ──────────────────────────────────────────── -->
+<section id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div>
+        <div class="section-label">About Us</div>
+        <h2>Built for Northern BC businesses.</h2>
+        <p class="lead">We're based in Vanderhoof, BC. We serve Vanderhoof, Prince George, Fort St. James, Quesnel, Burns Lake, and surrounding areas.</p>
+        <p style="font-size: 15px; color: var(--text-muted); line-height: 1.7;">Local businesses here deserve the same tools the big cities use. We build AI agents that work the way your customers already communicate — by text.</p>
+        <div class="service-area">
+          <strong>Serving:</strong> Vanderhoof · Prince George · Fort St. James · Quesnel · Burns Lake
         </div>
-    </section>
+      </div>
+      <div>
+        <h3 style="font-size: 18px; font-weight: 600; margin-bottom: 4px; color: var(--text);">Why work with us</h3>
+        <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 4px;">Not another agency that disappears after setup.</p>
+        <ul class="why-list">
+          <li>Real human support — not a chatbot you can't reach</li>
+          <li>Fast setup — days, not months</li>
+          <li>Built around your workflow, not a one-size-fits-all template</li>
+          <li>Ongoing optimization included — we watch the numbers</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- Trust Section -->
-    <section class="py-16 bg-white" aria-labelledby="trust-heading">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 id="trust-heading" class="text-3xl font-bold text-primary text-center mb-12">Trusted by Local Businesses</h2>
-            <div class="max-w-3xl mx-auto text-center mb-12">
-                <p class="text-xl text-gray-600 mb-8">No contracts, no hassle, just real results. Get friendly, local, on-call support for any tech question.</p>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-gray-50 p-8 rounded-lg">
-                    <div class="flex items-center mb-4">
-                        <div class="bg-secondary text-white rounded-full w-12 h-12 flex items-center justify-center text-xl font-bold mr-4">VH</div>
-                        <div>
-                            <h3 class="text-lg font-bold text-primary">Ron D.</h3>
-                            <p class="text-gray-600">Vanderhoof</p>
-                        </div>
-                    </div>
-                    <p class="text-gray-600">"Ken has done an amazing job designing and maintaining our webpage. We have been searching a long time for just the right person to help us get to the next level in our exposure to our target audience and he is spot on! Highly recommend Ken for your webpage needs."</p>
-                </div>
-                <div class="bg-gray-50 p-8 rounded-lg">
-                    <div class="flex items-center mb-4">
-                        <div class="bg-secondary text-white rounded-full w-12 h-12 flex items-center justify-center text-xl font-bold mr-4">VH</div>
-                        <div>
-                            <h3 class="text-lg font-bold text-primary">Bill T.</h3>
-                            <p class="text-gray-600">"A wonderful experience dealing with this company. Very professional. They developed a wonderful website for us and do the updates. It's been a seamless experience for me."</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="bg-gray-50 p-8 rounded-lg">
-                    <div class="flex items-center mb-4">
-                        <div class="bg-secondary text-white rounded-full w-12 h-12 flex items-center justify-center text-xl font-bold mr-4">PM</div>
-                        <div>
-                            <h3 class="text-lg font-bold text-primary">Charles G.</h3>
-                            <p class="text-gray-600">"Ken is excellent with computers and is able to assist with services that are computer related. I have used Ken and Gentoolink for several years, and frankly he is exceptional."</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+<!-- ─── Contact ───────────────────────────────────────── -->
+<section id="contact">
+  <div class="container">
+    <div class="section-label">Get in Touch</div>
+    <h2>Let's figure out if this is a fit.</h2>
+    <p class="lead">No pitch. No pressure. Tell us what your business looks like and we'll tell you honestly what AI can — and can't — do for it.</p>
+
+    <div class="contact-grid">
+      <div>
+        <div class="contact-item">
+          <span class="contact-label">Phone</span>
+          <span class="contact-value"><a href="tel:+16042187290">+1 604-218-7290</a></span>
+          <span class="contact-hours">Mon–Fri, 10am–4pm PT</span>
         </div>
-    </section>
-
-    <!-- Portfolio Carousel Section -->
-    <section class="py-16 bg-gray-50" aria-labelledby="portfolio-heading">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 id="portfolio-heading" class="text-3xl font-bold text-primary text-center mb-12">A Glimpse of Our Work</h2>
-            <div class="relative">
-                <div id="carousel-container" class="flex overflow-x-auto scroll-smooth scrollbar-hide space-x-8 py-4">
-                    <!-- Portfolio items will be injected here -->
-                </div>
-                <!-- Carousel Controls -->
-                <button id="prev-btn" class="absolute top-1/2 left-0 transform -translate-y-1/2 bg-white/70 hover:bg-white rounded-full p-3 shadow-lg -ml-4 md:-ml-6 z-10">
-                    <i class="fas fa-chevron-left text-primary text-xl"></i>
-                </button>
-                <button id="next-btn" class="absolute top-1/2 right-0 transform -translate-y-1/2 bg-white/70 hover:bg-white rounded-full p-3 shadow-lg -mr-4 md:-mr-6 z-10">
-                    <i class="fas fa-chevron-right text-primary text-xl"></i>
-                </button>
-            </div>
+      </div>
+      <div>
+        <div class="contact-item">
+          <span class="contact-label">Email</span>
+          <span class="contact-value"><a href="mailto:ken@gentoolinkwebservices.com">ken@gentoolinkwebservices.com</a></span>
+          <span class="contact-hours">Usually reply same day</span>
         </div>
-    </section>
-    <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const websites = [
-            { name: "Bill's Plumbing & Heating", url: 'https://billsplumbingheating.ca/' },
-            { name: 'SOS Custom Gutters', url: 'https://soscustomgutters.com' },
-            { name: 'Autism Story Creator', url: 'https://autismstorycreator.com' },
-            { name: 'Fast Local SEO Checker', url: 'https://fastlocalseochecker.com/' },
-            { name: 'Mapes Church', url: 'https://www.mapeschurch.com/' },
-            { name: 'All Points Cycling', url: 'https://allpointscycling.ca/' },
-            { name: 'Side Hustle Tax', url: 'https://sidehustletax.ca/' },
-            { name: 'Central BC Directory', url: 'https://centralbcdirectory.ca' }
-        ];
-        const container = document.getElementById('carousel-container');
-        websites.forEach(site => {
-            container.innerHTML += `
-                <div class="flex-shrink-0 w-72 bg-white rounded-lg shadow-md p-6 text-center">
-                    <h3 class="text-xl font-bold text-primary mb-4 h-16 flex items-center justify-center">${site.name}</h3>
-                    <a href="${site.url}" target="_blank" rel="noopener noreferrer" class="bg-secondary hover:bg-accent text-white px-6 py-2 rounded-lg font-semibold transition duration-300">Visit Site</a>
-                </div>`;
-        });
-    });
-    </script>
-
-    <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-8" role="contentinfo">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <p class="mb-2">Gentoolink Web Services Inc.</p>
-            <p class="mb-2">
-                <a href="mailto:ken@gentoolinkwebservices.com" class="hover:text-accent transition-colors duration-300">ken@gentoolinkwebservices.com</a>
-            </p>
-            <p class="mb-4">
-                <a href="tel:+16042187290" class="hover:text-accent transition-colors duration-300">+1 (604) 218-7290</a>
-            </p>
-            <div class="mt-4">
-                <a href="privacy-policy.html" class="text-sm text-gray-400 hover:text-accent transition-colors duration-300 mt-2 inline-block">Privacy Policy</a>
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        const carousel = document.getElementById('carousel-container');
-        const prevBtn = document.getElementById('prev-btn');
-        const nextBtn = document.getElementById('next-btn');
-        let autoScrollInterval;
-
-        const scrollNext = () => {
-            // If we are at the end, scroll to the beginning
-            if (carousel.scrollLeft + carousel.clientWidth >= carousel.scrollWidth - 1) {
-                carousel.scrollTo({ left: 0, behavior: 'smooth' });
-            } else {
-                carousel.scrollBy({ left: 320, behavior: 'smooth' });
-            }
-        };
-
-        const startAutoScroll = () => {
-            autoScrollInterval = setInterval(scrollNext, 3000); // Change slide every 3 seconds
-        };
-
-        const stopAutoScroll = () => {
-            clearInterval(autoScrollInterval);
-        };
-
-        nextBtn.addEventListener('click', () => {
-            carousel.scrollBy({ left: 320, behavior: 'smooth' });
-        });
-
-        prevBtn.addEventListener('click', () => {
-            carousel.scrollBy({ left: -320, behavior: 'smooth' });
-        });
-
-        carousel.addEventListener('mouseenter', stopAutoScroll);
-        carousel.addEventListener('mouseleave', startAutoScroll);
-
-        startAutoScroll();
-    </script>
-<!-- Chat greeting bubble -->
-    <div id="chat-bubble">
-        How can I help you?
-        <button id="chat-bubble-close" type="button" onclick="document.getElementById('chat-bubble').style.display='none'" aria-label="Close">&#x2715;</button>
+      </div>
     </div>
 
-    <!-- Pickaxe AI Chatbot -->
-    
-    <script src="https://studio.pickaxe.co/api/embed/bundle.js" defer></script>
-<div id="deployment-b2355a3a-0338-4521-901d-8aa64b486be1"></div>
+    <div class="contact-cta">
+      <p>Prefer to text? That's how we work.</p>
+      <a href="sms:+16042187290" class="btn-primary">Text Us Now</a>
+      &nbsp;&nbsp;
+      <a href="mailto:ken@gentoolinkwebservices.com" class="btn-primary" style="background: var(--bg-elevated); color: var(--text); border: 1px solid var(--border);">Send an Email</a>
+    </div>
+  </div>
+</section>
+
+<!-- ─── Footer ────────────────────────────────────────── -->
+<footer>
+  <div class="container">
+    <p class="footer-tagline">AI that works. <span>Text to start.</span></p>
+    <p class="footer-copy">© 2025 Gentoolink Web Services · Vanderhoof, BC · <a href="tel:+16042187290">+1 604-218-7290</a></p>
+  </div>
+</footer>
+
+<script>
+  // Smooth scroll polyfill for older Safari
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+</script>
+
 </body>
-</html> 
+</html>
