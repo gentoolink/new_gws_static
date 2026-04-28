@@ -2,17 +2,4 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/gentoolink/public_html/
-    - /bin/cp -R index.html $DEPLOYPATH
-    - /bin/cp -R style.css $DEPLOYPATH
-    - /bin/cp -R assets $DEPLOYPATH
-    - /bin/cp -R blog*.html $DEPLOYPATH
-    - /bin/cp -R media.html $DEPLOYPATH
-    - /bin/cp -R plumbers*.html $DEPLOYPATH
-    - /bin/cp -R privacy-policy.html $DEPLOYPATH
-    - /bin/cp -R real-estate*.html $DEPLOYPATH
-    - /bin/cp -R robots.txt $DEPLOYPATH
-    - /bin/cp -R salesrecon*.html $DEPLOYPATH
-    - /bin/cp -R sitemap.xml $DEPLOYPATH
-    - /bin/cp -R tech-investment*.html $DEPLOYPATH
-    - /bin/cp -R trades*.html $DEPLOYPATH
-    - /bin/cp -R trades-starter*.html $DEPLOYPATH
+    - /bin/cp -R . $DEPLOYPATH
