@@ -787,7 +787,11 @@ footer .container {
   }
 
   .phone-frame {
-    width: 200px;
+    width: min(220px, 72vw);
+  }
+
+  .phone-screen {
+    min-height: 0;
   }
 
   .steps {
