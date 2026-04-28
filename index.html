@@ -12,7 +12,7 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AI Receptionist for Northern BC Businesses | Gentoolink Web Services</title>
+  <title>AI Receptionist for Northern BC | Gentoolink Web Services</title>
   <meta name="description" content="Gentoolink's AI receptionist answers calls, books appointments, and handles customer questions — by text. No app to download. Serving Vanderhoof, Prince George, Fort St. James, Quesnel, and Burns Lake.">
   <meta name="keywords" content="AI receptionist Northern BC, AI for small business BC, missed call solution, AI texting receptionist, Vanderhoof BC AI, Prince George small business AI, Gentoolink Web Services">
   <meta name="author" content="Gentoolink Web Services Inc.">
@@ -25,6 +25,9 @@
   <meta property="og:title" content="AI Receptionist for Northern BC Businesses | Gentoolink">
   <meta property="og:description" content="Your business never misses a call again. Gentoolink's AI receptionist answers calls, books appointments, and handles questions by text. No app. Just texting.">
   <meta property="og:image" content="https://gentoolinkwebservices.com/assets/images/gentoolink-logo.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="en_CA">
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
@@ -34,12 +37,13 @@
   <meta property="twitter:image" content="https://gentoolinkwebservices.com/assets/images/gentoolink-logo.png">
   <meta property="twitter:image:alt" content="Gentoolink Web Services Logo">
 
-  <!-- Schema.org markup -->
+  <!-- Schema.org: Local Business -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
+    "@type": ["LocalBusiness", "ProfessionalService"],
     "name": "Gentoolink Web Services",
+    "url": "https://gentoolinkwebservices.com",
     "image": "https://gentoolinkwebservices.com/assets/images/gentoolink-logo.png",
     "description": "AI receptionist and automation tools for Northern BC small businesses. Answers calls, books appointments, and handles customer questions by text — 24/7.",
     "address": {
@@ -53,20 +57,78 @@
       "latitude": "54.0166",
       "longitude": "-124.0166"
     },
-    "areaServed": {
-      "@type": "GeoCircle",
-      "geoMidpoint": {
-        "@type": "GeoCoordinates",
-        "latitude": "54.0166",
-        "longitude": "-124.0166"
-      },
-      "geoRadius": "200000"
-    },
-    "serviceArea": ["Vanderhoof", "Prince George", "Fort St. James", "Quesnel", "Burns Lake"],
+    "areaServed": [
+      {"@type": "City", "name": "Vanderhoof"},
+      {"@type": "City", "name": "Prince George"},
+      {"@type": "City", "name": "Fort St. James"},
+      {"@type": "City", "name": "Quesnel"},
+      {"@type": "City", "name": "Burns Lake"}
+    ],
     "telephone": "+16042187290",
     "email": "ken@gentoolinkwebservices.com",
     "openingHours": "Mo-Fr 10:00-16:00",
-    "priceRange": "$$"
+    "priceRange": "$$",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "AI Services",
+      "itemListElement": [
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "AI Receptionist", "description": "24/7 AI receptionist that answers calls by text, books appointments, and captures leads."}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Custom AI Builds", "description": "Custom AI agents built around your specific business workflow and data."}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Research Assistant", "description": "AI-powered market research, prospect lists, and competitive intelligence."}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "AI Training", "description": "2-day intensive training for your team on building and using AI tools."}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "AI Fitness Coach", "description": "Personal fitness coaching via text, 24/7."}}
+      ]
+    }
+  }
+  </script>
+
+  <!-- Schema.org: FAQ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How much does an AI receptionist cost?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The AI Receptionist is $1,500 setup + $149/month. Most businesses recoup the cost with 1–2 new customers per month."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do my customers need to download an app?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Customers text your existing business phone number. There is nothing to download and no new habit to form."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long does setup take?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Most businesses are up and running within a few days. You tell us about your business, we configure the AI, and it goes live."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What areas do you serve?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We serve businesses in Vanderhoof, Prince George, Fort St. James, Quesnel, Burns Lake, and surrounding Northern BC communities."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What does the AI receptionist actually do?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "It answers missed calls with a live text conversation, books appointments, answers common questions about your business, captures leads, and handles after-hours inquiries — 24/7."
+        }
+      }
+    ]
   }
   </script>
 
@@ -79,10 +141,10 @@
 <body>
 
 <!-- ─── Nav ──────────────────────────────────────────── -->
-<nav>
+<nav aria-label="Main navigation">
   <div class="container">
     <div class="nav-inner">
-      <span class="nav-logo">Gentoo<span>link</span></span>
+      <a href="/" class="nav-logo" aria-label="Gentoolink Web Services — home">Gentoo<span>link</span></a>
       <span class="nav-contact">
         <a href="tel:+16042187290">+1 604-218-7290</a>
         &nbsp;·&nbsp;
@@ -92,6 +154,8 @@
     </div>
   </div>
 </nav>
+
+<main>
 
 <!-- ─── Hero ─────────────────────────────────────────── -->
 <section id="hero">
@@ -388,6 +452,8 @@
     </div>
   </div>
 </section>
+
+</main>
 
 <!-- ─── Footer ────────────────────────────────────────── -->
 <footer>

@@ -82,6 +82,12 @@ nav {
   font-weight: 700;
   color: var(--text);
   letter-spacing: -0.02em;
+  text-decoration: none;
+}
+
+.nav-logo:hover {
+  text-decoration: none;
+  opacity: 0.85;
 }
 
 .nav-logo span {
