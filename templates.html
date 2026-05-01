@@ -34,12 +34,21 @@
         </picture>
         <span>Gentoo<span>link</span></span>
       </a>
-      <span class="nav-contact">
-        <a href="tel:+16042187290">+1 604-218-7290</a>
-        &nbsp;·&nbsp;
-        <a href="mailto:ken@gentoolinkwebservices.com">ken@gentoolinkwebservices.com</a>
-      </span>
-      <a href="/#contact" class="nav-cta">Book a Free Consultation</a>
+
+      <!-- Hamburger toggle -->
+      <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="nav-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <!-- Mobile menu -->
+      <div class="nav-menu" id="nav-menu">
+        <a href="/templates.html" class="nav-templates">Templates</a>
+        <a href="tel:+16042187290" class="nav-contact">+1 604-218-7290</a>
+        <a href="mailto:ken@gentoolinkwebservices.com" class="nav-contact">ken@gentoolinkwebservices.com</a>
+        <a href="#contact" class="nav-cta">Book a Free Consultation</a>
+      </div>
     </div>
   </div>
 </nav>
@@ -56,7 +65,7 @@
         <p class="hero-sub">
           Nine free, ready-to-deploy website templates built by Gentoolink. Find your industry, click through, and if you like what you see — we'll build you one exactly like it.
         </p>
-        <a href="/#contact" class="btn-primary">Talk to Us About Your Site</a>
+        <a href="#contact" class="btn-primary">Talk to Us About Your Site</a>
         <p class="hero-trust">No deposit. No commitment. Just look.</p>
       </div>
     </div>
@@ -228,6 +237,26 @@
     <p class="footer-copy">© 2025 Gentoolink Web Services · Vanderhoof, BC · <a href="tel:+16042187290">+1 604-218-7290</a></p>
   </div>
 </footer>
+
+<script>
+  // Mobile nav hamburger
+  const hamburger = document.querySelector('.nav-hamburger');
+  const navMenu = document.querySelector('.nav-menu');
+  if (hamburger && navMenu) {
+    hamburger.addEventListener('click', () => {
+      const isOpen = navMenu.classList.toggle('open');
+      hamburger.classList.toggle('active', isOpen);
+      hamburger.setAttribute('aria-expanded', isOpen);
+    });
+    navMenu.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        navMenu.classList.remove('open');
+        hamburger.classList.remove('active');
+        hamburger.setAttribute('aria-expanded', 'false');
+      });
+    });
+  }
+</script>
 
 </body>
 </html>
