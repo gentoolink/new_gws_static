@@ -127,6 +127,21 @@ nav {
   text-decoration: none;
 }
 
+.nav-templates {
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--text-muted);
+  padding: 6px 14px;
+  border-radius: 6px;
+  transition: color 0.15s, background 0.15s;
+}
+
+.nav-templates:hover {
+  color: var(--text);
+  background: var(--bg-elevated);
+  text-decoration: none;
+}
+
 .nav-cta {
   background: var(--accent);
   color: #0f0f0f;
@@ -563,6 +578,45 @@ h2 {
   border: 1px solid var(--border);
   border-radius: 6px;
   padding: 5px 12px;
+}
+
+/* ─── Demo Template Buttons ────────────────────────────── */
+
+.demo-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--accent);
+  color: var(--bg);
+  font-weight: 600;
+  font-size: 13px;
+  padding: 9px 18px;
+  border-radius: 7px;
+  transition: opacity 0.15s;
+}
+
+.demo-btn-primary:hover {
+  opacity: 0.85;
+  text-decoration: none;
+}
+
+.demo-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--bg-elevated);
+  color: var(--text-muted);
+  font-weight: 600;
+  font-size: 13px;
+  padding: 9px 18px;
+  border-radius: 7px;
+  border: 1px solid var(--border);
+  transition: background 0.15s;
+}
+
+.demo-btn-secondary:hover {
+  background: var(--bg-card);
+  text-decoration: none;
 }
 
 /* ─── Pricing ────────────────────────────────────────── */
