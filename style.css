@@ -390,54 +390,55 @@ h1 {
 .phone-frame {
   width: 260px;
   background: #1c1c1e;
-  border-radius: 40px;
-  padding: 16px 12px;
+  border-radius: 36px;
+  padding: 14px 10px;
   border: 2px solid #333;
   box-shadow: 0 32px 64px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.04);
 }
 
 .phone-notch {
-  width: 80px;
-  height: 24px;
+  width: 76px;
+  height: 22px;
   background: #0f0f0f;
-  border-radius: 12px;
-  margin: 0 auto 12px;
+  border-radius: 11px;
+  margin: 0 auto 10px;
 }
 
 .phone-screen {
   background: #f2f2f7;
-  border-radius: 28px;
-  padding: 12px 10px 16px;
-  min-height: 360px;
+  border-radius: 24px;
+  padding: 10px 8px 14px;
+  min-height: 340px;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 6px;
 }
 
 .chat-header {
   text-align: center;
-  padding-bottom: 8px;
+  padding-bottom: 6px;
   border-bottom: 1px solid #ddd;
-  margin-bottom: 4px;
+  margin-bottom: 2px;
+  font-size: 11px;
 }
 
 .chat-name {
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 600;
   color: #000;
 }
 
 .chat-status {
-  font-size: 11px;
+  font-size: 9px;
   color: #6c6c70;
 }
 
 .bubble {
   max-width: 82%;
-  padding: 8px 12px;
-  border-radius: 16px;
-  font-size: 12px;
-  line-height: 1.45;
+  padding: 6px 10px;
+  border-radius: 14px;
+  font-size: 11px;
+  line-height: 1.4;
   color: #000;
 }
 
@@ -455,10 +456,10 @@ h1 {
 }
 
 .chat-time {
-  font-size: 10px;
+  font-size: 9px;
   color: #8e8e93;
   text-align: center;
-  margin: 2px 0;
+  margin: 1px 0;
 }
 
 /* ─── Problem ────────────────────────────────────────── */
@@ -990,11 +991,23 @@ footer .container {
   }
 
   .phone-frame {
-    width: min(220px, 72vw);
+    width: min(180px, 65vw);
   }
 
   .phone-screen {
     min-height: 0;
+  }
+
+  .phone-notch {
+    width: 60px;
+    height: 18px;
+    border-radius: 9px;
+    margin-bottom: 8px;
+  }
+
+  .bubble {
+    font-size: 11px;
+    padding: 6px 10px;
   }
 
   .steps {
