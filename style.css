@@ -207,11 +207,19 @@ nav {
   margin-left: 4px;
 }
 
+/* Hide phone/email/call-btn in desktop nav — only show in mobile hamburger menu */
+.nav-menu .nav-contact,
+.nav-menu .nav-call-btn {
+  display: none;
+}
+
 @media (max-width: 768px) {
+  /* Hamburger toggle shown only on mobile */
   .nav-hamburger {
     display: flex;
   }
 
+  /* Nav menu: hidden by default on mobile, shown when .open */
   .nav-menu {
     display: none;
     position: absolute;
@@ -229,6 +237,43 @@ nav {
 
   .nav-menu.open {
     display: flex;
+  }
+
+  /* Show phone/email in mobile hamburger menu */
+  .nav-menu.open .nav-contact {
+    display: block;
+  }
+
+  /* Show prominent call button in mobile hamburger menu */
+  .nav-menu.open .nav-call-btn {
+    display: flex;
+  }
+
+  /* Mobile call button — prominent */
+  .nav-call-btn {
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: var(--accent);
+    color: #0f0f0f;
+    font-weight: 700;
+    font-size: 16px;
+    padding: 14px 24px;
+    margin: 8px 24px 0;
+    border-radius: 8px;
+    width: calc(100% - 48px);
+    text-align: center;
+    animation: pulse-btn 2s ease-in-out infinite;
+  }
+
+  .nav-call-btn:hover {
+    opacity: 0.9;
+    text-decoration: none;
+  }
+
+  @keyframes pulse-btn {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.03); }
   }
 
   .nav-menu a {
@@ -964,10 +1009,6 @@ footer .container {
 
   .service-card.wide {
     grid-column: span 1;
-  }
-
-  .nav-contact {
-    display: none;
   }
 
   h1 {
