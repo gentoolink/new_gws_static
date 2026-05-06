@@ -963,6 +963,13 @@ footer .container {
   color: var(--text-subtle);
 }
 
+.footer-funfact {
+  font-size: 12px;
+  color: var(--text-subtle);
+  opacity: 0.7;
+  margin-top: 10px;
+}
+
 /* ─── Utilities ──────────────────────────────────────── */
 
 .text-accent { color: var(--accent); }
