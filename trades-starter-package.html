@@ -87,25 +87,48 @@
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "Product",
-        "name": "Trades Starter Package",
-        "description": "A website, Google Business Profile setup, and AI lead automation for trades businesses.",
-        "url": "https://gentoolinkwebservices.com/trades-starter-package.html",
-        "brand": {
-            "@type": "Brand",
-            "name": "Gentoolink Web Services"
-        },
-        "offers": {
-            "@type": "Offer",
-            "price": "3997",
-            "priceCurrency": "CAD",
-            "availability": "https://schema.org/InStock",
-            "seller": {
-                "@type": "LocalBusiness",
-                "name": "Gentoolink Web Services",
-                "url": "https://gentoolinkwebservices.com"
+        "@graph": [
+            {
+                "@type": "Service",
+                "@id": "https://gentoolinkwebservices.com/trades-starter-package.html#service",
+                "name": "Trades Starter Package",
+                "description": "A website, Google Business Profile setup, and AI lead automation for trades businesses.",
+                "url": "https://gentoolinkwebservices.com/trades-starter-package.html",
+                "provider": {
+                    "@type": "LocalBusiness",
+                    "@id": "https://gentoolinkwebservices.com/#business",
+                    "name": "Gentoolink Web Services",
+                    "url": "https://gentoolinkwebservices.com"
+                },
+                "offers": {
+                    "@type": "Offer",
+                    "price": "3997",
+                    "priceCurrency": "CAD",
+                    "availability": "https://schema.org/InStock",
+                    "seller": {
+                        "@type": "LocalBusiness",
+                        "@id": "https://gentoolinkwebservices.com/#business",
+                        "name": "Gentoolink Web Services",
+                        "url": "https://gentoolinkwebservices.com"
+                    }
+                },
+                "areaServed": [
+                    {"@type": "City", "name": "Prince George"},
+                    {"@type": "City", "name": "Vanderhoof"},
+                    {"@type": "City", "name": "Quesnel"},
+                    {"@type": "City", "name": "Fort St. James"},
+                    {"@type": "City", "name": "Burns Lake"}
+                ],
+                "audience": {"@type": "Audience", "audienceType": "Tradespeople and Contractors"}
+            },
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://gentoolinkwebservices.com"},
+                    {"@type": "ListItem", "position": 2, "name": "Trades Starter Package", "item": "https://gentoolinkwebservices.com/trades-starter-package.html"}
+                ]
             }
-        }
+        ]
     }
     </script>
 </head>

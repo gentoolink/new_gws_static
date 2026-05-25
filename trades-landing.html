@@ -28,25 +28,45 @@
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "Service",
-        "name": "Websites & AI Tools for Trades",
-        "provider": {
-            "@type": "LocalBusiness",
-            "name": "Gentoolink Web Services",
-            "url": "https://gentoolinkwebservices.com",
-            "address": {
-                "@type": "PostalAddress",
-                "addressLocality": "Vanderhoof",
-                "addressRegion": "BC",
-                "addressCountry": "CA"
+        "@graph": [
+            {
+                "@type": "Service",
+                "@id": "https://gentoolinkwebservices.com/trades-landing.html#service",
+                "name": "Websites & AI Tools for Trades",
+                "provider": {
+                    "@type": "LocalBusiness",
+                    "@id": "https://gentoolinkwebservices.com/#business",
+                    "name": "Gentoolink Web Services",
+                    "url": "https://gentoolinkwebservices.com",
+                    "address": {
+                        "@type": "PostalAddress",
+                        "addressLocality": "Vanderhoof",
+                        "addressRegion": "BC",
+                        "addressCountry": "CA"
+                    },
+                    "telephone": "+16042187290",
+                    "email": "ken@gentoolinkwebservices.com"
+                },
+                "description": "Done-for-you websites, Google setup, and AI automation for trades.",
+                "areaServed": [
+                    {"@type": "City", "name": "Prince George"},
+                    {"@type": "City", "name": "Vanderhoof"},
+                    {"@type": "City", "name": "Quesnel"},
+                    {"@type": "City", "name": "Fort St. James"},
+                    {"@type": "City", "name": "Burns Lake"}
+                ],
+                "serviceType": "Web Design, AI Automation, Google Business Profile, Lead Generation",
+                "url": "https://gentoolinkwebservices.com/trades-landing.html",
+                "audience": {"@type": "Audience", "audienceType": "Tradespeople and Contractors"}
             },
-            "telephone": "+16042187290",
-            "email": "ken@gentoolinkwebservices.com"
-        },
-        "description": "Done-for-you websites, Google setup, and AI automation for trades.",
-        "areaServed": ["Prince George", "Vanderhoof", "Quesnel", "Fort St. James", "Burns Lake"],
-        "serviceType": "Web Design, AI Automation, Google Business Profile, Lead Generation",
-        "url": "https://gentoolinkwebservices.com/trades-landing.html"
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://gentoolinkwebservices.com"},
+                    {"@type": "ListItem", "position": 2, "name": "Websites & AI Tools for Trades", "item": "https://gentoolinkwebservices.com/trades-landing.html"}
+                ]
+            }
+        ]
     }
     </script>
 </head>

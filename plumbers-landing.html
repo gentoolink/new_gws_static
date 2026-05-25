@@ -28,25 +28,45 @@
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "Service",
-        "name": "Plumber Website & Google Business Profile Setup",
-        "provider": {
-            "@type": "LocalBusiness",
-            "name": "Gentoolink Web Services",
-            "url": "https://gentoolinkwebservices.com",
-            "address": {
-                "@type": "PostalAddress",
-                "addressLocality": "Vanderhoof",
-                "addressRegion": "BC",
-                "addressCountry": "CA"
+        "@graph": [
+            {
+                "@type": "Service",
+                "@id": "https://gentoolinkwebservices.com/plumbers-landing.html#service",
+                "name": "Plumber Website & Google Business Profile Setup",
+                "provider": {
+                    "@type": "LocalBusiness",
+                    "@id": "https://gentoolinkwebservices.com/#business",
+                    "name": "Gentoolink Web Services",
+                    "url": "https://gentoolinkwebservices.com",
+                    "address": {
+                        "@type": "PostalAddress",
+                        "addressLocality": "Vanderhoof",
+                        "addressRegion": "BC",
+                        "addressCountry": "CA"
+                    },
+                    "telephone": "+16042187290",
+                    "email": "ken@gentoolinkwebservices.com"
+                },
+                "description": "Done-for-you websites, Google Business Profile setup, and lead capture tools built for plumbers.",
+                "areaServed": [
+                    {"@type": "City", "name": "Prince George"},
+                    {"@type": "City", "name": "Vanderhoof"},
+                    {"@type": "City", "name": "Quesnel"},
+                    {"@type": "City", "name": "Fort St. James"},
+                    {"@type": "City", "name": "Burns Lake"}
+                ],
+                "serviceType": "Web Design, Google Business Profile, Lead Generation",
+                "url": "https://gentoolinkwebservices.com/plumbers-landing.html",
+                "audience": {"@type": "Audience", "audienceType": "Plumbers and Plumbing Contractors"}
             },
-            "telephone": "+16042187290",
-            "email": "ken@gentoolinkwebservices.com"
-        },
-        "description": "Done-for-you websites, Google Business Profile setup, and lead capture tools built for plumbers.",
-        "areaServed": ["Prince George", "Vanderhoof", "Quesnel", "Fort St. James", "Burns Lake"],
-        "serviceType": "Web Design, Google Business Profile, Lead Generation",
-        "url": "https://gentoolinkwebservices.com/plumbers-landing.html"
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://gentoolinkwebservices.com"},
+                    {"@type": "ListItem", "position": 2, "name": "Plumber Website & Google Business Profile Setup", "item": "https://gentoolinkwebservices.com/plumbers-landing.html"}
+                ]
+            }
+        ]
     }
     </script>
 </head>

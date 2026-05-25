@@ -37,47 +37,123 @@
   <meta property="twitter:image" content="https://gentoolinkwebservices.com/assets/images/gentoolink-logo.png">
   <meta property="twitter:image:alt" content="Gentoolink Web Services Logo">
 
-  <!-- Schema.org: Local Business -->
+  <!-- Schema.org: WebSite + Organization + Person + LocalBusiness -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": ["LocalBusiness", "ProfessionalService"],
-    "name": "Gentoolink Web Services",
-    "url": "https://gentoolinkwebservices.com",
-    "image": "https://gentoolinkwebservices.com/assets/images/gentoolink-logo.png",
-    "description": "AI receptionist and automation tools for Northern BC small businesses. Answers calls, books appointments, and handles customer questions by text — 24/7.",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Vanderhoof",
-      "addressRegion": "BC",
-      "addressCountry": "CA"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": "54.0166",
-      "longitude": "-124.0166"
-    },
-    "areaServed": [
-      {"@type": "City", "name": "Vanderhoof"},
-      {"@type": "City", "name": "Prince George"},
-      {"@type": "City", "name": "Fort St. James"},
-      {"@type": "City", "name": "Quesnel"},
-      {"@type": "City", "name": "Burns Lake"}
-    ],
-    "telephone": "+16042187290",
-    "email": "ken@gentoolinkwebservices.com",
-    "openingHours": "Mo-Fr 10:00-16:00",
-    "priceRange": "$$",
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "AI Services",
-      "itemListElement": [
-        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "AI Receptionist", "description": "24/7 AI receptionist that answers calls by text, books appointments, and captures leads."}},
-        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Custom AI Builds", "description": "Custom AI agents built around your specific business workflow and data."}},
-        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Research Assistant", "description": "AI-powered market research, prospect lists, and competitive intelligence."}},
-        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "AI Training", "description": "2-day intensive training for your team on building and using AI tools."}}
-      ]
-    }
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://gentoolinkwebservices.com/#website",
+        "url": "https://gentoolinkwebservices.com",
+        "name": "Gentoolink Web Services",
+        "description": "AI receptionist and automation tools for Northern BC small businesses.",
+        "publisher": {"@id": "https://gentoolinkwebservices.com/#organization"},
+        "inLanguage": "en-CA"
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://gentoolinkwebservices.com/#organization",
+        "name": "Gentoolink Web Services",
+        "url": "https://gentoolinkwebservices.com",
+        "logo": {
+          "@type": "ImageObject",
+          "@id": "https://gentoolinkwebservices.com/#logo",
+          "url": "https://gentoolinkwebservices.com/assets/images/gentoolink-logo.png",
+          "contentUrl": "https://gentoolinkwebservices.com/assets/images/gentoolink-logo.png"
+        },
+        "image": {"@id": "https://gentoolinkwebservices.com/#logo"},
+        "telephone": "+16042187290",
+        "email": "ken@gentoolinkwebservices.com",
+        "sameAs": ["https://soundcloud.com/ken-mcgonigal"],
+        "founder": {"@id": "https://gentoolinkwebservices.com/#ken"},
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+16042187290",
+          "contactType": "customer service",
+          "email": "ken@gentoolinkwebservices.com",
+          "areaServed": "CA",
+          "availableLanguage": "en"
+        },
+        "knowsAbout": [
+          "AI Receptionist",
+          "Business Automation",
+          "Web Design",
+          "Google Business Profile Optimization",
+          "Small Business Technology",
+          "Lead Generation",
+          "Missed Call Text Back"
+        ]
+      },
+      {
+        "@type": "Person",
+        "@id": "https://gentoolinkwebservices.com/#ken",
+        "name": "Ken McGonigal",
+        "email": "ken@gentoolinkwebservices.com",
+        "jobTitle": "Founder",
+        "worksFor": {"@id": "https://gentoolinkwebservices.com/#organization"},
+        "url": "https://gentoolinkwebservices.com",
+        "sameAs": ["https://soundcloud.com/ken-mcgonigal"]
+      },
+      {
+        "@type": ["LocalBusiness", "ProfessionalService"],
+        "@id": "https://gentoolinkwebservices.com/#business",
+        "name": "Gentoolink Web Services",
+        "url": "https://gentoolinkwebservices.com",
+        "image": {"@id": "https://gentoolinkwebservices.com/#logo"},
+        "logo": {"@id": "https://gentoolinkwebservices.com/#logo"},
+        "description": "AI receptionist and automation tools for Northern BC small businesses. Answers calls, books appointments, and handles customer questions by text — 24/7.",
+        "slogan": "Your business never misses a call again.",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Vanderhoof",
+          "addressRegion": "BC",
+          "addressCountry": "CA"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "54.0166",
+          "longitude": "-124.0166"
+        },
+        "areaServed": [
+          {"@type": "City", "name": "Vanderhoof"},
+          {"@type": "City", "name": "Prince George"},
+          {"@type": "City", "name": "Fort St. James"},
+          {"@type": "City", "name": "Quesnel"},
+          {"@type": "City", "name": "Burns Lake"}
+        ],
+        "telephone": "+16042187290",
+        "email": "ken@gentoolinkwebservices.com",
+        "openingHours": "Mo-Fr 10:00-16:00",
+        "priceRange": "$$",
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+16042187290",
+          "contactType": "customer service",
+          "email": "ken@gentoolinkwebservices.com"
+        },
+        "knowsAbout": [
+          "AI Receptionist",
+          "Business Automation",
+          "Web Design",
+          "Google Business Profile Optimization",
+          "Small Business Technology",
+          "Lead Generation",
+          "Missed Call Text Back"
+        ],
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "AI Services",
+          "itemListElement": [
+            {"@type": "Offer", "itemOffered": {"@type": "Service", "@id": "https://gentoolinkwebservices.com/#service-ai-receptionist", "name": "AI Receptionist", "description": "24/7 AI receptionist that answers calls by text, books appointments, and captures leads."}},
+            {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Custom AI Builds", "description": "Custom AI agents built around your specific business workflow and data."}},
+            {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Research Assistant", "description": "AI-powered market research, prospect lists, and competitive intelligence."}},
+            {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "AI Training", "description": "2-day intensive training for your team on building and using AI tools."}}
+          ]
+        },
+        "parentOrganization": {"@id": "https://gentoolinkwebservices.com/#organization"}
+      }
+    ]
   }
   </script>
 
