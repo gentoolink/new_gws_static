@@ -148,7 +148,8 @@
             {"@type": "Offer", "itemOffered": {"@type": "Service", "@id": "https://gentoolinkwebservices.com/#service-ai-receptionist", "name": "AI Receptionist", "description": "24/7 AI receptionist that answers calls by text, books appointments, and captures leads."}},
             {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Custom AI Builds", "description": "Custom AI agents built around your specific business workflow and data."}},
             {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Research Assistant", "description": "AI-powered market research, prospect lists, and competitive intelligence."}},
-            {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "AI Training", "description": "2-day intensive training for your team on building and using AI tools."}}
+            {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "AI Training", "description": "2-day intensive training for your team on building and using AI tools."}},
+            {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "AI Fitness Coach", "description": "Personal fitness coaching via text, 24/7."}}
           ]
         },
         "parentOrganization": {"@id": "https://gentoolinkwebservices.com/#organization"}
@@ -202,22 +203,6 @@
           "@type": "Answer",
           "text": "It answers missed calls with a live text conversation, books appointments, answers common questions about your business, captures leads, and handles after-hours inquiries — 24/7."
         }
-      },
-      {
-        "@type": "Question",
-        "name": "Can you also build me a website?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes. Our SiteReply service builds professional business websites starting at $79/mo. We start with a 15-minute call, build the site in 48 hours, and you update it by just sending a text or email. No CMS, no login, no developer needed."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Can I get both the AI receptionist and a website?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes — and they work even better together. Your website handles the first impression, the AI receptionist handles every inquiry after that. Many clients bundle both starting at $228/mo."
-        }
       }
     ]
   }
@@ -225,6 +210,7 @@
 
   <link rel="icon" href="/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -242,22 +228,13 @@
         </picture>
         <span>Gentoo<span>link</span></span>
       </a>
-
-      <!-- Hamburger toggle -->
-      <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="nav-menu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-
-      <!-- Mobile menu -->
-      <div class="nav-menu" id="nav-menu">
-        <a href="/templates.html" class="nav-templates">Templates</a>
-        <a href="/sitereply.html" class="nav-sitereply">SiteReply</a>
-        <a href="tel:+16042187290" class="nav-call-btn">📞 Call Now — +1 604-218-7290</a>
-        <a href="mailto:ken@gentoolinkwebservices.com" class="nav-contact">ken@gentoolinkwebservices.com</a>
-        <a href="#contact" class="nav-cta">Book a Free Consultation</a>
-      </div>
+      <span class="nav-links">
+        <a href="#agents">Agents</a>
+        <a href="#ai-web">AI Web</a>
+        <a href="#pricing">Pricing</a>
+        <a href="blog.html">Blog</a>
+      </span>
+      <a href="#contact" class="nav-cta">Book a free audit</a>
     </div>
   </div>
 </nav>
@@ -269,28 +246,52 @@
   <div class="container">
     <div class="hero-grid">
       <div class="hero-copy">
-        <div class="hero-eyebrow">AI for Northern BC Businesses</div>
-        <h1>Your business never misses a call again.</h1>
+        <div class="hero-eyebrow">AI Agents · Canadian Small Business</div>
+        <h1 class="gradient-text">AI agents that work<br>while you sleep.</h1>
         <p class="hero-sub">
-          Gentoolink's AI receptionist answers calls, books appointments, and handles customer questions — by text. No app to download. No new habit to form.
+          Gentoolink builds custom AI agents for Canadian small businesses — receptionists that catch every call, research bots, lead automation, and AI-ready web presence. Done for you, running in days.
         </p>
-        <a href="#contact" class="btn-primary">Book a Free Consultation</a>
-        <p class="hero-trust">No obligation. We'll tell you plainly if it's a fit or not.</p>
+        <div class="hero-cta-row">
+          <a href="#agents" class="btn-primary">See what we build</a>
+          <a href="#contact" class="btn-secondary">Book a free audit</a>
+        </div>
+        <p class="hero-trust">No obligation. Usually reply same day.</p>
       </div>
-      <div class="phone-mockup">
-        <div class="phone-frame">
-          <div class="phone-notch"></div>
-          <div class="phone-screen">
-            <div class="chat-header">
-              <div class="chat-name">Miller's Plumbing</div>
-              <div class="chat-status">AI Receptionist · Active</div>
+      <div class="agent-console">
+        <div class="console-header">
+          <span class="console-dot red"></span>
+          <span class="console-dot yellow"></span>
+          <span class="console-dot green"></span>
+          <span class="console-title">gentoolink — agent dashboard</span>
+        </div>
+        <div class="console-body">
+          <div class="agent-row">
+            <div class="agent-header">
+              <span class="agent-name"><span class="agent-dot green"></span>AI Receptionist</span>
+              <span class="agent-status status-active">ACTIVE</span>
             </div>
-            <div class="chat-time">2:47 PM</div>
-            <div class="bubble incoming">Hi, I need a quote for a leaking water heater. Can someone come out this week?</div>
-            <div class="bubble outgoing">Hi! Thanks for reaching out to Miller's Plumbing. We can definitely help. What's your address and what's the best time — morning or afternoon?</div>
-            <div class="bubble incoming">Morning works. I'm at 142 Spruce Ave in town.</div>
-            <div class="bubble outgoing">Got it. Thursday 9am works — I'll book that in. You'll get a confirmation text shortly. Anything else?</div>
-            <div class="bubble incoming">That's perfect, thank you!</div>
+            <span class="agent-detail">12 calls handled · 3 bookings confirmed today</span>
+          </div>
+          <div class="agent-row">
+            <div class="agent-header">
+              <span class="agent-name"><span class="agent-dot teal"></span>Research Agent</span>
+              <span class="agent-status status-running">RUNNING</span>
+            </div>
+            <span class="agent-detail">Building prospect list · 47 contacts found</span>
+          </div>
+          <div class="agent-row">
+            <div class="agent-header">
+              <span class="agent-name"><span class="agent-dot green"></span>Lead Qualifier</span>
+              <span class="agent-status status-active">ACTIVE</span>
+            </div>
+            <span class="agent-detail">3 new leads captured · 1 flagged as hot</span>
+          </div>
+          <div class="agent-row">
+            <div class="agent-header">
+              <span class="agent-name"><span class="agent-dot amber"></span>AI Web Readiness</span>
+              <span class="agent-status status-building">CONFIGURING</span>
+            </div>
+            <span class="agent-detail">9 pages structured · Entity graph building</span>
           </div>
         </div>
       </div>
@@ -298,14 +299,36 @@
   </div>
 </section>
 
+<!-- ─── Stats ─────────────────────────────────────────── -->
+<section id="stats">
+  <div class="stats-bar">
+    <div class="stat-item">
+      <span class="stat-number">24/7</span>
+      <span class="stat-label">Never offline</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number">Days</span>
+      <span class="stat-label">Time to deploy</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number">$0</span>
+      <span class="stat-label">App download required</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number">100%</span>
+      <span class="stat-label">Canadian businesses</span>
+    </div>
+  </div>
+</section>
+
 <!-- ─── Problem ───────────────────────────────────────── -->
 <section id="problem">
   <div class="container">
-    <div class="section-label">The Problem</div>
-    <h2>You're losing customers every time you don't pick up.</h2>
-    <p class="lead">In Northern BC, you're not always on the phone. Between jobs, driving, meetings — your prospects call somewhere else. They don't leave a message. They just move on.</p>
-    <p class="lead">A missed call isn't just a missed call. It's a job that went to your competitor.</p>
-    <p class="hook">What if every missed call became a text conversation?</p>
+    <div class="section-label">The Shift</div>
+    <h2>The AI web is rewriting how businesses get found — and run.</h2>
+    <p class="lead">ChatGPT, Perplexity, and Google's AI are answering business questions directly. If your website isn't structured for AI to read, you're invisible in those answers — even if you're the best option.</p>
+    <p class="lead">At the same time, the grunt work of running a business — answering calls, qualifying leads, following up, researching markets — can now be handed to agents that never sleep and never miss.</p>
+    <p class="hook">The businesses deploying AI agents now are operating on a different plane.</p>
   </div>
 </section>
 
@@ -314,14 +337,14 @@
   <div class="container">
     <div class="solution-inner">
       <div>
-        <span class="no-app-badge">No app. Just texting.</span>
-        <h2>Your customers already know how to text.</h2>
-        <p class="lead">That's all they need to reach your business. Our AI receptionist handles the rest — 24/7, never misses a call, never drops a lead.</p>
+        <span class="no-app-badge">Built for you. Running in days.</span>
+        <h2>We build the agents. You run your business.</h2>
+        <p class="lead">Every agent is trained on your business — your services, your tone, your workflow. We handle the build and the ongoing optimization. You handle the work that actually needs you.</p>
         <ul class="feature-list">
-          <li>Works on any phone — no app install required</li>
-          <li>Responds instantly, even at 11pm on a Sunday</li>
-          <li>Books appointments, answers questions, captures leads</li>
-          <li>Sounds like your business, not a robot</li>
+          <li>Custom-built around your workflow, not a generic template</li>
+          <li>Deployed in days, not months</li>
+          <li>Works on any device — no app required</li>
+          <li>Ongoing support and optimization included</li>
         </ul>
       </div>
       <div>
@@ -362,25 +385,26 @@
   </div>
 </section>
 
-<!-- ─── Services ──────────────────────────────────────── -->
-<section id="services">
+<!-- ─── Agents / Services ─────────────────────────────── -->
+<section id="agents">
   <div class="container">
-    <div class="section-label">What We Offer</div>
-    <h2>Six ways we put AI to work for your business.</h2>
+    <div class="section-label">What We Build</div>
+    <h2>Six AI agents and services. One studio.</h2>
 
     <div class="services-grid">
 
       <!-- AI Receptionist -->
       <div class="service-card featured">
+        <div class="service-icon"><i class="fa-solid fa-headset"></i></div>
         <div class="service-tag">Most Popular</div>
         <h3>AI Receptionist</h3>
-        <p class="service-desc">Your never-sleeping receptionist.</p>
+        <p class="service-desc">Your never-sleeping front desk.</p>
         <ul class="service-features">
-          <li>Answers every call with a live text conversation</li>
-          <li>Books appointments and confirms bookings</li>
+          <li>Answers every missed call with a live text conversation</li>
+          <li>Books appointments and sends confirmations</li>
           <li>Answers common questions about your business</li>
-          <li>Captures leads and sends them to you immediately</li>
-          <li>Handles after-hours inquiries</li>
+          <li>Captures leads and alerts you immediately</li>
+          <li>Handles after-hours and weekend inquiries</li>
           <li>Never forgets your pricing, hours, or policies</li>
         </ul>
         <span class="service-price">$1,500 setup + $149/mo</span>
@@ -388,64 +412,135 @@
 
       <!-- Custom Builds -->
       <div class="service-card">
+        <div class="service-icon"><i class="fa-solid fa-robot"></i></div>
         <div class="service-tag">Custom</div>
-        <h3>Custom AI Builds</h3>
+        <h3>Custom AI Agents</h3>
         <p>Tell us what you need. We'll build it.</p>
-        <p>Every business has unique workflows. We build custom AI agents trained on your data, configured for your process, built around how you actually work.</p>
+        <p>Every business has unique workflows. We build AI agents trained on your data, configured for your process, built around how you actually work.</p>
         <ul class="service-examples">
           <li>A letter-writing AI trained on Canadian government format</li>
           <li>A research agent monitoring regulatory changes for your industry</li>
           <li>A customer service AI trained on your product catalog</li>
-          <li>A prospecting tool that pulls your exact target market data</li>
+          <li>A prospecting tool that pulls your exact target market</li>
         </ul>
-        <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 12px;">Text us what you're trying to solve → We scope it and give you a clear quote → Build time is days, not months.</p>
+        <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 12px;">Text us what you're trying to solve → We scope it and quote → Build time is days, not months.</p>
         <span class="service-price">From $1,500 setup + $149/mo</span>
       </div>
 
-      <!-- Research Assistant -->
+      <!-- Research Automation -->
       <div class="service-card">
+        <div class="service-icon"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
         <div class="service-tag">Research</div>
-        <h3>Research Assistant</h3>
+        <h3>Research Automation</h3>
         <p>Know your market before your competitors do.</p>
         <ul class="service-features">
-          <li>Build prospect lists — names, emails, phone numbers</li>
+          <li>Build prospect lists — names, emails, numbers</li>
           <li>Competitive research on your top 5 competitors</li>
           <li>Data gathering while you sleep</li>
           <li>Market analysis before you pitch</li>
-          <li>Industry deep-dives</li>
+          <li>Industry deep-dives on demand</li>
         </ul>
         <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 12px;">Text us what you need → We build and run the workflow → Clean spreadsheet delivered in 24–48 hours.</p>
         <span class="service-price">From $500/project or $750/mo</span>
       </div>
 
+      <!-- AI Web Readiness -->
+      <div class="service-card">
+        <div class="service-icon"><i class="fa-solid fa-network-wired"></i></div>
+        <div class="service-tag">AI Web</div>
+        <h3>AI Web Readiness</h3>
+        <p>Be found when AI answers the question.</p>
+        <p>ChatGPT and Google's AI read your website and answer questions directly. Without structured data, your business is invisible in those answers. We fix that.</p>
+        <ul class="service-features">
+          <li>Full JSON-LD structured data audit and implementation</li>
+          <li>Entity graph linking your business across every page</li>
+          <li>Schema for services, FAQ, articles, and more</li>
+          <li>Ongoing optimization as AI standards evolve</li>
+        </ul>
+        <span class="service-price">From $750 one-time</span>
+      </div>
+
       <!-- AI Training -->
       <div class="service-card coming-soon-card">
+        <div class="service-icon"><i class="fa-solid fa-chalkboard-user"></i></div>
         <div class="service-card-header">
           <div class="service-tag">Training</div>
           <span class="coming-soon-badge">Coming Soon</span>
         </div>
         <h3>AI Training</h3>
         <p>Your team becomes your AI team.</p>
-        <p>We spend a weekend with your staff teaching them to build their own AI tools — research automation, vibe coding, thinking with AI as a multiplier. After one session, they never go back.</p>
+        <p>We spend a weekend with your staff teaching them to build their own AI tools — research automation, workflow automation, thinking with AI as a multiplier. After one session, they never go back.</p>
         <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 12px;"><strong style="color: var(--text-muted);">Perfect for:</strong> Operations managers, sales teams, anyone who wants to automate themselves out of busywork. Includes custom tools built during the session + 30-day follow-up.</p>
         <span class="service-price">$2,500 — 2-day intensive</span>
       </div>
 
-      <!-- SiteReply -->
+      <!-- AI Coach -->
       <div class="service-card">
-        <div class="service-tag">Websites</div>
-        <h3>SiteReply — Websites by Email</h3>
-        <p>Your website, updated by email.</p>
-        <p>Send an email. Your website updates in minutes. No CMS, no developer, no login. Add photos, change hours, update pricing — just text or email what you need changed.</p>
-        <ul class="service-features">
-          <li>Built in 48 hours from a 15-minute call</li>
-          <li>Update anything by text or email</li>
-          <li>Mobile-friendly, fast-loading</li>
-          <li>Unlimited changes included</li>
-        </ul>
-        <span class="service-price">$79–$249/mo</span>
+        <div class="service-icon"><i class="fa-solid fa-dumbbell"></i></div>
+        <div class="service-tag">Consumer</div>
+        <h3>AI Fitness Coach</h3>
+        <p>Your personal fitness coach. Just text.</p>
+        <p>Stop guessing. Start training. Text your goals, food, and progress — get a coach in your pocket, 24/7. No app, no subscription trap. Just results.</p>
+        <span class="service-price">$47/mo</span>
       </div>
 
+    </div>
+  </div>
+</section>
+
+<!-- ─── AI Web Readiness ──────────────────────────────── -->
+<section id="ai-web">
+  <div class="container">
+    <div class="ai-web-inner">
+      <div>
+        <div class="section-label">AI Web Readiness</div>
+        <h2>Be seen in the age of AI search.</h2>
+        <p class="lead">When someone asks ChatGPT or Google's AI for a recommendation, it reads your website. If it can't understand who you are and what you do, you don't get recommended.</p>
+        <div class="ai-web-steps">
+          <div class="ai-web-step">
+            <div class="ai-web-step-num">1</div>
+            <div class="ai-web-step-content">
+              <h4>Semantic Markup Audit</h4>
+              <p>We audit every page for missing or broken structured data — the machine-readable layer AI uses to understand your business.</p>
+            </div>
+          </div>
+          <div class="ai-web-step">
+            <div class="ai-web-step-num">2</div>
+            <div class="ai-web-step-content">
+              <h4>Entity Graph Buildout</h4>
+              <p>We declare your business as a known entity — name, location, services, founder, expertise — linked across every page with unique identifiers AI can follow.</p>
+            </div>
+          </div>
+          <div class="ai-web-step">
+            <div class="ai-web-step-num">3</div>
+            <div class="ai-web-step-content">
+              <h4>Ongoing Optimization</h4>
+              <p>AI standards are evolving fast. We keep your markup current as the ecosystem changes.</p>
+            </div>
+          </div>
+        </div>
+        <a href="blog-semantic-markup-ai-ready.html" class="btn-secondary" style="margin-top: 28px; display: inline-block;">Read how we did it for our own site →</a>
+      </div>
+      <div>
+        <div class="data-card"><span class="b">{</span>
+  <span class="k">"@type"</span><span class="b">:</span> <span class="s">"Organization"</span><span class="b">,</span>
+  <span class="k">"@id"</span><span class="b">:</span> <span class="s">"yourbusiness.com/#org"</span><span class="b">,</span>
+  <span class="k">"name"</span><span class="b">:</span> <span class="v">"Your Business"</span><span class="b">,</span>
+  <span class="k">"knowsAbout"</span><span class="b">: [</span>
+    <span class="v">"Your Service"</span><span class="b">,</span>
+    <span class="v">"Your Location"</span><span class="b">,</span>
+    <span class="v">"Your Expertise"</span>
+  <span class="b">],</span>
+  <span class="k">"sameAs"</span><span class="b">: [</span>
+    <span class="v">"google.com/maps/..."</span><span class="b">,</span>
+    <span class="v">"facebook.com/..."</span>
+  <span class="b">],</span>
+  <span class="k">"contactPoint"</span><span class="b">: {</span>
+    <span class="k">"contactType"</span><span class="b">:</span> <span class="s">"customer service"</span>
+  <span class="b">}</span>
+<span class="b">}</span></div>
+        <p style="font-size: 13px; color: var(--text-subtle); margin-top: 14px; line-height: 1.6;">This is what AI reads, not what humans see. We make sure yours says the right things about your business.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -495,71 +590,16 @@
           <td class="td-price">$2,500</td>
           <td class="td-note">2-day intensive, in-person or Zoom. Includes custom tools built during the session + 30-day follow-up.</td>
         </tr>
+        <tr>
+          <td class="td-product">AI Coach</td>
+          <td class="td-price">$47/mo</td>
+          <td class="td-note">Personal fitness coaching via text. No contract.</td>
+        </tr>
       </tbody>
     </table>
 
     <div class="pricing-note">
       Most businesses recoup the AI Receptionist cost with 1–2 new customers per month. A single missed call is often worth more than a year's subscription.
-    </div>
-  </div>
-</section>
-
-<!-- ─── FAQ ──────────────────────────────────────────────── -->
-<section id="faq">
-  <div class="container">
-    <div class="section-label">FAQ</div>
-    <h2>Questions we hear a lot.</h2>
-
-    <div class="faq-grid">
-      <div class="faq-item">
-        <div class="faq-q">Will my customers know it's AI?</div>
-        <div class="faq-a">Mostly no. The AI texts like a real person — friendly, professional, answers their question. If someone asks "are you a robot?", it answers honestly. Most people never notice.</div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-q">What if it gives wrong information?</div>
-        <div class="faq-a">We train it on your exact business info — hours, pricing, services, policies. If it doesn't know something, it says so and takes a message. No making things up. You can also set boundaries: "if it's an emergency, tell them to call 911 first."</div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-q">How long does setup take?</div>
-        <div class="faq-a">3–5 days. We configure the AI with your business info, test it with real scenarios, and you're live. Not months of integration work.</div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-q">What happens to my calls when you're closed?</div>
-        <div class="faq-a">Same as when we're open — the AI answers every call, 24/7. After-hours is actually where it earns the most. You wake up to booked appointments, not missed calls.</div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-q">Can I cancel anytime?</div>
-        <div class="faq-a">Yes. Monthly subscription, no contract. If it's not working for you, we figure out why — or you cancel. No cancellation fees.</div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-q">What phone number do my customers text?</div>
-        <div class="faq-a">Your existing number. We set up a Twilio number that routes to your AI, or we can port your current number over. Either way, your customers text the same number they've always had.</div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-q">Do I need a smartphone?</div>
-        <div class="faq-a">No. All you need is a way to receive texts — and you already have that. Conversations go to your phone just like any other text. You can also get email summaries if you prefer.</div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-q">How is this different from a voicemail?</div>
-        <div class="faq-a">Voicemails are passive — customers rarely leave them, and you can't respond to one in real time. The AI has a two-way conversation: it answers questions, books appointments, confirms details — right then while the customer is still interested.</div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-q">Can you also build me a website?</div>
-        <div class="faq-a">Yes. Our SiteReply service builds professional business websites starting at $79/mo. We start with a 15-minute call, build the site in 48 hours, and you update it by just sending us a text or email. No CMS, no login, no developer needed.</div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-q">Can I get both the AI receptionist and a website?</div>
-        <div class="faq-a">Yes — and they work even better together. Your website handles the first impression, the AI receptionist handles every inquiry after that. Many clients bundle both starting at $228/mo.</div>
-      </div>
     </div>
   </div>
 </section>
@@ -570,21 +610,19 @@
     <div class="about-grid">
       <div>
         <div class="section-label">About Us</div>
-        <h2>Built for Northern BC businesses.</h2>
-        <p class="lead">We're based in Vanderhoof, BC. We serve Vanderhoof, Prince George, Fort St. James, Quesnel, Burns Lake, and surrounding areas.</p>
-        <p style="font-size: 15px; color: var(--text-muted); line-height: 1.7;">Local businesses here deserve the same tools the big cities use. We build AI agents that work the way your customers already communicate — by text.</p>
-        <div class="service-area">
-          <strong>Serving:</strong> Vanderhoof · Prince George · Fort St. James · Quesnel · Burns Lake
-        </div>
+        <h2>Small team. Real builders.</h2>
+        <p class="lead">We're based in BC, Canada. We work with small businesses across the country who want AI tools built the right way — custom, fast, and built to actually work.</p>
+        <p style="font-size: 15px; color: var(--text-muted); line-height: 1.7;">No offshore teams, no cookie-cutter templates. We build your agents ourselves, stay involved, and optimize what we deploy. Canadian businesses deserve enterprise-quality AI — and that's what we deliver.</p>
       </div>
       <div>
         <h3 style="font-size: 18px; font-weight: 600; margin-bottom: 4px; color: var(--text);">Why work with us</h3>
-        <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 4px;">Not another agency that disappears after setup.</p>
+        <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 16px;">Not another agency that disappears after setup.</p>
         <ul class="why-list">
-          <li>Real human support — not a chatbot you can't reach</li>
-          <li>Fast setup — days, not months</li>
-          <li>Built around your workflow, not a one-size-fits-all template</li>
-          <li>Ongoing optimization included — we watch the numbers</li>
+          <li>Real humans who built the thing — not resellers</li>
+          <li>Fast — agents live in days, not months</li>
+          <li>Built around your workflow, not a generic template</li>
+          <li>Ongoing optimization included</li>
+          <li>Canadian business, Canadian data</li>
         </ul>
       </div>
     </div>
@@ -633,9 +671,8 @@
       <source srcset="/assets/images/gentoolink-logo.webp" type="image/webp">
       <img src="/assets/images/gentoolink-logo.png" alt="Gentoolink Web Services" class="footer-logo">
     </picture>
-    <p class="footer-tagline">AI that works. <span>Text to start.</span></p>
-    <p class="footer-copy">© 2025 Gentoolink Web Services · Member: Vanderhoof & District Chamber of Commerce · Vanderhoof, BC · <a href="tel:+160****7290">+1 604-218-7290</a></p>
-    <p class="footer-funfact">🐧 Fun fact: The name Gentoo comes from the penguin — known for its loyalty and community-building. We like that.</p>
+    <p class="footer-tagline">AI agents that work. <span>We build yours.</span></p>
+    <p class="footer-copy">© 2026 Gentoolink Web Services · BC, Canada · <a href="tel:+16042187290">+1 604-218-7290</a></p>
   </div>
 </footer>
 
@@ -644,25 +681,6 @@
 <div id="deployment-b2355a3a-0338-4521-901d-8aa64b486be1"></div>
 
 <script>
-  // Mobile nav hamburger
-  const hamburger = document.querySelector('.nav-hamburger');
-  const navMenu = document.querySelector('.nav-menu');
-  if (hamburger && navMenu) {
-    hamburger.addEventListener('click', () => {
-      const isOpen = navMenu.classList.toggle('open');
-      hamburger.classList.toggle('active', isOpen);
-      hamburger.setAttribute('aria-expanded', isOpen);
-    });
-    // Close on link click
-    navMenu.querySelectorAll('a').forEach(a => {
-      a.addEventListener('click', () => {
-        navMenu.classList.remove('open');
-        hamburger.classList.remove('active');
-        hamburger.setAttribute('aria-expanded', 'false');
-      });
-    });
-  }
-
   // Smooth scroll polyfill for older Safari
   document.querySelectorAll('a[href^="#"]').forEach(a => {
     a.addEventListener('click', e => {
