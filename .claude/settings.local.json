@@ -9,7 +9,8 @@
       "Bash(cp /tmp/index_redesigned.html \"C:\\\\Users\\\\ken\\\\OneDrive\\\\Documents\\\\Github\\\\new_gws_static\\\\index.html\")",
       "Bash(cp /tmp/style_final.css \"C:\\\\Users\\\\ken\\\\OneDrive\\\\Documents\\\\Github\\\\new_gws_static\\\\style.css\")",
       "Bash(git add *)",
-      "Bash(dir *.html *.css)"
+      "Bash(dir *.html *.css)",
+      "Bash(node *)"
     ]
   }
 }
