@@ -1487,6 +1487,10 @@ footer .container {
   line-height: 1.65;
 }
 
+.prose-dark .btn-primary {
+  color: #0f0f0f;
+}
+
 .article-author-note {
   margin-top: 48px;
   padding-top: 24px;
