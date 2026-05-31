@@ -1219,6 +1219,147 @@ footer .container {
 
   .hero-cta-row { flex-direction: column; align-items: flex-start; }
 }
+/* ─── Social proof quotes ────────────────────────────── */
+
+.quote-bar {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.quote-card {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  border-radius: 0 8px 8px 0;
+  padding: 18px 22px;
+}
+
+.quote-text {
+  font-size: 15px;
+  color: var(--text-muted);
+  font-style: italic;
+  margin-bottom: 8px;
+  line-height: 1.6;
+}
+
+.quote-source {
+  font-size: 12px;
+  color: var(--text-subtle);
+  font-weight: 500;
+}
+
+/* ─── Audit includes grid ────────────────────────────── */
+
+.audit-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-top: 28px;
+}
+
+.audit-section {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 22px 20px;
+}
+
+.audit-section h4 {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 12px;
+}
+
+.offer-report-card {
+  background: var(--bg-elevated);
+  border: 1px solid var(--accent-border);
+  border-radius: 10px;
+  padding: 24px 20px;
+  margin-top: 16px;
+}
+
+/* ─── Objections ─────────────────────────────────────── */
+
+.objections-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 40px;
+}
+
+.objection {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 28px 24px;
+  transition: border-color 0.2s;
+}
+
+.objection:hover {
+  border-color: var(--accent-border);
+}
+
+.objection-q {
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 14px;
+  letter-spacing: -0.01em;
+}
+
+.objection-a {
+  font-size: 15px;
+  color: var(--text-muted);
+  line-height: 1.75;
+}
+
+/* ─── CTA centered ───────────────────────────────────── */
+
+.cta-center {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.cta-center h2 { margin-bottom: 16px; }
+
+.cta-center .lead {
+  max-width: 520px;
+  margin: 0 auto 12px;
+}
+
+/* ─── Tier cards (services page) ─────────────────────── */
+
+.tier-card {
+  padding: 8px 0;
+}
+
+.tier-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+/* ─── Mobile: new homepage components ───────────────── */
+
+@media (max-width: 768px) {
+  .quote-bar {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .audit-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tier-header {
+    flex-direction: row;
+  }
+}
+
 /* ─── Blog listing ───────────────────────────────────── */
 
 .blog-hero {
