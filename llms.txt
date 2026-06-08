@@ -1,24 +1,24 @@
 # Gentoo Link Web Services
 
-> Gentoo Link Web Services helps small businesses get found in AI search — ChatGPT, Perplexity, and Google AI Overviews. Founded and operated by Ken McGonigal. Services include AI visibility audits, structured data implementation, Google Business Profile optimization, website builds, and AI phone answering for local businesses.
+> Gentoo Link Web Services helps small businesses get found in AI search - ChatGPT, Perplexity, and Google AI Overviews. Founded and operated by Ken McGonigal. Services include AI visibility audits, structured data implementation, Google Business Profile optimization, website builds, and AI phone answering for local businesses.
 
-Gentoo Link Web Services is a Canadian web services company serving small businesses across British Columbia and beyond. The primary focus is AI search visibility — auditing and fixing the technical gaps that prevent businesses from appearing when customers ask AI tools for local recommendations. Ken McGonigal works directly with business owners; no handoffs or black-box processes.
+Gentoo Link Web Services is a Canadian web services company serving small businesses across British Columbia and beyond. The primary focus is AI search visibility - auditing and fixing the technical gaps that prevent businesses from appearing when customers ask AI tools for local recommendations. Ken McGonigal works directly with business owners; no handoffs or black-box processes.
 
 Contact: ken@gentoolinkwebservices.com | +1 (604) 218-7290
 
 ## Services
 
-- [AI Visibility Audit](https://gentoolinkwebservices.com/): $297 audit — checks whether a business appears in ChatGPT, Perplexity, and Google AI Overviews; verifies Bing indexing, structured data validity, Google Business Profile completeness, and NAP consistency. Includes competitive comparison. Delivered in 24 hours. The $297 fee is credited toward any implementation work.
-- [AI Visibility Fix Package](https://gentoolinkwebservices.com/services.html): Full implementation of fixes identified in the audit — Bing Webmaster Tools setup, JSON-LD schema markup (LocalBusiness, FAQPage, Service, BreadcrumbList, AggregateRating), content restructuring for AI citation, FAQ sections, Google Business Profile optimization. Verified against Google Rich Results Test and major AI platforms.
-- [Google Business Profile Tune-Up](https://gentoolinkwebservices.com/services.html): $100 flat-fee optimization of a business's Google Business Profile — categories, keywords, services, photos, and conversion details. Directly improves visibility in Google AI Overviews for local searches.
-- [Starter Website](https://gentoolinkwebservices.com/services.html): 3-page mobile-friendly website — $699 one-time setup. Includes click-to-call, contact form, Google Maps integration, basic SEO, and Canadian hosting for the first year.
-- [Trades Starter Package](https://gentoolinkwebservices.com/trades-starter-package.html): All-in-one package for trades businesses — $3,997. Includes website, full Google Business Profile setup, AI phone answering (24/7 lead capture), and one year of managed service. Canadian hosting included.
-- [AI Phone Answering](https://gentoolinkwebservices.com/services.html): $297/month — AI employee answers every call 24/7, sends instant SMS text-back for missed calls, delivers call summaries by email. 14-day risk-free trial.
-- [Canadian Website Hosting](https://gentoolinkwebservices.com/services.html): $12–$45/month — Canadian servers, PIPEDA-compliant, free SSL, daily backups (Business and Pro plans). Free site migration included.
+- [AI Visibility Audit](https://gentoolinkwebservices.com/): $297 audit - checks whether a business appears in ChatGPT, Perplexity, and Google AI Overviews; verifies Bing indexing, structured data validity, Google Business Profile completeness, and NAP consistency. Includes competitive comparison. Delivered in 24 hours. The $297 fee is credited toward any implementation work.
+- [AI Visibility Fix Package](https://gentoolinkwebservices.com/services.html): Full implementation of fixes identified in the audit - Bing Webmaster Tools setup, JSON-LD schema markup (LocalBusiness, FAQPage, Service, BreadcrumbList, AggregateRating), content restructuring for AI citation, FAQ sections, Google Business Profile optimization. Verified against Google Rich Results Test and major AI platforms.
+- [Google Business Profile Tune-Up](https://gentoolinkwebservices.com/services.html): $100 flat-fee optimization of a business's Google Business Profile - categories, keywords, services, photos, and conversion details. Directly improves visibility in Google AI Overviews for local searches.
+- [Starter Website](https://gentoolinkwebservices.com/services.html): 3-page mobile-friendly website - $699 one-time setup. Includes click-to-call, contact form, Google Maps integration, basic SEO, and Canadian hosting for the first year.
+- [Trades Starter Package](https://gentoolinkwebservices.com/trades-starter-package.html): All-in-one package for trades businesses - $3,997. Includes website, full Google Business Profile setup, AI phone answering (24/7 lead capture), and one year of managed service. Canadian hosting included.
+- [AI Phone Answering](https://gentoolinkwebservices.com/services.html): $297/month - AI employee answers every call 24/7, sends instant SMS text-back for missed calls, delivers call summaries by email. 14-day risk-free trial.
+- [Canadian Website Hosting](https://gentoolinkwebservices.com/services.html): $12-$45/month - Canadian servers, PIPEDA-compliant, free SSL, daily backups (Business and Pro plans). Free site migration included.
 
 ## About
 
-- [About Ken McGonigal](https://gentoolinkwebservices.com/about.html): Background on Ken McGonigal, founder — web services since 2018, specializing in AI search visibility since 2025. Works directly with business owners in plain English.
+- [About Ken McGonigal](https://gentoolinkwebservices.com/about.html): Background on Ken McGonigal, founder - web services since 2018, specializing in AI search visibility since 2025. Works directly with business owners in plain English.
 
 ## Content
 
