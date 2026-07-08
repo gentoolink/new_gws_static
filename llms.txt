@@ -1,8 +1,8 @@
-# Gentoo Link Web Services
+# Gentoolink Web Services
 
-> Gentoo Link Web Services helps small businesses get found in AI search - ChatGPT, Perplexity, and Google AI Overviews. Founded and operated by Ken McGonigal. Services include AI visibility audits, structured data implementation, Google Business Profile optimization, website builds, and AI phone answering for local businesses.
+> Gentoolink Web Services helps small businesses get found in AI search - ChatGPT, Perplexity, and Google AI Overviews. Founded and operated by Ken McGonigal. Services include AI visibility audits, structured data implementation, Google Business Profile optimization, website builds, and AI phone answering for local businesses.
 
-Gentoo Link Web Services is a Canadian web services company serving small businesses across British Columbia and beyond. The primary focus is AI search visibility - auditing and fixing the technical gaps that prevent businesses from appearing when customers ask AI tools for local recommendations. Ken McGonigal works directly with business owners; no handoffs or black-box processes.
+Gentoolink Web Services is a Canadian web services company serving small businesses across British Columbia and beyond. The primary focus is AI search visibility - auditing and fixing the technical gaps that prevent businesses from appearing when customers ask AI tools for local recommendations. Ken McGonigal works directly with business owners; no handoffs or black-box processes.
 
 Contact: ken@gentoolinkwebservices.com | +1 (604) 218-7290
 
@@ -30,4 +30,4 @@ Contact: ken@gentoolinkwebservices.com | +1 (604) 218-7290
 
 ## Optional
 
-- [Privacy Policy](https://gentoolinkwebservices.com/privacy-policy.html): Privacy practices for Gentoo Link Web Services Inc., including Canadian data handling under PIPEDA.
+- [Privacy Policy](https://gentoolinkwebservices.com/privacy-policy.html): Privacy practices for Gentoolink Web Services Inc., including Canadian data handling under PIPEDA.
