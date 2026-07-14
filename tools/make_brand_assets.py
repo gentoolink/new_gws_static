@@ -7,7 +7,7 @@ Writes, relative to the repo root:
 
     assets/images/og-card.png     1200x630, homepage — headline and price are
                                   baked into the pixels, so re-run this whenever
-                                  the hero copy or the $297 figure changes
+                                  the hero copy or the $497 figure changes
     assets/images/og-default.png  1200x630, every other page
     favicon.ico                   16/32/48, transparent
     favicon-16x16.png
@@ -157,7 +157,7 @@ def build_home_card():
     lead = "AI Visibility Audit — "
     d.text((PAD, y), lead, font=f_price, fill=MUTED)
     d.text((PAD + d.textlength(lead, font=f_price), y),
-           "$297, delivered in 24 hours", font=f_price, fill=GOLD)
+           "$497, delivered in 24 hours", font=f_price, fill=GOLD)
 
     d.text((PAD, H - PAD - 4), "gentoolinkwebservices.com", font=f_url, fill=SUBTLE)
     d.line([(0, 0), (W, 0)], fill=HAIRLINE, width=3)
