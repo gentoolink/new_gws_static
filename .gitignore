@@ -1,1 +1,7 @@
 _archive/
+__pycache__/
+*.pyc
+
+# Parked until it has enough content to be worth indexing.
+# Kept locally, not deployed. See .htaccess for the live redirect.
+media.html

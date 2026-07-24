@@ -9,3 +9,8 @@ RewriteRule ^ https://%1%{REQUEST_URI} [R=301,L]
 # Collapse /index.html to /
 RewriteCond %{THE_REQUEST} \s/index\.html[\s?] [NC]
 RewriteRule ^index\.html$ / [R=301,L]
+
+# Podcast page parked until it has real content. Temporary (302) on purpose —
+# the URL is meant to come back, so we don't want it permanently deindexed.
+# Remove this rule when media.html is republished.
+RewriteRule ^media\.html$ / [R=302,L]
