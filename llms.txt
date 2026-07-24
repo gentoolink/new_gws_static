@@ -26,7 +26,7 @@ Gentoolink Web Services is based in Vanderhoof, BC and serves communities along 
 
 ## Websites by Industry
 
-Small business websites start at $399 CAD and are typically live within 48 hours, with structured data included rather than sold as an add-on. Each industry page includes a free live demo site.
+Small business websites start at $2,500 CAD and are typically live in 2-4 weeks, with structured data included rather than sold as an add-on. Final pricing depends on scope. Each industry page includes a free live demo site.
 
 - [Restaurant Website Design](https://gentoolinkwebservices.com/restaurant-website-design.html): Mobile-readable menus (not PDFs), accurate hours marked up as structured data, and weekly specials updatable by email.
 - [Plumber Website Design](https://gentoolinkwebservices.com/plumber-website-design.html): Built for urgent searches - tap-to-call, explicit emergency availability, and service areas encoded per town.
