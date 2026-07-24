@@ -14,3 +14,8 @@ RewriteRule ^index\.html$ / [R=301,L]
 # the URL is meant to come back, so we don't want it permanently deindexed.
 # Remove this rule when media.html is republished.
 RewriteRule ^media\.html$ / [R=302,L]
+
+# SiteReply offer discontinued. Permanent (301) — the page is gone for good,
+# and this keeps the retired $399 price unreachable if a stale copy is still
+# sitting in public_html after a manual upload.
+RewriteRule ^sitereply\.html$ / [R=301,L]
