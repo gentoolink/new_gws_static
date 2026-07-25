@@ -161,6 +161,7 @@ SHELL = """<!DOCTYPE html>
 CITIES = [
     {
         "slug": "web-design-prince-george",
+        "meta_desc": "Website design and AI search visibility for Prince George businesses. Built to rank on Google and get cited by ChatGPT. Sites from $1,500.",
         "city": "Prince George",
         "region": "BC",
         "eyebrow": "Prince George, BC · Websites &amp; AI Visibility",
@@ -190,6 +191,7 @@ CITIES = [
     },
     {
         "slug": "web-design-vanderhoof",
+        "meta_desc": "Local website design and AI search visibility for Vanderhoof businesses. Vanderhoof-based, Chamber member. Sites from $1,500, in-person audits.",
         "city": "Vanderhoof",
         "region": "BC",
         "eyebrow": "Vanderhoof, BC · My Home Town",
@@ -219,6 +221,7 @@ CITIES = [
     },
     {
         "slug": "web-design-fort-st-james",
+        "meta_desc": "Website design and AI search visibility for Fort St. James businesses, built for a town where visitors search before they arrive. From $1,500.",
         "city": "Fort St. James",
         "region": "BC",
         "eyebrow": "Fort St. James, BC · Websites &amp; AI Visibility",
@@ -248,6 +251,7 @@ CITIES = [
     },
     {
         "slug": "web-design-fraser-lake",
+        "meta_desc": "Website design and AI search visibility for Fraser Lake businesses. Stop losing local searches to out-of-town competitors. Sites from $1,500.",
         "city": "Fraser Lake",
         "region": "BC",
         "eyebrow": "Fraser Lake, BC · Websites &amp; AI Visibility",
@@ -277,6 +281,7 @@ CITIES = [
     },
     {
         "slug": "web-design-burns-lake",
+        "meta_desc": "Website design and AI search visibility for Burns Lake and the Lakes District. Built to capture visitor and regional search. From $1,500.",
         "city": "Burns Lake",
         "region": "BC",
         "eyebrow": "Burns Lake, BC · Websites &amp; AI Visibility",
@@ -306,6 +311,7 @@ CITIES = [
     },
     {
         "slug": "web-design-quesnel",
+        "meta_desc": "Website design and AI search visibility for Quesnel and the Cariboo. Built for local trade and Highway 97 visitor traffic. From $1,500.",
         "city": "Quesnel",
         "region": "BC",
         "eyebrow": "Quesnel, BC · Websites &amp; AI Visibility",
@@ -342,6 +348,7 @@ CITIES = [
 INDUSTRIES = [
     {
         "slug": "restaurant-website-design",
+        "meta_desc": "Website design for restaurants and cafes in Northern BC. Menu, hours and specials front and centre, plus structured data for AI search. From $1,500.",
         "industry": "Restaurants",
         "eyebrow": "Restaurant Websites",
         "h1": "Restaurant Websites That Show the Menu and the Hours",
@@ -598,6 +605,7 @@ INDUSTRIES = [
     },
     {
         "slug": "landscaping-website-design",
+        "meta_desc": "Website design for landscapers and outdoor contractors in Northern BC. Portfolio-led, with year-round AI search visibility. From $1,500.",
         "industry": "Landscapers",
         "eyebrow": "Landscaping &amp; Outdoor Websites",
         "h1": "Landscaping Websites That Work Through the Whole Season",
@@ -636,6 +644,7 @@ INDUSTRIES = [
 SERVICES = [
     {
         "slug": "google-business-profile-management",
+        "meta_desc": "Google Business Profile tune-ups and management for Northern BC. The biggest lever in local search and AI recommendations. $250 tune-up, $150/mo.",
         "name": "Google Business Profile Management",
         "service_type": "Google Business Profile Optimization",
         "title": "Google Business Profile Management | Gentoolink Web Services",
@@ -692,9 +701,10 @@ SERVICES = [
     },
     {
         "slug": "ai-phone-receptionist",
+        "meta_desc": "An AI receptionist that answers every call, takes the details and texts you the message. Built for trades that lose jobs to voicemail. $500 setup.",
         "name": "AI Phone Receptionist",
         "service_type": "AI Phone Answering Service",
-        "title": "AI Phone Receptionist for Small Business | Gentoolink Web Services",
+        "title": "AI Phone Receptionist for Small Business | Gentoolink",
         "desc": "An AI receptionist that answers every call, takes the details, and texts you the message. Built for trades and small businesses that lose jobs to voicemail. $500 setup, $249/month.",
         "keywords": "AI phone receptionist, AI answering service small business, virtual receptionist BC, never miss a call trades, automated phone answering Northern BC",
         "eyebrow": "AI Phone Receptionist · Never Miss a Call",
@@ -1140,7 +1150,7 @@ def build_city(c):
 
     shell_vars = {
         "TITLE": c["title"],
-        "DESC": c["desc"],
+        "DESC": c.get("meta_desc", c["desc"]),
         "KEYWORDS": c["keywords"],
         "CANON": url,
         "OGTITLE": f"Web Design in {city}, BC — Gentoolink Web Services",
@@ -1327,7 +1337,7 @@ def build_industry(ind):
 
     shell_vars = {
         "TITLE": ind["title"],
-        "DESC": ind["desc"],
+        "DESC": ind.get("meta_desc", ind["desc"]),
         "KEYWORDS": ind["keywords"],
         "CANON": url,
         "OGTITLE": f"{industry} Website Design | Gentoolink Web Services",
@@ -1535,7 +1545,7 @@ def build_service(s):
 
     shell_vars = {
         "TITLE": s["title"],
-        "DESC": s["desc"],
+        "DESC": s.get("meta_desc", s["desc"]),
         "KEYWORDS": s["keywords"],
         "CANON": url,
         "OGTITLE": f'{s["name"]} | Gentoolink Web Services',
