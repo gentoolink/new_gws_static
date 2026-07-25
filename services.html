@@ -83,8 +83,20 @@
       {
         "@type": "Service",
         "name": "GEO Retainer",
-        "description": "Monthly AI visibility monitoring, schema updates, new FAQ and service page content, quarterly competitive reporting, and priority support.",
-        "provider": {"@id": "https://gentoolinkwebservices.com/#organization"}
+        "description": "Monthly AI visibility retainer in two tiers. Lean GEO at $150 per month covers AI visibility monitoring, schema updates, and quarterly competitive reporting. Growth GEO at $350 per month adds one new FAQ or service page per month optimized for AI citation, plus priority support.",
+        "provider": {"@id": "https://gentoolinkwebservices.com/#organization"},
+        "serviceType": "Ongoing GEO Monitoring and Optimization",
+        "offers": {
+          "@type": "Offer",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "minPrice": "150",
+            "maxPrice": "350",
+            "priceCurrency": "CAD",
+            "unitText": "MONTH"
+          },
+          "url": "https://gentoolinkwebservices.com/contact.html"
+        }
       }
     ]
   }
@@ -238,20 +250,29 @@
       <div class="tier-header">
         <div>
           <h2 style="margin-bottom: 6px;">GEO Retainer</h2>
-          <p style="font-size: 18px; font-weight: 600; color: var(--accent); margin-bottom: 0;">$500–$1,500/month · Ongoing</p>
+          <p style="font-size: 18px; font-weight: 600; color: var(--accent); margin-bottom: 0;">$150 or $350/month · Ongoing</p>
         </div>
         <div class="service-icon"><i class="fa-solid fa-chart-line"></i></div>
       </div>
       <p class="lead" style="margin-top: 20px;">AI search changes fast. New platforms emerge. Algorithms shift. Your business changes. The retainer keeps you ahead of all of it — and ahead of competitors who are optimizing right now.</p>
 
-      <h3 style="font-size: 12px; font-weight: 600; color: var(--text); margin: 28px 0 14px; text-transform: uppercase; letter-spacing: 0.06em;">What's included</h3>
-      <ul class="service-features">
-        <li>Monthly AI visibility monitoring across ChatGPT, Perplexity, and Google AI Overviews</li>
-        <li>Schema updates as your services, hours, or offers change</li>
-        <li>One new FAQ or service page per month, optimized for AI citation</li>
-        <li>Quarterly competitive AI visibility report</li>
-        <li>Priority support for schema errors or indexing issues</li>
-      </ul>
+      <table class="pricing-table">
+        <thead>
+          <tr><th scope="col">Tier</th><th scope="col">Monthly</th><th scope="col">What's included</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="td-product">Lean GEO</td>
+            <td class="td-price">$150/mo</td>
+            <td class="td-note">Monthly AI visibility monitoring across ChatGPT, Perplexity, and Google AI Overviews; schema updates as your services, hours, or offers change; quarterly competitive AI visibility report.</td>
+          </tr>
+          <tr>
+            <td class="td-product">Growth GEO</td>
+            <td class="td-price">$350/mo</td>
+            <td class="td-note">Everything in Lean, plus one new FAQ or service page per month written and optimized for AI citation, and priority support for schema errors or indexing issues.</td>
+          </tr>
+        </tbody>
+      </table>
 
       <div class="pricing-note" style="margin-top: 24px;">
         <strong style="color: var(--text);">Who it's for:</strong> Businesses that want to maintain and grow their AI search presence as the channel matures — and clients who understand that the businesses winning in AI search 12 months from now started optimizing today.
