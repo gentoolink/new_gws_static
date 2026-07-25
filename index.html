@@ -41,113 +41,164 @@
   <!-- Schema.org -->
   <!-- Schema Block 1: Core entities — WebSite, WebPage, Organization, Person -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "WebSite",
-        "@id": "https://gentoolinkwebservices.com/#website",
-        "url": "https://gentoolinkwebservices.com",
-        "name": "Gentoolink Web Services",
-        "description": "AI visibility audits and GEO (Generative Engine Optimization) for local businesses. We check whether your business shows up in ChatGPT, Perplexity, and Google AI Overviews — then fix what's missing.",
-        "publisher": {"@id": "https://gentoolinkwebservices.com/#organization"},
-        "inLanguage": "en-CA"
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://gentoolinkwebservices.com/#website",
+      "url": "https://gentoolinkwebservices.com",
+      "name": "Gentoolink Web Services",
+      "description": "AI visibility audits and GEO (Generative Engine Optimization) for local businesses. We check whether your business shows up in ChatGPT, Perplexity, and Google AI Overviews — then fix what's missing.",
+      "publisher": {
+        "@id": "https://gentoolinkwebservices.com/#organization"
       },
-      {
-        "@type": "WebPage",
-        "@id": "https://gentoolinkwebservices.com/#homepage",
-        "url": "https://gentoolinkwebservices.com",
-        "name": "Is Your Business Showing Up When Customers Ask AI? | Gentoolink Web Services",
-        "description": "Your customers are asking ChatGPT, Perplexity, and Google AI to find businesses like yours. Most businesses aren't showing up — even if they rank on Google. AI Visibility Audit: $1,000, delivered in 24 hours.",
-        "isPartOf": {"@id": "https://gentoolinkwebservices.com/#website"},
-        "about": {"@id": "https://gentoolinkwebservices.com/#organization"},
-        "dateModified": "2026-05-31",
-        "inLanguage": "en-CA",
-        "breadcrumb": {
-          "@type": "BreadcrumbList",
-          "itemListElement": [
-            {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://gentoolinkwebservices.com"}
-          ]
-        },
-        "speakable": {
-          "@type": "SpeakableSpecification",
-          "cssSelector": ["#hero .hero-copy", "#problem", "#offer", "#how-it-works"]
-        },
-        "mainEntity": {"@id": "https://gentoolinkwebservices.com/#faq"}
+      "inLanguage": "en-CA"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://gentoolinkwebservices.com/#homepage",
+      "url": "https://gentoolinkwebservices.com",
+      "name": "Is Your Business Showing Up When Customers Ask AI? | Gentoolink Web Services",
+      "description": "Your customers are asking ChatGPT, Perplexity, and Google AI to find businesses like yours. Most businesses aren't showing up — even if they rank on Google. AI Visibility Audit: $1,000, delivered in 24 hours.",
+      "isPartOf": {
+        "@id": "https://gentoolinkwebservices.com/#website"
       },
-      {
-        "@type": ["ProfessionalService", "LocalBusiness"],
-        "@id": "https://gentoolinkwebservices.com/#organization",
-        "name": "Gentoolink Web Services",
-        "alternateName": "Gentoolink Web Services",
-        "description": "Gentoolink Web Services runs AI visibility audits for small businesses. We check whether your business appears in ChatGPT, Perplexity, and Google AI Overviews when customers search your category and city, then implement the structured data, Bing indexing, and content changes needed to fix what's missing.",
-        "slogan": "Find out if AI can find your business.",
-        "foundingDate": "2018",
-        "url": "https://gentoolinkwebservices.com",
-        "logo": {
-          "@type": "ImageObject",
-          "@id": "https://gentoolinkwebservices.com/#logo",
-          "url": "https://gentoolinkwebservices.com/assets/images/gentoolink-logo.png",
-          "contentUrl": "https://gentoolinkwebservices.com/assets/images/gentoolink-logo.png"
-        },
-        "image": {"@id": "https://gentoolinkwebservices.com/#logo"},
-        "telephone": "+16042187290",
+      "about": {
+        "@id": "https://gentoolinkwebservices.com/#organization"
+      },
+      "dateModified": "2026-05-31",
+      "inLanguage": "en-CA",
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://gentoolinkwebservices.com"
+          }
+        ]
+      },
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [
+          "#hero .hero-copy",
+          "#problem",
+          "#offer",
+          "#how-it-works"
+        ]
+      },
+      "mainEntity": {
+        "@id": "https://gentoolinkwebservices.com/#faq"
+      }
+    },
+    {
+      "@type": [
+        "ProfessionalService",
+        "LocalBusiness"
+      ],
+      "@id": "https://gentoolinkwebservices.com/#organization",
+      "name": "Gentoolink Web Services",
+      "alternateName": "Gentoolink Web Services",
+      "description": "Gentoolink Web Services runs AI visibility audits for small businesses. We check whether your business appears in ChatGPT, Perplexity, and Google AI Overviews when customers search your category and city, then implement the structured data, Bing indexing, and content changes needed to fix what's missing.",
+      "slogan": "Find out if AI can find your business.",
+      "foundingDate": "2018",
+      "url": "https://gentoolinkwebservices.com",
+      "logo": {
+        "@type": "ImageObject",
+        "@id": "https://gentoolinkwebservices.com/#logo",
+        "url": "https://gentoolinkwebservices.com/assets/images/gentoolink-logo.png",
+        "contentUrl": "https://gentoolinkwebservices.com/assets/images/gentoolink-logo.png"
+      },
+      "image": {
+        "@id": "https://gentoolinkwebservices.com/#logo"
+      },
+      "telephone": "+16042187290",
+      "email": "ken@gentoolinkwebservices.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Vanderhoof",
+        "addressRegion": "BC",
+        "addressCountry": "CA"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "Canada"
+      },
+      "priceRange": "$$",
+      "sameAs": [
+        "https://www.linkedin.com/in/kenmcgonigal/",
+        "https://www.google.com/maps/place/Gentoolink+Web+Services/@54.1126796,-124.2163096,8z"
+      ],
+      "founder": {
+        "@id": "https://gentoolinkwebservices.com/#ken"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
         "email": "ken@gentoolinkwebservices.com",
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "Vanderhoof",
-          "addressRegion": "BC",
-          "addressCountry": "CA"
-        },
-        "areaServed": {"@type": "Country", "name": "Canada"},
-        "priceRange": "$$",
-        "sameAs": [
-          "https://www.linkedin.com/in/kenmcgonigal/",
-          "https://www.google.com/maps/place/Gentoolink+Web+Services/@54.1126796,-124.2163096,8z"
-        ],
-        "founder": {"@id": "https://gentoolinkwebservices.com/#ken"},
-        "contactPoint": {
-          "@type": "ContactPoint",
-          "email": "ken@gentoolinkwebservices.com",
-          "contactType": "customer service",
-          "areaServed": "CA",
-          "availableLanguage": "en"
-        },
-        "hasOfferCatalog": {
-          "@type": "OfferCatalog",
-          "name": "AI Visibility Services",
-          "itemListElement": [
-            {"@type": "Offer", "itemOffered": {"@id": "https://gentoolinkwebservices.com/#service-audit"}},
-            {"@type": "Offer", "itemOffered": {"@id": "https://gentoolinkwebservices.com/#service-foundation"}},
-            {"@type": "Offer", "itemOffered": {"@id": "https://gentoolinkwebservices.com/#service-retainer"}}
-          ]
-        }
+        "contactType": "customer service",
+        "areaServed": "CA",
+        "availableLanguage": "en"
       },
-      {
-        "@type": "Person",
-        "@id": "https://gentoolinkwebservices.com/#ken",
-        "name": "Ken McGonigal",
-        "email": "ken@gentoolinkwebservices.com",
-        "jobTitle": "Founder",
-        "description": "Ken McGonigal has worked in web services since 2018. He runs AI visibility audits for small businesses — checking whether they show up in ChatGPT, Perplexity, and Google AI Overviews, then implementing the structured data and content changes needed to fix it.",
-        "worksFor": {"@id": "https://gentoolinkwebservices.com/#organization"},
-        "url": "https://gentoolinkwebservices.com/about.html",
-        "sameAs": [
-          "https://soundcloud.com/ken-mcgonigal",
-          "https://www.linkedin.com/in/kenmcgonigal/"
-        ],
-        "knowsAbout": [
-          "Generative Engine Optimization",
-          "Structured Data",
-          "JSON-LD Schema Markup",
-          "Google Business Profile",
-          "Bing Webmaster Tools",
-          "AI Search Visibility",
-          "Local Business SEO"
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "AI Visibility Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@id": "https://gentoolinkwebservices.com/#service-audit"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@id": "https://gentoolinkwebservices.com/#service-foundation"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@id": "https://gentoolinkwebservices.com/#service-retainer"
+            }
+          }
         ]
       }
-    ]
-  }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://gentoolinkwebservices.com/#ken",
+      "name": "Ken McGonigal",
+      "email": "ken@gentoolinkwebservices.com",
+      "jobTitle": "Founder",
+      "description": "Ken McGonigal has worked in web services since 2018. He runs AI visibility audits for small businesses — checking whether they show up in ChatGPT, Perplexity, and Google AI Overviews, then implementing the structured data and content changes needed to fix it.",
+      "worksFor": {
+        "@id": "https://gentoolinkwebservices.com/#organization"
+      },
+      "url": "https://gentoolinkwebservices.com/about.html",
+      "sameAs": [
+        "https://soundcloud.com/ken-mcgonigal",
+        "https://www.linkedin.com/in/kenmcgonigal/"
+      ],
+      "knowsAbout": [
+        "Generative Engine Optimization",
+        "Structured Data",
+        "JSON-LD Schema Markup",
+        "Google Business Profile",
+        "Bing Webmaster Tools",
+        "AI Search Visibility",
+        "Local Business SEO"
+      ]
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://gentoolinkwebservices.com/#logo",
+      "url": "https://gentoolinkwebservices.com/assets/images/gentoolink-logo.png",
+      "contentUrl": "https://gentoolinkwebservices.com/assets/images/gentoolink-logo.png"
+    }
+  ]
+}
   </script>
 
   <!-- Schema Block 2: Services + HowTo process -->

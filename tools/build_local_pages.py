@@ -870,6 +870,86 @@ SERVICES = [
 
 
 # ─────────────────────────────────────────────────────────────────────────────
+# Shared identity nodes
+#
+# schema.org @id references are NOT resolved across pages — each page has to be
+# self-contained. Without these, a page saying
+#   "provider": {"@id": ".../#organization"}
+# hands a crawler a Service with no business behind it: no name, no address, no
+# phone. These nodes go into every page's @graph so the entity resolves locally.
+#
+# hasOfferCatalog is deliberately omitted: it points at #service-audit and
+# friends, which only exist on index.html, and would reintroduce the same bug.
+# ─────────────────────────────────────────────────────────────────────────────
+
+
+def identity_nodes():
+    return [
+        {
+            "@type": ["ProfessionalService", "LocalBusiness"],
+            "@id": f"{SITE}/#organization",
+            "name": "Gentoolink Web Services",
+            "description": (
+                "Gentoolink Web Services builds small business websites and runs AI "
+                "visibility audits, checking whether a business appears in ChatGPT, "
+                "Perplexity, and Google AI Overviews, then implementing the structured "
+                "data, Bing indexing, and content changes needed to fix what's missing."
+            ),
+            "slogan": "Find out if AI can find your business.",
+            "foundingDate": "2018",
+            "url": SITE,
+            "logo": {"@id": f"{SITE}/#logo"},
+            "image": {"@id": f"{SITE}/#logo"},
+            "telephone": "+16042187290",
+            "email": "ken@gentoolinkwebservices.com",
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Vanderhoof",
+                "addressRegion": "BC",
+                "addressCountry": "CA",
+            },
+            "areaServed": {"@type": "Country", "name": "Canada"},
+            "priceRange": "$$",
+            "sameAs": [
+                "https://www.linkedin.com/in/kenmcgonigal/",
+                "https://www.google.com/maps/place/Gentoolink+Web+Services/@54.1126796,-124.2163096,8z",
+            ],
+            "founder": {"@id": f"{SITE}/#ken"},
+            "contactPoint": {
+                "@type": "ContactPoint",
+                "email": "ken@gentoolinkwebservices.com",
+                "contactType": "customer service",
+                "areaServed": "CA",
+                "availableLanguage": "en",
+            },
+        },
+        {
+            "@type": "ImageObject",
+            "@id": f"{SITE}/#logo",
+            "url": f"{SITE}/assets/images/gentoolink-logo.png",
+            "contentUrl": f"{SITE}/assets/images/gentoolink-logo.png",
+        },
+        {
+            "@type": "WebSite",
+            "@id": f"{SITE}/#website",
+            "url": SITE,
+            "name": "Gentoolink Web Services",
+            "publisher": {"@id": f"{SITE}/#organization"},
+            "inLanguage": "en-CA",
+        },
+        {
+            "@type": "Person",
+            "@id": f"{SITE}/#ken",
+            "name": "Ken McGonigal",
+            "jobTitle": "Founder",
+            "worksFor": {"@id": f"{SITE}/#organization"},
+            "url": f"{SITE}/about.html",
+            "sameAs": ["https://www.linkedin.com/in/kenmcgonigal/"],
+        },
+    ]
+
+
+# ─────────────────────────────────────────────────────────────────────────────
 # Helpers
 # ─────────────────────────────────────────────────────────────────────────────
 
@@ -997,7 +1077,7 @@ def build_city(c):
                 },
             },
             faq_schema(url, c["faqs"]),
-        ],
+        ] + identity_nodes(),
     }
 
     local_paras = "\n".join(f'    <p class="lead">{p}</p>' for p in c["local_body"])
@@ -1217,7 +1297,7 @@ def build_industry(ind):
                 },
             },
             faq_schema(url, ind["faqs"]),
-        ],
+        ] + identity_nodes(),
     }
 
     problem_paras = "\n".join(f'    <p class="lead">{p}</p>' for p in ind["problem"])
@@ -1399,7 +1479,7 @@ def build_service(s):
                 },
             },
             faq_schema(url, s["faqs"]),
-        ],
+        ] + identity_nodes(),
     }
 
     problem_paras = "\n".join(f'    <p class="lead">{p}</p>' for p in s["problem"])

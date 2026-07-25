@@ -38,68 +38,160 @@
 
   <!-- Schema.org -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "WebPage",
-        "@id": "https://gentoolinkwebservices.com/services.html",
-        "url": "https://gentoolinkwebservices.com/services.html",
-        "name": "Services — Gentoolink Web Services",
-        "description": "AI visibility audit, foundation package, and GEO retainer services for local businesses.",
-        "isPartOf": {"@id": "https://gentoolinkwebservices.com/#website"},
-        "breadcrumb": {
-          "@type": "BreadcrumbList",
-          "itemListElement": [
-            {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://gentoolinkwebservices.com"},
-            {"@type": "ListItem", "position": 2, "name": "Services", "item": "https://gentoolinkwebservices.com/services.html"}
-          ]
-        }
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://gentoolinkwebservices.com/services.html",
+      "url": "https://gentoolinkwebservices.com/services.html",
+      "name": "Services — Gentoolink Web Services",
+      "description": "AI visibility audit, foundation package, and GEO retainer services for local businesses.",
+      "isPartOf": {
+        "@id": "https://gentoolinkwebservices.com/#website"
       },
-      {
-        "@type": "Service",
-        "name": "AI Visibility Audit",
-        "description": "A complete check of your business's AI search visibility across ChatGPT, Perplexity, Google AI Overviews, and the technical infrastructure behind them. Delivered as a plain-English PDF within 24 hours.",
-        "provider": {"@id": "https://gentoolinkwebservices.com/#organization"},
-        "offers": {
-          "@type": "Offer",
-          "price": "1000",
-          "priceCurrency": "CAD",
-          "availability": "https://schema.org/InStock"
-        }
-      },
-      {
-        "@type": "Service",
-        "name": "AI Search Foundation Package",
-        "description": "Complete implementation of AI search visibility — schema markup, Bing indexing, content restructuring, Google Business Profile optimization, and verified results across all major AI platforms.",
-        "provider": {"@id": "https://gentoolinkwebservices.com/#organization"},
-        "offers": {
-          "@type": "Offer",
-          "price": "2500",
-          "priceCurrency": "CAD",
-          "availability": "https://schema.org/InStock"
-        }
-      },
-      {
-        "@type": "Service",
-        "name": "GEO Retainer",
-        "description": "Monthly AI visibility retainer in two tiers. Lean GEO at $150 per month covers AI visibility monitoring, schema updates, and quarterly competitive reporting. Growth GEO at $350 per month adds one new FAQ or service page per month optimized for AI citation, plus priority support.",
-        "provider": {"@id": "https://gentoolinkwebservices.com/#organization"},
-        "serviceType": "Ongoing GEO Monitoring and Optimization",
-        "offers": {
-          "@type": "Offer",
-          "priceSpecification": {
-            "@type": "UnitPriceSpecification",
-            "minPrice": "150",
-            "maxPrice": "350",
-            "priceCurrency": "CAD",
-            "unitText": "MONTH"
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://gentoolinkwebservices.com"
           },
-          "url": "https://gentoolinkwebservices.com/contact.html"
-        }
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Services",
+            "item": "https://gentoolinkwebservices.com/services.html"
+          }
+        ]
       }
-    ]
-  }
+    },
+    {
+      "@type": "Service",
+      "name": "AI Visibility Audit",
+      "description": "A complete check of your business's AI search visibility across ChatGPT, Perplexity, Google AI Overviews, and the technical infrastructure behind them. Delivered as a plain-English PDF within 24 hours.",
+      "provider": {
+        "@id": "https://gentoolinkwebservices.com/#organization"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "1000",
+        "priceCurrency": "CAD",
+        "availability": "https://schema.org/InStock"
+      }
+    },
+    {
+      "@type": "Service",
+      "name": "AI Search Foundation Package",
+      "description": "Complete implementation of AI search visibility — schema markup, Bing indexing, content restructuring, Google Business Profile optimization, and verified results across all major AI platforms.",
+      "provider": {
+        "@id": "https://gentoolinkwebservices.com/#organization"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "2500",
+        "priceCurrency": "CAD",
+        "availability": "https://schema.org/InStock"
+      }
+    },
+    {
+      "@type": "Service",
+      "name": "GEO Retainer",
+      "description": "Monthly AI visibility retainer in two tiers. Lean GEO at $150 per month covers AI visibility monitoring, schema updates, and quarterly competitive reporting. Growth GEO at $350 per month adds one new FAQ or service page per month optimized for AI citation, plus priority support.",
+      "provider": {
+        "@id": "https://gentoolinkwebservices.com/#organization"
+      },
+      "serviceType": "Ongoing GEO Monitoring and Optimization",
+      "offers": {
+        "@type": "Offer",
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "minPrice": "150",
+          "maxPrice": "350",
+          "priceCurrency": "CAD",
+          "unitText": "MONTH"
+        },
+        "url": "https://gentoolinkwebservices.com/contact.html"
+      }
+    },
+    {
+      "@type": [
+        "ProfessionalService",
+        "LocalBusiness"
+      ],
+      "@id": "https://gentoolinkwebservices.com/#organization",
+      "name": "Gentoolink Web Services",
+      "description": "Gentoolink Web Services builds small business websites and runs AI visibility audits, checking whether a business appears in ChatGPT, Perplexity, and Google AI Overviews, then implementing the structured data, Bing indexing, and content changes needed to fix what's missing.",
+      "slogan": "Find out if AI can find your business.",
+      "foundingDate": "2018",
+      "url": "https://gentoolinkwebservices.com",
+      "logo": {
+        "@id": "https://gentoolinkwebservices.com/#logo"
+      },
+      "image": {
+        "@id": "https://gentoolinkwebservices.com/#logo"
+      },
+      "telephone": "+16042187290",
+      "email": "ken@gentoolinkwebservices.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Vanderhoof",
+        "addressRegion": "BC",
+        "addressCountry": "CA"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "Canada"
+      },
+      "priceRange": "$$",
+      "sameAs": [
+        "https://www.linkedin.com/in/kenmcgonigal/",
+        "https://www.google.com/maps/place/Gentoolink+Web+Services/@54.1126796,-124.2163096,8z"
+      ],
+      "founder": {
+        "@id": "https://gentoolinkwebservices.com/#ken"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "ken@gentoolinkwebservices.com",
+        "contactType": "customer service",
+        "areaServed": "CA",
+        "availableLanguage": "en"
+      }
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://gentoolinkwebservices.com/#logo",
+      "url": "https://gentoolinkwebservices.com/assets/images/gentoolink-logo.png",
+      "contentUrl": "https://gentoolinkwebservices.com/assets/images/gentoolink-logo.png"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://gentoolinkwebservices.com/#website",
+      "url": "https://gentoolinkwebservices.com",
+      "name": "Gentoolink Web Services",
+      "publisher": {
+        "@id": "https://gentoolinkwebservices.com/#organization"
+      },
+      "inLanguage": "en-CA"
+    },
+    {
+      "@type": "Person",
+      "@id": "https://gentoolinkwebservices.com/#ken",
+      "name": "Ken McGonigal",
+      "jobTitle": "Founder",
+      "worksFor": {
+        "@id": "https://gentoolinkwebservices.com/#organization"
+      },
+      "url": "https://gentoolinkwebservices.com/about.html",
+      "sameAs": [
+        "https://www.linkedin.com/in/kenmcgonigal/"
+      ]
+    }
+  ]
+}
   </script>
 
   <link rel="icon" href="/favicon.ico" sizes="any">
