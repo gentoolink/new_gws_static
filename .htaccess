@@ -10,19 +10,19 @@ RewriteRule ^ https://%1%{REQUEST_URI} [R=301,L]
 RewriteCond %{THE_REQUEST} \s/index\.html[\s?] [NC]
 RewriteRule ^index\.html$ / [R=301,L]
 
-# Podcast page parked until it has real content. Temporary (302) on purpose —
+# Podcast page parked until it has real content. Temporary (302) on purpose --
 # the URL is meant to come back, so we don't want it permanently deindexed.
 # Remove this rule when media.html is republished.
 RewriteRule ^media\.html$ / [R=302,L]
 
-# SiteReply offer discontinued. Permanent (301) — the page is gone for good,
+# SiteReply offer discontinued. Permanent (301) -- the page is gone for good,
 # and this keeps the retired $399 price unreachable if a stale copy is still
 # sitting in public_html after a manual upload.
 RewriteRule ^sitereply\.html$ / [R=301,L]
 
 # Retired landing pages left in /_archive/ on the server from an old upload.
 # They are not in the repo, were still returning 200 with "index, follow", and
-# one advertised $3,997 — contradicting current pricing and competing with the
+# one advertised $3,997 -- contradicting current pricing and competing with the
 # industry pages. Redirect each to its closest current equivalent so any
 # accumulated ranking carries over, then delete the files from public_html.
 RewriteRule ^_archive/plumbers-landing\.html$          /plumber-website-design.html [R=301,L]
@@ -34,3 +34,40 @@ RewriteRule ^_archive/salesrecon-privacy-policy\.html$ /privacy-policy.html     
 
 # Anything else under /_archive/ is retired too.
 RewriteRule ^_archive/ / [R=301,L]
+
+# --- Block files that shouldn't be served --------------------------------
+# The cPanel deploy copies the whole repo into the web root, so source and
+# config end up publicly readable. The host already 403s .git/ and .gitignore
+# but not these. Using [F] rather than <FilesMatch> keeps this working on both
+# Apache 2.2 and 2.4, since mod_rewrite is already required above.
+RewriteRule ^\.cpanel\.yml$ - [F,L]
+RewriteRule ^tools/ - [F,L]
+
+# --- Security headers ----------------------------------------------------
+# Wrapped in IfModule so a host without mod_headers doesn't 500 the site.
+<IfModule mod_headers.c>
+
+  # HTTPS already redirects above; this stops the first request being made over
+  # HTTP at all. NOTE: once a browser sees this it refuses plain HTTP for the
+  # full max-age, so don't plan to serve anything over HTTP for a year.
+  # No includeSubDomains -- that would also bind any subdomain, including ones
+  # that may not have a certificate.
+  Header always set Strict-Transport-Security "max-age=31536000"
+
+  # Stop browsers second-guessing declared content types.
+  Header always set X-Content-Type-Options "nosniff"
+
+  # Clickjacking. X-Frame-Options for older browsers, frame-ancestors for
+  # current ones. This is a deliberately minimal CSP: a full policy would need
+  # to allowlist gtag, Botpress, Font Awesome and Google Fonts, and getting it
+  # wrong silently breaks the chat widget or the styling.
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set Content-Security-Policy "frame-ancestors 'self'"
+
+  # Send the origin to third parties, never the full URL and query string.
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+
+  # Nothing on this site needs any of these devices.
+  Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=(), usb=()"
+
+</IfModule>
