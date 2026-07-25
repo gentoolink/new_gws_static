@@ -376,8 +376,10 @@ INDUSTRIES = [
     {
         "slug": "plumber-website-design",
         "industry": "Plumbers",
-        "demo_name": "Precision Plumbing",
-        "demo_url": "https://gentoolink.github.io/gentoolink-demo-sites/plumber/",
+        "demo_name": "Bill's Plumbing and Heating",
+        "demo_url": "https://billsplumbingheating.ca",
+        "demo_is_client": True,
+        "demo_location": "Vanderhoof, BC",
         "eyebrow": "Plumbing Websites",
         "h1": "Plumber Websites Built to Get the Phone Ringing",
         "hero_sub": "Nobody browses for a plumber. They have a problem right now, they search, and they call the first business that looks like it can help.",
@@ -475,8 +477,10 @@ INDUSTRIES = [
     {
         "slug": "church-website-design",
         "industry": "Churches",
-        "demo_name": "Vanderhoof Christian Church",
-        "demo_url": "https://gentoolink.github.io/gentoolink-demo-sites/church/",
+        "demo_name": "Mapes Baptist Church",
+        "demo_url": "https://www.mapeschurch.com",
+        "demo_is_client": True,
+        "demo_location": "Vanderhoof, BC",
         "eyebrow": "Church &amp; Community Websites",
         "h1": "Church Websites for the Person Deciding Whether to Walk In",
         "hero_sub": "Your members already know the service times. The website is for the family that just moved to town and is nervous about visiting.",
@@ -1230,6 +1234,25 @@ def build_industry(ind):
         for title, desc in ind["features"]
     )
 
+    is_client = ind.get("demo_is_client", False)
+    hero_btn = (f'See a Live Client Site →' if is_client else "View the Live Demo →")
+    demo_label = "Client Site" if is_client else "Live Demo"
+    demo_btn = (f'Open {ind["demo_name"]} →' if is_client
+                else f'Open the {ind["demo_name"]} Demo →')
+    if is_client:
+        demo_lead = (
+            f'A real site, live and in service for a working business in '
+            f'{ind.get("demo_location", "British Columbia")} — not a mockup. Click through it: '
+            f'the menus work, the pages are real, and it is doing the job every day. Yours gets '
+            f'built the same way, around your business, your photos, and your services.'
+        )
+    else:
+        demo_lead = (
+            "A complete, working example site for this industry, built as a demonstration rather "
+            "than for a client. Click through it — the menus work, the pages are real. If you like "
+            "the direction, yours gets built the same way with your content, your photos, and your colours."
+        )
+
     body = f"""
 <!-- ─── Hero ─────────────────────────────────────────────── -->
 <section id="hero">
@@ -1240,7 +1263,7 @@ def build_industry(ind):
         <h1 class="gradient-text">{ind["h1"]}</h1>
         <p class="hero-sub">{ind["hero_sub"]}</p>
         <div class="hero-cta-row">
-          <a href="{ind["demo_url"]}" target="_blank" rel="noopener" class="btn-primary">View the Live Demo →</a>
+          <a href="{ind["demo_url"]}" target="_blank" rel="noopener" class="btn-primary">{hero_btn}</a>
         </div>
         <p class="hero-trust">From $1,500 for a typical 5&ndash;8 page site, usually live in 2&ndash;4 weeks. Structured data included so AI assistants can actually read your site.</p>
       </div>
@@ -1273,12 +1296,12 @@ def build_industry(ind):
 <!-- ─── Demo ──────────────────────────────────────────────── -->
 <section id="demo">
   <div class="container">
-    <div class="section-label">Live Demo</div>
+    <div class="section-label">{demo_label}</div>
     <h2>{ind["demo_name"]}</h2>
-    <p class="lead">A complete, working example site for this industry. Click through it — the menus work, the pages are real. If you like the direction, yours gets built the same way with your content, your photos, and your colours.</p>
+    <p class="lead">{demo_lead}</p>
     <div style="display: flex; gap: 14px; flex-wrap: wrap; margin-top: 28px;">
-      <a href="{ind["demo_url"]}" target="_blank" rel="noopener" class="btn-primary">Open the {ind["demo_name"]} Demo →</a>
-      <a href="templates.html" class="btn-secondary">See All Nine Examples</a>
+      <a href="{ind["demo_url"]}" target="_blank" rel="noopener" class="btn-primary">{demo_btn}</a>
+      <a href="templates.html" class="btn-secondary">See All Examples</a>
     </div>
   </div>
 </section>
