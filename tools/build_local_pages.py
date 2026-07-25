@@ -784,6 +784,32 @@ SERVICES = [
             ("Edits by email", "Send the change you want in plain English. No CMS login, no ticket system, no training session."),
             ("Someone who knows your site", "The same person every time, who already knows how your site is built and does not need it re-explained."),
         ],
+        "explainer": {
+            "label": "The Obvious Question",
+            "h2": "Isn't hosting free?",
+            "paras": [
+                "Some of it genuinely can be. There are free tiers that will serve a small static site perfectly well, and if you are comfortable running your own deployments, you should use one. I would rather tell you that than sell you something you do not need.",
+                "But it is worth being straight about what the money is actually for, because it is not the server. Storage and bandwidth for a small business website cost pennies a month. Anyone charging you $25 a month for \"server space\" is not being honest about the bill.",
+                "What you are paying for is everything around the server — the parts that fail quietly, on a schedule nobody is watching.",
+            ],
+            "points": [
+                ("The renewals nobody diarises",
+                 "Your SSL certificate, your domain, and your DNS records all expire on their own separate schedules. An expired certificate does not degrade gracefully — browsers throw a full-page security warning, and effectively nobody clicks through it. It usually happens on a weekend."),
+                ("Backups that have actually been restored",
+                 "A backup nobody has ever tested is not a backup, it is an assumption. Restores get verified here, because the moment you find out a backup was broken is always the moment you needed it."),
+                ("Monitoring, so you are not the last to know",
+                 "Most small business owners discover their site is down because a customer mentions it. By then it has usually been down for days. Monitoring means the problem gets found before it costs you anything."),
+                ("Someone who already knows your site",
+                 "Free platforms have documentation, not people. When something breaks you are reading forum threads at 9pm. A plan means emailing one person who already knows how your site is built and does not need it re-explained."),
+            ],
+            "catch_h3": "The part free tiers do not advertise",
+            "catch": [
+                "A free tier is a business decision someone else made, and they can change it. Limits get introduced, terms shift, and products get retired — usually with notice, occasionally not, and always on their timetable rather than yours.",
+                "Most free hosting also assumes you can redeploy your own site: that you are comfortable with a git push, a build step, or a dashboard. If you are not, \"free\" quietly means waiting on a favour from whoever set it up.",
+                "And free accounts are tied to a person. If your site sits under a contractor's login or a relative's personal email, control of it does too. That is fine right up until they change jobs, move away, or stop answering.",
+            ],
+            "close": "If you would rather run it yourself, say so and I will hand over the files — it is your site, and you can host it anywhere. The plans exist for people who would rather it was simply handled.",
+        },
         "tables": [
             {
                 "label": "Plans",
@@ -831,6 +857,10 @@ SERVICES = [
              "No. Hosting and care plans are month to month and can be cancelled at any time. If you leave, the site is yours and it can be moved to another host."),
             ("Can you take over hosting for a site someone else built?",
              "Usually yes, depending on how it was built. Static and standard small business sites migrate easily. It is worth a look first, because occasionally a site is tied to a proprietary platform that cannot be moved without rebuilding it."),
+            ("Can't I just host my website for free?",
+             "For a simple static site, technically yes — free tiers exist and they work. If you are comfortable running your own deployments, you should use one. What paid hosting buys is not the server, which costs pennies: it is the SSL, domain and DNS renewals that expire on separate schedules, backups that have been tested rather than assumed, monitoring so a problem is found before a customer finds it, and one person to email who already knows your site. Free platforms have documentation, not people."),
+            ("What is the risk of using free hosting for a business site?",
+             "Three things. Free tiers are a business decision someone else controls, so limits and terms can change on their timetable. Most assume you can redeploy the site yourself, so if you cannot, an urgent change means waiting on a favour. And free accounts are tied to an individual login — if your site sits under a contractor's or a relative's personal account, so does control of it. None of that matters until it does, usually at the worst moment."),
         ],
         "cta_h2": "Tell me what your site is running on.",
         "cta_body": "I will tell you what it would take to move it, what it would cost to keep, and whether a care plan is worth it for how often you actually change things. If hosting alone is enough for you, I will say that.",
@@ -1356,6 +1386,39 @@ def build_service(s):
         for title, desc in s["features"]
     )
 
+    explainer = ""
+    if s.get("explainer"):
+        e = s["explainer"]
+        paras = "\n".join(f'    <p class="lead">{p}</p>' for p in e["paras"])
+        points = "\n\n".join(
+            f"""      <div class="objection">
+        <p class="objection-q">{title}</p>
+        <p class="objection-a">{desc}</p>
+      </div>"""
+            for title, desc in e["points"]
+        )
+        catch = "\n".join(f'    <p class="lead">{p}</p>' for p in e["catch"])
+        explainer = f"""
+<!-- ─── Why it isn't free ─────────────────────────────────── -->
+<section id="why-paid">
+  <div class="container">
+    <div class="section-label">{e["label"]}</div>
+    <h2>{e["h2"]}</h2>
+{paras}
+
+    <div class="objections-list" style="margin-top: 32px;">
+
+{points}
+
+    </div>
+
+    <h3 style="font-size: 12px; font-weight: 600; color: var(--text); margin: 40px 0 16px; text-transform: uppercase; letter-spacing: 0.06em;">{e["catch_h3"]}</h3>
+{catch}
+
+    <p class="hook">{e["close"]}</p>
+  </div>
+</section>"""
+
     tables = []
     for idx, t in enumerate(s["tables"]):
         rows = "\n".join(
@@ -1425,6 +1488,7 @@ def build_service(s):
     </div>
   </div>
 </section>
+{explainer}
 {"".join(tables)}
 
 <!-- ─── FAQ ───────────────────────────────────────────────── -->
