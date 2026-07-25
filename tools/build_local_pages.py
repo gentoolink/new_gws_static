@@ -91,7 +91,7 @@ SHELL = """<!DOCTYPE html>
       </a>
       <span class="nav-links">
         <a href="services.html">Services</a>
-        <a href="templates.html">Templates</a>
+        <a href="templates.html">Examples</a>
         <a href="time-money-audit.html" style="color: var(--gold);">Local Audit</a>
         <a href="about.html">About</a>
         <a href="blog.html">Blog</a>
@@ -116,7 +116,7 @@ SHELL = """<!DOCTYPE html>
     <nav aria-label="Footer navigation" style="margin-bottom: 18px;">
       <span style="display:flex;gap:20px;justify-content:center;flex-wrap:wrap;">
         <a href="services.html" style="font-size:13px;color:var(--text-subtle);">Services</a>
-        <a href="templates.html" style="font-size:13px;color:var(--text-subtle);">Templates</a>
+        <a href="templates.html" style="font-size:13px;color:var(--text-subtle);">Examples</a>
         <a href="time-money-audit.html" style="font-size:13px;color:var(--text-subtle);">Time &amp; Money Audit</a>
         <a href="about.html" style="font-size:13px;color:var(--text-subtle);">About</a>
         <a href="blog.html" style="font-size:13px;color:var(--text-subtle);">Blog</a>
@@ -1087,7 +1087,7 @@ def build_city(c):
           <li>Product launch site — from $2,000</li>
           <li>Store +$500 · logo +$500 · copywriting +$300</li>
         </ul>
-        <a href="templates.html" class="post-read-more">See example designs →</a>
+        <a href="templates.html" class="post-read-more">See example sites →</a>
       </div>
 
       <div class="service-card">
@@ -1278,7 +1278,7 @@ def build_industry(ind):
     <p class="lead">A complete, working example site for this industry. Click through it — the menus work, the pages are real. If you like the direction, yours gets built the same way with your content, your photos, and your colours.</p>
     <div style="display: flex; gap: 14px; flex-wrap: wrap; margin-top: 28px;">
       <a href="{ind["demo_url"]}" target="_blank" rel="noopener" class="btn-primary">Open the {ind["demo_name"]} Demo →</a>
-      <a href="templates.html" class="btn-secondary">See All Nine Templates</a>
+      <a href="templates.html" class="btn-secondary">See All Nine Examples</a>
     </div>
   </div>
 </section>
