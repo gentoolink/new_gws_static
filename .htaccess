@@ -19,3 +19,18 @@ RewriteRule ^media\.html$ / [R=302,L]
 # and this keeps the retired $399 price unreachable if a stale copy is still
 # sitting in public_html after a manual upload.
 RewriteRule ^sitereply\.html$ / [R=301,L]
+
+# Retired landing pages left in /_archive/ on the server from an old upload.
+# They are not in the repo, were still returning 200 with "index, follow", and
+# one advertised $3,997 — contradicting current pricing and competing with the
+# industry pages. Redirect each to its closest current equivalent so any
+# accumulated ranking carries over, then delete the files from public_html.
+RewriteRule ^_archive/plumbers-landing\.html$          /plumber-website-design.html [R=301,L]
+RewriteRule ^_archive/trades-landing\.html$            /templates.html              [R=301,L]
+RewriteRule ^_archive/trades-starter-package\.html$    /services.html               [R=301,L]
+RewriteRule ^_archive/real-estate-agents-landing\.html$ /services.html              [R=301,L]
+RewriteRule ^_archive/tech-investment-guide\.html$     /blog.html                   [R=301,L]
+RewriteRule ^_archive/salesrecon-privacy-policy\.html$ /privacy-policy.html         [R=301,L]
+
+# Anything else under /_archive/ is retired too.
+RewriteRule ^_archive/ / [R=301,L]
