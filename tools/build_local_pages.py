@@ -343,8 +343,6 @@ INDUSTRIES = [
     {
         "slug": "restaurant-website-design",
         "industry": "Restaurants",
-        "demo_name": "The Copper Kettle",
-        "demo_url": "https://gentoolink.github.io/gentoolink-demo-sites/copper-kettle/",
         "eyebrow": "Restaurant Websites",
         "h1": "Restaurant Websites That Show the Menu and the Hours",
         "hero_sub": "The two things every diner wants are the two things most restaurant sites bury. Yours won't.",
@@ -411,8 +409,6 @@ INDUSTRIES = [
     {
         "slug": "electrician-website-design",
         "industry": "Electricians",
-        "demo_name": "Current Electric",
-        "demo_url": "https://gentoolink.github.io/gentoolink-demo-sites/electrician/",
         "eyebrow": "Electrical Contractor Websites",
         "h1": "Electrician Websites That Win Both Kinds of Work",
         "hero_sub": "Residential service calls and commercial contracts get found in completely different ways. Most electrical sites are built for only one.",
@@ -444,8 +440,6 @@ INDUSTRIES = [
     {
         "slug": "pizza-shop-website-design",
         "industry": "Pizza Shops",
-        "demo_name": "Mama Rosa's Pizza",
-        "demo_url": "https://gentoolink.github.io/gentoolink-demo-sites/pizzashop/",
         "eyebrow": "Pizza &amp; Fast-Casual Websites",
         "h1": "Pizza Shop Websites Built for the Order, Not the Browse",
         "hero_sub": "Someone deciding on dinner gives you about ten seconds. Menu, price, phone number, done.",
@@ -512,8 +506,6 @@ INDUSTRIES = [
     {
         "slug": "auto-repair-website-design",
         "industry": "Auto Repair Shops",
-        "demo_name": "Vanderhoof Auto Care",
-        "demo_url": "https://gentoolink.github.io/gentoolink-demo-sites/auto-repair/",
         "eyebrow": "Auto Repair Websites",
         "h1": "Auto Repair Websites Built on the Thing You Actually Sell: Trust",
         "hero_sub": "Nobody enjoys picking a mechanic. They're choosing who to trust with an expensive problem they can't verify themselves.",
@@ -545,8 +537,6 @@ INDUSTRIES = [
     {
         "slug": "dentist-website-design",
         "industry": "Dental Practices",
-        "demo_name": "Vanderhoof Family Dental",
-        "demo_url": "https://gentoolink.github.io/gentoolink-demo-sites/dentist/",
         "eyebrow": "Dental &amp; Medical Practice Websites",
         "h1": "Dental Websites Built Around the Two Questions Every Patient Has",
         "hero_sub": "Are you accepting new patients, and do you take my insurance? Everything else is secondary.",
@@ -578,8 +568,6 @@ INDUSTRIES = [
     {
         "slug": "salon-website-design",
         "industry": "Salons &amp; Spas",
-        "demo_name": "The Velvet Chair Salon",
-        "demo_url": "https://gentoolink.github.io/gentoolink-demo-sites/salon/",
         "eyebrow": "Salon &amp; Beauty Websites",
         "h1": "Salon Websites Where the Work Speaks and the Booking Is One Tap",
         "hero_sub": "Clients choose a stylist by looking. Then they book — or they don't, depending on how many steps you put in the way.",
@@ -611,8 +599,6 @@ INDUSTRIES = [
     {
         "slug": "landscaping-website-design",
         "industry": "Landscapers",
-        "demo_name": "Northern Terrain Landscaping",
-        "demo_url": "https://gentoolink.github.io/gentoolink-demo-sites/landscaper/",
         "eyebrow": "Landscaping &amp; Outdoor Websites",
         "h1": "Landscaping Websites That Work Through the Whole Season",
         "hero_sub": "Your work is visual and your year is seasonal. A portfolio and a site that stays visible in the off months solve both.",
@@ -1234,24 +1220,44 @@ def build_industry(ind):
         for title, desc in ind["features"]
     )
 
-    is_client = ind.get("demo_is_client", False)
-    hero_btn = (f'See a Live Client Site →' if is_client else "View the Live Demo →")
-    demo_label = "Client Site" if is_client else "Live Demo"
-    demo_btn = (f'Open {ind["demo_name"]} →' if is_client
-                else f'Open the {ind["demo_name"]} Demo →')
-    if is_client:
-        demo_lead = (
-            f'A real site, live and in service for a working business in '
-            f'{ind.get("demo_location", "British Columbia")} — not a mockup. Click through it: '
-            f'the menus work, the pages are real, and it is doing the job every day. Yours gets '
-            f'built the same way, around your business, your photos, and your services.'
+    # Industries with a live client site get a showcase section; the rest send
+    # people to the client work on the examples page instead.
+    demo_url = ind.get("demo_url")
+    if demo_url:
+        hero_cta = (
+            f'<a href="{demo_url}" target="_blank" rel="noopener" class="btn-primary">'
+            f'See a Live Client Site →</a>'
         )
+        demo_section = f"""
+<!-- ─── Client site ───────────────────────────────────────── -->
+<section id="demo">
+  <div class="container">
+    <div class="section-label">Client Site</div>
+    <h2>{ind["demo_name"]}</h2>
+    <p class="lead">A real site, live and in service for a working business in {ind.get("demo_location", "British Columbia")} — not a mockup. Click through it: the menus work, the pages are real, and it is doing the job every day. Yours gets built the same way, around your business, your photos, and your services.</p>
+    <div style="display: flex; gap: 14px; flex-wrap: wrap; margin-top: 28px;">
+      <a href="{demo_url}" target="_blank" rel="noopener" class="btn-primary">Open {ind["demo_name"]} →</a>
+      <a href="templates.html" class="btn-secondary">See All Client Work</a>
+    </div>
+  </div>
+</section>
+"""
     else:
-        demo_lead = (
-            "A complete, working example site for this industry, built as a demonstration rather "
-            "than for a client. Click through it — the menus work, the pages are real. If you like "
-            "the direction, yours gets built the same way with your content, your photos, and your colours."
-        )
+        hero_cta = '<a href="contact.html" class="btn-primary">Start My Website</a>'
+        demo_section = """
+<!-- ─── Client work ───────────────────────────────────────── -->
+<section id="demo">
+  <div class="container">
+    <div class="section-label">Our Work</div>
+    <h2>See what we've actually built.</h2>
+    <p class="lead">We haven't built a site in this industry yet — so rather than show you a mockup, here is real client work you can click through and judge for yourself. Trades, community, retail and a regional directory, all live and in service.</p>
+    <div style="display: flex; gap: 14px; flex-wrap: wrap; margin-top: 28px;">
+      <a href="templates.html" class="btn-primary">See Our Client Work →</a>
+      <a href="contact.html" class="btn-secondary">Talk About My Site</a>
+    </div>
+  </div>
+</section>
+"""
 
     body = f"""
 <!-- ─── Hero ─────────────────────────────────────────────── -->
@@ -1263,7 +1269,7 @@ def build_industry(ind):
         <h1 class="gradient-text">{ind["h1"]}</h1>
         <p class="hero-sub">{ind["hero_sub"]}</p>
         <div class="hero-cta-row">
-          <a href="{ind["demo_url"]}" target="_blank" rel="noopener" class="btn-primary">{hero_btn}</a>
+          {hero_cta}
         </div>
         <p class="hero-trust">From $1,500 for a typical 5&ndash;8 page site, usually live in 2&ndash;4 weeks. Structured data included so AI assistants can actually read your site.</p>
       </div>
@@ -1292,20 +1298,7 @@ def build_industry(ind):
     </div>
   </div>
 </section>
-
-<!-- ─── Demo ──────────────────────────────────────────────── -->
-<section id="demo">
-  <div class="container">
-    <div class="section-label">{demo_label}</div>
-    <h2>{ind["demo_name"]}</h2>
-    <p class="lead">{demo_lead}</p>
-    <div style="display: flex; gap: 14px; flex-wrap: wrap; margin-top: 28px;">
-      <a href="{ind["demo_url"]}" target="_blank" rel="noopener" class="btn-primary">{demo_btn}</a>
-      <a href="templates.html" class="btn-secondary">See All Examples</a>
-    </div>
-  </div>
-</section>
-
+{demo_section}
 <!-- ─── FAQ ───────────────────────────────────────────────── -->
 <section id="faq" style="background: var(--bg-card);">
   <div class="container">
