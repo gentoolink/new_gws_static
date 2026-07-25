@@ -640,6 +640,206 @@ INDUSTRIES = [
 ]
 
 # ─────────────────────────────────────────────────────────────────────────────
+# Standalone service pages
+# ─────────────────────────────────────────────────────────────────────────────
+
+SERVICES = [
+    {
+        "slug": "google-business-profile-management",
+        "name": "Google Business Profile Management",
+        "service_type": "Google Business Profile Optimization",
+        "title": "Google Business Profile Management | Gentoolink Web Services",
+        "desc": "Google Business Profile tune-ups and ongoing management for Northern BC businesses. The single biggest lever in local search and AI recommendations. $250 tune-up, $150/mo managed.",
+        "keywords": "Google Business Profile management, GBP optimization, Google Business Profile help Prince George, local SEO Northern BC, Google Maps listing",
+        "eyebrow": "Google Business Profile · Local Visibility",
+        "h1": "Your Google Business Profile Is Doing More Work Than Your Website",
+        "hero_sub": "It is the first thing a local customer sees, the thing Google Maps ranks, and one of the strongest signals an AI assistant uses to decide who to recommend. Most are claimed once and never touched again.",
+        "hero_trust": "Tune-up $250, one-time. Ongoing management $150/month. No contract.",
+        "cta_label": "Get My Profile Tuned Up",
+        "low_price": "250",
+        "problem_h2": "Claimed in 2019, never opened since.",
+        "problem": [
+            "That is the state of most local business profiles. The hours are wrong at Christmas, the phone number is the old one, there are three photos from a flip phone, the category is vaguely close but not right, and the last four reviews have no reply.",
+            "Every one of those is a ranking factor. Google reads profile completeness, category accuracy, photo recency, and review responsiveness as signals of whether a business is active and worth showing. A neglected profile gets quietly demoted in the map pack, which is where most local searches actually end.",
+            "It matters twice over now. AI assistants lean heavily on Google Business Profile data when someone asks for a local recommendation, because it is structured, verified, and current in a way most small business websites are not. An incomplete profile means the assistant has less to go on, and it recommends whoever gave it more.",
+        ],
+        "hook": "This is the cheapest ranking work available to a local business. It is also the most commonly skipped.",
+        "features_h2": "What the tune-up covers.",
+        "features": [
+            ("Categories and services", "Primary and secondary categories chosen against what customers actually search, plus every service listed individually rather than lumped into one description."),
+            ("NAP consistency", "Name, address, and phone matched exactly across your profile, your website, and your schema markup. Mismatches quietly suppress local rankings."),
+            ("Hours, including the awkward ones", "Regular hours, holiday hours, and seasonal changes set properly so Google can state whether you are open right now."),
+            ("Photos and products", "Current photos, correctly sized and geotagged, plus products or services populated where your category supports it."),
+            ("Reviews and Q&A", "Existing reviews replied to, and the Q&A section seeded with the questions customers actually ask instead of left blank."),
+            ("Posts and updates", "Set up so the profile shows recent activity, which is a live signal to both Google and AI assistants that the business is operating."),
+        ],
+        "tables": [
+            {
+                "label": "Pricing",
+                "h2": "Two ways to do this.",
+                "intro": "Most businesses start with the one-time tune-up and add ongoing management only if they want the posting and review work handled for them.",
+                "rows": [
+                    ("Google Business Profile tune-up", "$250", "One-time. Full audit and cleanup of categories, NAP, hours, photos, services, and Q&A."),
+                    ("Ongoing profile management", "$150/mo", "Monthly posts, review monitoring and replies, hours and seasonal updates, performance reporting."),
+                ],
+            },
+        ],
+        "faqs": [
+            ("What does a Google Business Profile tune-up include?",
+             "A full audit and cleanup: primary and secondary category selection, every service listed individually, name/address/phone consistency across the profile and website, regular and holiday hours, current photos, products or services populated, replies to existing reviews, and a seeded Q&A section. The tune-up is $250 CAD, one-time."),
+            ("Why does my Google Business Profile matter for AI search?",
+             "AI assistants rely heavily on Google Business Profile data when answering local recommendation questions, because it is structured, verified, and current in a way most small business websites are not. When someone asks an assistant for a plumber or a dentist in a specific town, an incomplete profile gives it less to work with, so it recommends a business that supplied more."),
+            ("Do I need ongoing management, or is a one-time tune-up enough?",
+             "For many businesses a one-time tune-up is enough, particularly if your hours and services rarely change. Ongoing management at $150/month makes sense if you get steady reviews that need replies, run seasonal hours, or want regular posts keeping the profile visibly active. Start with the tune-up and add management only if you want it."),
+            ("Will this help me show up in the Google Maps pack?",
+             "It is the main lever. The map pack weighs profile completeness, category accuracy, proximity, review volume and recency, and how responsive the business appears. Proximity cannot be changed, but everything else on that list is exactly what the tune-up addresses."),
+            ("Can you manage a profile for a business outside Northern BC?",
+             "Yes. Google Business Profile work is done remotely and does not require an in-person visit, so it works for businesses anywhere in Canada. The in-person services, like the Time & Money Audit, are the ones limited to the Northern BC service area."),
+        ],
+        "cta_h2": "Find out what your profile is missing.",
+        "cta_body": "Send me your business name and I will look at your Google Business Profile and tell you what is incomplete — categories, hours, photos, review replies, the lot. No charge for the look.",
+        "cta_btn": "Check My Profile",
+    },
+    {
+        "slug": "ai-phone-receptionist",
+        "name": "AI Phone Receptionist",
+        "service_type": "AI Phone Answering Service",
+        "title": "AI Phone Receptionist for Small Business | Gentoolink Web Services",
+        "desc": "An AI receptionist that answers every call, takes the details, and texts you the message. Built for trades and small businesses that lose jobs to voicemail. $500 setup, $249/month.",
+        "keywords": "AI phone receptionist, AI answering service small business, virtual receptionist BC, never miss a call trades, automated phone answering Northern BC",
+        "eyebrow": "AI Phone Receptionist · Never Miss a Call",
+        "h1": "The Job Went to Whoever Answered the Phone",
+        "hero_sub": "You were under a sink, on a roof, or driving. It rang out. They called the next name on the list and never called back — and you never knew it happened.",
+        "hero_trust": "$500 setup, $249/month. Answers 24/7, texts you every message. Cancel anytime.",
+        "cta_label": "Set Up My Receptionist",
+        "low_price": "500",
+        "problem_h2": "Voicemail is not a safety net. It is where leads go to die.",
+        "problem": [
+            "Most people calling a trade or a small business will not leave a voicemail. They hang up and dial the next result. You never see the missed call as a lost job, because nothing about it looks like a loss — it looks like a number you did not recognise.",
+            "The awkward part is that the calls you miss are not spread evenly. They cluster exactly when you are busiest: mid-job, mid-drive, mid-season. The better the work is going, the more of it you are quietly turning away.",
+            "Hiring a receptionist for this does not pencil out for a small operation, and answering services are expensive and generic. An AI receptionist sits in the gap: it picks up on the first ring every time, sounds normal, gets the caller's name, number, and what they need, and texts it to you before you have put the wrench down.",
+        ],
+        "hook": "It does not need to be better than you on the phone. It needs to be better than ringing out.",
+        "features_h2": "What it actually does.",
+        "features": [
+            ("Answers on the first ring, always", "No hold music, no queue. It picks up at 2pm on a Tuesday and 9pm on a Sunday, in the same voice."),
+            ("Takes the details that matter", "Name, callback number, what they need, and how urgent it is. Configured around the questions your trade actually needs answered."),
+            ("Texts you immediately", "The full message arrives as a text the moment the call ends, so you can decide whether it is worth stopping for."),
+            ("Answers the questions it can", "Hours, service area, whether you handle a given job, roughly how booking works. The routine questions stop interrupting you."),
+            ("Books or routes as configured", "It can push callers to your booking link, take a callback slot, or flag genuine emergencies so those reach you differently."),
+            ("Sounds like a person, not a phone tree", "No menus, no press-one-for-service. Callers speak normally and it responds normally."),
+        ],
+        "tables": [
+            {
+                "label": "Pricing",
+                "h2": "What it costs.",
+                "intro": "One setup fee to configure it around your business, then a flat monthly rate. No per-minute billing and no contract.",
+                "rows": [
+                    ("AI phone receptionist — setup", "$500", "One-time. Voice, script, questions, routing rules, and integration with your existing number."),
+                    ("AI phone receptionist — monthly", "$249/mo", "Ongoing service, 24/7 answering, message delivery, and adjustments as your business changes."),
+                ],
+            },
+        ],
+        "faqs": [
+            ("How much does an AI phone receptionist cost?",
+             "Setup is $500 CAD one-time, which covers configuring the voice, the script, the questions it asks, routing rules, and integration with your existing phone number. Ongoing service is $249 CAD per month, flat, with no per-minute charges and no contract."),
+            ("Do I have to change my phone number?",
+             "No. The receptionist works with your existing number. Calls are forwarded to it, either on every call or only when you do not pick up within a set number of rings, which is the more common setup."),
+            ("Will callers know they are talking to an AI?",
+             "It is not disguised as a human, and it should not be. In practice most callers do not mind, because the alternative they are comparing it to is voicemail. What they care about is that someone picked up and their message reached you."),
+            ("What happens with emergency calls?",
+             "Urgent calls can be flagged and routed differently — forwarded straight through to your cell, sent as a priority text, or escalated to a second number. The rules are set during setup around what counts as an emergency in your trade."),
+            ("What if it cannot answer a caller's question?",
+             "It takes the details and tells the caller you will follow up, which is the correct outcome. It is configured to be straightforward about what it does not know rather than guessing, because a wrong answer about pricing or availability costs more than a callback."),
+        ],
+        "cta_h2": "Stop losing jobs to a ringing phone.",
+        "cta_body": "Tell me roughly how many calls you miss in a week and what your average job is worth, and I will tell you honestly whether this pays for itself. For some businesses it does not — I would rather say so.",
+        "cta_btn": "See If It Pays Off",
+    },
+    {
+        "slug": "website-hosting-care-plans",
+        "name": "Website Hosting and Care Plans",
+        "service_type": "Website Hosting and Maintenance",
+        "title": "Website Hosting & Care Plans | Gentoolink Web Services",
+        "desc": "Managed hosting, backups, security monitoring, and a real person to email when you need a change. Plans from $25/month for Northern BC businesses.",
+        "keywords": "website hosting Northern BC, website maintenance plan, website care plan BC, managed hosting small business, website updates Prince George",
+        "eyebrow": "Hosting &amp; Care Plans",
+        "h1": "Someone to Email When the Site Needs Changing",
+        "hero_sub": "Most small business websites are built once and then quietly abandoned — no backups, no updates, and nobody to call when the hours change or something breaks.",
+        "hero_trust": "Hosting from $25/month. Care plans from $40/month, including edits. No lock-in.",
+        "cta_label": "Get on a Care Plan",
+        "low_price": "25",
+        "problem_h2": "The site was finished. Then nothing happened to it for four years.",
+        "problem": [
+            "This is the normal life cycle of a small business website. It launches, it looks good, and then the person who built it moves on. The hours go stale, the seasonal banner from two summers ago is still up, and nobody has taken a backup since launch.",
+            "The failure mode is rarely dramatic. It is a price that has been wrong for eight months, a contact form that quietly stopped delivering, or a certificate that expired on a long weekend. Small things, but each one is a customer who did not get through.",
+            "The other half is friction. When changing a phone number means finding an old email thread and hoping someone replies, most owners simply do not bother — and the site drifts further from the truth every month.",
+        ],
+        "hook": "A website that is wrong is worse than one that is plain. Keeping it true is the cheap part.",
+        "features_h2": "What is actually handled.",
+        "features": [
+            ("Managed hosting", "Fast, monitored hosting with SSL kept current. You are not administering a server or renewing a certificate at midnight."),
+            ("Backups that get tested", "Regular automated backups, and a restore path that has actually been checked rather than assumed."),
+            ("Security monitoring", "Uptime and integrity monitoring, so a problem gets caught before a customer finds it for you."),
+            ("Edits by email", "Send the change you want in plain English. No CMS login, no ticket system, no training session."),
+            ("Someone who knows your site", "The same person every time, who already knows how your site is built and does not need it re-explained."),
+        ],
+        "tables": [
+            {
+                "label": "Plans",
+                "h2": "Hosting and care plans.",
+                "intro": "Hosting alone keeps the site online. A care plan adds a set allowance of edits so small changes stop being a project.",
+                "rows": [
+                    ("Managed hosting — static sites", "$25/mo", "For low-maintenance sites that change rarely."),
+                    ("Managed hosting — dynamic sites", "$75/mo", "For sites with frequent updates, bookings, or a store."),
+                    ("Security monitoring add-on", "$15/mo", "Added to either hosting tier."),
+                    ("Lean Care Plan", "$40/mo", "Hosting, backups, security, plus 2 small edits per quarter."),
+                    ("Growth Care Plan", "$85/mo", "Hosting plus a monthly edit allowance and priority turnaround."),
+                ],
+            },
+            {
+                "label": "One-off changes",
+                "h2": "Not on a plan? Changes are priced individually.",
+                "intro": "Every change is quoted in writing before any work starts. These are starting points.",
+                "rows": [
+                    ("Small edit", "$50", "Text or image swap, updating hours or prices."),
+                    ("New page", "$150", "Matching your existing design."),
+                    ("New section or feature", "$250", "Form, gallery, or booking widget."),
+                    ("DNS or domain change", "$50", "Including moves between providers."),
+                    ("Larger functionality", "$500", "Store, member area, or redesign."),
+                    ("Rush turnaround", "+25%", "Completed within 48 hours."),
+                ],
+            },
+            {
+                "label": "Bundles",
+                "h2": "Or bundle it with your local visibility work.",
+                "intro": "These combine a care plan with the Google Business Profile work most local businesses need anyway.",
+                "rows": [
+                    ("Foundation", "$300 + $40/mo", "Google Business Profile tune-up plus the Lean Care Plan."),
+                    ("Complete", "$1,050 + $644/mo", "Foundation upgraded to the Growth Care Plan, plus an AI customer service assistant and ongoing local visibility management."),
+                ],
+            },
+        ],
+        "faqs": [
+            ("How much does website hosting cost?",
+             "Managed hosting starts at $25 CAD per month for static, low-maintenance sites and $75 per month for dynamic sites with frequent updates or a store. Security monitoring can be added for $15 per month. Care plans, which bundle hosting with an allowance of edits, start at $40 per month."),
+            ("What is the difference between hosting and a care plan?",
+             "Hosting keeps the site online, backed up, and secure. A care plan adds a set allowance of content changes — the Lean Care Plan includes 2 small edits per quarter at $40/month, and the Growth Care Plan includes a monthly allowance with priority turnaround at $85/month. If you rarely change anything, hosting alone is enough."),
+            ("What counts as a small edit?",
+             "Swapping text or an image, updating your hours, or changing a price. Larger work — a new page, a new section or feature, or new functionality like a store — is quoted separately, starting at $150, $250, and $500 respectively. Everything is quoted in writing before work begins."),
+            ("Do I have to sign a contract?",
+             "No. Hosting and care plans are month to month and can be cancelled at any time. If you leave, the site is yours and it can be moved to another host."),
+            ("Can you take over hosting for a site someone else built?",
+             "Usually yes, depending on how it was built. Static and standard small business sites migrate easily. It is worth a look first, because occasionally a site is tied to a proprietary platform that cannot be moved without rebuilding it."),
+        ],
+        "cta_h2": "Tell me what your site is running on.",
+        "cta_body": "I will tell you what it would take to move it, what it would cost to keep, and whether a care plan is worth it for how often you actually change things. If hosting alone is enough for you, I will say that.",
+        "cta_btn": "Ask About Hosting",
+    },
+]
+
+
+# ─────────────────────────────────────────────────────────────────────────────
 # Helpers
 # ─────────────────────────────────────────────────────────────────────────────
 
@@ -1096,6 +1296,178 @@ def build_industry(ind):
 
 # ─────────────────────────────────────────────────────────────────────────────
 
+def build_service(s):
+    slug = s["slug"]
+    url = f"{SITE}/{slug}.html"
+
+    schema = {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "WebPage",
+                "@id": url,
+                "url": url,
+                "name": f'{s["name"]} — Gentoolink Web Services',
+                "description": s["desc"],
+                "isPartOf": {"@id": f"{SITE}/#website"},
+                "about": {"@id": f"{SITE}/#organization"},
+                "inLanguage": "en-CA",
+                "breadcrumb": {
+                    "@type": "BreadcrumbList",
+                    "itemListElement": [
+                        {"@type": "ListItem", "position": 1, "name": "Home", "item": SITE},
+                        {"@type": "ListItem", "position": 2, "name": "Services",
+                         "item": f"{SITE}/services.html"},
+                        {"@type": "ListItem", "position": 3, "name": s["name"], "item": url},
+                    ],
+                },
+                "mainEntity": {"@id": f"{url}#faq"},
+            },
+            {
+                "@type": "Service",
+                "@id": f"{url}#service",
+                "name": s["name"],
+                "description": s["desc"],
+                "provider": {"@id": f"{SITE}/#organization"},
+                "serviceType": s["service_type"],
+                "areaServed": [
+                    {"@type": "AdministrativeArea", "name": "British Columbia"},
+                    {"@type": "Country", "name": "Canada"},
+                ],
+                "offers": {
+                    "@type": "Offer",
+                    "price": s["low_price"],
+                    "priceCurrency": "CAD",
+                    "availability": "https://schema.org/InStock",
+                    "url": url,
+                },
+            },
+            faq_schema(url, s["faqs"]),
+        ],
+    }
+
+    problem_paras = "\n".join(f'    <p class="lead">{p}</p>' for p in s["problem"])
+
+    feature_cards = "\n\n".join(
+        f"""      <div class="audit-section">
+        <h4>{title}</h4>
+        <p style="font-size: 15px; color: var(--text-muted); line-height: 1.7; margin: 0;">{desc}</p>
+      </div>"""
+        for title, desc in s["features"]
+    )
+
+    tables = []
+    for idx, t in enumerate(s["tables"]):
+        rows = "\n".join(
+            f"""          <tr>
+            <td class="td-product">{name}</td>
+            <td class="td-price">{price}</td>
+            <td class="td-note">{note}</td>
+          </tr>"""
+            for name, price, note in t["rows"]
+        )
+        bg = ' style="background: var(--bg-card);"' if idx % 2 == 0 else ""
+        tables.append(f"""
+<section id="pricing-{idx}"{bg}>
+  <div class="container">
+    <div class="section-label">{t["label"]}</div>
+    <h2>{t["h2"]}</h2>
+    <p class="lead">{t["intro"]}</p>
+    <table class="pricing-table">
+      <thead>
+        <tr><th scope="col">Service</th><th scope="col">Starting at</th><th scope="col">What it covers</th></tr>
+      </thead>
+      <tbody>
+{rows}
+      </tbody>
+    </table>
+    <p class="pricing-note">Every project is scoped to your business. You get a firm, fixed price in writing before any work begins, and nothing starts without your sign-off. We never bill by the hour.</p>
+  </div>
+</section>""")
+
+    body = f"""
+<!-- ─── Hero ─────────────────────────────────────────────── -->
+<section id="hero">
+  <div class="container">
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <div class="hero-eyebrow">{s["eyebrow"]}</div>
+        <h1 class="gradient-text">{s["h1"]}</h1>
+        <p class="hero-sub">{s["hero_sub"]}</p>
+        <div class="hero-cta-row">
+          <a href="contact.html" class="btn-primary">{s["cta_label"]}</a>
+        </div>
+        <p class="hero-trust">{s["hero_trust"]}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── Problem ───────────────────────────────────────────── -->
+<section id="problem">
+  <div class="container">
+    <div class="section-label">The Problem</div>
+    <h2>{s["problem_h2"]}</h2>
+{problem_paras}
+    <p class="hook">{s["hook"]}</p>
+  </div>
+</section>
+
+<!-- ─── What's included ───────────────────────────────────── -->
+<section id="included" style="background: var(--bg-card);">
+  <div class="container">
+    <div class="section-label">What You Get</div>
+    <h2>{s["features_h2"]}</h2>
+    <div class="audit-grid" style="margin-top: 32px;">
+
+{feature_cards}
+
+    </div>
+  </div>
+</section>
+{"".join(tables)}
+
+<!-- ─── FAQ ───────────────────────────────────────────────── -->
+<section id="faq">
+  <div class="container">
+    <div class="section-label">Common Questions</div>
+    <h2>What owners ask.</h2>
+    <div class="objections-list">
+
+{faq_html(s["faqs"])}
+
+    </div>
+  </div>
+</section>
+
+<!-- ─── Final CTA ─────────────────────────────────────────── -->
+<section id="cta" style="background: var(--bg-card);">
+  <div class="container">
+    <div class="cta-center">
+      <h2>{s["cta_h2"]}</h2>
+      <p class="lead">{s["cta_body"]}</p>
+      <a href="contact.html" class="btn-primary" style="font-size: 17px; padding: 16px 36px; margin-top: 12px; display: inline-block;">{s["cta_btn"]}</a>
+      <p style="margin-top: 20px; font-size: 14px; color: var(--text-subtle);">Or email <a href="mailto:ken@gentoolinkwebservices.com">ken@gentoolinkwebservices.com</a> · call or text 604-218-7290</p>
+    </div>
+  </div>
+</section>
+"""
+
+    shell_vars = {
+        "TITLE": s["title"],
+        "DESC": s["desc"],
+        "KEYWORDS": s["keywords"],
+        "CANON": url,
+        "OGTITLE": f'{s["name"]} | Gentoolink Web Services',
+        "OGDESC": s["desc"],
+        "OGIMG": OG_IMG,
+        "SCHEMA": json.dumps(schema, indent=2, ensure_ascii=False),
+        "FOOTER_TAG": f'{s["name"]}. <span>Built in Northern BC.</span>',
+    }
+
+    write(slug, render(shell_vars, body, slug))
+
+
 def main():
     print("Building city pages...")
     for c in CITIES:
@@ -1103,7 +1475,11 @@ def main():
     print("Building industry pages...")
     for i in INDUSTRIES:
         build_industry(i)
-    print(f"\nDone. {len(CITIES) + len(INDUSTRIES)} pages generated.")
+    print("Building service pages...")
+    for s in SERVICES:
+        build_service(s)
+    total = len(CITIES) + len(INDUSTRIES) + len(SERVICES)
+    print(f"\nDone. {total} pages generated.")
 
 
 if __name__ == "__main__":

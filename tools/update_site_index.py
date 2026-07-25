@@ -12,7 +12,7 @@ Run after build_local_pages.py:
 import os
 import re
 
-from build_local_pages import CITIES, INDUSTRIES, SITE, footer_areas
+from build_local_pages import CITIES, INDUSTRIES, SERVICES, SITE, footer_areas
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 LASTMOD = "2026-07-24"
@@ -49,6 +49,9 @@ def build_sitemap():
     # City pages rank as primary commercial landing pages.
     for c in CITIES:
         entries.append((f'{c["slug"]}.html', "monthly", "0.8"))
+    # Standalone service pages sit alongside services.html in importance.
+    for s in SERVICES:
+        entries.append((f'{s["slug"]}.html', "monthly", "0.8"))
     for i in INDUSTRIES:
         entries.append((f'{i["slug"]}.html', "monthly", "0.7"))
 
