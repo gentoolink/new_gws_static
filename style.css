@@ -1764,3 +1764,112 @@ footer .container {
   .nav-logo-img { height: 44px; width: 44px; }
   .nav-cta { padding: 7px 14px; font-size: 13px; }
 }
+
+/* ─── Anchored sections (clear the sticky nav) ───────── */
+
+section[id] { scroll-margin-top: 84px; }
+
+/* ─── Link chips: industries and service areas ───────── */
+
+.chips-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-subtle);
+  margin: 32px 0 12px;
+}
+
+.link-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.link-chips a {
+  font-size: 13.5px;
+  color: var(--text-muted);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 7px 15px;
+  transition: color 0.15s, border-color 0.15s;
+}
+
+.link-chips a:hover {
+  color: var(--gold);
+  border-color: var(--gold-border);
+  text-decoration: none;
+}
+
+/* ─── Honest comparison: self-serve vs concierge ─────── */
+
+.compare-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-top: 40px;
+  align-items: start;
+}
+
+.compare-col {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 26px 24px;
+}
+
+.compare-col-ours {
+  border-color: var(--gold-border);
+  box-shadow: var(--shadow-card);
+}
+
+.compare-head {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-subtle);
+  padding-bottom: 14px;
+  margin-bottom: 18px;
+  border-bottom: 1px solid var(--border-soft);
+}
+
+.compare-col-ours .compare-head { color: var(--gold); }
+
+.compare-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.compare-list li {
+  position: relative;
+  padding-left: 26px;
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+
+.compare-list li::before {
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.compare-against li::before {
+  content: '\00d7';
+  color: #ef4444;
+}
+
+.compare-ours li::before {
+  content: '\2713';
+  color: var(--accent);
+}
+
+@media (max-width: 720px) {
+  .compare-grid { grid-template-columns: 1fr; }
+}
