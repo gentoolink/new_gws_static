@@ -237,6 +237,22 @@ nav {
   right: 0;
 }
 
+/* The "Time & Money Audit" nav label is long — tighten the bar before it overflows */
+@media (max-width: 1100px) {
+  .nav-inner { gap: 16px; }
+  .nav-links { gap: 18px; }
+  .nav-links a { font-size: 13.5px; }
+}
+
+@media (max-width: 900px) {
+  .nav-inner { gap: 12px; }
+  .nav-links { gap: 13px; }
+  .nav-links a { font-size: 13px; }
+  .nav-logo { font-size: 17px; }
+  .nav-logo-img { height: 38px; width: 38px; }
+  .nav-cta { padding: 7px 14px; font-size: 13px; }
+}
+
 @media (max-width: 768px) {
   .nav-links { display: none; }
 }
@@ -1698,10 +1714,99 @@ footer .container {
   background: var(--accent-dim);
 }
 
+/* ─── Two doors: pick your audit ─────────────────────── */
+
+.door-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+  align-items: stretch;
+  margin-top: 36px;
+}
+
+.door-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px 26px;
+  box-shadow: var(--shadow-card);
+  transition: border-color 0.18s, transform 0.18s;
+}
+
+.door-card:hover {
+  border-color: var(--accent-border);
+  transform: translateY(-2px);
+}
+
+.door-card.is-default {
+  background: linear-gradient(180deg, rgba(45,212,191,0.06), rgba(45,212,191,0.01)), var(--bg-card);
+  border-color: var(--accent-border);
+}
+
+.door-tag {
+  align-self: flex-start;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: var(--accent-dim);
+  border: 1px solid var(--accent-border);
+  border-radius: 100px;
+  padding: 5px 12px;
+  margin-bottom: 14px;
+}
+
+.door-tag.neutral {
+  color: var(--text-subtle);
+  background: var(--bg-elevated);
+  border-color: var(--border);
+}
+
+.door-card h3 {
+  font-family: var(--font-display);
+  font-size: 21px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+
+.door-price {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--gold);
+  margin-bottom: 14px;
+}
+
+.door-fit {
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--text);
+  border-left: 2px solid var(--accent-border);
+  padding-left: 12px;
+  margin-bottom: 14px;
+}
+
+.door-body {
+  font-size: 14.5px;
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin-bottom: 22px;
+}
+
+.door-card .btn-primary,
+.door-card .btn-secondary {
+  align-self: flex-start;
+  margin-top: auto;
+}
+
 /* ─── Mobile ─────────────────────────────────────────── */
 
 @media (max-width: 768px) {
   section { padding: 64px 0; }
+  .door-grid { grid-template-columns: 1fr; gap: 16px; }
 
   #hero { padding: 64px 0 56px; }
 
@@ -1744,6 +1849,7 @@ footer .container {
   .data-card { font-size: 11px; }
 
   .hero-cta-row { flex-direction: column; align-items: flex-start; }
+  .cta-center .hero-cta-row { align-items: center; }
 
   .quote-bar { grid-template-columns: 1fr; gap: 12px; }
   .audit-grid { grid-template-columns: 1fr; }
