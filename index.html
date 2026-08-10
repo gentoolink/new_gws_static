@@ -94,6 +94,28 @@
       },
       "mainEntity": {
         "@id": "https://gentoolinkwebservices.com/#faq"
+      },
+      "video": {
+        "@id": "https://gentoolinkwebservices.com/#cbc-ai-web-video"
+      }
+    },
+    {
+      "@type": "VideoObject",
+      "@id": "https://gentoolinkwebservices.com/#cbc-ai-web-video",
+      "name": "Say goodbye to the internet as you know it",
+      "description": "CBC's Nora Young reports for The National on how artificial intelligence is reshaping the way people use the internet — the future of search, and what happens to information online when bots do most of the reading.",
+      "thumbnailUrl": "https://i.ytimg.com/vi/qbkfLxrrtzk/maxresdefault.jpg",
+      "uploadDate": "2026-07-29T16:00:00-07:00",
+      "duration": "PT8M11S",
+      "contentUrl": "https://www.youtube.com/watch?v=qbkfLxrrtzk",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/qbkfLxrrtzk",
+      "publisher": {
+        "@type": "Organization",
+        "name": "CBC News: The National",
+        "url": "https://www.youtube.com/@CBCTheNational"
+      },
+      "isPartOf": {
+        "@id": "https://gentoolinkwebservices.com/#homepage"
       }
     },
     {
@@ -734,6 +756,27 @@
     <p class="lead">And that AI answer doesn't come from your Google ranking. It comes from a completely different set of signals — structured data, Bing indexing, entity authority, content clarity.</p>
     <p class="lead">Which means you could be #1 on Google and completely invisible in AI search. At the same time.</p>
     <p class="hook">The businesses that are showing up didn't get lucky — they're set up correctly.</p>
+
+    <!-- Outside confirmation of the shift described above, from a source nobody
+         can accuse of selling AI audits. Click-to-play facade: see .video-facade
+         in style.css and the swap handler at the bottom of this file. -->
+    <figure class="video-embed">
+      <button type="button" class="video-facade" data-video-id="qbkfLxrrtzk"
+              aria-label="Play video: Say goodbye to the internet as you know it — CBC News: The National, 8 minutes">
+        <picture>
+          <source srcset="/assets/images/cbc-ai-web-video-thumb.webp" type="image/webp">
+          <img src="/assets/images/cbc-ai-web-video-thumb.jpg"
+               alt="CBC News: The National report on how AI is changing search and web traffic"
+               width="1280" height="720" loading="lazy" decoding="async">
+        </picture>
+        <span class="video-play"></span>
+      </button>
+      <figcaption class="video-caption">
+        <strong>&ldquo;Say goodbye to the internet as you know it&rdquo; — CBC News: The National</strong>
+        Don't take my word for it. CBC's Nora Young breaks down the future of search and what happens to information online when bots do most of the reading. Aired July 29, 2026 · 8 min ·
+        <a href="https://www.youtube.com/watch?v=qbkfLxrrtzk" target="_blank" rel="noopener">watch on YouTube</a>.
+      </figcaption>
+    </figure>
   </div>
 </section>
 
@@ -1097,6 +1140,8 @@
 <!-- Botpress webchat widget -->
 <script src="https://cdn.botpress.cloud/webchat/v3.6/inject.js"></script>
 <script src="https://files.bpcontent.cloud/2026/06/16/18/20260616185415-YA0VJZEI.js" defer></script>
+
+<script src="/assets/js/video-embed.js" defer></script>
 
 <script>
   document.querySelectorAll('a[href^="#"]').forEach(a => {

@@ -71,7 +71,7 @@
         }
       },
       "datePublished": "2026-05-24",
-      "dateModified": "2026-05-24",
+      "dateModified": "2026-08-10",
       "url": "https://gentoolinkwebservices.com/blog-semantic-markup-ai-ready.html",
       "image": {
         "@type": "ImageObject",
@@ -100,6 +100,28 @@
         "@id": "https://gentoolinkwebservices.com/blog.html#blog",
         "name": "AI & Web Tips for Small Business",
         "url": "https://gentoolinkwebservices.com/blog.html"
+      },
+      "video": {
+        "@id": "https://gentoolinkwebservices.com/blog-semantic-markup-ai-ready.html#cbc-ai-web-video"
+      }
+    },
+    {
+      "@type": "VideoObject",
+      "@id": "https://gentoolinkwebservices.com/blog-semantic-markup-ai-ready.html#cbc-ai-web-video",
+      "name": "Say goodbye to the internet as you know it",
+      "description": "CBC's Nora Young reports for The National on how artificial intelligence is reshaping the way people use the internet — the future of search, and what happens to information online when bots do most of the reading.",
+      "thumbnailUrl": "https://i.ytimg.com/vi/qbkfLxrrtzk/maxresdefault.jpg",
+      "uploadDate": "2026-07-29T16:00:00-07:00",
+      "duration": "PT8M11S",
+      "contentUrl": "https://www.youtube.com/watch?v=qbkfLxrrtzk",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/qbkfLxrrtzk",
+      "publisher": {
+        "@type": "Organization",
+        "name": "CBC News: The National",
+        "url": "https://www.youtube.com/@CBCTheNational"
+      },
+      "isPartOf": {
+        "@id": "https://gentoolinkwebservices.com/blog-semantic-markup-ai-ready.html#article"
       }
     },
     {
@@ -302,6 +324,26 @@
 
     <blockquote>The businesses that win in the AI web aren't just the ones with the best marketing. They're the ones AI can actually read and understand.</blockquote>
 
+    <!-- CBC segment making the same case. Click-to-play facade -- see
+         .video-facade in style.css and /assets/js/video-embed.js. -->
+    <figure class="video-embed">
+      <button type="button" class="video-facade" data-video-id="qbkfLxrrtzk"
+              aria-label="Play video: Say goodbye to the internet as you know it — CBC News: The National, 8 minutes">
+        <picture>
+          <source srcset="/assets/images/cbc-ai-web-video-thumb.webp" type="image/webp">
+          <img src="/assets/images/cbc-ai-web-video-thumb.jpg"
+               alt="CBC News: The National report on how AI is changing search and web traffic"
+               width="1280" height="720" loading="lazy" decoding="async">
+        </picture>
+        <span class="video-play"></span>
+      </button>
+      <figcaption class="video-caption">
+        <strong>&ldquo;Say goodbye to the internet as you know it&rdquo; — CBC News: The National</strong>
+        This isn't a niche prediction from people selling websites. CBC's Nora Young reports on the future of search and what happens to information online when bots do most of the reading — the exact shift the rest of this article is a response to. Aired July 29, 2026 · 8 min ·
+        <a href="https://www.youtube.com/watch?v=qbkfLxrrtzk" target="_blank" rel="noopener">watch on YouTube</a>.
+      </figcaption>
+    </figure>
+
     <h2>So What Does "Machine-Readable" Actually Mean?</h2>
 
     <p>Your website has two layers. There's the layer humans see — the text, the images, the layout. And there's a layer machines read, which is the HTML code underneath.</p>
@@ -395,6 +437,8 @@
     <p class="footer-copy" style="margin-top:8px"><a href="privacy-policy.html" style="color:var(--text-subtle)">Privacy Policy</a></p>
   </div>
 </footer>
+<script src="/assets/js/video-embed.js" defer></script>
+
 <!-- Botpress webchat widget -->
 <script src="https://cdn.botpress.cloud/webchat/v3.6/inject.js"></script>
 <script src="https://files.bpcontent.cloud/2026/06/16/18/20260616185415-YA0VJZEI.js" defer></script>

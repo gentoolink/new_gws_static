@@ -1258,6 +1258,126 @@ footer .container {
   letter-spacing: 0.03em;
 }
 
+/* ─── Video embed (click-to-play facade) ─────────────── */
+/* The facade is a real <button> holding a local still. The YouTube iframe is
+   only created on click, so the page never pays for third-party player JS --
+   or sets a YouTube cookie -- for the majority of visitors who don't press
+   play. Once clicked, the iframe replaces the button in the same frame. */
+
+.video-embed {
+  margin: 36px 0 0;
+}
+
+.video-facade {
+  display: block;
+  position: relative;
+  width: 100%;
+  padding: 0;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--bg-elevated);
+  cursor: pointer;
+  box-shadow: var(--shadow-card);
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.video-facade:hover {
+  border-color: var(--gold-border);
+  transform: translateY(-2px);
+}
+
+.video-facade img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+/* Darkens the still so the gold play button keeps its contrast on any frame. */
+.video-facade::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(7,9,13,0.08) 0%, rgba(7,9,13,0.42) 100%);
+  pointer-events: none;
+}
+
+.video-play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 74px;
+  height: 74px;
+  border-radius: 50%;
+  background: var(--gold-grad);
+  box-shadow: 0 10px 30px -8px rgba(0,0,0,0.85);
+  z-index: 1;
+  transition: transform 0.2s ease;
+}
+
+/* Triangle drawn with borders -- no extra asset to ship. */
+.video-play::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 54%;
+  transform: translate(-50%, -50%);
+  border-style: solid;
+  border-width: 13px 0 13px 21px;
+  border-color: transparent transparent transparent #0b0e14;
+}
+
+.video-facade:hover .video-play {
+  transform: translate(-50%, -50%) scale(1.08);
+}
+
+.video-embed iframe {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.video-caption {
+  margin-top: 14px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+
+.video-caption strong {
+  display: block;
+  color: var(--text);
+  font-family: var(--font-display);
+  font-size: 15.5px;
+  margin-bottom: 4px;
+}
+
+/* Inside an article the embed sits between paragraphs, so it needs room below
+   as well -- on the homepage it's the last thing in its section. */
+.prose-dark .video-embed {
+  margin: 32px 0 34px;
+}
+
+@media (max-width: 768px) {
+  .video-embed { margin-top: 28px; }
+  .prose-dark .video-embed { margin: 26px 0 28px; }
+  .video-play { width: 58px; height: 58px; }
+  .video-play::before { border-width: 10px 0 10px 16px; }
+  .video-caption { font-size: 13.5px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .video-facade,
+  .video-play { transition: none; }
+  .video-facade:hover { transform: none; }
+  .video-facade:hover .video-play { transform: translate(-50%, -50%); }
+}
+
 /* ─── Audit includes grid ────────────────────────────── */
 
 .audit-grid {
