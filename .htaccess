@@ -20,6 +20,14 @@ RewriteRule ^media\.html$ / [R=302,L]
 # sitting in public_html after a manual upload.
 RewriteRule ^sitereply\.html$ / [R=301,L]
 
+# Short link for the Microsoft Bookings page. The real URL is a 100+ character
+# GUID that can't be read out on the phone or printed on a card, so /book fronts
+# it and every CTA on the site points here instead of hard-coding it.
+# 302, not 301: if the booking page is ever recreated the URL changes, and a
+# cached permanent redirect would be unfixable in visitors' browsers.
+# NE keeps mod_rewrite from re-escaping the @ and & in the target.
+RewriteRule ^book/?$ https://outlook.office.com/bookwithme/user/824a9f3b89dd46a493054c64f21cf610@gentoolinkwebservices.com?anonymous&ismsaljsauthenabled&ep=plink [R=302,NE,L]
+
 # Retired landing pages left in /_archive/ on the server from an old upload.
 # They are not in the repo, were still returning 200 with "index, follow", and
 # one advertised $3,997 -- contradicting current pricing and competing with the

@@ -1834,6 +1834,21 @@ footer .container {
   background: var(--accent-dim);
 }
 
+/* Booking is the primary way in here, email the fallback -- stacked so the
+   two never compete for the same line on a narrow strip. */
+.local-strip-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.local-strip-actions .btn-primary,
+.local-strip-actions .btn-secondary {
+  text-align: center;
+  white-space: nowrap;
+}
+
 /* ─── Two doors: pick your audit ─────────────────────── */
 
 .door-grid {
