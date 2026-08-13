@@ -17,6 +17,30 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SITE = "https://gentoolinkwebservices.com"
 OG_IMG = f"{SITE}/assets/images/og-default.png"
 
+# Reach declared by the #organization node. The named cities give AI assistants
+# concrete towns to cite us for; BC and Canada keep the org from reading as a
+# six-town operation, since the build work is delivered remotely. Kept separate
+# from CITIES below on purpose — this is who we serve, not which landing pages
+# happen to exist.
+ORG_AREA_SERVED = [
+    {
+        "@type": "City",
+        "name": name,
+        "containedInPlace": {"@type": "AdministrativeArea", "name": "British Columbia"},
+    }
+    for name in [
+        "Vanderhoof",
+        "Prince George",
+        "Fort St. James",
+        "Fraser Lake",
+        "Burns Lake",
+        "Quesnel",
+    ]
+] + [
+    {"@type": "AdministrativeArea", "name": "British Columbia"},
+    {"@type": "Country", "name": "Canada"},
+]
+
 # ─────────────────────────────────────────────────────────────────────────────
 # Shared shell
 # ─────────────────────────────────────────────────────────────────────────────
@@ -908,7 +932,7 @@ def identity_nodes():
                 "addressRegion": "BC",
                 "addressCountry": "CA",
             },
-            "areaServed": {"@type": "Country", "name": "Canada"},
+            "areaServed": ORG_AREA_SERVED,
             "priceRange": "$$",
             "sameAs": [
                 "https://www.linkedin.com/in/kenmcgonigal/",
