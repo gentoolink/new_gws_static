@@ -1258,6 +1258,60 @@ footer .container {
   letter-spacing: 0.03em;
 }
 
+/* ─── Client reviews ─────────────────────────────────── */
+/* Cards borrow the quote-card treatment so reviews read as part of the
+   same family, with the gold rule moved to the top to make room for the
+   star row. */
+
+.review-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  align-items: start;
+  margin-top: 28px;
+}
+
+.review-card {
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0)), var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-top: 3px solid var(--gold);
+  border-radius: 0 0 10px 10px;
+  padding: 20px 24px;
+  box-shadow: var(--shadow-card);
+}
+
+.review-stars {
+  color: var(--gold);
+  font-size: 15px;
+  letter-spacing: 0.12em;
+  margin-bottom: 10px;
+}
+
+.review-text {
+  font-size: 15px;
+  color: #c4ccd6;
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+
+.review-meta {
+  font-size: 12px;
+  color: var(--text-subtle);
+  font-weight: 600;
+  letter-spacing: 0.03em;
+}
+
+.review-date {
+  font-weight: 400;
+  opacity: 0.75;
+}
+
+.review-footnote {
+  margin-top: 22px;
+  font-size: 14px;
+  color: var(--text-subtle);
+}
+
 /* ─── Video embed (click-to-play facade) ─────────────── */
 /* The facade is a real <button> holding a local still. The YouTube iframe is
    only created on click, so the page never pays for third-party player JS --
@@ -1990,6 +2044,7 @@ footer .container {
   .cta-center .hero-cta-row { align-items: center; }
 
   .quote-bar { grid-template-columns: 1fr; gap: 12px; }
+  .review-grid { grid-template-columns: 1fr; gap: 14px; }
   .audit-grid { grid-template-columns: 1fr; }
   .tier-header { flex-direction: row; }
   .tier-card { padding: 28px 22px; }
