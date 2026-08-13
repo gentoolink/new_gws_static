@@ -11,16 +11,71 @@ Run after build_local_pages.py:
 
 import os
 import re
+import subprocess
 
 from build_local_pages import CITIES, INDUSTRIES, SERVICES, SITE, footer_areas
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-LASTMOD = "2026-07-24"
+
+# Fallback only — used when git isn't available or a page has no history yet.
+# Every other lastmod is derived per-page from git; see lastmod_for().
+LASTMOD_FALLBACK = "2026-08-12"
+
+# Footer/nav link churn touches every page at once and is not a content change.
+# Stamping the whole site with today's date because a footer link moved is the
+# thing that makes Google stop trusting lastmod, so those commits are skipped
+# when working out when a page last actually changed.
+MECHANICAL = re.compile(
+    r'footer-areas|footer-services-label|footer-area-current|'
+    r'ai-visibility-audit\.html" style="font-size:13px|'
+    r'(google-business-profile-management|ai-phone-receptionist|'
+    r'website-hosting-care-plans)\.html">|'
+    r'web-design-(prince-george|vanderhoof|fort-st-james|fraser-lake|'
+    r'burns-lake|quesnel)\.html">|'
+    r'^</?(div|span)>$|^$'
+)
+
+
+def _git(*args):
+    """Run a git command in the repo root, returning stdout ('' on failure)."""
+    try:
+        return subprocess.run(
+            ("git",) + args, cwd=ROOT, capture_output=True,
+            encoding="utf-8", errors="replace", check=True,
+        ).stdout
+    except (subprocess.CalledProcessError, FileNotFoundError):
+        return ""
+
+
+def lastmod_for(path):
+    """Date of the last commit that made a real content change to `path`.
+
+    Walks back through history skipping commits whose only edits to this file
+    were the sitewide footer/nav link blocks, so a link rollout doesn't reset
+    every page's freshness date.
+    """
+    name = path or "index.html"
+    log = _git("log", "--format=%H|%ad", "--date=short", "--", name).strip()
+    for line in log.splitlines():
+        sha, date = line.split("|")
+        diff = _git("show", "--format=", "--unified=0", sha, "--", name)
+        changed = [
+            l[1:].strip() for l in diff.splitlines()
+            if l[:1] in "+-" and not l.startswith(("+++", "---"))
+        ]
+        if not changed:
+            continue
+        if all(MECHANICAL.search(l) for l in changed):
+            continue
+        return date
+    return LASTMOD_FALLBACK
+
 
 # Existing pages, preserved with their original priorities.
 EXISTING = [
     ("", "weekly", "1.0"),
     ("time-money-audit.html", "monthly", "0.9"),
+    ("ai-visibility-audit.html", "monthly", "0.9"),
     ("services.html", "monthly", "0.9"),
     ("contact.html", "monthly", "0.8"),
     ("about.html", "monthly", "0.7"),
@@ -62,7 +117,7 @@ def build_sitemap():
     for path, freq, pri in entries:
         lines.append("  <url>")
         lines.append(f"    <loc>{SITE}/{path}</loc>")
-        lines.append(f"    <lastmod>{LASTMOD}</lastmod>")
+        lines.append(f"    <lastmod>{lastmod_for(path)}</lastmod>")
         lines.append(f"    <changefreq>{freq}</changefreq>")
         lines.append(f"    <priority>{pri}</priority>")
         lines.append("  </url>")
