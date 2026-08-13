@@ -1265,10 +1265,16 @@ footer .container {
 
 .review-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
   gap: 20px;
   align-items: start;
   margin-top: 28px;
+}
+
+/* Five reviews: three across, then two. Drop to two columns before the
+   cards get too narrow for the longer quotes to read well. */
+@media (max-width: 1000px) {
+  .review-grid { grid-template-columns: 1fr 1fr; }
 }
 
 .review-card {
