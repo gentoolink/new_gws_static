@@ -743,6 +743,82 @@
   </div>
 </section>
 
+<!-- ─── Free self-check ───────────────────────────────────── -->
+<!-- Scores readiness from three self-reported answers, not visibility.
+     The paid audit is what measures. See assets/js/visibility-check.js. -->
+<section id="visibility-check">
+  <div class="container">
+    <div class="section-label">Free · 60 seconds · No email required</div>
+    <h2>What's your AI visibility score?</h2>
+    <p class="lead">Three questions about things you either know or you don't. Your score is worked out from those answers and shown with the arithmetic — nothing gets scanned, nothing gets guessed, and you don't have to give me your email to see it.</p>
+
+    <form class="vc-form" id="vc-form" novalidate>
+
+      <fieldset class="vc-q">
+        <legend><span class="vc-qnum">1</span> Is your website indexed by Bing?</legend>
+        <p class="vc-hint">Bing is the index behind ChatGPT Search. If Bing doesn't have your site, ChatGPT can't cite it — no matter how well you rank on Google. This is the hardest gate on the list, which is why it's worth the most.</p>
+        <label class="vc-opt">
+          <input type="radio" name="q1" value="40" data-max="40">
+          <span>Yes — I've seen my pages in Bing Webmaster Tools or in a Bing search</span>
+        </label>
+        <label class="vc-opt">
+          <input type="radio" name="q1" value="15" data-max="40" data-unsure="true">
+          <span>Probably, but I've never actually checked</span>
+        </label>
+        <label class="vc-opt">
+          <input type="radio" name="q1" value="0" data-max="40" data-unsure="true">
+          <span>No, or I don't know</span>
+        </label>
+      </fieldset>
+
+      <fieldset class="vc-q">
+        <legend><span class="vc-qnum">2</span> Is your Google Business Profile claimed and current?</legend>
+        <p class="vc-hint">Hours, categories, and services on a verified profile are among the most reliable facts an assistant can pick up about a local business — and one of the few you control directly.</p>
+        <label class="vc-opt">
+          <input type="radio" name="q2" value="35" data-max="35">
+          <span>Claimed, and the hours, categories, and services are up to date</span>
+        </label>
+        <label class="vc-opt">
+          <input type="radio" name="q2" value="15" data-max="35">
+          <span>Claimed, but I haven't touched it in a year or more</span>
+        </label>
+        <label class="vc-opt">
+          <input type="radio" name="q2" value="0" data-max="35" data-unsure="true">
+          <span>Not claimed, or I'm not sure</span>
+        </label>
+      </fieldset>
+
+      <fieldset class="vc-q">
+        <legend><span class="vc-qnum">3</span> Does your site have structured data describing your business?</legend>
+        <p class="vc-hint">JSON-LD markup stating who you are, where you work, and what you sell. It isn't a requirement for appearing in AI answers — Google is clear about that — but it removes the guesswork, and it keeps you eligible for the search features that still exist.</p>
+        <label class="vc-opt">
+          <input type="radio" name="q3" value="25" data-max="25">
+          <span>Yes — and it's been run through a validator</span>
+        </label>
+        <label class="vc-opt">
+          <input type="radio" name="q3" value="10" data-max="25" data-unsure="true">
+          <span>Something came with the site build, but it's never been checked</span>
+        </label>
+        <label class="vc-opt">
+          <input type="radio" name="q3" value="0" data-max="25" data-unsure="true">
+          <span>No, or I don't know</span>
+        </label>
+      </fieldset>
+
+      <div class="vc-actions">
+        <button type="submit" class="btn-primary vc-submit">Show my score</button>
+        <p class="vc-error" id="vc-error" hidden>Answer all three to see a score.</p>
+      </div>
+    </form>
+
+    <div class="vc-result" id="vc-result" role="status" aria-live="polite" hidden></div>
+
+    <noscript>
+      <p class="vc-disclaimer">This self-check needs JavaScript to add up your answers. The three questions above are the whole of it, though — Bing indexing, a current Google Business Profile, and valid structured data. If you can't answer them confidently, that is itself the finding.</p>
+    </noscript>
+  </div>
+</section>
+
 <!-- ─── The Offer ─────────────────────────────────────────── -->
 <section id="ai-visibility-audit" style="background: var(--bg-card);">
   <div class="container">
@@ -1162,6 +1238,7 @@
 <script src="https://files.bpcontent.cloud/2026/06/16/18/20260616185415-YA0VJZEI.js" defer></script>
 
 <script src="/assets/js/video-embed.js" defer></script>
+<script src="/assets/js/visibility-check.js" defer></script>
 
 <script>
   document.querySelectorAll('a[href^="#"]').forEach(a => {
