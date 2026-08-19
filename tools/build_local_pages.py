@@ -57,6 +57,9 @@ ORG_AREA_SERVED = [
         "Fraser Lake",
         "Burns Lake",
         "Quesnel",
+        "Kelowna",
+        "Vernon",
+        "Penticton",
     ]
 ] + [
     {"@type": "AdministrativeArea", "name": "British Columbia"},
