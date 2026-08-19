@@ -2,10 +2,28 @@
 """
 Generates the local city pages and industry pages for gentoolinkwebservices.com.
 
-Output is plain static HTML in the repo root — no build step is needed to serve
-the site, and the generated files are safe to hand-edit afterward. Re-running
-this script overwrites them, so if you edit a page by hand, either fold the
-change back into the CONTENT dicts below or stop running the script.
+    ####################################################################
+    #  DO NOT RUN THIS WITHOUT READING THE NEXT PARAGRAPH.             #
+    ####################################################################
+
+STALE AS OF 2026-08-19. The pages in the repo root have been hand-edited
+well past what this script produces, and running it WILL destroy work.
+A trial run on 2026-08-19 showed it would have stripped, from 18 live pages:
+
+  * the "More Services" footer block and several nav links
+  * priceSpecification nodes from the Service schema
+  * postalCode and dateModified from the page schema
+  * FAQ answer text that had been rewritten by hand
+  * every price on the site, reverting to a ladder two generations old
+    (hosting at $25, care plans at $40, the Time & Money Audit at $497)
+
+The price constants below have since been brought up to date, so the damage
+would be smaller now — but the structural losses above are still real and
+this script is NOT the source of truth. The HTML files are.
+
+Before running it again, diff its output against the live pages and fold
+every difference back into the templates here. Until that is done, add new
+pages by copying an existing page in the repo root and editing it.
 
     python tools/build_local_pages.py
 """
@@ -16,6 +34,10 @@ import os
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SITE = "https://gentoolinkwebservices.com"
 OG_IMG = f"{SITE}/assets/images/og-default.png"
+
+# Stamped onto every generated WebPage node. Bump when the content changes
+# materially; the pages carried this by hand before the generator did.
+DATE_MODIFIED = "2026-08-19"
 
 # Reach declared by the #organization node. The named cities give AI assistants
 # concrete towns to cite us for; BC and Canada keep the org from reading as a
@@ -193,14 +215,14 @@ SHELL = """<!DOCTYPE html>
 CITIES = [
     {
         "slug": "web-design-prince-george",
-        "meta_desc": "Website design and AI search visibility for Prince George businesses. Built to rank on Google and get cited by ChatGPT. Sites from $2,500.",
+        "meta_desc": "Website design and AI search visibility for Prince George businesses. Built to rank on Google and get cited by ChatGPT. Sites from $3,500.",
         "city": "Prince George",
         "region": "BC",
         "eyebrow": "Prince George, BC · Websites &amp; AI Visibility",
         "h1": "Web Design in Prince George That Customers — and AI — Can Actually Find",
         "hero_sub": "Most Prince George businesses already have a website. Far fewer show up when someone asks ChatGPT or Google AI for a recommendation. I build sites that do both.",
         "title": "Web Design Prince George, BC | Gentoolink Web Services",
-        "desc": "Website design and AI search visibility for Prince George businesses. Built to rank on Google and get cited by ChatGPT and Perplexity. Sites from $2,500, audits $1,000.",
+        "desc": "Website design and AI search visibility for Prince George businesses. Built to rank on Google and get cited by ChatGPT and Perplexity. Sites from $3,500, audits $1,250.",
         "keywords": "web design Prince George, website designer Prince George BC, small business website Prince George, SEO Prince George, AI visibility Prince George",
         "local_h2": "Prince George is the most competitive market I work in.",
         "local_body": [
@@ -212,25 +234,25 @@ CITIES = [
         "travel": "Prince George is about an hour east of my office in Vanderhoof on Highway 16. In-person visits are easy to arrange, and most web work happens remotely either way.",
         "faqs": [
             ("Do you build websites for businesses in Prince George?",
-             "Yes. Gentoolink Web Services builds small business websites for Prince George and the surrounding region, starting at $800 for a single page and $2,500 for a typical 5–8 page site with copywriting included. Ken McGonigal is based in Vanderhoof, about an hour west on Highway 16, and travels to Prince George for in-person work. Most design and build work is done remotely, so distance rarely affects the timeline."),
+             "Yes. Gentoolink Web Services builds small business websites for Prince George and the surrounding region, starting at $2,000 for a single-offer campaign page and $3,500 for a typical 5–8 page site with copywriting included. Ken McGonigal is based in Vanderhoof, about an hour west on Highway 16, and travels to Prince George for in-person work. Most design and build work is done remotely, so distance rarely affects the timeline."),
             ("How much does a website cost in Prince George?",
-             "A single-page site starts at $800. A typical 5–8 page local business website is $2,500 and a product launch site $3,500, both with the copywriting written for you rather than sold as an extra. Most builds run 2–4 weeks. Domain and DNS setup is included, and an online store or logo design can be added for $500 each. The $1,000 AI Visibility Audit checks whether an existing site appears in ChatGPT, Perplexity, and Google AI Overviews. The $2,500 AI Search Foundation Package implements the fixes. All prices are in Canadian dollars."),
+             "A single-offer campaign or event page starts at $2,000. A typical 5–8 page local business website is $3,500 and a product launch site $5,000, both with the copywriting written for you rather than sold as an extra. Most builds run 2–4 weeks. Domain and DNS setup is included, and an online store can be added for $1,200 and logo design for $900. The $1,250 AI Visibility Audit checks whether an existing site appears in ChatGPT, Perplexity, and Google AI Overviews. The $3,500 AI Search Foundation Package implements the fixes. All prices are in Canadian dollars."),
             ("Why doesn't my Prince George business show up in ChatGPT?",
              "Usually one of three reasons: the site has no structured data, so AI tools can't reliably tell what the business does or where it operates; the site isn't indexed in Bing, which is what ChatGPT's web search draws on; or the Google Business Profile is incomplete or inconsistent with the website. In a market as crowded as Prince George, any one of these is enough to keep a business off the shortlist."),
             ("Do I need a new website, or can you fix the one I have?",
-             "Often the existing site is fine and only needs the AI visibility work — schema markup, Bing indexing, content restructuring, and Google Business Profile cleanup. The $1,000 AI Visibility Audit tells you which situation you're in before you spend anything on a rebuild."),
+             "Often the existing site is fine and only needs the AI visibility work — schema markup, Bing indexing, content restructuring, and Google Business Profile cleanup. The $1,250 AI Visibility Audit tells you which situation you're in before you spend anything on a rebuild."),
         ],
     },
     {
         "slug": "web-design-vanderhoof",
-        "meta_desc": "Local website design and AI search visibility for Vanderhoof businesses. Vanderhoof-based, Chamber member. Sites from $2,500, in-person audits.",
+        "meta_desc": "Local website design and AI search visibility for Vanderhoof businesses. Vanderhoof-based, Chamber member. Sites from $3,500, in-person audits.",
         "city": "Vanderhoof",
         "region": "BC",
         "eyebrow": "Vanderhoof, BC · My Home Town",
         "h1": "Web Design in Vanderhoof, BC — From Someone Who Lives Here",
-        "hero_sub": "I'm on Burrard Avenue, not in a call centre in another province. Websites from $800, AI visibility audits at $1,000, and an in-person Time &amp; Money Audit for businesses right here in the Nechako Valley.",
+        "hero_sub": "I'm on Burrard Avenue, not in a call centre in another province. Websites from $2,000, AI visibility audits at $1,250, and an in-person Time &amp; Money Audit for businesses right here in the Nechako Valley.",
         "title": "Web Design Vanderhoof, BC | Gentoolink Web Services",
-        "desc": "Local website design and AI search visibility for Vanderhoof businesses. Vanderhoof-based, Chamber of Commerce member. Sites from $2,500, in-person audits available.",
+        "desc": "Local website design and AI search visibility for Vanderhoof businesses. Vanderhoof-based, Chamber of Commerce member. Sites from $3,500, in-person audits available.",
         "keywords": "web design Vanderhoof, website designer Vanderhoof BC, small business website Vanderhoof, Nechako Valley web design, AI visibility Vanderhoof",
         "local_h2": "The advantage of hiring someone who lives in the valley.",
         "local_body": [
@@ -242,9 +264,9 @@ CITIES = [
         "travel": "I'm based in Vanderhoof, so in-person work here costs no travel time. That's also why the in-person Time &amp; Money Audit starts here.",
         "faqs": [
             ("Do you work with businesses in Vanderhoof in person?",
-             "Yes. Ken McGonigal is based in Vanderhoof and is a member of the Vanderhoof Chamber of Commerce. In-person meetings are standard for Vanderhoof businesses, and the Time & Money Audit — a $497 in-person review of where hours and dollars leak out of your admin work — was built specifically for businesses in this area."),
+             "Yes. Ken McGonigal is based in Vanderhoof and is a member of the Vanderhoof Chamber of Commerce. In-person meetings are standard for Vanderhoof businesses, and the Time & Money Audit — a $1,500 in-person review of where hours and dollars leak out of your admin work — was built specifically for businesses in this area."),
             ("How much does a small business website cost in Vanderhoof?",
-             "A single-page site starts at $800. A typical 5–8 page local business site is $2,500 with the copywriting written for you and included, usually live in 2–4 weeks. Every project is quoted in writing before work begins. The $1,000 AI Visibility Audit checks whether an existing business appears in ChatGPT, Perplexity, and Google AI Overviews. The $497 Time & Money Audit is a separate, in-person service focused on admin efficiency rather than web presence. All prices are in Canadian dollars."),
+             "A single-offer campaign or event page starts at $2,000. A typical 5–8 page local business site is $3,500 with the copywriting written for you and included, usually live in 2–4 weeks. Every project is quoted in writing before work begins. The $1,250 AI Visibility Audit checks whether an existing business appears in ChatGPT, Perplexity, and Google AI Overviews. The $1,500 Time & Money Audit is a separate, in-person service focused on admin efficiency rather than web presence. All prices are in Canadian dollars."),
             ("My customers all know me already. Why would I need a website?",
              "Word of mouth still works in Vanderhoof, and a website doesn't replace it. What a website does is capture the customers word of mouth misses: people who just moved to town, people searching from Fraser Lake or Fort St. James, and the growing number of people who ask an AI assistant for a recommendation before they ask a neighbour."),
             ("What areas around Vanderhoof do you serve?",
@@ -253,14 +275,14 @@ CITIES = [
     },
     {
         "slug": "web-design-fort-st-james",
-        "meta_desc": "Website design and AI search visibility for Fort St. James businesses, built for a town where visitors search before they arrive. From $2,500.",
+        "meta_desc": "Website design and AI search visibility for Fort St. James businesses, built for a town where visitors search before they arrive. From $3,500.",
         "city": "Fort St. James",
         "region": "BC",
         "eyebrow": "Fort St. James, BC · Websites &amp; AI Visibility",
         "h1": "Web Design in Fort St. James — Get Found Before Visitors Arrive",
         "hero_sub": "Half your potential customers are deciding where to eat, stay, and hire before they ever reach Stuart Lake. If your business isn't in that search, you never get the chance to impress them.",
         "title": "Web Design Fort St. James, BC | Gentoolink Web Services",
-        "desc": "Website design and AI search visibility for Fort St. James businesses. Built for a town where visitors search before they arrive. Sites from $2,500. Vanderhoof-based, in person.",
+        "desc": "Website design and AI search visibility for Fort St. James businesses. Built for a town where visitors search before they arrive. Sites from $3,500. Vanderhoof-based, in person.",
         "keywords": "web design Fort St. James, website designer Fort St James BC, small business website Fort St. James, Stuart Lake tourism website, AI visibility Fort St. James",
         "local_h2": "In a visitor town, the search happens before the drive.",
         "local_body": [
@@ -272,25 +294,25 @@ CITIES = [
         "travel": "Fort St. James is about 45 minutes north of Vanderhoof on Highway 27. In-person visits are straightforward, including for the Time &amp; Money Audit.",
         "faqs": [
             ("Do you serve businesses in Fort St. James?",
-             "Yes. Fort St. James is about 45 minutes north of Vanderhoof on Highway 27, and it's part of Gentoolink Web Services' regular in-person service area. That includes both web design work and the $497 in-person Time & Money Audit."),
+             "Yes. Fort St. James is about 45 minutes north of Vanderhoof on Highway 27, and it's part of Gentoolink Web Services' regular in-person service area. That includes both web design work and the $1,500 in-person Time & Money Audit."),
             ("Is a website worth it for a business in a town this size?",
              "In a visitor town, usually yes — and for a different reason than in a city. Fort St. James draws people who aren't local: Stuart Lake visitors, tourists heading to the national historic site, and work crews passing through. Those people search before they arrive, and a business with no web presence is invisible to all of them."),
             ("How much does a website cost in Fort St. James?",
-             "A single-page site starts at $800. A typical 5–8 page local business site is $2,500 with the copywriting written for you and included, usually live in 2–4 weeks. Every project is quoted in writing before work begins. The $1,000 AI Visibility Audit checks whether an existing business shows up in ChatGPT, Perplexity, and Google AI Overviews. All prices are in Canadian dollars."),
+             "A single-offer campaign or event page starts at $2,000. A typical 5–8 page local business site is $3,500 with the copywriting written for you and included, usually live in 2–4 weeks. Every project is quoted in writing before work begins. The $1,250 AI Visibility Audit checks whether an existing business shows up in ChatGPT, Perplexity, and Google AI Overviews. All prices are in Canadian dollars."),
             ("How hard is it to rank for searches in Fort St. James?",
              "Considerably easier than in Prince George. In a town this size there are often only a handful of businesses in any given category, and most have incomplete or missing structured data. That makes it realistic to become the default AI and search answer for your category here — and to hold that position."),
         ],
     },
     {
         "slug": "web-design-fraser-lake",
-        "meta_desc": "Website design and AI search visibility for Fraser Lake businesses. Stop losing local searches to out-of-town competitors. Sites from $2,500.",
+        "meta_desc": "Website design and AI search visibility for Fraser Lake businesses. Stop losing local searches to out-of-town competitors. Sites from $3,500.",
         "city": "Fraser Lake",
         "region": "BC",
         "eyebrow": "Fraser Lake, BC · Websites &amp; AI Visibility",
         "h1": "Web Design in Fraser Lake — Don't Lose the Job to a Prince George Search Result",
         "hero_sub": "When someone in Fraser Lake searches for what you do, the results often fill up with businesses an hour away. A properly built local site fixes that.",
         "title": "Web Design Fraser Lake, BC | Gentoolink Web Services",
-        "desc": "Website design and AI search visibility for Fraser Lake businesses. Stop losing local searches to out-of-town competitors. Sites from $2,500. Vanderhoof-based, in person.",
+        "desc": "Website design and AI search visibility for Fraser Lake businesses. Stop losing local searches to out-of-town competitors. Sites from $3,500. Vanderhoof-based, in person.",
         "keywords": "web design Fraser Lake, website designer Fraser Lake BC, small business website Fraser Lake, Highway 16 web design, AI visibility Fraser Lake",
         "local_h2": "The problem isn't your competitors in town. It's the ones an hour away.",
         "local_body": [
@@ -302,25 +324,25 @@ CITIES = [
         "travel": "Fraser Lake is about 40 minutes west of Vanderhoof on Highway 16. In-person visits are easy to arrange.",
         "faqs": [
             ("Do you build websites for Fraser Lake businesses?",
-             "Yes. Fraser Lake is about 40 minutes west of Vanderhoof on Highway 16 and is part of Gentoolink Web Services' regular service area, including in-person visits and the $497 Time & Money Audit."),
+             "Yes. Fraser Lake is about 40 minutes west of Vanderhoof on Highway 16 and is part of Gentoolink Web Services' regular service area, including in-person visits and the $1,500 Time & Money Audit."),
             ("Why do out-of-town businesses outrank me in local searches?",
              "Because they've given search engines and AI tools clearer signals about who they serve. A business in Prince George with proper structured data listing its service area will often outrank a Fraser Lake business with no website at all — even for a Fraser Lake customer. The fix is to publish those same signals for your own business."),
             ("How much does a website cost in Fraser Lake?",
-             "A single-page site starts at $800. A typical 5–8 page local business site is $2,500 with the copywriting written for you and included, usually live in 2–4 weeks. Every project is quoted in writing before work begins. The $1,000 AI Visibility Audit checks whether an existing business appears in ChatGPT, Perplexity, and Google AI Overviews. All prices are in Canadian dollars."),
+             "A single-offer campaign or event page starts at $2,000. A typical 5–8 page local business site is $3,500 with the copywriting written for you and included, usually live in 2–4 weeks. Every project is quoted in writing before work begins. The $1,250 AI Visibility Audit checks whether an existing business appears in ChatGPT, Perplexity, and Google AI Overviews. All prices are in Canadian dollars."),
             ("Is it realistic for a small Fraser Lake business to rank first?",
              "Yes, more so than in a larger centre. Search competition scales with the number of businesses publishing good signals, and in Fraser Lake that number is very low. A well-built page with correct structured data frequently takes the top local position within a few months."),
         ],
     },
     {
         "slug": "web-design-burns-lake",
-        "meta_desc": "Website design and AI search visibility for Burns Lake and the Lakes District. Built to capture visitor and regional search. From $2,500.",
+        "meta_desc": "Website design and AI search visibility for Burns Lake and the Lakes District. Built to capture visitor and regional search. From $3,500.",
         "city": "Burns Lake",
         "region": "BC",
         "eyebrow": "Burns Lake, BC · Websites &amp; AI Visibility",
         "h1": "Web Design in Burns Lake — Built for the Lakes District",
         "hero_sub": "Burns Lake pulls in visitors from well beyond the village — riders, anglers, and travellers along Highway 16. Being findable to them is a different job than being known in town.",
         "title": "Web Design Burns Lake, BC | Gentoolink Web Services",
-        "desc": "Website design and AI search visibility for Burns Lake and Lakes District businesses. Built to capture visitor and regional search. Sites from $2,500. Northern BC based.",
+        "desc": "Website design and AI search visibility for Burns Lake and Lakes District businesses. Built to capture visitor and regional search. Sites from $3,500. Northern BC based.",
         "keywords": "web design Burns Lake, website designer Burns Lake BC, small business website Burns Lake, Lakes District web design, AI visibility Burns Lake",
         "local_h2": "Burns Lake's reach is bigger than its population.",
         "local_body": [
@@ -332,9 +354,9 @@ CITIES = [
         "travel": "Burns Lake is about an hour and 15 minutes west of Vanderhoof on Highway 16. In-person visits can be arranged; most web work is remote.",
         "faqs": [
             ("Do you serve Burns Lake and the Lakes District?",
-             "Yes. Burns Lake is about an hour and 15 minutes west of Vanderhoof on Highway 16. Web design and AI visibility work is done remotely, and in-person visits — including the $497 Time & Money Audit — can be arranged."),
+             "Yes. Burns Lake is about an hour and 15 minutes west of Vanderhoof on Highway 16. Web design and AI visibility work is done remotely, and in-person visits — including the $1,500 Time & Money Audit — can be arranged."),
             ("How much does a website cost in Burns Lake?",
-             "A single-page site starts at $800. A typical 5–8 page local business site is $2,500 with the copywriting written for you and included, usually live in 2–4 weeks. Every project is quoted in writing before work begins. The $1,000 AI Visibility Audit checks whether an existing business appears in ChatGPT, Perplexity, and Google AI Overviews. All prices are in Canadian dollars."),
+             "A single-offer campaign or event page starts at $2,000. A typical 5–8 page local business site is $3,500 with the copywriting written for you and included, usually live in 2–4 weeks. Every project is quoted in writing before work begins. The $1,250 AI Visibility Audit checks whether an existing business appears in ChatGPT, Perplexity, and Google AI Overviews. All prices are in Canadian dollars."),
             ("Can a website help with seasonal business?",
              "It's one of the clearer benefits. Seasonal businesses lose visibility in their off months because nothing is reminding search engines they exist. A properly structured site with current content and an accurate Google Business Profile keeps a business appearing in search and AI recommendations year-round, which shortens the ramp when the season turns."),
             ("Do you work with tourism and recreation businesses?",
@@ -343,14 +365,14 @@ CITIES = [
     },
     {
         "slug": "web-design-quesnel",
-        "meta_desc": "Website design and AI search visibility for Quesnel and the Cariboo. Built for local trade and Highway 97 visitor traffic. From $2,500.",
+        "meta_desc": "Website design and AI search visibility for Quesnel and the Cariboo. Built for local trade and Highway 97 visitor traffic. From $3,500.",
         "city": "Quesnel",
         "region": "BC",
         "eyebrow": "Quesnel, BC · Websites &amp; AI Visibility",
         "h1": "Web Design in Quesnel — For Locals and the Highway 97 Traffic",
         "hero_sub": "Quesnel gets two kinds of customers: the ones who live here, and the ones passing through on the Gold Rush Trail. A good site is built to catch both.",
         "title": "Web Design Quesnel, BC | Gentoolink Web Services",
-        "desc": "Website design and AI search visibility for Quesnel and Cariboo businesses. Built for local trade and Highway 97 visitor traffic. Sites from $2,500. Northern BC based.",
+        "desc": "Website design and AI search visibility for Quesnel and Cariboo businesses. Built for local trade and Highway 97 visitor traffic. Sites from $3,500. Northern BC based.",
         "keywords": "web design Quesnel, website designer Quesnel BC, small business website Quesnel, Cariboo web design, AI visibility Quesnel",
         "local_h2": "Two audiences, one website, and most sites only serve one.",
         "local_body": [
@@ -364,7 +386,7 @@ CITIES = [
             ("Do you build websites for Quesnel businesses?",
              "Yes. Gentoolink Web Services works with businesses throughout Northern BC and the Cariboo, including Quesnel. Web design and AI visibility work is done remotely, and in-person visits can be scheduled."),
             ("How much does a website cost in Quesnel?",
-             "A single-page site starts at $800. A typical 5–8 page local business site is $2,500 with the copywriting written for you and included, usually live in 2–4 weeks. Every project is quoted in writing before work begins. The $1,000 AI Visibility Audit checks whether an existing business shows up in ChatGPT, Perplexity, and Google AI Overviews. All prices are in Canadian dollars."),
+             "A single-offer campaign or event page starts at $2,000. A typical 5–8 page local business site is $3,500 with the copywriting written for you and included, usually live in 2–4 weeks. Every project is quoted in writing before work begins. The $1,250 AI Visibility Audit checks whether an existing business shows up in ChatGPT, Perplexity, and Google AI Overviews. All prices are in Canadian dollars."),
             ("How do I get found by visitors passing through on Highway 97?",
              "By making the basics explicit rather than assuming local knowledge: your category, your exact location, your hours, and your service area — stated plainly on the page and encoded in structured data. Visitors and the AI assistants they ask both rely on those signals, because neither has the local context a resident would."),
             ("Do you travel to Quesnel for in-person work?",
@@ -380,13 +402,13 @@ CITIES = [
 INDUSTRIES = [
     {
         "slug": "restaurant-website-design",
-        "meta_desc": "Website design for restaurants and cafes in Northern BC. Menu, hours and specials front and centre, plus structured data for AI search. From $2,500.",
+        "meta_desc": "Website design for restaurants and cafes in Northern BC. Menu, hours and specials front and centre, plus structured data for AI search. From $3,500.",
         "industry": "Restaurants",
         "eyebrow": "Restaurant Websites",
         "h1": "Restaurant Websites That Show the Menu and the Hours",
         "hero_sub": "The two things every diner wants are the two things most restaurant sites bury. Yours won't.",
         "title": "Restaurant Website Design | Gentoolink Web Services",
-        "desc": "Website design for restaurants and cafés in Northern BC. Menu, hours, and specials front and centre — plus the structured data that gets you into AI recommendations. From $2,500.",
+        "desc": "Website design for restaurants and cafés in Northern BC. Menu, hours, and specials front and centre — plus the structured data that gets you into AI recommendations. From $3,500.",
         "keywords": "restaurant website design, cafe website design, menu website, restaurant web design BC, restaurant SEO Northern BC",
         "problem_h2": "What people actually want from a restaurant website.",
         "problem": [
@@ -401,7 +423,7 @@ INDUSTRIES = [
         ],
         "faqs": [
             ("How much does a restaurant website cost?",
-             "Restaurant websites from Gentoolink Web Services start at $2,500 for a typical 5–8 page site, with the copywriting included, and are usually live in 2–4 weeks. That includes a mobile-friendly menu, hours, location, and the structured data needed to appear in Google and AI search results. All prices are in Canadian dollars."),
+             "Restaurant websites from Gentoolink Web Services start at $3,500 for a typical 5–8 page site, with the copywriting included, and are usually live in 2–4 weeks. That includes a mobile-friendly menu, hours, location, and the structured data needed to appear in Google and AI search results. All prices are in Canadian dollars."),
             ("Can I update my menu and specials myself?",
              "Yes. Menu items, prices, and weekly specials can be updated by sending an email — there's no CMS to learn and no login to remember. Changes go live the same day."),
             ("Why shouldn't my menu be a PDF?",
@@ -421,7 +443,7 @@ INDUSTRIES = [
         "h1": "Plumber Websites Built to Get the Phone Ringing",
         "hero_sub": "Nobody browses for a plumber. They have a problem right now, they search, and they call the first business that looks like it can help.",
         "title": "Plumber Website Design | Gentoolink Web Services",
-        "desc": "Website design for plumbers and plumbing contractors in Northern BC. Built for emergency searches, service areas, and AI recommendations. From $2,500.",
+        "desc": "Website design for plumbers and plumbing contractors in Northern BC. Built for emergency searches, service areas, and AI recommendations. From $3,500.",
         "keywords": "plumber website design, plumbing website, plumbing contractor web design, trades website BC, plumber SEO Northern BC",
         "problem_h2": "Plumbing searches are urgent. Your site has about four seconds.",
         "problem": [
@@ -436,13 +458,13 @@ INDUSTRIES = [
         ],
         "faqs": [
             ("How much does a plumber website cost?",
-             "Plumbing websites from Gentoolink Web Services start at $2,500 for a typical 5–8 page site, with the copywriting included, and are usually live in 2–4 weeks. That includes tap-to-call, a full service list, service area markup, and the structured data needed to appear in Google and AI search results. All prices are in Canadian dollars."),
+             "Plumbing websites from Gentoolink Web Services start at $3,500 for a typical 5–8 page site, with the copywriting included, and are usually live in 2–4 weeks. That includes tap-to-call, a full service list, service area markup, and the structured data needed to appear in Google and AI search results. All prices are in Canadian dollars."),
             ("How do I show up when someone searches for an emergency plumber?",
              "Three things matter most: stating explicitly that you handle emergency and after-hours calls, listing every town in your service area in a machine-readable form, and having a complete Google Business Profile. Most plumbing sites do none of the three, which is why the results are usually easy to take."),
             ("Should I list every town I serve?",
-             "Yes — and not just as a sentence. Service areas encoded as structured data let search engines and AI assistants match your business to searches in each specific town. A plumber in Vanderhoof who properly lists Fort St. James and Fraser Lake will appear for searches in all three."),
+             "Yes — and not just as a sentence. Service areas encoded as structured data let search engines and AI assistants match your business to searches in each specific town. A plumber in Vanderhoof who properly lists Fort St. James and Fraser Lake is eligible to appear for searches in all three."),
             ("Will this help me show up in ChatGPT?",
-             "It's the main point. When someone asks an AI assistant for a plumber in a specific town, the assistant needs to know your trade, your service area, and your availability in a readable form. The $1,000 AI Visibility Audit checks whether that's currently true for your business."),
+             "It's the main point. When someone asks an AI assistant for a plumber in a specific town, the assistant needs to know your trade, your service area, and your availability in a readable form. The $1,250 AI Visibility Audit checks whether that's currently true for your business."),
         ],
     },
     {
@@ -452,7 +474,7 @@ INDUSTRIES = [
         "h1": "Electrician Websites That Win Both Kinds of Work",
         "hero_sub": "Residential service calls and commercial contracts get found in completely different ways. Most electrical sites are built for only one.",
         "title": "Electrician Website Design | Gentoolink Web Services",
-        "desc": "Website design for electricians and electrical contractors in Northern BC. Built for residential service calls and commercial bids alike. From $2,500.",
+        "desc": "Website design for electricians and electrical contractors in Northern BC. Built for residential service calls and commercial bids alike. From $3,500.",
         "keywords": "electrician website design, electrical contractor website, trades website BC, electrician SEO Northern BC, commercial electrical website",
         "problem_h2": "A homeowner and a general contractor are not looking for the same thing.",
         "problem": [
@@ -467,7 +489,7 @@ INDUSTRIES = [
         ],
         "faqs": [
             ("How much does an electrician website cost?",
-             "Electrical contractor websites from Gentoolink Web Services start at $2,500 for a typical 5–8 page site, with the copywriting included, and are usually live in 2–4 weeks. That includes licensing details, a full service list, service area markup, and structured data for Google and AI search. All prices are in Canadian dollars."),
+             "Electrical contractor websites from Gentoolink Web Services start at $3,500 for a typical 5–8 page site, with the copywriting included, and are usually live in 2–4 weeks. That includes licensing details, a full service list, service area markup, and structured data for Google and AI search. All prices are in Canadian dollars."),
             ("Should my site target residential or commercial work?",
              "Both, but on separate paths. A homeowner with a dead outlet and a general contractor pricing a tenant improvement need completely different information. One site can serve both if it's organised so each visitor reaches their answer immediately, rather than forcing them through content written for the other."),
             ("What should an electrical contractor list on their website?",
@@ -483,7 +505,7 @@ INDUSTRIES = [
         "h1": "Pizza Shop Websites Built for the Order, Not the Browse",
         "hero_sub": "Someone deciding on dinner gives you about ten seconds. Menu, price, phone number, done.",
         "title": "Pizza Shop Website Design | Gentoolink Web Services",
-        "desc": "Website design for pizzerias and fast-casual restaurants in Northern BC. Fast menus, clear pricing, tap-to-order. Plus AI search visibility. From $2,500.",
+        "desc": "Website design for pizzerias and fast-casual restaurants in Northern BC. Fast menus, clear pricing, tap-to-order. Plus AI search visibility. From $3,500.",
         "keywords": "pizza shop website design, pizzeria website, takeout website design, fast casual restaurant website, pizza SEO Northern BC",
         "problem_h2": "Takeout decisions are made fast, usually on a phone, usually hungry.",
         "problem": [
@@ -498,13 +520,13 @@ INDUSTRIES = [
         ],
         "faqs": [
             ("How much does a pizza shop website cost?",
-             "Pizzeria and fast-casual websites from Gentoolink Web Services start at $2,500 for a typical 5–8 page site, with the copywriting included, and are usually live in 2–4 weeks. That includes a fast mobile menu, pricing, tap-to-call ordering, and structured data for Google and AI search. All prices are in Canadian dollars."),
+             "Pizzeria and fast-casual websites from Gentoolink Web Services start at $3,500 for a typical 5–8 page site, with the copywriting included, and are usually live in 2–4 weeks. That includes a fast mobile menu, pricing, tap-to-call ordering, and structured data for Google and AI search. All prices are in Canadian dollars."),
             ("Do I still need a website if I'm on delivery apps?",
              "Delivery platforms take a percentage of every order and own the customer relationship — you don't get the contact details or the repeat business directly. Your own site is the one channel where the full ticket is yours. Most shops keep both, but drive customers toward the site."),
             ("Can customers order directly from the site?",
              "The site links to whatever ordering system you already use, and makes the phone number a one-tap action. There's no need to replace a system that works; the goal is to remove the steps between someone deciding they want pizza and placing the order."),
             ("How do I show up when someone asks AI where to get pizza?",
-             "Cuisine type, location, hours, price range, and dietary options need to be encoded as structured data rather than only appearing as text or images. That's what lets an AI assistant confidently include you when someone asks for pizza nearby. The $1,000 AI Visibility Audit checks whether yours is set up correctly."),
+             "Cuisine type, location, hours, price range, and dietary options need to be encoded as structured data rather than only appearing as text or images. That's what lets an AI assistant confidently include you when someone asks for pizza nearby. The $1,250 AI Visibility Audit checks whether yours is set up correctly."),
         ],
     },
     {
@@ -518,7 +540,7 @@ INDUSTRIES = [
         "h1": "Church Websites for the Person Deciding Whether to Walk In",
         "hero_sub": "Your members already know the service times. The website is for the family that just moved to town and is nervous about visiting.",
         "title": "Church Website Design | Gentoolink Web Services",
-        "desc": "Website design for churches and community organizations in Northern BC. Service times, events, and a welcoming first impression for newcomers. From $2,500.",
+        "desc": "Website design for churches and community organizations in Northern BC. Service times, events, and a welcoming first impression for newcomers. From $3,500.",
         "keywords": "church website design, ministry website, community organization website, church web design BC, non-profit website Northern BC",
         "problem_h2": "The website's real job is answering a newcomer's quiet questions.",
         "problem": [
@@ -533,7 +555,7 @@ INDUSTRIES = [
         ],
         "faqs": [
             ("How much does a church website cost?",
-             "Church and community organization websites from Gentoolink Web Services start at $2,500 for a typical 5–8 page site, with the copywriting included, and are usually live in 2–4 weeks. That includes service times, event listings, and the structured data that lets search engines and AI assistants answer questions about your congregation. All prices are in Canadian dollars."),
+             "Church and community organization websites from Gentoolink Web Services start at $3,500 for a typical 5–8 page site, with the copywriting included, and are usually live in 2–4 weeks. That includes service times, event listings, and the structured data that lets search engines and AI assistants answer questions about your congregation. All prices are in Canadian dollars."),
             ("What should a church website include?",
              "Service times above everything else, followed by what a first-time visitor can expect — dress, parking, length of service, children's programs. Most church sites lead with a mission statement, which serves existing members but tells a newcomer nothing about whether they'd be comfortable walking in."),
             ("Can volunteers update the site?",
@@ -549,7 +571,7 @@ INDUSTRIES = [
         "h1": "Auto Repair Websites Built on the Thing You Actually Sell: Trust",
         "hero_sub": "Nobody enjoys picking a mechanic. They're choosing who to trust with an expensive problem they can't verify themselves.",
         "title": "Auto Repair Website Design | Gentoolink Web Services",
-        "desc": "Website design for auto repair shops and mechanics in Northern BC. Built to establish trust, list services, and capture urgent searches. From $2,500.",
+        "desc": "Website design for auto repair shops and mechanics in Northern BC. Built to establish trust, list services, and capture urgent searches. From $3,500.",
         "keywords": "auto repair website design, mechanic website, auto shop web design, car repair website BC, automotive SEO Northern BC",
         "problem_h2": "Every customer arrives slightly suspicious. That's the starting position.",
         "problem": [
@@ -564,7 +586,7 @@ INDUSTRIES = [
         ],
         "faqs": [
             ("How much does an auto repair website cost?",
-             "Auto shop websites from Gentoolink Web Services start at $2,500 for a typical 5–8 page site, with the copywriting included, and are usually live in 2–4 weeks. That includes your service list, shop photos, hours, location, and the structured data needed for Google and AI search results. All prices are in Canadian dollars."),
+             "Auto shop websites from Gentoolink Web Services start at $3,500 for a typical 5–8 page site, with the copywriting included, and are usually live in 2–4 weeks. That includes your service list, shop photos, hours, location, and the structured data needed for Google and AI search results. All prices are in Canadian dollars."),
             ("What makes an auto repair website convert?",
              "Trust signals, more than anything else. Real photos of the actual shop, the names and experience of the people working there, and plain explanations of what common jobs involve. Customers can't evaluate the mechanical work, so they evaluate everything around it."),
             ("Should I list prices on my website?",
@@ -580,7 +602,7 @@ INDUSTRIES = [
         "h1": "Dental Websites Built Around the Two Questions Every Patient Has",
         "hero_sub": "Are you accepting new patients, and do you take my insurance? Everything else is secondary.",
         "title": "Dentist Website Design | Gentoolink Web Services",
-        "desc": "Website design for dental practices and clinics in Northern BC. Built for new patient bookings, insurance questions, and anxious first-timers. From $2,500.",
+        "desc": "Website design for dental practices and clinics in Northern BC. Built for new patient bookings, insurance questions, and anxious first-timers. From $3,500.",
         "keywords": "dentist website design, dental practice website, clinic web design, medical practice website BC, dental SEO Northern BC",
         "problem_h2": "New patients screen you before they ever call.",
         "problem": [
@@ -595,13 +617,13 @@ INDUSTRIES = [
         ],
         "faqs": [
             ("How much does a dental practice website cost?",
-             "Dental and clinic websites from Gentoolink Web Services start at $2,500 for a typical 5–8 page site, with the copywriting included, and are usually live in 2–4 weeks. That includes new patient information, insurance details, hours, and the structured data needed for Google and AI search results. All prices are in Canadian dollars."),
+             "Dental and clinic websites from Gentoolink Web Services start at $3,500 for a typical 5–8 page site, with the copywriting included, and are usually live in 2–4 weeks. That includes new patient information, insurance details, hours, and the structured data needed for Google and AI search results. All prices are in Canadian dollars."),
             ("What should a dental website say first?",
              "Whether you're accepting new patients, and which insurance plans you work with. Those two questions decide whether a prospective patient calls at all. Practices routinely bury both below a welcome message and lose bookings to a competitor who stated them plainly."),
             ("How do I attract patients who avoid the dentist?",
              "Address the anxiety directly on the site. Explain what a first visit actually involves, how long it takes, what sedation or comfort options exist, and that a gap in care won't be met with judgment. Anxious patients read carefully before booking, and most practice websites give them nothing to go on."),
             ("Will my practice show up in AI search results?",
-             "Only if your hours, location, services, and new-patient status are published in a machine-readable form and your Google Business Profile is complete and consistent. The $1,000 AI Visibility Audit checks each of those and reports what's missing."),
+             "Only if your hours, location, services, and new-patient status are published in a machine-readable form and your Google Business Profile is complete and consistent. The $1,250 AI Visibility Audit checks each of those and reports what's missing."),
         ],
     },
     {
@@ -611,7 +633,7 @@ INDUSTRIES = [
         "h1": "Salon Websites Where the Work Speaks and the Booking Is One Tap",
         "hero_sub": "Clients choose a stylist by looking. Then they book — or they don't, depending on how many steps you put in the way.",
         "title": "Salon Website Design | Gentoolink Web Services",
-        "desc": "Website design for hair salons, spas, and beauty businesses in Northern BC. Gallery-led, one-tap booking, and AI search visibility. From $2,500.",
+        "desc": "Website design for hair salons, spas, and beauty businesses in Northern BC. Gallery-led, one-tap booking, and AI search visibility. From $3,500.",
         "keywords": "salon website design, hair salon website, spa website design, beauty business website BC, salon SEO Northern BC",
         "problem_h2": "This is a visual business with mostly non-visual websites.",
         "problem": [
@@ -626,7 +648,7 @@ INDUSTRIES = [
         ],
         "faqs": [
             ("How much does a salon website cost?",
-             "Salon and spa websites from Gentoolink Web Services start at $2,500 for a typical 5–8 page site, with the copywriting included, and are usually live in 2–4 weeks. That includes a work gallery, service list, booking links, and the structured data needed for Google and AI search. All prices are in Canadian dollars."),
+             "Salon and spa websites from Gentoolink Web Services start at $3,500 for a typical 5–8 page site, with the copywriting included, and are usually live in 2–4 weeks. That includes a work gallery, service list, booking links, and the structured data needed for Google and AI search. All prices are in Canadian dollars."),
             ("Does my salon website need a gallery?",
              "It's the most important element on the page. Clients choose a stylist visually — they want to see colour work and cuts before they trust someone with their hair. A service list without images asks people to take a risk, and many won't."),
             ("Should I list my prices?",
@@ -637,13 +659,13 @@ INDUSTRIES = [
     },
     {
         "slug": "landscaping-website-design",
-        "meta_desc": "Website design for landscapers and outdoor contractors in Northern BC. Portfolio-led, with year-round AI search visibility. From $2,500.",
+        "meta_desc": "Website design for landscapers and outdoor contractors in Northern BC. Portfolio-led, with year-round AI search visibility. From $3,500.",
         "industry": "Landscapers",
         "eyebrow": "Landscaping &amp; Outdoor Websites",
         "h1": "Landscaping Websites That Work Through the Whole Season",
         "hero_sub": "Your work is visual and your year is seasonal. A portfolio and a site that stays visible in the off months solve both.",
         "title": "Landscaping Website Design | Gentoolink Web Services",
-        "desc": "Website design for landscapers and outdoor contractors in Northern BC. Portfolio-led, seasonal service listings, and year-round AI search visibility. From $2,500.",
+        "desc": "Website design for landscapers and outdoor contractors in Northern BC. Portfolio-led, seasonal service listings, and year-round AI search visibility. From $3,500.",
         "keywords": "landscaping website design, landscaper website, lawn care website, outdoor contractor web design BC, landscaping SEO Northern BC",
         "problem_h2": "Before-and-after photos sell landscaping. Nothing else comes close.",
         "problem": [
@@ -658,13 +680,13 @@ INDUSTRIES = [
         ],
         "faqs": [
             ("How much does a landscaping website cost?",
-             "Landscaping and outdoor contractor websites from Gentoolink Web Services start at $2,500 for a typical 5–8 page site, with the copywriting included, and are usually live in 2–4 weeks. That includes a project portfolio, seasonal service listings, service area markup, and structured data for Google and AI search. All prices are in Canadian dollars."),
+             "Landscaping and outdoor contractor websites from Gentoolink Web Services start at $3,500 for a typical 5–8 page site, with the copywriting included, and are usually live in 2–4 weeks. That includes a project portfolio, seasonal service listings, service area markup, and structured data for Google and AI search. All prices are in Canadian dollars."),
             ("What matters most on a landscaping website?",
              "Before-and-after photographs, organised by project type. Homeowners spending several thousand dollars want to see a property similar to theirs that you've already transformed. No written description does that job, which is why portfolio-led sites consistently outperform service-list sites."),
             ("How do I stay visible during the off season?",
              "By listing the services you offer year-round — snow removal, planning consultations, winter pruning — rather than letting the site go quiet. Search engines and AI tools deprioritise businesses that appear seasonally inactive, so a site that stops updating in October is rebuilding its position every spring."),
             ("Should I list the towns I serve?",
-             "Yes, individually and in machine-readable form. A landscaper based in Vanderhoof who properly lists Fort St. James, Fraser Lake, and Prince George will appear in searches for all four. A vague 'serving Northern BC' matches far fewer searches than the specific town names."),
+             "Yes, individually and in machine-readable form. A landscaper based in Vanderhoof who properly lists Fort St. James, Fraser Lake, and Prince George is eligible to appear in searches for all four. A vague 'serving Northern BC' matches far fewer searches than the specific town names."),
         ],
     },
 ]
@@ -676,18 +698,18 @@ INDUSTRIES = [
 SERVICES = [
     {
         "slug": "google-business-profile-management",
-        "meta_desc": "Google Business Profile tune-ups and management for Northern BC. The biggest lever in local search and AI recommendations. $250 tune-up, $150/mo.",
+        "meta_desc": "Google Business Profile tune-ups and management for Northern BC. The biggest lever in local search and AI recommendations. $400 tune-up, $250/mo.",
         "name": "Google Business Profile Management",
         "service_type": "Google Business Profile Optimization",
         "title": "Google Business Profile Management | Gentoolink Web Services",
-        "desc": "Google Business Profile tune-ups and ongoing management for Northern BC businesses. The single biggest lever in local search and AI recommendations. $250 tune-up, $150/mo managed.",
+        "desc": "Google Business Profile tune-ups and ongoing management for Northern BC businesses. The single biggest lever in local search and AI recommendations. $400 tune-up, $250/mo managed.",
         "keywords": "Google Business Profile management, GBP optimization, Google Business Profile help Prince George, local SEO Northern BC, Google Maps listing",
         "eyebrow": "Google Business Profile · Local Visibility",
         "h1": "Your Google Business Profile Is Doing More Work Than Your Website",
         "hero_sub": "It is the first thing a local customer sees, the thing Google Maps ranks, and one of the strongest signals an AI assistant uses to decide who to recommend. Most are claimed once and never touched again.",
-        "hero_trust": "Tune-up $250, one-time. Ongoing management $150/month. No contract.",
+        "hero_trust": "Tune-up $400, one-time. Ongoing management $250/month. No contract.",
         "cta_label": "Get My Profile Tuned Up",
-        "low_price": "250",
+        "low_price": "400",
         "problem_h2": "Claimed in 2019, never opened since.",
         "problem": [
             "That is the state of most local business profiles. The hours are wrong at Christmas, the phone number is the old one, there are three photos from a flip phone, the category is vaguely close but not right, and the last four reviews have no reply.",
@@ -710,18 +732,18 @@ SERVICES = [
                 "h2": "Two ways to do this.",
                 "intro": "Most businesses start with the one-time tune-up and add ongoing management only if they want the posting and review work handled for them.",
                 "rows": [
-                    ("Google Business Profile tune-up", "$250", "One-time. Full audit and cleanup of categories, NAP, hours, photos, services, and Q&A."),
-                    ("Ongoing profile management", "$150/mo", "Monthly posts, review monitoring and replies, hours and seasonal updates, performance reporting."),
+                    ("Google Business Profile tune-up", "$400", "One-time. Full audit and cleanup of categories, NAP, hours, photos, services, and Q&A."),
+                    ("Ongoing profile management", "$250/mo", "Monthly posts, review monitoring and replies, hours and seasonal updates, performance reporting."),
                 ],
             },
         ],
         "faqs": [
             ("What does a Google Business Profile tune-up include?",
-             "A full audit and cleanup: primary and secondary category selection, every service listed individually, name/address/phone consistency across the profile and website, regular and holiday hours, current photos, products or services populated, replies to existing reviews, and a seeded Q&A section. The tune-up is $250 CAD, one-time."),
+             "A full audit and cleanup: primary and secondary category selection, every service listed individually, name/address/phone consistency across the profile and website, regular and holiday hours, current photos, products or services populated, replies to existing reviews, and a seeded Q&A section. The tune-up is $400 CAD, one-time."),
             ("Why does my Google Business Profile matter for AI search?",
              "AI assistants rely heavily on Google Business Profile data when answering local recommendation questions, because it is structured, verified, and current in a way most small business websites are not. When someone asks an assistant for a plumber or a dentist in a specific town, an incomplete profile gives it less to work with, so it recommends a business that supplied more."),
             ("Do I need ongoing management, or is a one-time tune-up enough?",
-             "For many businesses a one-time tune-up is enough, particularly if your hours and services rarely change. Ongoing management at $150/month makes sense if you get steady reviews that need replies, run seasonal hours, or want regular posts keeping the profile visibly active. Start with the tune-up and add management only if you want it."),
+             "For many businesses a one-time tune-up is enough, particularly if your hours and services rarely change. Ongoing management at $250/month makes sense if you get steady reviews that need replies, run seasonal hours, or want regular posts keeping the profile visibly active. Start with the tune-up and add management only if you want it."),
             ("Will this help me show up in the Google Maps pack?",
              "It is the main lever. The map pack weighs profile completeness, category accuracy, proximity, review volume and recency, and how responsive the business appears. Proximity cannot be changed, but everything else on that list is exactly what the tune-up addresses."),
             ("Can you manage a profile for a business outside Northern BC?",
@@ -793,12 +815,12 @@ SERVICES = [
         "name": "Website Hosting and Care Plans",
         "service_type": "Website Hosting and Maintenance",
         "title": "Website Hosting & Care Plans | Gentoolink Web Services",
-        "desc": "Managed hosting, backups, security monitoring, and a real person to email when you need a change. Plans from $25/month for Northern BC businesses.",
+        "desc": "Managed hosting, backups, security monitoring, and a real person to email when you need a change. Plans from $45/month for Northern BC businesses.",
         "keywords": "website hosting Northern BC, website maintenance plan, website care plan BC, managed hosting small business, website updates Prince George",
         "eyebrow": "Hosting &amp; Care Plans",
         "h1": "Someone to Email When the Site Needs Changing",
         "hero_sub": "Most small business websites are built once and then quietly abandoned — no backups, no updates, and nobody to call when the hours change or something breaks.",
-        "hero_trust": "Hosting from $25/month. Care plans from $40/month, including edits. No lock-in.",
+        "hero_trust": "Hosting from $45/month. Care plans from $95/month, including edits. No lock-in.",
         "cta_label": "Get on a Care Plan",
         "low_price": "25",
         "problem_h2": "The site was finished. Then nothing happened to it for four years.",
@@ -848,11 +870,11 @@ SERVICES = [
                 "h2": "Hosting and care plans.",
                 "intro": "Hosting alone keeps the site online. A care plan adds a set allowance of edits so small changes stop being a project.",
                 "rows": [
-                    ("Managed hosting — static sites", "$25/mo", "For low-maintenance sites that change rarely."),
-                    ("Managed hosting — dynamic sites", "$75/mo", "For sites with frequent updates, bookings, or a store."),
+                    ("Managed hosting — static sites", "$45/mo", "For low-maintenance sites that change rarely."),
+                    ("Managed hosting — dynamic sites", "$95/mo", "For sites with frequent updates, bookings, or a store."),
                     ("Security monitoring add-on", "$15/mo", "Added to either hosting tier."),
-                    ("Lean Care Plan", "$40/mo", "Hosting, backups, security, plus 2 small edits per quarter."),
-                    ("Growth Care Plan", "$85/mo", "Hosting plus a monthly edit allowance and priority turnaround."),
+                    ("Lean Care Plan", "$95/mo", "Hosting, backups, security, plus 2 small edits per quarter."),
+                    ("Growth Care Plan", "$175/mo", "Hosting plus a monthly edit allowance and priority turnaround."),
                 ],
             },
             {
@@ -860,11 +882,11 @@ SERVICES = [
                 "h2": "Not on a plan? Changes are priced individually.",
                 "intro": "Every change is quoted in writing before any work starts. These are starting points.",
                 "rows": [
-                    ("Small edit", "$50", "Text or image swap, updating hours or prices."),
-                    ("New page", "$150", "Matching your existing design."),
-                    ("New section or feature", "$250", "Form, gallery, or booking widget."),
+                    ("Small edit", "$75", "Text or image swap, updating hours or prices."),
+                    ("New page", "$250", "Matching your existing design."),
+                    ("New section or feature", "$400", "Form, gallery, or booking widget."),
                     ("DNS or domain change", "$50", "Including moves between providers."),
-                    ("Larger functionality", "$500", "Store, member area, or redesign."),
+                    ("Larger functionality", "$1,200", "Store, member area, or redesign."),
                     ("Rush turnaround", "+25%", "Completed within 48 hours."),
                 ],
             },
@@ -873,18 +895,18 @@ SERVICES = [
                 "h2": "Or bundle it with your local visibility work.",
                 "intro": "These combine a care plan with the Google Business Profile work most local businesses need anyway.",
                 "rows": [
-                    ("Foundation", "$300 + $40/mo", "Google Business Profile tune-up plus the Lean Care Plan."),
-                    ("Complete", "$1,050 + $644/mo", "Foundation upgraded to the Growth Care Plan, plus an AI customer service assistant and ongoing local visibility management."),
+                    ("Foundation", "$400 + $95/mo", "Google Business Profile tune-up plus the Lean Care Plan."),
+                    ("Complete", "$900 + $675/mo", "Foundation upgraded to the Growth Care Plan, plus an AI customer service assistant and ongoing local visibility management."),
                 ],
             },
         ],
         "faqs": [
             ("How much does website hosting cost?",
-             "Managed hosting starts at $25 CAD per month for static, low-maintenance sites and $75 per month for dynamic sites with frequent updates or a store. Security monitoring can be added for $15 per month. Care plans, which bundle hosting with an allowance of edits, start at $40 per month."),
+             "Managed hosting starts at $45 CAD per month for static, low-maintenance sites and $95 per month for dynamic sites with frequent updates or a store. Security monitoring can be added for $15 per month. Care plans, which bundle hosting with an allowance of edits, start at $95 per month."),
             ("What is the difference between hosting and a care plan?",
-             "Hosting keeps the site online, backed up, and secure. A care plan adds a set allowance of content changes — the Lean Care Plan includes 2 small edits per quarter at $40/month, and the Growth Care Plan includes a monthly allowance with priority turnaround at $85/month. If you rarely change anything, hosting alone is enough."),
+             "Hosting keeps the site online, backed up, and secure. A care plan adds a set allowance of content changes — the Lean Care Plan includes 2 small edits per quarter at $95/month, and the Growth Care Plan includes a monthly allowance with priority turnaround at $175/month. If you rarely change anything, hosting alone is enough."),
             ("What counts as a small edit?",
-             "Swapping text or an image, updating your hours, or changing a price. Larger work — a new page, a new section or feature, or new functionality like a store — is quoted separately, starting at $150, $250, and $500 respectively. Everything is quoted in writing before work begins."),
+             "Swapping text or an image, updating your hours, or changing a price. Larger work — a new page, a new section or feature, or new functionality like a store — is quoted separately, starting at $250, $400, and $1,200 respectively. Everything is quoted in writing before work begins."),
             ("Do I have to sign a contract?",
              "No. Hosting and care plans are month to month and can be cancelled at any time. If you leave, the site is yours and it can be moved to another host."),
             ("Can you take over hosting for a site someone else built?",
@@ -938,6 +960,7 @@ def identity_nodes():
                 "@type": "PostalAddress",
                 "addressLocality": "Vanderhoof",
                 "addressRegion": "BC",
+                "postalCode": "V0J 3A1",
                 "addressCountry": "CA",
             },
             "areaServed": ORG_AREA_SERVED,
@@ -1075,6 +1098,7 @@ def build_city(c):
             {
                 "@type": "WebPage",
                 "@id": url,
+                "dateModified": DATE_MODIFIED,
                 "url": url,
                 "name": f"Web Design in {city}, BC — Gentoolink Web Services",
                 "description": c["desc"],
@@ -1105,8 +1129,8 @@ def build_city(c):
                 },
                 "offers": {
                     "@type": "AggregateOffer",
-                    "lowPrice": "800",
-                    "highPrice": "3500",
+                    "lowPrice": "2000",
+                    "highPrice": "5000",
                     "priceCurrency": "CAD",
                     "offerCount": 3,
                     "availability": "https://schema.org/InStock",
@@ -1131,7 +1155,7 @@ def build_city(c):
         <div class="hero-cta-row">
           <a href="contact.html" class="btn-primary">Get a Free Spot-Check</a>
         </div>
-        <p class="hero-trust">Websites from $800. AI Visibility Audit $1,000, delivered in 24 hours. Based in Vanderhoof, BC.</p>
+        <p class="hero-trust">Websites from $2,000. AI Visibility Audit $1,250, delivered in 72 hours. Based in Vanderhoof, BC.</p>
       </div>
       <div class="agent-console">
         <div class="console-header">
@@ -1165,7 +1189,7 @@ def build_city(c):
           <div class="agent-row">
             <div class="agent-header">
               <span class="agent-name"><span class="agent-dot green"></span>The fix</span>
-              <span class="agent-status status-active">24 HRS</span>
+              <span class="agent-status status-active">72 HRS</span>
             </div>
             <span class="agent-detail">audit first, so you know before you spend</span>
           </div>
@@ -1195,14 +1219,14 @@ def build_city(c):
 
       <div class="service-card">
         <div class="service-icon"><i class="fa-solid fa-globe"></i></div>
-        <div class="service-tag">$800–$3,500</div>
+        <div class="service-tag">$2,000–$5,000</div>
         <h3>Website Design &amp; Build</h3>
         <p>A complete small business website, built mobile-first with the structured data baked in from the start. Domain and DNS setup included, and you update it forever by sending an email — no CMS, no login.</p>
         <ul class="service-features">
-          <li>Landing page, single page — $800</li>
-          <li>Local business site, 5–8 pages — $2,500</li>
-          <li>Product launch site — $3,500</li>
-          <li>Copywriting written for you, included from $2,500</li>
+          <li>Campaign or event page, single page — $2,000</li>
+          <li>Local business site, 5–8 pages — $3,500</li>
+          <li>Product launch site — $5,000</li>
+          <li>Copywriting written for you, included from $3,500</li>
           <li>Store +$500 · logo +$500</li>
         </ul>
         <a href="templates.html" class="post-read-more">See example sites →</a>
@@ -1210,9 +1234,9 @@ def build_city(c):
 
       <div class="service-card">
         <div class="service-icon"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
-        <div class="service-tag">$1,000</div>
+        <div class="service-tag">$1,250</div>
         <h3>AI Visibility Audit</h3>
-        <p>Find out whether your {city} business actually appears when someone asks ChatGPT, Perplexity, or Google AI for a recommendation in your category. Delivered as a plain-English PDF within 24 hours.</p>
+        <p>Find out whether your {city} business actually appears when someone asks ChatGPT, Perplexity, or Google AI for a recommendation in your category. Delivered as a plain-English PDF within 72 hours.</p>
         <ul class="service-features">
           <li>Tested against the real AI platforms</li>
           <li>Bing indexing, schema, and Google Business Profile checked</li>
@@ -1223,7 +1247,7 @@ def build_city(c):
 
       <div class="service-card">
         <div class="service-icon"><i class="fa-solid fa-stopwatch"></i></div>
-        <div class="service-tag">$497 · In person</div>
+        <div class="service-tag">$1,500 · In person</div>
         <h3>Time &amp; Money Audit</h3>
         <p>Not a web problem — an office one. I visit your business, follow the paperwork, and put real numbers on where hours and dollars leak out of quoting, invoicing, and follow-ups.</p>
         <ul class="service-features">
@@ -1297,6 +1321,7 @@ def build_industry(ind):
             {
                 "@type": "WebPage",
                 "@id": url,
+                "dateModified": DATE_MODIFIED,
                 "url": url,
                 "name": f"{industry} Website Design — Gentoolink Web Services",
                 "description": ind["desc"],
@@ -1328,7 +1353,7 @@ def build_industry(ind):
                 "areaServed": {"@type": "AdministrativeArea", "name": "British Columbia"},
                 "offers": {
                     "@type": "Offer",
-                    "price": "2500",
+                    "price": "3500",
                     "priceCurrency": "CAD",
                     "availability": "https://schema.org/InStock",
                     "url": url,
@@ -1399,7 +1424,7 @@ def build_industry(ind):
         <div class="hero-cta-row">
           {hero_cta}
         </div>
-        <p class="hero-trust">$2,500 for a typical 5&ndash;8 page site with the copywriting included, usually live in 2&ndash;4 weeks. Structured data included so AI assistants can actually read your site.</p>
+        <p class="hero-trust">$3,500 for a typical 5&ndash;8 page site with the copywriting included, usually live in 2&ndash;4 weeks. Structured data included so AI assistants can actually read your site.</p>
       </div>
     </div>
   </div>
@@ -1480,6 +1505,7 @@ def build_service(s):
             {
                 "@type": "WebPage",
                 "@id": url,
+                "dateModified": DATE_MODIFIED,
                 "url": url,
                 "name": f'{s["name"]} — Gentoolink Web Services',
                 "description": s["desc"],
