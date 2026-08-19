@@ -2431,3 +2431,100 @@ section[id] { scroll-margin-top: 84px; }
   .vc-score-value { font-size: 44px; }
   .vc-cta a { width: 100%; text-align: center; }
 }
+
+/* ─── Self-check sharing ─────────────────────────────── */
+
+.vc-share {
+  margin-top: 26px;
+  padding-top: 22px;
+  border-top: 1px solid var(--border);
+}
+
+.vc-share-title {
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text);
+  margin: 0 0 8px;
+}
+
+.vc-share-copy {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--text-muted);
+  margin: 0 0 16px;
+}
+
+.vc-share-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: stretch;
+}
+
+.vc-share-url {
+  flex: 1 1 240px;
+  min-width: 0;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 13px;
+  color: var(--text-muted);
+  background: rgba(255,255,255,0.03);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 12px 14px;
+}
+
+.vc-share-url:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  color: var(--text);
+}
+
+.vc-share-btn {
+  flex: none;
+  cursor: pointer;
+  font-family: inherit;
+  padding: 12px 20px;
+  font-size: 15px;
+}
+
+/* ─── Inbound shared result ──────────────────────────── */
+
+.vc-shared {
+  margin: 32px 0 8px;
+  background: linear-gradient(180deg, rgba(45,212,191,0.06), rgba(45,212,191,0.015)), var(--bg-elevated);
+  border: 1px solid var(--accent-border);
+  border-radius: 12px;
+  padding: 26px 24px;
+  box-shadow: var(--shadow-card);
+}
+
+.vc-shared-label {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 16px;
+}
+
+.vc-shared-note {
+  margin: 18px 0 0;
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--text-muted);
+}
+
+.vc-shared-cta {
+  margin-top: 20px;
+  border: 0;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+@media (max-width: 720px) {
+  .vc-share-row { flex-direction: column; }
+  .vc-share-btn { width: 100%; }
+  .vc-shared { padding: 22px 16px; }
+  .vc-shared-cta { width: 100%; }
+}
