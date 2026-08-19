@@ -1,35 +1,32 @@
-#!/usr/bin/env python3
 """
-Generates the local city pages and industry pages for gentoolinkwebservices.com.
+Generates the local city pages, industry pages, and service pages for
+gentoolinkwebservices.com.
 
-    ####################################################################
-    #  DO NOT RUN THIS WITHOUT READING THE NEXT PARAGRAPH.             #
-    ####################################################################
+    python tools/build_local_pages.py --check    # compare, write nothing
+    python tools/build_local_pages.py --out DIR  # write somewhere else
+    python tools/build_local_pages.py            # overwrite the real pages
 
-STALE AS OF 2026-08-19. The pages in the repo root have been hand-edited
-well past what this script produces, and running it WILL destroy work.
-A trial run on 2026-08-19 showed it would have stripped, from 18 live pages:
+RUN --check FIRST, ALWAYS.
 
-  * the "More Services" footer block and several nav links
-  * priceSpecification nodes from the Service schema
-  * postalCode and dateModified from the page schema
-  * FAQ answer text that had been rewritten by hand
-  * every price on the site, reverting to a ladder two generations old
-    (hosting at $25, care plans at $40, the Time & Money Audit at $497)
+This script silently reverted the entire live price ladder once, in August
+2026, because the pages had been hand-edited for months and the templates
+here had not. --check exists so that can never happen quietly again: it
+regenerates in memory, compares against the HTML on disk, prints any page
+that differs, and exits non-zero. Clean output means the templates and the
+live pages agree and it is safe to run for real.
 
-The price constants below have since been brought up to date, so the damage
-would be smaller now — but the structural losses above are still real and
-this script is NOT the source of truth. The HTML files are.
-
-Before running it again, diff its output against the live pages and fold
-every difference back into the templates here. Until that is done, add new
-pages by copying an existing page in the repo root and editing it.
-
-    python tools/build_local_pages.py
+If --check reports drift, the HTML on disk wins. Somebody edited a page by
+hand; fold that change into the CONTENT dicts below until --check is clean,
+then run without it. Never resolve drift by running the generator and
+letting it overwrite.
 """
 
+import difflib
+import io
 import json
 import os
+import re
+import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SITE = "https://gentoolinkwebservices.com"
@@ -140,12 +137,13 @@ SHELL = """<!DOCTYPE html>
       </a>
       <span class="nav-links">
         <a href="services.html">Services</a>
+        <a href="services.html#web-design">Web Design</a>
         <a href="templates.html">Examples</a>
-        <a href="time-money-audit.html" style="color: var(--gold);">Local Audit</a>
+        <a href="time-money-audit.html" style="color: var(--gold);">Time &amp; Money Audit</a>
         <a href="about.html">About</a>
         <a href="blog.html">Blog</a>
       </span>
-      <a href="contact.html" class="nav-cta">Book My Audit</a>
+      <a href="contact.html" class="nav-cta">Book an Audit</a>
     </div>
   </div>
 </nav>
@@ -167,6 +165,7 @@ SHELL = """<!DOCTYPE html>
         <a href="services.html" style="font-size:13px;color:var(--text-subtle);">Services</a>
         <a href="templates.html" style="font-size:13px;color:var(--text-subtle);">Examples</a>
         <a href="time-money-audit.html" style="font-size:13px;color:var(--text-subtle);">Time &amp; Money Audit</a>
+        <a href="ai-visibility-audit.html" style="font-size:13px;color:var(--text-subtle);">AI Visibility Audit</a>
         <a href="about.html" style="font-size:13px;color:var(--text-subtle);">About</a>
         <a href="blog.html" style="font-size:13px;color:var(--text-subtle);">Blog</a>
         <a href="contact.html" style="font-size:13px;color:var(--text-subtle);">Contact</a>
@@ -174,11 +173,12 @@ SHELL = """<!DOCTYPE html>
       </span>
     </nav>
     <div class="footer-areas">
-      <span class="footer-areas-label">Serving Northern BC</span>
+      <span class="footer-areas-label footer-services-label">More Services</span>
       <span class="footer-areas-links">
-{{FOOTER_AREAS}}
+{{FOOTER_SERVICES}}
       </span>
     </div>
+{{FOOTER_AREAS}}
     <div class="footer-areas">
       <span class="footer-areas-label">Connect</span>
       <span class="footer-areas-links">
@@ -253,7 +253,7 @@ CITIES = [
         "region": "BC",
         "eyebrow": "Vanderhoof, BC · My Home Town",
         "h1": "Web Design in Vanderhoof, BC — From Someone Who Lives Here",
-        "hero_sub": "I'm on Burrard Avenue, not in a call centre in another province. Websites from $2,000, AI visibility audits at $1,250, and an in-person Time &amp; Money Audit for businesses right here in the Nechako Valley.",
+        "hero_sub": "I'm on Burrard Avenue, not in a call centre in another province. Websites from $3,500 with the copywriting included, AI visibility audits at $1,250, and an in-person Time &amp; Money Audit for businesses right here in the Nechako Valley.",
         "title": "Web Design Vanderhoof, BC | Gentoolink Web Services",
         "desc": "Local website design and AI search visibility for Vanderhoof businesses. Vanderhoof-based, Chamber of Commerce member. Sites from $3,500, in-person audits available.",
         "keywords": "web design Vanderhoof, website designer Vanderhoof BC, small business website Vanderhoof, Nechako Valley web design, AI visibility Vanderhoof",
@@ -396,6 +396,111 @@ CITIES = [
              "Quesnel is roughly two hours south of Vanderhoof via Prince George, so in-person visits are arranged rather than routine. Website design, AI visibility audits, and implementation work don't require an in-person visit."),
         ],
     },
+    {
+        "slug": "web-design-kelowna",
+        "group": "okanagan",
+        "meta_desc": "Kelowna has plenty of web designers. Far fewer businesses can be found by ChatGPT, Perplexity or Google AI. AI Visibility Audit $1,250 in 72 hours; sites from $3,500.",
+        "city": "Kelowna",
+        "region": "BC",
+        "eyebrow": "Kelowna, BC \u00b7 AI Search Visibility",
+        "h1": "Kelowna Is Full of Web Designers. It Is Not Full of Sites AI Can Read.",
+        "hero_sub": "There are a dozen capable agencies in Kelowna and I am not going to pretend to be the local one. I do a narrower job than they do: making sure ChatGPT, Perplexity and Google AI can find your business and say the right thing about it.",
+        "hero_trust": "AI Visibility Audit $1,250, delivered in 72 hours. Sites from $3,500 with the copywriting included. Based in Vanderhoof \u2014 Okanagan work is remote, with trips down through the year.",
+        "console_detail": "asked for a recommendation in Kelowna \u2014 named four competitors",
+        "title": "Web Design Kelowna, BC | AI Search Visibility | Gentoolink",
+        "desc": "Website design and AI search visibility for Kelowna and Central Okanagan businesses. Remote-first, with in-person visits through the year. Sites from $3,500, audits $1,250.",
+        "keywords": "web design Kelowna, AI visibility Kelowna, ChatGPT local business Kelowna, Okanagan web design, generative engine optimization Kelowna, schema markup Okanagan",
+        "local_h2": "A crowded market where almost nobody has done this part.",
+        "local_body": [
+            "Kelowna has more than 30,000 businesses, the third-largest metro population in BC, and a tourism economy that turns over billions a year. It also has a deep bench of established web and marketing agencies. If what you need is a brand campaign or a full-service retainer, several of them are genuinely good and they are down the road from you.",
+            "What almost nobody in that market has done \u2014 including plenty of businesses with expensive, recently built websites \u2014 is the machine-readable layer underneath. Whether Bing has your site at all, which decides whether ChatGPT Search can cite you. Whether your services, service area and hours exist as structured data or only as words in a hero image. Whether the assistants name you when someone asks for a recommendation in your category.",
+            "That gap is wider in Kelowna than in a small town, not narrower, because the competition for a spot in a short AI answer is fiercer. When someone asks an assistant for a recommendation, it names two or three businesses. In Vanderhoof that is most of the category. In Kelowna it is a rounding error, and being unreadable is what keeps you out of it.",
+        ],
+        "hook": "You do not need another agency. You need to know whether the assistants can read the site you already paid for.",
+        "travel": "Kelowna is a long drive from Vanderhoof rather than a day trip, so visits are planned in advance and batched. Nothing in the audit or the build requires one.",
+        "cta_h2": "Find out what the assistants say about your category in Kelowna.",
+        "cta_lead": "I will run a free spot-check: I ask ChatGPT, Perplexity and Google AI what a customer would ask, in your category, in Kelowna \u2014 and tell you who they name and whether you are in the list. No charge, no obligation.",
+        "faqs": [
+            ("You are not in Kelowna. Why would I hire you?",
+             "Start with the fact that I already do. SOS Custom Gutters in Kelowna is a current client \u2014 the site is live, I built it, and I keep it running. Beyond that: audits, schema implementation, Bing indexing and site builds are done remotely and would be even if I were on Bernard Avenue. What you get is the person doing the work rather than an account manager, and a narrower specialism than a full-service Okanagan agency is set up to sell. If what you want is someone local for weekly in-person meetings, hire someone local; I would rather say that than waste your time."),
+            ("How much does a website cost in Kelowna?",
+             "A single-offer campaign or event page starts at $2,000. A typical 5\u20138 page local business site is $3,500 with the copywriting written for you and included, usually live in 2\u20134 weeks. That is below what most Kelowna agencies quote, because the overhead is smaller, not because the work is thinner. Every project is quoted in writing before work begins. All prices are in Canadian dollars."),
+            ("Kelowna already has good agencies. What is actually different here?",
+             "Scope. A full-service agency sells design, brand, ads and SEO together. I do one thing: whether AI assistants and search engines can find your business, understand what it does, and cite it accurately. That is the $1,250 AI Visibility Audit, and it works fine on a site somebody else built \u2014 plenty of clients keep their existing agency and hire me only for this."),
+            ("Do you come to Kelowna in person?",
+             "Sometimes. Kelowna is a long drive from Vanderhoof rather than a day trip, so visits are planned in advance and batched rather than arranged on short notice. If an in-person session matters to you, say so early and we will line it up with a trip. Nothing in the audit or the build actually requires one."),
+        ],
+    },
+    {
+        "slug": "web-design-vernon",
+        "group": "okanagan",
+        "meta_desc": "Website design and AI search visibility for Vernon and North Okanagan businesses. Findable by ChatGPT and Google AI, not just Google. Audits $1,250, sites from $3,500.",
+        "city": "Vernon",
+        "region": "BC",
+        "eyebrow": "Vernon, BC \u00b7 Websites &amp; AI Visibility",
+        "h1": "Web Design in Vernon \u2014 Built to Be Found in the Answer, Not Just the Results",
+        "hero_sub": "Vernon is its own market, not a suburb of Kelowna, and the businesses that say so plainly are the ones an AI assistant can place. Most sites here leave it to be guessed.",
+        "hero_trust": "Sites from $3,500 with the copywriting included. AI Visibility Audit $1,250, delivered in 72 hours. Based in Vanderhoof, working the Okanagan remotely.",
+        "console_detail": "asked for a recommendation in Vernon \u2014 returned Kelowna businesses",
+        "title": "Web Design Vernon, BC | AI Search Visibility | Gentoolink",
+        "desc": "Website design and AI search visibility for Vernon and North Okanagan businesses. Sites from $3,500 with copywriting included, AI Visibility Audit $1,250 in 72 hours.",
+        "keywords": "web design Vernon BC, AI visibility Vernon, North Okanagan web design, ChatGPT local business Vernon, schema markup Vernon, Okanagan SEO",
+        "local_h2": "Vernon keeps getting answered as if it were Kelowna.",
+        "local_body": [
+            "Ask an assistant for a trade, a clinic or a shop in Vernon and a good share of what comes back is in Kelowna, forty-five minutes south. That is not because Kelowna businesses are better. It is because they have more of the signals that tell a machine where they are and what they do, so they get pulled in whenever the North Okanagan comes up short.",
+            "The fix is unglamorous and specific: name the town and the surrounding communities explicitly, encode the service area as structured data rather than a sentence like &ldquo;serving the Okanagan&rdquo;, keep the Google Business Profile accurate, and make sure Bing has the site at all \u2014 because Bing is the index behind ChatGPT Search.",
+            "Vernon also has a seasonal shape that hurts businesses that go quiet. Silver Star, the lakes and the summer trade mean demand arrives in waves, and a site that stops being updated between them looks dormant to the systems deciding who to recommend when the season turns.",
+        ],
+        "hook": "If the assistants cannot tell Vernon from Kelowna, they will keep answering with Kelowna.",
+        "travel": "Vernon is in the Okanagan rather than the Highway 16 corridor, so visits are arranged in advance around a trip. The web and AI visibility work is delivered remotely.",
+        "cta_h2": "Find out where you stand in Vernon.",
+        "cta_lead": "I will run a free spot-check: I ask the AI assistants what a customer would ask, in your category, in Vernon \u2014 and tell you whether your name comes up or whether it answers with Kelowna. No charge, no obligation.",
+        "faqs": [
+            ("Do you build websites for Vernon businesses?",
+             "Yes. Web design, AI visibility audits and implementation are delivered remotely, which is how most of this work is done regardless of who you hire. Gentoolink Web Services is based in Vanderhoof in Northern BC, and Okanagan visits are arranged in advance rather than on short notice."),
+            ("How much does a website cost in Vernon?",
+             "A single-offer campaign or event page starts at $2,000. A typical 5\u20138 page local business site is $3,500 with the copywriting written for you and included, usually live in 2\u20134 weeks. Every project is quoted in writing before work begins. The $1,250 AI Visibility Audit checks whether an existing business shows up in ChatGPT, Perplexity and Google AI Overviews. All prices are in Canadian dollars."),
+            ("Why do Kelowna businesses show up when I search for Vernon?",
+             "Usually because they have stated their location and service area in a form a machine can read, and the Vernon business has not. An assistant answering a question about Vernon will reach for whatever it can place confidently, and a nearby business with clear signals beats a closer one with vague signals. Listing the specific communities you serve \u2014 Vernon, Coldstream, Armstrong, Lumby, Lake Country \u2014 as structured data is the part most sites skip."),
+            ("Do you travel to Vernon for in-person work?",
+             "Occasionally, and planned ahead rather than on short notice. Nothing in the audit or the build requires it. If a face-to-face session matters to you, mention it early and it can be lined up with a trip through the valley."),
+        ],
+    },
+    {
+        "slug": "web-design-penticton",
+        "group": "okanagan",
+        "meta_desc": "Website design and AI search visibility for Penticton and South Okanagan businesses. Built for visitors who ask an assistant before they arrive. Audits $1,250.",
+        "city": "Penticton",
+        "region": "BC",
+        "eyebrow": "Penticton, BC \u00b7 Websites &amp; AI Visibility",
+        "h1": "Web Design in Penticton \u2014 For Visitors Who Ask an Assistant Before They Arrive",
+        "hero_sub": "More and more trips to the South Okanagan start with a question typed into ChatGPT rather than a search results page. If the answer does not include you, the visitor never knew you existed.",
+        "hero_trust": "Sites from $3,500 with the copywriting included. AI Visibility Audit $1,250, delivered in 72 hours. Based in Vanderhoof, working the Okanagan remotely.",
+        "console_detail": "asked what to visit near Penticton \u2014 named six places, not yours",
+        "title": "Web Design Penticton, BC | AI Search Visibility | Gentoolink",
+        "desc": "Website design and AI search visibility for Penticton and South Okanagan businesses, built for visitors who plan by asking an AI assistant. Sites from $3,500, audits $1,250.",
+        "keywords": "web design Penticton, AI visibility Penticton, South Okanagan web design, winery website Okanagan, ChatGPT local business Penticton, tourism website BC",
+        "local_h2": "Trip planning moved into the chat window.",
+        "local_body": [
+            "Penticton&rsquo;s trade is heavily visitor-driven, and visitor research has changed shape. &ldquo;What wineries should I visit near Penticton&rdquo;, &ldquo;where should we eat on the Naramata Bench&rdquo;, &ldquo;is there a bike shop near the channel&rdquo; \u2014 these are now asked of an assistant as often as a search engine, and the answer is a short list rather than ten blue links.",
+            "That short list is assembled from whatever the assistant can read confidently: structured data about what you are, exactly where you are, when you are open, and what you offer. A beautiful site whose hours live in an image and whose location is implied by the photos gives it nothing to work with, and it moves on to a competitor whose site spells it out.",
+            "The South Okanagan makes this sharper than most places because so much of the demand is from people with no local knowledge at all. A resident knows where you are. A visitor from Calgary planning in September knows only what the answer told them.",
+        ],
+        "hook": "The visitor never sees the site they were not shown. They just go to the one they were.",
+        "travel": "Penticton is in the South Okanagan, so visits are planned in advance around a trip. None of the audit or build work requires one.",
+        "cta_h2": "Find out what visitors are being told about Penticton.",
+        "cta_lead": "I will run a free spot-check: I ask the AI assistants what a visitor would ask about your category in Penticton \u2014 and tell you who gets named. No charge, no obligation.",
+        "faqs": [
+            ("Do you build websites for Penticton businesses?",
+             "Yes. Web design, AI visibility audits and implementation are delivered remotely. Gentoolink Web Services is based in Vanderhoof in Northern BC, and South Okanagan visits are arranged in advance rather than on short notice."),
+            ("How much does a website cost in Penticton?",
+             "A single-offer campaign or event page starts at $2,000. A typical 5\u20138 page local business site is $3,500 with the copywriting written for you and included, usually live in 2\u20134 weeks. Every project is quoted in writing before work begins. The $1,250 AI Visibility Audit checks whether an existing business shows up in ChatGPT, Perplexity and Google AI Overviews. All prices are in Canadian dollars."),
+            ("How do I get recommended when a visitor asks an AI what to do here?",
+             "By making the things a visitor needs explicit rather than assumed: your category, your exact location, your hours and season, what you offer, and whether you take bookings \u2014 written plainly on the page and encoded as structured data underneath. Assistants building a short recommendation list use what they can verify, and a business that leaves those details to be inferred is the easiest one to leave out."),
+            ("Do you travel to Penticton for in-person work?",
+             "Occasionally, planned in advance. None of the audit or build work requires it, but if an in-person session matters, say so early and it can be scheduled around a trip through the valley."),
+        ],
+    },
 ]
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -426,7 +531,7 @@ INDUSTRIES = [
         ],
         "faqs": [
             ("How much does a restaurant website cost?",
-             "Restaurant websites from Gentoolink Web Services start at $3,500 for a typical 5–8 page site, with the copywriting included, and are usually live in 2–4 weeks. That includes a mobile-friendly menu, hours, location, and the structured data needed to appear in Google and AI search results. All prices are in Canadian dollars."),
+             "Restaurant websites from Gentoolink Web Services start at $3,500 for a typical 5–8 page site, with the copywriting included, and are usually live in 2–4 weeks. That includes a mobile-friendly menu, hours, location, and the structured data needed to appear in Google and AI search results. $3,500 is a starting point rather than a fixed price: extras such as form automation, online booking, e-commerce, or a logo are quoted on top of the build. All prices are in Canadian dollars."),
             ("Can I update my menu and specials myself?",
              "Yes. Menu items, prices, and weekly specials can be updated by sending an email — there's no CMS to learn and no login to remember. Changes go live the same day."),
             ("Why shouldn't my menu be a PDF?",
@@ -461,7 +566,7 @@ INDUSTRIES = [
         ],
         "faqs": [
             ("How much does a plumber website cost?",
-             "Plumbing websites from Gentoolink Web Services start at $3,500 for a typical 5–8 page site, with the copywriting included, and are usually live in 2–4 weeks. That includes tap-to-call, a full service list, service area markup, and the structured data needed to appear in Google and AI search results. All prices are in Canadian dollars."),
+             "Plumbing websites from Gentoolink Web Services start at $3,500 for a typical 5–8 page site, with the copywriting included, and are usually live in 2–4 weeks. That includes tap-to-call, a full service list, service area markup, and the structured data needed to appear in Google and AI search results. $3,500 is a starting point rather than a fixed price: extras such as form automation, online booking, e-commerce, or a logo are quoted on top of the build. All prices are in Canadian dollars."),
             ("How do I show up when someone searches for an emergency plumber?",
              "Three things matter most: stating explicitly that you handle emergency and after-hours calls, listing every town in your service area in a machine-readable form, and having a complete Google Business Profile. Most plumbing sites do none of the three, which is why the results are usually easy to take."),
             ("Should I list every town I serve?",
@@ -492,7 +597,7 @@ INDUSTRIES = [
         ],
         "faqs": [
             ("How much does an electrician website cost?",
-             "Electrical contractor websites from Gentoolink Web Services start at $3,500 for a typical 5–8 page site, with the copywriting included, and are usually live in 2–4 weeks. That includes licensing details, a full service list, service area markup, and structured data for Google and AI search. All prices are in Canadian dollars."),
+             "Electrical contractor websites from Gentoolink Web Services start at $3,500 for a typical 5–8 page site, with the copywriting included, and are usually live in 2–4 weeks. That includes licensing details, a full service list, service area markup, and structured data for Google and AI search. $3,500 is a starting point rather than a fixed price: extras such as form automation, online booking, e-commerce, or a logo are quoted on top of the build. All prices are in Canadian dollars."),
             ("Should my site target residential or commercial work?",
              "Both, but on separate paths. A homeowner with a dead outlet and a general contractor pricing a tenant improvement need completely different information. One site can serve both if it's organised so each visitor reaches their answer immediately, rather than forcing them through content written for the other."),
             ("What should an electrical contractor list on their website?",
@@ -523,7 +628,7 @@ INDUSTRIES = [
         ],
         "faqs": [
             ("How much does a pizza shop website cost?",
-             "Pizzeria and fast-casual websites from Gentoolink Web Services start at $3,500 for a typical 5–8 page site, with the copywriting included, and are usually live in 2–4 weeks. That includes a fast mobile menu, pricing, tap-to-call ordering, and structured data for Google and AI search. All prices are in Canadian dollars."),
+             "Pizzeria and fast-casual websites from Gentoolink Web Services start at $3,500 for a typical 5–8 page site, with the copywriting included, and are usually live in 2–4 weeks. That includes a fast mobile menu, pricing, tap-to-call ordering, and structured data for Google and AI search. $3,500 is a starting point rather than a fixed price: extras such as form automation, online booking, e-commerce, or a logo are quoted on top of the build. All prices are in Canadian dollars."),
             ("Do I still need a website if I'm on delivery apps?",
              "Delivery platforms take a percentage of every order and own the customer relationship — you don't get the contact details or the repeat business directly. Your own site is the one channel where the full ticket is yours. Most shops keep both, but drive customers toward the site."),
             ("Can customers order directly from the site?",
@@ -558,7 +663,7 @@ INDUSTRIES = [
         ],
         "faqs": [
             ("How much does a church website cost?",
-             "Church and community organization websites from Gentoolink Web Services start at $3,500 for a typical 5–8 page site, with the copywriting included, and are usually live in 2–4 weeks. That includes service times, event listings, and the structured data that lets search engines and AI assistants answer questions about your congregation. All prices are in Canadian dollars."),
+             "Church and community organization websites from Gentoolink Web Services start at $3,500 for a typical 5–8 page site, with the copywriting included, and are usually live in 2–4 weeks. That includes service times, event listings, and the structured data that lets search engines and AI assistants answer questions about your congregation. $3,500 is a starting point rather than a fixed price: extras such as form automation, online booking, e-commerce, or a logo are quoted on top of the build. All prices are in Canadian dollars."),
             ("What should a church website include?",
              "Service times above everything else, followed by what a first-time visitor can expect — dress, parking, length of service, children's programs. Most church sites lead with a mission statement, which serves existing members but tells a newcomer nothing about whether they'd be comfortable walking in."),
             ("Can volunteers update the site?",
@@ -589,7 +694,7 @@ INDUSTRIES = [
         ],
         "faqs": [
             ("How much does an auto repair website cost?",
-             "Auto shop websites from Gentoolink Web Services start at $3,500 for a typical 5–8 page site, with the copywriting included, and are usually live in 2–4 weeks. That includes your service list, shop photos, hours, location, and the structured data needed for Google and AI search results. All prices are in Canadian dollars."),
+             "Auto shop websites from Gentoolink Web Services start at $3,500 for a typical 5–8 page site, with the copywriting included, and are usually live in 2–4 weeks. That includes your service list, shop photos, hours, location, and the structured data needed for Google and AI search results. $3,500 is a starting point rather than a fixed price: extras such as form automation, online booking, e-commerce, or a logo are quoted on top of the build. All prices are in Canadian dollars."),
             ("What makes an auto repair website convert?",
              "Trust signals, more than anything else. Real photos of the actual shop, the names and experience of the people working there, and plain explanations of what common jobs involve. Customers can't evaluate the mechanical work, so they evaluate everything around it."),
             ("Should I list prices on my website?",
@@ -620,7 +725,7 @@ INDUSTRIES = [
         ],
         "faqs": [
             ("How much does a dental practice website cost?",
-             "Dental and clinic websites from Gentoolink Web Services start at $3,500 for a typical 5–8 page site, with the copywriting included, and are usually live in 2–4 weeks. That includes new patient information, insurance details, hours, and the structured data needed for Google and AI search results. All prices are in Canadian dollars."),
+             "Dental and clinic websites from Gentoolink Web Services start at $3,500 for a typical 5–8 page site, with the copywriting included, and are usually live in 2–4 weeks. That includes new patient information, insurance details, hours, and the structured data needed for Google and AI search results. $3,500 is a starting point rather than a fixed price: extras such as form automation, online booking, e-commerce, or a logo are quoted on top of the build. All prices are in Canadian dollars."),
             ("What should a dental website say first?",
              "Whether you're accepting new patients, and which insurance plans you work with. Those two questions decide whether a prospective patient calls at all. Practices routinely bury both below a welcome message and lose bookings to a competitor who stated them plainly."),
             ("How do I attract patients who avoid the dentist?",
@@ -651,7 +756,7 @@ INDUSTRIES = [
         ],
         "faqs": [
             ("How much does a salon website cost?",
-             "Salon and spa websites from Gentoolink Web Services start at $3,500 for a typical 5–8 page site, with the copywriting included, and are usually live in 2–4 weeks. That includes a work gallery, service list, booking links, and the structured data needed for Google and AI search. All prices are in Canadian dollars."),
+             "Salon and spa websites from Gentoolink Web Services start at $3,500 for a typical 5–8 page site, with the copywriting included, and are usually live in 2–4 weeks. That includes a work gallery, service list, booking links, and the structured data needed for Google and AI search. $3,500 is a starting point rather than a fixed price: extras such as form automation, online booking, e-commerce, or a logo are quoted on top of the build. All prices are in Canadian dollars."),
             ("Does my salon website need a gallery?",
              "It's the most important element on the page. Clients choose a stylist visually — they want to see colour work and cuts before they trust someone with their hair. A service list without images asks people to take a risk, and many won't."),
             ("Should I list my prices?",
@@ -683,7 +788,7 @@ INDUSTRIES = [
         ],
         "faqs": [
             ("How much does a landscaping website cost?",
-             "Landscaping and outdoor contractor websites from Gentoolink Web Services start at $3,500 for a typical 5–8 page site, with the copywriting included, and are usually live in 2–4 weeks. That includes a project portfolio, seasonal service listings, service area markup, and structured data for Google and AI search. All prices are in Canadian dollars."),
+             "Landscaping and outdoor contractor websites from Gentoolink Web Services start at $3,500 for a typical 5–8 page site, with the copywriting included, and are usually live in 2–4 weeks. That includes a project portfolio, seasonal service listings, service area markup, and structured data for Google and AI search. $3,500 is a starting point rather than a fixed price: extras such as form automation, online booking, e-commerce, or a logo are quoted on top of the build. All prices are in Canadian dollars."),
             ("What matters most on a landscaping website?",
              "Before-and-after photographs, organised by project type. Homeowners spending several thousand dollars want to see a property similar to theirs that you've already transformed. No written description does that job, which is why portfolio-led sites consistently outperform service-list sites."),
             ("How do I stay visible during the off season?",
@@ -823,9 +928,9 @@ SERVICES = [
         "eyebrow": "Hosting &amp; Care Plans",
         "h1": "Someone to Email When the Site Needs Changing",
         "hero_sub": "Most small business websites are built once and then quietly abandoned — no backups, no updates, and nobody to call when the hours change or something breaks.",
-        "hero_trust": "Hosting from $45/month. Care plans from $95/month, including edits. No lock-in.",
+        "hero_trust": "Hosting from $45/month. Care plans from $95/month, including the edits. You email me; I make the change. No lock-in.",
         "cta_label": "Get on a Care Plan",
-        "low_price": "25",
+        "low_price": "45",
         "problem_h2": "The site was finished. Then nothing happened to it for four years.",
         "problem": [
             "This is the normal life cycle of a small business website. It launches, it looks good, and then the person who built it moves on. The hours go stale, the seasonal banner from two summers ago is still up, and nobody has taken a backup since launch.",
@@ -846,7 +951,7 @@ SERVICES = [
             "h2": "Isn't hosting free?",
             "paras": [
                 "Some of it genuinely can be. There are free tiers that will serve a small static site perfectly well, and if you are comfortable running your own deployments, you should use one. I would rather tell you that than sell you something you do not need.",
-                "But it is worth being straight about what the money is actually for, because it is not the server. Storage and bandwidth for a small business website cost pennies a month. Anyone charging you $25 a month for \"server space\" is not being honest about the bill.",
+                "But it is worth being straight about what the money is actually for, because it is not the server. Storage and bandwidth for a small business website cost pennies a month. Anyone charging you $45 a month for \"server space\" is not being honest about the bill. What you are paying for is that the site stays current without you touching it.",
                 "What you are paying for is everything around the server — the parts that fail quietly, on a schedule nobody is watching.",
             ],
             "points": [
@@ -905,7 +1010,7 @@ SERVICES = [
         ],
         "faqs": [
             ("How much does website hosting cost?",
-             "Managed hosting starts at $45 CAD per month for static, low-maintenance sites and $95 per month for dynamic sites with frequent updates or a store. Security monitoring can be added for $15 per month. Care plans, which bundle hosting with an allowance of edits, start at $95 per month."),
+             "Managed hosting starts at $45 CAD per month for static, low-maintenance sites and $95 per month for dynamic sites with frequent updates or a store. Security monitoring can be added for $15 per month. Care plans, which bundle hosting with an allowance of edits, start at $75 per month."),
             ("What is the difference between hosting and a care plan?",
              "Hosting keeps the site online, backed up, and secure. A care plan adds a set allowance of content changes — the Lean Care Plan includes 2 small edits per quarter at $95/month, and the Growth Care Plan includes a monthly allowance with priority turnaround at $175/month. If you rarely change anything, hosting alone is enough."),
             ("What counts as a small edit?",
@@ -1055,18 +1160,95 @@ def faq_html(faqs):
     return "\n\n".join(rows)
 
 
-def footer_areas(current_slug):
+GROUP_LABELS = {
+    "north": ("Serving Northern BC", "Also in Northern BC"),
+    "okanagan": ("Serving the Okanagan", "Also in the Okanagan"),
+}
+
+
+def _area_block(label, cities, current_slug):
     links = []
-    for c in CITIES:
+    for c in cities:
         if c["slug"] == current_slug:
             links.append(
                 f'        <span class="footer-area-current">{c["city"]}</span>'
             )
         else:
-            links.append(
-                f'        <a href="{c["slug"]}.html">{c["city"]}</a>'
-            )
-    return "\n".join(links)
+            links.append(f'        <a href="{c["slug"]}.html">{c["city"]}</a>')
+    joined = "\n".join(links)
+    return (
+        '    <div class="footer-areas">\n'
+        f'      <span class="footer-areas-label">{label}</span>\n'
+        '      <span class="footer-areas-links">\n'
+        f"{joined}\n"
+        "      </span>\n"
+        "    </div>"
+    )
+
+
+def footer_areas(current_slug):
+    """Two blocks: the page's own region first, then the other one.
+
+    A city page leads with the region it belongs to and links across to the
+    other, so an Okanagan visitor is not asked to read a list of Highway 16
+    towns before finding their own.
+    """
+    groups = {}
+    for c in CITIES:
+        groups.setdefault(c.get("group", "north"), []).append(c)
+    current = next(
+        (c.get("group", "north") for c in CITIES if c["slug"] == current_slug),
+        "north",
+    )
+    other = "okanagan" if current == "north" else "north"
+    blocks = [_area_block(GROUP_LABELS[current][0], groups.get(current, []), current_slug)]
+    if groups.get(other):
+        blocks.append(_area_block(GROUP_LABELS[other][1], groups[other], current_slug))
+    return "\n".join(blocks)
+
+
+def dump_schema(schema):
+    """json.dumps, then re-collapse the objects the live pages keep on one line.
+
+    The hand-maintained HTML writes containedInPlace inline. Matching it exactly
+    is what lets --check mean something: any remaining difference is real
+    content drift rather than whitespace.
+    """
+    out = json.dumps(schema, indent=2, ensure_ascii=False)
+    # Only the city entries in the organization's areaServed list are collapsed
+    # in the live HTML — they sit at ten spaces of indent. The single City on a
+    # Service node (eight spaces) stays expanded. Matching on indent keeps both
+    # forms exactly as the deployed pages have them.
+    pattern = (
+        r'( {10})"containedInPlace": \{\n'
+        r' {12}"@type": "AdministrativeArea",\n'
+        r' {12}"name": "([^"]+)"\n'
+        r' {10}\}'
+    )
+    out = re.sub(
+        pattern,
+        lambda m: '%s"containedInPlace": {"@type": "AdministrativeArea", "name": "%s"}'
+                  % (m.group(1), m.group(2)),
+        out,
+    )
+    return out
+
+
+SERVICE_LINKS = [
+    ("google-business-profile-management", "Google Business Profile"),
+    ("ai-phone-receptionist", "AI Phone Receptionist"),
+    ("website-hosting-care-plans", "Hosting &amp; Care Plans"),
+]
+
+
+def footer_services(current_slug):
+    out = []
+    for slug, label in SERVICE_LINKS:
+        if slug == current_slug:
+            out.append(f'        <span class="footer-area-current">{label}</span>')
+        else:
+            out.append(f'        <a href="{slug}.html">{label}</a>')
+    return "\n".join(out)
 
 
 def render(shell_vars, body, slug):
@@ -1075,11 +1257,39 @@ def render(shell_vars, body, slug):
         out = out.replace("{{" + key + "}}", val)
     out = out.replace("{{BODY}}", body)
     out = out.replace("{{FOOTER_AREAS}}", footer_areas(slug))
+    out = out.replace("{{FOOTER_SERVICES}}", footer_services(slug))
     return out
 
 
+# --check regenerates in memory and compares against what is on disk, writing
+# nothing. It exists because this script silently reverted the whole live price
+# ladder once already; drift is now something you can detect on purpose rather
+# than discover after a deploy.
+CHECK_ONLY = False
+OUT_DIR = None
+DRIFT = []
+
+
 def write(slug, html):
-    path = os.path.join(ROOT, f"{slug}.html")
+    if CHECK_ONLY:
+        disk = os.path.join(ROOT, f"{slug}.html")
+        if not os.path.exists(disk):
+            DRIFT.append(slug)
+            print(f"  NEW      {slug}.html")
+            return
+        current = io.open(disk, encoding="utf-8").read().replace("\r\n", "\n")
+        if current == html:
+            print(f"  ok       {slug}.html")
+        else:
+            diff = list(difflib.unified_diff(
+                current.splitlines(), html.splitlines(),
+                "disk", "generated", lineterm="", n=0))
+            changed = len([l for l in diff
+                           if l[:1] in "+-" and l[:3] not in ("+++", "---")])
+            DRIFT.append(slug)
+            print(f"  DRIFT    {slug}.html  ({changed} changed lines)")
+        return
+    path = os.path.join(OUT_DIR or ROOT, f"{slug}.html")
     with open(path, "w", encoding="utf-8", newline="\n") as f:
         f.write(html)
     print(f"  wrote {slug}.html")
@@ -1094,6 +1304,51 @@ def build_city(c):
     slug = c["slug"]
     url = f"{SITE}/{slug}.html"
     city = c["city"]
+
+    # Optional per-city overrides. The defaults reproduce the Highway 16 pages
+    # exactly; the Okanagan pages set them because the pitch there is different
+    # — not local, narrower scope, and a competitor set worth naming.
+    hero_trust = c.get(
+        "hero_trust",
+        "Sites from $3,500 with the copywriting included. "
+        "AI Visibility Audit $1,250, delivered in 72 hours. Based in Vanderhoof, BC.",
+    )
+    console_detail = c.get(
+        "console_detail", f"asked for a recommendation in {city} — named someone else"
+    )
+    cta_h2 = c.get("cta_h2", f"Find out where you stand in {city}.")
+    cta_lead = c.get(
+        "cta_lead",
+        "I'll run a free spot-check: I ask the AI assistants what a customer "
+        f"would ask, in your category, in {city} — and tell you whether your "
+        "name comes up. No charge, no obligation.",
+    )
+
+    # The Time & Money Audit is in-person and scoped to the Highway 16 corridor,
+    # so Okanagan pages must not offer it. They get the remote monthly plan in
+    # that slot instead — same position, something actually deliverable there.
+    if c.get("group", "north") == "okanagan":
+        third_card = """        <div class="service-icon"><i class="fa-solid fa-arrows-rotate"></i></div>
+        <div class="service-tag">$199/mo · Remote</div>
+        <h3>AI Visibility Maintenance</h3>
+        <p>The audit is a photograph; this keeps it current. Monthly checks across ChatGPT, Perplexity and Google AI, schema kept accurate as the platforms change, and a full re-audit every quarter.</p>
+        <ul class="service-features">
+          <li>Monthly visibility checks for your category and city</li>
+          <li>Schema and Bing index kept current</li>
+          <li>Month to month, no contract</li>
+        </ul>
+        <a href="services.html" class="post-read-more">See the plans →</a>"""
+    else:
+        third_card = """        <div class="service-icon"><i class="fa-solid fa-stopwatch"></i></div>
+        <div class="service-tag">$1,500 · In person</div>
+        <h3>Time &amp; Money Audit</h3>
+        <p>Not a web problem — an office one. I visit your business, follow the paperwork, and put real numbers on where hours and dollars leak out of quoting, invoicing, and follow-ups.</p>
+        <ul class="service-features">
+          <li>Done in person, in your business</li>
+          <li>Written plan, fixes ranked by impact</li>
+          <li>Fee credited toward the fixes</li>
+        </ul>
+        <a href="time-money-audit.html" class="post-read-more">How it works →</a>"""
 
     schema = {
         "@context": "https://schema.org",
@@ -1158,7 +1413,7 @@ def build_city(c):
         <div class="hero-cta-row">
           <a href="contact.html" class="btn-primary">Get a Free Spot-Check</a>
         </div>
-        <p class="hero-trust">Websites from $2,000. AI Visibility Audit $1,250, delivered in 72 hours. Based in Vanderhoof, BC.</p>
+        <p class="hero-trust">{hero_trust}</p>
       </div>
       <div class="agent-console">
         <div class="console-header">
@@ -1180,7 +1435,7 @@ def build_city(c):
               <span class="agent-name"><span class="agent-dot amber"></span>ChatGPT mention</span>
               <span class="agent-status status-building">NOT FOUND</span>
             </div>
-            <span class="agent-detail">asked for a recommendation in {city} — named someone else</span>
+            <span class="agent-detail">{console_detail}</span>
           </div>
           <div class="agent-row">
             <div class="agent-header">
@@ -1222,15 +1477,15 @@ def build_city(c):
 
       <div class="service-card">
         <div class="service-icon"><i class="fa-solid fa-globe"></i></div>
-        <div class="service-tag">$2,000–$5,000</div>
+        <div class="service-tag">Sites from $3,500</div>
         <h3>Website Design &amp; Build</h3>
         <p>A complete small business website, built mobile-first with the structured data baked in from the start. Domain and DNS setup included, and you update it forever by sending an email — no CMS, no login.</p>
         <ul class="service-features">
-          <li>Campaign or event page, single page — $2,000</li>
-          <li>Local business site, 5–8 pages — $3,500</li>
-          <li>Product launch site — $5,000</li>
+          <li>Campaign or event page — from $2,000</li>
+          <li>Local business site, 5–8 pages — from $3,500</li>
+          <li>Product launch site — from $5,000</li>
           <li>Copywriting written for you, included from $3,500</li>
-          <li>Store +$500 · logo +$500</li>
+          <li>Store +$1,200 · logo +$900 · form automation quoted with the build</li>
         </ul>
         <a href="templates.html" class="post-read-more">See example sites →</a>
       </div>
@@ -1249,16 +1504,7 @@ def build_city(c):
       </div>
 
       <div class="service-card">
-        <div class="service-icon"><i class="fa-solid fa-stopwatch"></i></div>
-        <div class="service-tag">$1,500 · In person</div>
-        <h3>Time &amp; Money Audit</h3>
-        <p>Not a web problem — an office one. I visit your business, follow the paperwork, and put real numbers on where hours and dollars leak out of quoting, invoicing, and follow-ups.</p>
-        <ul class="service-features">
-          <li>Done in person, in your business</li>
-          <li>Written plan, fixes ranked by impact</li>
-          <li>Fee credited toward the fixes</li>
-        </ul>
-        <a href="time-money-audit.html" class="post-read-more">How it works →</a>
+{third_card}
       </div>
 
     </div>
@@ -1284,8 +1530,8 @@ def build_city(c):
 <section id="cta" style="background: var(--bg-card);">
   <div class="container">
     <div class="cta-center">
-      <h2>Find out where you stand in {city}.</h2>
-      <p class="lead">I'll run a free spot-check: I ask the AI assistants what a customer would ask, in your category, in {city} — and tell you whether your name comes up. No charge, no obligation.</p>
+      <h2>{cta_h2}</h2>
+      <p class="lead">{cta_lead}</p>
       <a href="contact.html" class="btn-primary" style="font-size: 17px; padding: 16px 36px; margin-top: 12px; display: inline-block;">Get My Free Spot-Check</a>
       <p style="margin-top: 20px; font-size: 14px; color: var(--text-subtle);">Or email <a href="mailto:ken@gentoolinkwebservices.com">ken@gentoolinkwebservices.com</a> · call or text 604-218-7290</p>
     </div>
@@ -1301,7 +1547,7 @@ def build_city(c):
         "OGTITLE": f"Web Design in {city}, BC — Gentoolink Web Services",
         "OGDESC": c["desc"],
         "OGIMG": OG_IMG,
-        "SCHEMA": json.dumps(schema, indent=2, ensure_ascii=False),
+        "SCHEMA": dump_schema(schema),
         "FOOTER_TAG": f"Websites and AI visibility for {city}. <span>Built in Northern BC.</span>",
     }
 
@@ -1356,7 +1602,11 @@ def build_industry(ind):
                 "areaServed": {"@type": "AdministrativeArea", "name": "British Columbia"},
                 "offers": {
                     "@type": "Offer",
-                    "price": "3500",
+                    "priceSpecification": {
+                        "@type": "PriceSpecification",
+                        "minPrice": "3500",
+                        "priceCurrency": "CAD",
+                    },
                     "priceCurrency": "CAD",
                     "availability": "https://schema.org/InStock",
                     "url": url,
@@ -1427,7 +1677,7 @@ def build_industry(ind):
         <div class="hero-cta-row">
           {hero_cta}
         </div>
-        <p class="hero-trust">$3,500 for a typical 5&ndash;8 page site with the copywriting included, usually live in 2&ndash;4 weeks. Structured data included so AI assistants can actually read your site.</p>
+        <p class="hero-trust">From $3,500 for a typical 5&ndash;8 page site with the copywriting included, usually live in 2&ndash;4 weeks. Structured data included so AI assistants can actually read your site. Extras like form automation and online booking are quoted on top.</p>
       </div>
     </div>
   </div>
@@ -1489,7 +1739,7 @@ def build_industry(ind):
         "OGTITLE": f"{industry} Website Design | Gentoolink Web Services",
         "OGDESC": ind["desc"],
         "OGIMG": OG_IMG,
-        "SCHEMA": json.dumps(schema, indent=2, ensure_ascii=False),
+        "SCHEMA": dump_schema(schema),
         "FOOTER_TAG": f"Websites for {industry.lower()}. <span>Built in Northern BC.</span>",
     }
 
@@ -1698,7 +1948,7 @@ def build_service(s):
         "OGTITLE": f'{s["name"]} | Gentoolink Web Services',
         "OGDESC": s["desc"],
         "OGIMG": OG_IMG,
-        "SCHEMA": json.dumps(schema, indent=2, ensure_ascii=False),
+        "SCHEMA": dump_schema(schema),
         "FOOTER_TAG": f'{s["name"]}. <span>Built in Northern BC.</span>',
     }
 
@@ -1720,4 +1970,17 @@ def main():
 
 
 if __name__ == "__main__":
+    _args = sys.argv[1:]
+    if "--check" in _args:
+        CHECK_ONLY = True
+    if "--out" in _args:
+        OUT_DIR = _args[_args.index("--out") + 1]
+        os.makedirs(OUT_DIR, exist_ok=True)
     main()
+    if CHECK_ONLY:
+        if DRIFT:
+            print(f"\nDRIFT in {len(DRIFT)} page(s): {', '.join(DRIFT)}")
+            print("The HTML on disk is the source of truth. Reconcile the")
+            print("templates before running this without --check.")
+            sys.exit(1)
+        print("\nNo drift. Generated output matches every page on disk.")
