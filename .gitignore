@@ -5,3 +5,7 @@ __pycache__/
 # Parked until it has enough content to be worth indexing.
 # Kept locally, not deployed. See .htaccess for the live redirect.
 media.html
+
+# Working notes. Kept out of git because the cPanel deploy copies the repo into
+# public_html, and this file names clients, prices and security gaps.
+.claude/TODO.md
