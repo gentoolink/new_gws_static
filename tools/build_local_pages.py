@@ -803,6 +803,65 @@ INDUSTRIES = [
 
 SERVICES = [
     {
+        "slug": "competitor-intel-brief",
+        "meta_desc": "A weekly email naming which businesses ChatGPT, Perplexity and Google AI recommend in your category and town \u2014 and what changed. $197/month, no contract.",
+        "name": "Weekly Competitor Intel Brief",
+        "service_type": "Competitive AI Visibility Monitoring",
+        "title": "Weekly Competitor Intel Brief | Gentoolink Web Services",
+        "desc": "A weekly email reporting which businesses the AI assistants name in your category and town, and what changed since last week. $197 per month, month to month, no contract.",
+        "keywords": "AI visibility monitoring, competitor tracking ChatGPT, AI search monitoring small business, brand mentions AI, Perplexity tracking, local AI visibility BC",
+        "eyebrow": "Competitor Intel \u00b7 Weekly, by email",
+        "h1": "You Cannot See the Answer Your Customers Are Getting",
+        "hero_sub": "A Google ranking is public \u2014 you can look it up. When someone asks ChatGPT who to call in your town, that answer is private, it names two or three businesses, and it is different tomorrow. Most owners have never seen one.",
+        "hero_trust": "$197/month. A short email every week. Month to month, no contract, no setup fee. Cancel by replying to one.",
+        "cta_label": "See a Sample Brief",
+        "low_price": "197",
+        "problem_h2": "Checking it yourself once tells you almost nothing.",
+        "problem": [
+            "Every owner I mention this to does the same thing: opens ChatGPT, types their trade and their town, and reads the answer. Fair enough. But that is a sample of one, taken once, and the assistants do not work like a rankings page. Ask the same question tomorrow, or from a different account, and the list can come back different. One check that includes you proves about as much as one that does not.",
+            "The second problem is that nothing tells you when it changes. A competitor puts real detail on their site, gets their profile in order, gets indexed properly \u2014 and quietly starts turning up in answers where you used to. Nobody sends you a notice. You find out through a quiet quarter, months later, and you attribute it to the economy.",
+            "The third is that there is no history. Even if you check occasionally, you are comparing today against a vague memory of the last time you looked. Without a record you cannot tell a real shift from a bad roll of the dice, which is exactly the distinction that should decide whether you spend money on it.",
+        ],
+        "hook": "The point is not one answer. It is the same questions, asked every week, written down.",
+        "features_h2": "What arrives in your inbox.",
+        "features": [
+            ("Who got named this week", "The businesses ChatGPT, Perplexity and Google AI actually returned when asked for a recommendation in your category and town \u2014 in the order they were given."),
+            ("Whether you were one of them", "Stated plainly, for each platform, with no rounding up. If you did not appear anywhere this week, the brief says that in the first line."),
+            ("What changed since last week", "New names that appeared, names that dropped out, and movement in the order. If nothing moved, the brief says nothing moved rather than padding it out."),
+            ("The questions I asked", "The exact prompts, listed, so you can run them yourself and check my work. They are chosen to match how a customer actually asks, not how a marketer would."),
+            ("A running record", "Every week is kept, so after a couple of months you have a trend rather than an impression \u2014 which is the only way to tell a real change from noise."),
+            ("A short read on the Wide tier", "On the $297 plan, a monthly note from me on what genuinely moved and whether it is worth doing anything about. Often the answer is no."),
+        ],
+        "tables": [
+            {
+                "label": "Pricing",
+                "h2": "Two sizes. Both month to month.",
+                "intro": "No setup fee and no contract. You can stop by replying to any brief, and the last one you paid for is still yours.",
+                "rows": [
+                    ("Weekly Competitor Intel Brief", "$197/mo", "One category, one town, up to five competitors tracked. A short email every week."),
+                    ("Competitor Intel Brief \u2014 Wide", "$297/mo", "Up to twelve competitors across three categories or towns, plus a monthly written read on what moved."),
+                ],
+            },
+        ],
+        "faqs": [
+            ("How is this different from just asking ChatGPT myself?",
+             "Mostly in that it happens every week and gets written down. You can absolutely run these questions yourself, and the brief lists the exact prompts so you can. What is hard to do yourself is the discipline: the same questions, the same way, every week, recorded, so that in three months you can tell whether something actually changed. Almost nobody sustains that, which is the entire product."),
+            ("Why does the answer change every time I ask?",
+             "Because these systems are not a rankings table. The same question can return a different list on a different day, from a different account, or in a different session \u2014 that is how they are built, not a fault. It is also why a single check is close to meaningless and why the brief samples repeatedly instead. Anyone selling you a single fixed \u201cAI ranking\u201d for your business is describing something that does not exist."),
+            ("Can I not just buy a tool for $29 a month?",
+             "You can, and if you will genuinely log in and use it, you probably should \u2014 it is cheaper than this. Tools like that give you a dashboard and leave the work to you: choosing the prompts, reading the data, deciding what matters. This is the opposite arrangement. Someone who knows your market picks the questions, runs them, and sends you a paragraph in plain English. If you have ever paid for a dashboard you stopped opening after three weeks, you already know which one you would use."),
+            ("Will the brief improve my AI visibility?",
+             "No, and I want to be straight about that. It reports what the assistants say; it does not change what they say. It is a measurement, not a treatment. If it shows you are absent and you want that fixed, the $1,250 AI Visibility Audit diagnoses why and AI Visibility Maintenance at $199 a month does the ongoing work \u2014 those are separate things, and plenty of people buy the brief without either."),
+            ("What if nothing changes for weeks?",
+             "Then the brief says so and takes ten seconds to read. That is a normal outcome and it is still worth knowing. The weeks where nothing moves are what make the week something does move mean anything \u2014 and if quiet weeks run long enough that you stop seeing the value, cancel. I would rather you did that than keep paying out of inertia."),
+            ("Which platforms do you check?",
+             "ChatGPT, Perplexity, and Google AI Overviews. They behave differently from each other and disagree often, which is useful in itself \u2014 being named by one and not the others usually points at a specific fixable gap rather than a general problem."),
+        ],
+        "cta_h2": "See one before you buy one.",
+        "cta_body": "Tell me your category and your town and I will run the first brief and send it to you, free, so you can see the format and what it actually turns up. If the answer is that you are already being named everywhere and nothing is moving, I will tell you that and you can skip the subscription.",
+        "cta_btn": "Send Me a Free First Brief",
+    },
+    {
         "slug": "google-business-profile-management",
         "meta_desc": "Google Business Profile tune-ups and management for Northern BC. The biggest lever in local search and AI recommendations. $400 tune-up, $250/mo.",
         "name": "Google Business Profile Management",
@@ -1233,6 +1292,7 @@ def dump_schema(schema):
 
 
 SERVICE_LINKS = [
+    ("competitor-intel-brief", "Competitor Intel Brief"),
     ("google-business-profile-management", "Google Business Profile"),
     ("ai-phone-receptionist", "AI Phone Receptionist"),
     ("website-hosting-care-plans", "Hosting &amp; Care Plans"),
