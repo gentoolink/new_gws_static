@@ -139,7 +139,6 @@ SHELL = """<!DOCTYPE html>
         <a href="services.html">Services</a>
         <a href="services.html#web-design">Web Design</a>
         <a href="templates.html">Examples</a>
-        <a href="time-money-audit.html" style="color: var(--gold);">Time &amp; Money Audit</a>
         <a href="about.html">About</a>
         <a href="blog.html">Blog</a>
       </span>
@@ -164,7 +163,6 @@ SHELL = """<!DOCTYPE html>
       <span style="display:flex;gap:20px;justify-content:center;flex-wrap:wrap;">
         <a href="services.html" style="font-size:13px;color:var(--text-subtle);">Services</a>
         <a href="templates.html" style="font-size:13px;color:var(--text-subtle);">Examples</a>
-        <a href="time-money-audit.html" style="font-size:13px;color:var(--text-subtle);">Time &amp; Money Audit</a>
         <a href="ai-visibility-audit.html" style="font-size:13px;color:var(--text-subtle);">AI Visibility Audit</a>
         <a href="about.html" style="font-size:13px;color:var(--text-subtle);">About</a>
         <a href="blog.html" style="font-size:13px;color:var(--text-subtle);">Blog</a>
@@ -253,7 +251,7 @@ CITIES = [
         "region": "BC",
         "eyebrow": "Vanderhoof, BC · My Home Town",
         "h1": "Web Design in Vanderhoof, BC — From Someone Who Lives Here",
-        "hero_sub": "I'm on Burrard Avenue, not in a call centre in another province. Websites from $3,500 with the copywriting included, AI visibility audits at $1,250, and an in-person Time &amp; Money Audit for businesses right here in the Nechako Valley.",
+        "hero_sub": "I'm on Burrard Avenue, not in a call centre in another province. Websites from $3,500 with the copywriting included, AI visibility audits at $1,250, and a real person down the street when something needs changing.",
         "title": "Web Design Vanderhoof, BC | Gentoolink Web Services",
         "desc": "Local website design and AI search visibility for Vanderhoof businesses. Vanderhoof-based, Chamber of Commerce member. Sites from $3,500, in-person audits available.",
         "keywords": "web design Vanderhoof, website designer Vanderhoof BC, small business website Vanderhoof, Nechako Valley web design, AI visibility Vanderhoof",
@@ -264,12 +262,12 @@ CITIES = [
             "I'm a member of the Vanderhoof Chamber of Commerce and I've been doing web and tech work for businesses in this area since 2018. When something breaks, you get my cell — not a ticket number.",
         ],
         "hook": "I can be at your shop this week. That's the whole pitch.",
-        "travel": "I'm based in Vanderhoof, so in-person work here costs no travel time. That's also why the in-person Time &amp; Money Audit starts here.",
+        "travel": "I'm based in Vanderhoof, so in-person work here costs no travel time and a meeting is a walk rather than a drive.",
         "faqs": [
             ("Do you work with businesses in Vanderhoof in person?",
-             "Yes. Ken McGonigal is based in Vanderhoof and is a member of the Vanderhoof Chamber of Commerce. In-person meetings are standard for Vanderhoof businesses, and the Time & Money Audit — a $1,500 in-person review of where hours and dollars leak out of your admin work — was built specifically for businesses in this area."),
+             "Yes. Ken McGonigal is based in Vanderhoof and is a member of the Vanderhoof Chamber of Commerce. In-person meetings are standard for Vanderhoof businesses, and being down the street means a conversation about the site does not have to be scheduled a week out."),
             ("How much does a small business website cost in Vanderhoof?",
-             "A single-offer campaign or event page starts at $2,000. A typical 5–8 page local business site is $3,500 with the copywriting written for you and included, usually live in 2–4 weeks. Every project is quoted in writing before work begins. The $1,250 AI Visibility Audit checks whether an existing business appears in ChatGPT, Perplexity, and Google AI Overviews. The $1,500 Time & Money Audit is a separate, in-person service focused on admin efficiency rather than web presence. All prices are in Canadian dollars."),
+             "A single-offer campaign or event page starts at $2,000. A typical 5–8 page local business site is $3,500 with the copywriting written for you and included, usually live in 2–4 weeks. Every project is quoted in writing before work begins. The $1,250 AI Visibility Audit checks whether an existing business appears in ChatGPT, Perplexity, and Google AI Overviews. All prices are in Canadian dollars."),
             ("My customers all know me already. Why would I need a website?",
              "Word of mouth still works in Vanderhoof, and a website doesn't replace it. What a website does is capture the customers word of mouth misses: people who just moved to town, people searching from Fraser Lake or Fort St. James, and the growing number of people who ask an AI assistant for a recommendation before they ask a neighbour."),
             ("What areas around Vanderhoof do you serve?",
@@ -294,10 +292,10 @@ CITIES = [
             "This is the cheapest kind of visibility to win, because the competition in a town this size is thin. A properly built site with correct structured data and a complete Google Business Profile can become the default answer for your category here, and stay that way.",
         ],
         "hook": "Small town, small competition. That cuts both ways — and right now it's in your favour.",
-        "travel": "Fort St. James is about 45 minutes north of Vanderhoof on Highway 27. In-person visits are straightforward, including for the Time &amp; Money Audit.",
+        "travel": "Fort St. James is about 45 minutes north of Vanderhoof on Highway 27, so in-person visits are straightforward.",
         "faqs": [
             ("Do you serve businesses in Fort St. James?",
-             "Yes. Fort St. James is about 45 minutes north of Vanderhoof on Highway 27, and it's part of Gentoolink Web Services' regular in-person service area. That includes both web design work and the $1,500 in-person Time & Money Audit."),
+             "Yes. Fort St. James is about 45 minutes north of Vanderhoof on Highway 27, and it's part of Gentoolink Web Services' regular in-person service area for web design and AI visibility work."),
             ("Is a website worth it for a business in a town this size?",
              "In a visitor town, usually yes — and for a different reason than in a city. Fort St. James draws people who aren't local: Stuart Lake visitors, tourists heading to the national historic site, and work crews passing through. Those people search before they arrive, and a business with no web presence is invisible to all of them."),
             ("How much does a website cost in Fort St. James?",
@@ -327,7 +325,7 @@ CITIES = [
         "travel": "Fraser Lake is about 40 minutes west of Vanderhoof on Highway 16. In-person visits are easy to arrange.",
         "faqs": [
             ("Do you build websites for Fraser Lake businesses?",
-             "Yes. Fraser Lake is about 40 minutes west of Vanderhoof on Highway 16 and is part of Gentoolink Web Services' regular service area, including in-person visits and the $1,500 Time & Money Audit."),
+             "Yes. Fraser Lake is about 40 minutes west of Vanderhoof on Highway 16 and is part of Gentoolink Web Services' regular service area, including in-person visits."),
             ("Why do out-of-town businesses outrank me in local searches?",
              "Because they've given search engines and AI tools clearer signals about who they serve. A business in Prince George with proper structured data listing its service area will often outrank a Fraser Lake business with no website at all — even for a Fraser Lake customer. The fix is to publish those same signals for your own business."),
             ("How much does a website cost in Fraser Lake?",
@@ -357,7 +355,7 @@ CITIES = [
         "travel": "Burns Lake is about an hour and 15 minutes west of Vanderhoof on Highway 16. In-person visits can be arranged; most web work is remote.",
         "faqs": [
             ("Do you serve Burns Lake and the Lakes District?",
-             "Yes. Burns Lake is about an hour and 15 minutes west of Vanderhoof on Highway 16. Web design and AI visibility work is done remotely, and in-person visits — including the $1,500 Time & Money Audit — can be arranged."),
+             "Yes. Burns Lake is about an hour and 15 minutes west of Vanderhoof on Highway 16. Web design and AI visibility work is done remotely, and in-person visits can be arranged."),
             ("How much does a website cost in Burns Lake?",
              "A single-offer campaign or event page starts at $2,000. A typical 5–8 page local business site is $3,500 with the copywriting written for you and included, usually live in 2–4 weeks. Every project is quoted in writing before work begins. The $1,250 AI Visibility Audit checks whether an existing business appears in ChatGPT, Perplexity, and Google AI Overviews. All prices are in Canadian dollars."),
             ("Can a website help with seasonal business?",
@@ -855,7 +853,7 @@ SERVICES = [
             ("Will this help me show up in the Google Maps pack?",
              "It is the main lever. The map pack weighs profile completeness, category accuracy, proximity, review volume and recency, and how responsive the business appears. Proximity cannot be changed, but everything else on that list is exactly what the tune-up addresses."),
             ("Can you manage a profile for a business outside Northern BC?",
-             "Yes. Google Business Profile work is done remotely and does not require an in-person visit, so it works for businesses anywhere in Canada. The in-person services, like the Time & Money Audit, are the ones limited to the Northern BC service area."),
+             "Yes. Google Business Profile work is done remotely and does not require an in-person visit, so it works for businesses anywhere in Canada."),
         ],
         "cta_h2": "Find out what your profile is missing.",
         "cta_body": "Send me your business name and I will look at your Google Business Profile and tell you what is incomplete — categories, hours, photos, review replies, the lot. No charge for the look.",
@@ -1324,11 +1322,7 @@ def build_city(c):
         "name comes up. No charge, no obligation.",
     )
 
-    # The Time & Money Audit is in-person and scoped to the Highway 16 corridor,
-    # so Okanagan pages must not offer it. They get the remote monthly plan in
-    # that slot instead — same position, something actually deliverable there.
-    if c.get("group", "north") == "okanagan":
-        third_card = """        <div class="service-icon"><i class="fa-solid fa-arrows-rotate"></i></div>
+    third_card = """        <div class="service-icon"><i class="fa-solid fa-arrows-rotate"></i></div>
         <div class="service-tag">$199/mo · Remote</div>
         <h3>AI Visibility Maintenance</h3>
         <p>The audit is a photograph; this keeps it current. Monthly checks across ChatGPT, Perplexity and Google AI, schema kept accurate as the platforms change, and a full re-audit every quarter.</p>
@@ -1338,17 +1332,6 @@ def build_city(c):
           <li>Month to month, no contract</li>
         </ul>
         <a href="services.html" class="post-read-more">See the plans →</a>"""
-    else:
-        third_card = """        <div class="service-icon"><i class="fa-solid fa-stopwatch"></i></div>
-        <div class="service-tag">$1,500 · In person</div>
-        <h3>Time &amp; Money Audit</h3>
-        <p>Not a web problem — an office one. I visit your business, follow the paperwork, and put real numbers on where hours and dollars leak out of quoting, invoicing, and follow-ups.</p>
-        <ul class="service-features">
-          <li>Done in person, in your business</li>
-          <li>Written plan, fixes ranked by impact</li>
-          <li>Fee credited toward the fixes</li>
-        </ul>
-        <a href="time-money-audit.html" class="post-read-more">How it works →</a>"""
 
     schema = {
         "@context": "https://schema.org",

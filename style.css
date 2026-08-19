@@ -237,7 +237,7 @@ nav {
   right: 0;
 }
 
-/* The "Time & Money Audit" nav label is long — tighten the bar before it overflows */
+/* Long nav labels — tighten the bar before it overflows */
 @media (max-width: 1100px) {
   .nav-inner { gap: 16px; }
   .nav-links { gap: 18px; }
@@ -1857,7 +1857,7 @@ footer .container {
 
 .back-link:hover { color: var(--accent); text-decoration: none; }
 
-/* ─── Local strip (Time & Money Audit door) ──────────── */
+/* ─── Local strip (contact page audit door) ──────────── */
 
 .local-strip {
   background: linear-gradient(90deg, rgba(45,212,191,0.07), rgba(45,212,191,0.015)), var(--bg-card);
@@ -2529,94 +2529,6 @@ section[id] { scroll-margin-top: 84px; }
   .vc-shared-cta { width: 100%; }
 }
 
-/* ─── Arithmetic table (Time & Money Audit) ──────────── */
-
-.arith-wrap {
-  margin: 32px 0;
-  overflow-x: auto;
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0)), var(--bg-elevated);
-  box-shadow: var(--shadow-card);
-}
-
-.arith-table {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 15px;
-  min-width: 480px;
-}
-
-.arith-caption {
-  caption-side: top;
-  text-align: left;
-  padding: 18px 22px 0;
-  font-size: 13px;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: var(--text-subtle);
-}
-
-.arith-table th,
-.arith-table td {
-  padding: 14px 22px;
-  text-align: right;
-  font-variant-numeric: tabular-nums;
-}
-
-.arith-table thead th {
-  font-family: var(--font-display);
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--text-muted);
-  border-bottom: 1px solid var(--border);
-  white-space: nowrap;
-}
-
-.arith-table th:first-child,
-.arith-table td:first-child { text-align: left; }
-
-.arith-table tbody th {
-  font-weight: 700;
-  color: var(--text);
-}
-
-.arith-table tbody td { color: var(--text-muted); }
-
-.arith-table tbody tr + tr th,
-.arith-table tbody tr + tr td { border-top: 1px solid var(--border-soft); }
-
-/* The row the copy calls out — five hours is the typical week. Scoped through
-   tbody so it outranks `.arith-table tbody td`, which would otherwise win on
-   specificity and leave the highlighted row muted grey. */
-.arith-table tbody .arith-row-mark th,
-.arith-table tbody .arith-row-mark td {
-  background: var(--gold-dim);
-  color: var(--gold-bright);
-}
-
-.arith-source {
-  margin: 32px 0 0;
-  border-left: 2px solid var(--accent-border);
-  padding: 4px 0 4px 18px;
-}
-
-.arith-source p {
-  font-size: 14px;
-  line-height: 1.75;
-  color: var(--text-muted);
-  margin: 0 0 12px;
-}
-
-.arith-source p:last-child { margin-bottom: 0; }
-.arith-source strong { color: var(--text); }
-
-@media (max-width: 720px) {
-  .arith-table th,
-  .arith-table td { padding: 12px 14px; }
-  .arith-caption { padding: 14px 14px 0; }
-}
 
 /* ─── Recurring plan cards ───────────────────────────── */
 

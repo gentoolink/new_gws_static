@@ -20,6 +20,10 @@ RewriteRule ^media\.html$ / [R=302,L]
 # sitting in public_html after a manual upload.
 RewriteRule ^sitereply\.html$ / [R=301,L]
 
+# Time & Money Audit discontinued. Permanent (301) -- the service is retired,
+# and the page had inbound links from the nav, footer and blog for months.
+RewriteRule ^time-money-audit\.html$ /services.html [R=301,L]
+
 # Short link for the Microsoft Bookings page. The real URL is a 100+ character
 # GUID that can't be read out on the phone or printed on a card, so /book fronts
 # it and every CTA on the site points here instead of hard-coding it.

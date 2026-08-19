@@ -74,7 +74,6 @@ def lastmod_for(path):
 # Existing pages, preserved with their original priorities.
 EXISTING = [
     ("", "weekly", "1.0"),
-    ("time-money-audit.html", "monthly", "0.9"),
     ("ai-visibility-audit.html", "monthly", "0.9"),
     ("services.html", "monthly", "0.9"),
     ("contact.html", "monthly", "0.8"),
@@ -91,7 +90,6 @@ EXISTING = [
 FOOTER_HUB_PAGES = [
     "index.html",
     "services.html",
-    "time-money-audit.html",
     "contact.html",
     "about.html",
     "blog.html",
