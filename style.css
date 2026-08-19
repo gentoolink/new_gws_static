@@ -2617,3 +2617,36 @@ section[id] { scroll-margin-top: 84px; }
   .arith-table td { padding: 12px 14px; }
   .arith-caption { padding: 14px 14px 0; }
 }
+
+/* ─── Recurring plan cards ───────────────────────────── */
+
+.plan-price {
+  font-family: var(--font-display);
+  font-size: 30px;
+  font-weight: 700;
+  color: var(--gold-bright);
+  line-height: 1;
+  margin: 0 0 16px;
+}
+
+.plan-per {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-subtle);
+  margin-left: 2px;
+}
+
+.plan-note {
+  margin-top: 28px;
+  border-left: 2px solid var(--accent-border);
+  padding: 4px 0 4px 18px;
+}
+
+.plan-note p {
+  font-size: 14px;
+  line-height: 1.75;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.plan-note strong { color: var(--text); }
