@@ -980,13 +980,13 @@ SERVICES = [
         "name": "Website Hosting and Care Plans",
         "service_type": "Website Hosting and Maintenance",
         "title": "Website Hosting & Care Plans | Gentoolink Web Services",
-        "desc": "Managed hosting, backups, security monitoring, and a real person to email when you need a change. Plans from $45/month for Northern BC businesses.",
+        "desc": "One person keeps your site current. Take over an existing site for $400, then a care plan from $95/month; hosting alone from $45/month. Northern BC and remote.",
         "keywords": "website hosting Northern BC, website maintenance plan, website care plan BC, managed hosting small business, website updates Prince George",
         "eyebrow": "Hosting &amp; Care Plans",
         "h1": "Someone to Email When the Site Needs Changing",
         "hero_sub": "Most small business websites are built once and then quietly abandoned — no backups, no updates, and nobody to call when the hours change or something breaks.",
-        "hero_trust": "Hosting from $45/month. Care plans from $95/month, including the edits. You email me; I make the change. No lock-in.",
-        "cta_label": "Get on a Care Plan",
+        "hero_trust": "Already have a site? The takeover is $400 to set it right, then $95/month with the edits included. Hosting alone from $45/month. You email me; I make the change. No lock-in.",
+        "cta_label": "Take Over My Site",
         "low_price": "45",
         "problem_h2": "The site was finished. Then nothing happened to it for four years.",
         "problem": [
@@ -1056,12 +1056,12 @@ SERVICES = [
                 ],
             },
             {
-                "label": "Bundles",
-                "h2": "Or bundle it with your local visibility work.",
-                "intro": "These combine a care plan with the Google Business Profile work most local businesses need anyway.",
+                "label": "The Takeover",
+                "h2": "Already have a site? Start with the takeover.",
+                "intro": "A one-time setup that puts an existing site right, then the care plan. This is how most sites come onto a plan.",
                 "rows": [
-                    ("Foundation", "$400 + $95/mo", "Google Business Profile tune-up plus the Lean Care Plan."),
-                    ("Complete", "$900 + $675/mo", "Foundation upgraded to the Growth Care Plan, plus an AI customer service assistant and ongoing local visibility management."),
+                    ("Site takeover", "$400 + $95/mo", "Moved onto my hosting, Google Business Profile tune-up, Bing submission, structured data checked and fixed, and the AI Visibility Audit report — then the Lean Care Plan."),
+                    ("Takeover — Complete", "$900 + $675/mo", "The takeover upgraded to the Growth Care Plan, plus the AI Phone Receptionist and ongoing Google Business Profile management."),
                 ],
             },
         ],
@@ -1075,15 +1075,15 @@ SERVICES = [
             ("Do I have to sign a contract?",
              "No. Hosting and care plans are month to month and can be cancelled at any time. If you leave, the site is yours and it can be moved to another host."),
             ("Can you take over hosting for a site someone else built?",
-             "Usually yes, depending on how it was built. Static and standard small business sites migrate easily. It is worth a look first, because occasionally a site is tied to a proprietary platform that cannot be moved without rebuilding it."),
+             "Usually yes, depending on how it was built. Static and standard small business sites migrate easily. The takeover is a one-time $400 setup: the move to managed hosting, a Google Business Profile tune-up, Bing submission, a structured data check, and the AI Visibility Audit report, then the Lean Care Plan at $95 per month. I look first, because occasionally a site is tied to a proprietary platform that cannot be moved without rebuilding it, and I will say so before you pay anything."),
             ("Can't I just host my website for free?",
              "For a simple static site, technically yes — free tiers exist and they work. If you are comfortable running your own deployments, you should use one. What paid hosting buys is not the server, which costs pennies: it is the SSL, domain and DNS renewals that expire on separate schedules, backups that have been tested rather than assumed, monitoring so a problem is found before a customer finds it, and one person to email who already knows your site. Free platforms have documentation, not people."),
             ("What is the risk of using free hosting for a business site?",
              "Three things. Free tiers are a business decision someone else controls, so limits and terms can change on their timetable. Most assume you can redeploy the site yourself, so if you cannot, an urgent change means waiting on a favour. And free accounts are tied to an individual login — if your site sits under a contractor's or a relative's personal account, so does control of it. None of that matters until it does, usually at the worst moment."),
         ],
         "cta_h2": "Tell me what your site is running on.",
-        "cta_body": "I will tell you what it would take to move it, what it would cost to keep, and whether a care plan is worth it for how often you actually change things. If hosting alone is enough for you, I will say that.",
-        "cta_btn": "Ask About Hosting",
+        "cta_body": "I will tell you whether it can be moved, what the $400 takeover puts right, and whether a care plan is worth it for how often you actually change things. If hosting alone is enough for you, I will say that.",
+        "cta_btn": "Tell Me About My Site",
     },
 ]
 
@@ -1109,12 +1109,12 @@ def identity_nodes():
             "@id": f"{SITE}/#organization",
             "name": "Gentoolink Web Services",
             "description": (
-                "Gentoolink Web Services builds small business websites and runs AI "
-                "visibility audits, checking whether a business appears in ChatGPT, "
-                "Perplexity, and Google AI Overviews, then implementing the structured "
-                "data, Bing indexing, and content changes needed to fix what's missing."
+                "Gentoolink Web Services keeps small business websites, Google Business "
+                "Profiles, and structured data current on monthly care plans, builds new "
+                "sites with the copywriting included, and runs AI visibility audits that "
+                "check whether a business appears in ChatGPT, Perplexity, and Google AI Overviews."
             ),
-            "slogan": "Find out if AI can find your business.",
+            "slogan": "Your website, kept current.",
             "foundingDate": "2018",
             "url": SITE,
             "logo": {"@id": f"{SITE}/#logo"},
