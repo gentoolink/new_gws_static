@@ -142,7 +142,7 @@
           "name": "Why does Bing indexing matter for AI search?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Bing powers ChatGPT Search. Microsoft's Bing is the search engine behind ChatGPT's web browsing and retrieval features. If your website isn't indexed by Bing, it cannot appear in ChatGPT results — regardless of how well you rank on Google. Most local businesses have never submitted their site to Bing Webmaster Tools, which is one of the most common and most fixable AI visibility gaps."
+            "text": "ChatGPT Search currently draws on Microsoft's Bing index for web results while OpenAI builds out its own crawler, OAI-SearchBot. Today, a website Bing has not indexed is very unlikely to be cited in ChatGPT, regardless of how well it ranks on Google — and a site that blocks OAI-SearchBot will be missing from OpenAI's own index as that takes over. Most local businesses have never submitted their site to Bing Webmaster Tools, which is one of the most common and most fixable AI visibility gaps."
           }
         },
         {
@@ -150,7 +150,7 @@
           "name": "How do I know if my business is showing up in ChatGPT?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Open ChatGPT and type a query like 'best [your business type] in [your city]' or 'who is the top [plumber/dentist/accountant] near [city].' If your business isn't mentioned in the response, you have an AI visibility gap. According to SOCi's 2026 Local Visibility Index, ChatGPT recommends only 1.2% of local businesses. The AI Visibility Audit from Gentoolink Web Services checks all major platforms and tells you exactly where you stand."
+            "text": "Open ChatGPT and type a query like 'best [your business type] in [your city]' or 'who is the top [plumber/dentist/accountant] near [city].' If your business isn't mentioned in the response, you have an AI visibility gap. According to SOCi's 2026 Local Visibility Index, ChatGPT recommended only 1.2% of the roughly 350,000 US business locations it checked. The AI Visibility Audit from Gentoolink Web Services checks all major platforms and tells you exactly where you stand."
           }
         },
         {
@@ -378,7 +378,7 @@
               <span class="agent-name"><span class="agent-dot amber"></span>Bing index</span>
               <span class="agent-status status-building">MISSING</span>
             </div>
-            <span class="agent-detail">Bing is what ChatGPT Search reads — site never submitted</span>
+            <span class="agent-detail">Bing currently feeds ChatGPT Search — site never submitted</span>
           </div>
           <div class="agent-row">
             <div class="agent-header">
@@ -423,7 +423,7 @@
     <h2>Your Google ranking says nothing about whether AI can find you.</h2>
     <p class="lead">These are two different systems reading two different things. Google ranks pages on backlinks, content relevance and how people behave in the results. ChatGPT, Perplexity and Google AI Overviews work from structured data, Bing's index, whether your business details agree with each other across the web, and whether your pages answer questions in a form a machine can lift.</p>
     <p class="lead">A business can sit at the top of Google and be completely absent from the AI answer. It happens constantly, and the owner never finds out — there's no ranking report for this, no notification, nothing in Search Console. The first sign is quieter phones with no explanation attached.</p>
-    <p class="lead"><strong style="color: var(--text);">According to SOCi's 2026 Local Visibility Index, ChatGPT recommends only 1.2% of local businesses.</strong> That number isn't a warning about the future. It's the current hit rate, and most of the businesses in the other 98.8% have never checked.</p>
+    <p class="lead"><strong style="color: var(--text);">According to SOCi's 2026 Local Visibility Index, ChatGPT recommended only 1.2% of the roughly 350,000 US business locations it checked.</strong> That number isn't a warning about the future. It's the current hit rate, and most of the businesses in the other 98.8% have never checked.</p>
   </div>
 </section>
 
@@ -451,7 +451,8 @@
         <div class="service-icon" style="margin-bottom: 12px;"><i class="fa-solid fa-code"></i></div>
         <h3>Technical Foundation</h3>
         <ul class="service-features">
-          <li>Is your website indexed by Bing? (Bing powers ChatGPT Search — most businesses never check this)</li>
+          <li>Is your website indexed by Bing? (Bing currently powers ChatGPT Search — most businesses never check this)</li>
+          <li>Is OAI-SearchBot, OpenAI's own crawler, allowed in your robots.txt?</li>
           <li>Do you have structured data / JSON-LD schema? Is it valid?</li>
           <li>Does your site pass Google's Rich Results Test?</li>
         </ul>

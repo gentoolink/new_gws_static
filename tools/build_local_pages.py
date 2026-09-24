@@ -446,7 +446,7 @@ CITIES = [
         "local_h2": "Vernon keeps getting answered as if it were Kelowna.",
         "local_body": [
             "Ask an assistant for a trade, a clinic or a shop in Vernon and a good share of what comes back is in Kelowna, forty-five minutes south. That is not because Kelowna businesses are better. It is because they have more of the signals that tell a machine where they are and what they do, so they get pulled in whenever the North Okanagan comes up short.",
-            "The fix is unglamorous and specific: name the town and the surrounding communities explicitly, encode the service area as structured data rather than a sentence like &ldquo;serving the Okanagan&rdquo;, keep the Google Business Profile accurate, and make sure Bing has the site at all \u2014 because Bing is the index behind ChatGPT Search.",
+            "The fix is unglamorous and specific: name the town and the surrounding communities explicitly, encode the service area as structured data rather than a sentence like &ldquo;serving the Okanagan&rdquo;, keep the Google Business Profile accurate, and make sure Bing has the site at all \u2014 because Bing is currently the index behind ChatGPT Search.",
             "Vernon also has a seasonal shape that hurts businesses that go quiet. Silver Star, the lakes and the summer trade mean demand arrives in waves, and a site that stops being updated between them looks dormant to the systems deciding who to recommend when the season turns.",
         ],
         "hook": "If the assistants cannot tell Vernon from Kelowna, they will keep answering with Kelowna.",
@@ -1067,7 +1067,7 @@ SERVICES = [
         ],
         "faqs": [
             ("How much does website hosting cost?",
-             "Managed hosting starts at $45 CAD per month for static, low-maintenance sites and $95 per month for dynamic sites with frequent updates or a store. Security monitoring can be added for $15 per month. Care plans, which bundle hosting with an allowance of edits, start at $75 per month."),
+             "Managed hosting starts at $45 CAD per month for static, low-maintenance sites and $95 per month for dynamic sites with frequent updates or a store. Security monitoring can be added for $15 per month. Care plans, which bundle hosting with an allowance of edits, start at $95 per month."),
             ("What is the difference between hosting and a care plan?",
              "Hosting keeps the site online, backed up, and secure. A care plan adds a set allowance of content changes — the Lean Care Plan includes 2 small edits per quarter at $95/month, and the Growth Care Plan includes a monthly allowance with priority turnaround at $175/month. If you rarely change anything, hosting alone is enough."),
             ("What counts as a small edit?",
