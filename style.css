@@ -423,6 +423,73 @@ h2 {
   color: var(--text-subtle);
 }
 
+/* ─── Owner strip (hero) and About portrait ──────────── */
+
+.hero-owner {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 26px;
+  padding-top: 22px;
+  border-top: 1px solid var(--border);
+}
+
+.hero-owner img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--gold);
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.04);
+  flex-shrink: 0;
+}
+
+.hero-owner-name {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.hero-owner-meta {
+  margin-top: 2px;
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--text-subtle);
+}
+
+.about-portrait {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  margin-bottom: 30px;
+}
+
+.about-portrait img {
+  width: 132px;
+  height: 132px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--gold);
+  flex-shrink: 0;
+}
+
+.about-portrait-caption {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text-subtle);
+}
+
+.about-portrait-caption strong {
+  display: block;
+  font-size: 17px;
+  color: var(--text);
+  margin-bottom: 2px;
+}
+
+@media (max-width: 480px) {
+  .about-portrait { flex-direction: column; align-items: flex-start; gap: 14px; }
+}
+
 @keyframes rise {
   from { opacity: 0; transform: translateY(18px); }
   to   { opacity: 1; transform: translateY(0); }
