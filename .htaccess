@@ -32,6 +32,13 @@ RewriteRule ^time-money-audit\.html$ /services.html [R=301,L]
 # NE keeps mod_rewrite from re-escaping the @ and & in the target.
 RewriteRule ^book/?$ https://outlook.office.com/bookwithme/user/824a9f3b89dd46a493054c64f21cf610@gentoolinkwebservices.com?anonymous&ismsaljsauthenabled&ep=plink [R=302,NE,L]
 
+# The free AI visibility self-check moved from the homepage to the audit page.
+# Shared results carry ?vc=40-15-0, and links copied before the move point at
+# the root. Send them where the form now lives; mod_rewrite appends the query
+# string and the browser keeps the #visibility-check fragment.
+RewriteCond %{QUERY_STRING} (^|&)vc=
+RewriteRule ^(index\.html)?$ /ai-visibility-audit.html [R=301,L]
+
 # Retired landing pages left in /_archive/ on the server from an old upload.
 # They are not in the repo, were still returning 200 with "index, follow", and
 # one advertised $3,997 -- contradicting current pricing and competing with the

@@ -42,9 +42,31 @@
   "@context": "https://schema.org",
   "@graph": [
     {
+      "@type": "VideoObject",
+      "@id": "https://gentoolinkwebservices.com/ai-visibility-audit.html#cbc-ai-web-video",
+      "name": "Say goodbye to the internet as you know it",
+      "description": "CBC's Nora Young reports for The National on how artificial intelligence is reshaping the way people use the internet — the future of search, and what happens to information online when bots do most of the reading.",
+      "thumbnailUrl": "https://i.ytimg.com/vi/qbkfLxrrtzk/maxresdefault.jpg",
+      "uploadDate": "2026-07-30",
+      "duration": "PT8M11S",
+      "contentUrl": "https://www.youtube.com/watch?v=qbkfLxrrtzk",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/qbkfLxrrtzk",
+      "publisher": {
+        "@type": "Organization",
+        "name": "CBC News: The National",
+        "url": "https://www.youtube.com/@CBCTheNational"
+      },
+      "isPartOf": {
+        "@id": "https://gentoolinkwebservices.com/ai-visibility-audit.html"
+      }
+    },
+    {
       "@type": "WebPage",
       "@id": "https://gentoolinkwebservices.com/ai-visibility-audit.html",
       "url": "https://gentoolinkwebservices.com/ai-visibility-audit.html",
+      "video": {
+        "@id": "https://gentoolinkwebservices.com/ai-visibility-audit.html#cbc-ai-web-video"
+      },
       "name": "AI Visibility Audit — Gentoolink Web Services",
       "description": "An audit that checks whether a business appears in ChatGPT, Perplexity and Google AI Overviews when customers search its category and city, then reports the technical reasons it does or doesn't. $1,250, delivered in 72 hours, credited toward implementation.",
       "isPartOf": {
@@ -355,8 +377,9 @@
         </p>
         <div class="hero-cta-row">
           <a href="contact.html" class="btn-primary">Start My AI Visibility Audit — $1,250</a>
+          <a href="#visibility-check" class="btn-secondary">Free 60-Second Self-Check ↓</a>
         </div>
-        <p class="hero-trust">Plain-English PDF in 72 hours. The $1,250 is credited in full toward the fixes. No retainer, no contract.</p>
+        <p class="hero-trust">Included with every <a href="index.html#plans">site takeover</a>. On its own: plain-English PDF in 72 hours, $1,250 credited in full toward the fixes. No retainer, no contract.</p>
       </div>
       <div class="agent-console">
         <div class="console-header">
@@ -424,15 +447,116 @@
     <p class="lead">These are two different systems reading two different things. Google ranks pages on backlinks, content relevance and how people behave in the results. ChatGPT, Perplexity and Google AI Overviews work from structured data, Bing's index, whether your business details agree with each other across the web, and whether your pages answer questions in a form a machine can lift.</p>
     <p class="lead">A business can sit at the top of Google and be completely absent from the AI answer. It happens constantly, and the owner never finds out — there's no ranking report for this, no notification, nothing in Search Console. The first sign is quieter phones with no explanation attached.</p>
     <p class="lead"><strong style="color: var(--text);">According to SOCi's 2026 Local Visibility Index, ChatGPT recommended only 1.2% of the roughly 350,000 US business locations it checked.</strong> That number isn't a warning about the future. It's the current hit rate, and most of the businesses in the other 98.8% have never checked.</p>
+
+    <!-- Outside confirmation of the shift described above, from a source nobody
+         can accuse of selling AI audits. Click-to-play facade: see .video-facade
+         in style.css and the swap handler at the bottom of this file. -->
+    <figure class="video-embed">
+      <button type="button" class="video-facade" data-video-id="qbkfLxrrtzk"
+              aria-label="Play video: Say goodbye to the internet as you know it — CBC News: The National, 8 minutes">
+        <picture>
+          <source srcset="/assets/images/cbc-ai-web-video-thumb.webp" type="image/webp">
+          <img src="/assets/images/cbc-ai-web-video-thumb.jpg"
+               alt="CBC News: The National report on how AI is changing search and web traffic"
+               width="1280" height="720" loading="lazy" decoding="async">
+        </picture>
+        <span class="video-play"></span>
+      </button>
+      <figcaption class="video-caption">
+        <strong>&ldquo;Say goodbye to the internet as you know it&rdquo; — CBC News: The National</strong>
+        Don't take my word for it. CBC's Nora Young breaks down the future of search and what happens to information online when bots do most of the reading. Published July 30, 2026 · 8 min ·
+        <a href="https://www.youtube.com/watch?v=qbkfLxrrtzk" target="_blank" rel="noopener">watch on YouTube</a>.
+      </figcaption>
+    </figure>
   </div>
 </section>
+
+<!-- ─── Free self-check ───────────────────────────────────── -->
+<!-- Scores readiness from three self-reported answers, not visibility.
+     The paid audit is what measures. See assets/js/visibility-check.js. -->
+<section id="visibility-check">
+  <div class="container">
+    <div class="section-label">Free · 60 seconds · No email required</div>
+    <h2>What's your AI visibility score?</h2>
+    <p class="lead">Three questions about things you either know or you don't. Your score is worked out from those answers and shown with the arithmetic — nothing gets scanned, nothing gets guessed, and you don't have to give me your email to see it.</p>
+
+    <form class="vc-form" id="vc-form" novalidate>
+
+      <fieldset class="vc-q">
+        <legend><span class="vc-qnum">1</span> Is your website indexed by Bing?</legend>
+        <p class="vc-hint">Bing is currently the index behind ChatGPT Search, while OpenAI builds its own. If Bing doesn't have your site, ChatGPT is very unlikely to cite it — no matter how well you rank on Google. This is the hardest gate on the list, which is why it's worth the most.</p>
+        <label class="vc-opt">
+          <input type="radio" name="q1" value="40" data-max="40">
+          <span>Yes — I've seen my pages in Bing Webmaster Tools or in a Bing search</span>
+        </label>
+        <label class="vc-opt">
+          <input type="radio" name="q1" value="15" data-max="40" data-unsure="true">
+          <span>Probably, but I've never actually checked</span>
+        </label>
+        <label class="vc-opt">
+          <input type="radio" name="q1" value="0" data-max="40" data-unsure="true">
+          <span>No, or I don't know</span>
+        </label>
+      </fieldset>
+
+      <fieldset class="vc-q">
+        <legend><span class="vc-qnum">2</span> Is your Google Business Profile claimed and current?</legend>
+        <p class="vc-hint">Hours, categories, and services on a verified profile are among the most reliable facts an assistant can pick up about a local business — and one of the few you control directly.</p>
+        <label class="vc-opt">
+          <input type="radio" name="q2" value="35" data-max="35">
+          <span>Claimed, and the hours, categories, and services are up to date</span>
+        </label>
+        <label class="vc-opt">
+          <input type="radio" name="q2" value="15" data-max="35">
+          <span>Claimed, but I haven't touched it in a year or more</span>
+        </label>
+        <label class="vc-opt">
+          <input type="radio" name="q2" value="0" data-max="35" data-unsure="true">
+          <span>Not claimed, or I'm not sure</span>
+        </label>
+      </fieldset>
+
+      <fieldset class="vc-q">
+        <legend><span class="vc-qnum">3</span> Does your site have structured data describing your business?</legend>
+        <p class="vc-hint">JSON-LD markup stating who you are, where you work, and what you sell. It isn't a requirement for appearing in AI answers — Google is clear about that — but it removes the guesswork, and it keeps you eligible for the search features that still exist.</p>
+        <label class="vc-opt">
+          <input type="radio" name="q3" value="25" data-max="25">
+          <span>Yes — and it's been run through a validator</span>
+        </label>
+        <label class="vc-opt">
+          <input type="radio" name="q3" value="10" data-max="25" data-unsure="true">
+          <span>Something came with the site build, but it's never been checked</span>
+        </label>
+        <label class="vc-opt">
+          <input type="radio" name="q3" value="0" data-max="25" data-unsure="true">
+          <span>No, or I don't know</span>
+        </label>
+      </fieldset>
+
+      <div class="vc-actions">
+        <button type="submit" class="btn-primary vc-submit">Show my score</button>
+        <p class="vc-error" id="vc-error" hidden>Answer all three to see a score.</p>
+      </div>
+    </form>
+
+    <div class="vc-result" id="vc-result" role="status" aria-live="polite" hidden></div>
+
+    <noscript>
+      <p class="vc-disclaimer">This self-check needs JavaScript to add up your answers. The three questions above are the whole of it, though — Bing indexing, a current Google Business Profile, and valid structured data. If you can't answer them confidently, that is itself the finding.</p>
+    </noscript>
+  </div>
+</section>
+
 
 <!-- ─── The offer ─────────────────────────────────────────── -->
 <section id="offer" style="background: var(--bg-card);">
   <div class="container">
     <div class="section-label">The Audit</div>
     <h2>The AI Visibility Audit</h2>
-    <p class="lead" style="margin-bottom: 8px;"><strong style="color: var(--text);">$1,250 — delivered in 72 hours</strong></p>
+    <div class="plan-note" style="margin-bottom: 28px;">
+      <p><strong>Three ways to get it.</strong> Included with every <a href="index.html#plans">site takeover</a> — the report comes with the $400 setup and the fixes go into it. Repeated every quarter on <a href="services.html#tier-3">AI Visibility Maintenance</a>. Or on its own, below, for businesses outside my area or not ready for a plan.</p>
+    </div>
+    <p class="lead" style="margin-bottom: 8px;"><strong style="color: var(--text);">On its own: $1,250 — delivered in 72 hours</strong></p>
     <p class="lead">Here's what gets checked:</p>
 
     <div class="audit-grid">
@@ -578,7 +702,7 @@
       <source srcset="/assets/images/gentoolink-logo.webp" type="image/webp">
       <img src="/assets/images/gentoolink-logo.png" alt="Gentoolink Web Services" class="footer-logo" loading="lazy">
     </picture>
-    <p class="footer-tagline">AI visibility that gets you found. <span>We build yours.</span></p>
+    <p class="footer-tagline">Your website, kept current. <span>Built so Google and ChatGPT can both find you.</span></p>
     <nav aria-label="Footer navigation" style="margin-bottom: 12px;">
       <span style="display:flex;gap:20px;justify-content:center;flex-wrap:wrap;">
         <a href="services.html" style="font-size:13px;color:var(--text-subtle);">Services</a>
@@ -633,6 +757,9 @@
 <!-- Botpress webchat widget -->
 <script src="https://cdn.botpress.cloud/webchat/v3.6/inject.js"></script>
 <script src="https://files.bpcontent.cloud/2026/06/16/18/20260616185415-YA0VJZEI.js" defer></script>
+
+<script src="/assets/js/video-embed.js" defer></script>
+<script src="/assets/js/visibility-check.js" defer></script>
 
 </body>
 </html>
