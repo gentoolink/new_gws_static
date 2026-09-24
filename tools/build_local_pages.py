@@ -142,7 +142,7 @@ SHELL = """<!DOCTYPE html>
         <a href="about.html">About</a>
         <a href="blog.html">Blog</a>
       </span>
-      <a href="contact.html" class="nav-cta">Book an Audit</a>
+      <a href="contact.html" class="nav-cta">Get a Quote</a>
     </div>
   </div>
 </nav>
