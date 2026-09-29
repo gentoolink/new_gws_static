@@ -2629,3 +2629,55 @@ section[id] { scroll-margin-top: 84px; }
 }
 
 .plan-note strong { color: var(--text); }
+
+/* ─── How updates work: things you'll never have to do ── */
+
+.never-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px 18px;
+  margin-top: 36px;
+  padding: 20px 22px;
+  border: 1px dashed var(--border);
+  border-radius: var(--radius);
+}
+
+.never-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.never-list ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.never-list li {
+  position: relative;
+  font-size: 14px;
+  color: var(--text-subtle);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 6px 15px;
+}
+
+.never-list li::after {
+  content: '';
+  position: absolute;
+  left: 11px;
+  right: 11px;
+  top: 50%;
+  height: 2px;
+  margin-top: -1px;
+  background: #ef4444;
+  border-radius: 2px;
+  opacity: 0.85;
+  transform-origin: 0 50%;
+}

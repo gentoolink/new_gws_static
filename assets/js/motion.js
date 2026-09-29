@@ -108,11 +108,12 @@
     }
     function stop() { running = false; }
 
+    // Paint one still frame straight away (and after every resize, which
+    // clears the canvas) so the hero is never blank while the loop is paused
+    // in a background tab or has not started yet.
     resize();
-    if (reduce) {
-      frame(t0 + 14000);
-    }
-    requestAnimationFrame(function () { canvas.classList.add('is-on'); });
+    frame(t0 + 14000);
+    setTimeout(function () { canvas.classList.add('is-on'); }, 30);
 
     new IntersectionObserver(function (entries) {
       visible = entries[0].isIntersecting;
@@ -126,7 +127,7 @@
     var rt;
     window.addEventListener('resize', function () {
       clearTimeout(rt);
-      rt = setTimeout(function () { resize(); if (reduce) frame(t0 + 14000); }, 150);
+      rt = setTimeout(function () { resize(); if (!running) frame(performance.now()); }, 150);
     });
 
     if (finePointer) {
@@ -164,7 +165,7 @@
 
   /* ─── Scroll reveal ───────────────────────────────── */
 
-  var GROUPS = '.services-grid, .audit-grid, .door-grid, .quote-bar, .review-grid, .objections-list, .compare-grid, .link-chips, .steps, .post-grid, .stats-bar';
+  var GROUPS = '.never-list ul, .services-grid, .audit-grid, .door-grid, .quote-bar, .review-grid, .objections-list, .compare-grid, .link-chips, .steps, .post-grid, .stats-bar';
   var SINGLES = [
     'main section:not(#hero) .section-label',
     'main section:not(#hero) h2',
@@ -209,8 +210,8 @@
     var two = kids.length === 2 && g.matches('.compare-grid, .door-grid, .quote-bar') &&
       kids[0].offsetTop === kids[1].offsetTop;
     kids.forEach(function (el, i) {
-      var variant = two ? (i === 0 ? 'rv-left' : 'rv-right') : (g.matches('.link-chips') ? 'rv-pop' : null);
-      var per = g.matches('.link-chips') ? 0.035 : 0.09;
+      var variant = two ? (i === 0 ? 'rv-left' : 'rv-right') : (g.matches('.link-chips, .never-list ul') ? 'rv-pop' : null);
+      var per = g.matches('.link-chips') ? 0.035 : g.matches('.never-list ul') ? 0.12 : 0.09;
       prime(el, Math.min(i * per, 0.6), variant);
     });
   });
