@@ -66,10 +66,10 @@
     for (var i = 0; i < BANDS.length; i++) {
       if (score >= BANDS[i].min) { b = BANDS[i]; break; }
     }
-    /* A site Bing doesn't have can't be cited by ChatGPT Search, whatever the
-       other two answers are — so a zero there caps the verdict. Without this
-       a 0/35/25 answer scores 60 and reads "Mostly there", which contradicts
-       the question copy calling Bing the hardest gate. */
+    /* A site Bing doesn't have is missing one of the main routes into
+       ChatGPT's search, whatever the other two answers are — so a zero there
+       caps the verdict. Without this a 0/35/25 answer scores 60 and reads
+       "Mostly there", which undersells the gap the result copy describes. */
     if (bingBlocked && score >= 60) b = BANDS[2];
     return b;
   }
@@ -272,7 +272,7 @@
 
     if (s.bingBlocked) {
       result.appendChild(el('p', 'vc-unsure',
-        'Whatever else is in place, a site Bing hasn’t indexed can’t turn up in ChatGPT Search — that index is where it looks. Bing Webmaster Tools is free and submitting a sitemap takes about ten minutes; do that one first.'));
+        'Whatever else is in place, a site Bing hasn’t indexed is missing one of the main routes into ChatGPT’s search answers. Bing Webmaster Tools is free and submitting a sitemap takes about ten minutes; do that one first.'));
     }
 
     if (s.unsure > 0) {
