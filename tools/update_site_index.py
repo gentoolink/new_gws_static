@@ -32,6 +32,7 @@ MECHANICAL = re.compile(
     r'website-hosting-care-plans)\.html">|'
     r'web-design-(prince-george|vanderhoof|fort-st-james|fraser-lake|'
     r'burns-lake|quesnel)\.html">|'
+    r'/assets/(css|js)/motion\.(css|js)|classList\.add\(\'motion\'\)|'
     r'^</?(div|span)>$|^$'
 )
 

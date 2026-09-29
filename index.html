@@ -585,6 +585,8 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="/assets/css/motion.css">
+  <script>if(!matchMedia('(prefers-reduced-motion: reduce)').matches)document.documentElement.classList.add('motion')</script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -623,7 +625,7 @@
     <div class="hero-grid">
       <div class="hero-copy">
         <div class="hero-eyebrow">Website Care · Northern BC</div>
-        <h1 class="gradient-text">You Run the Business. I Run the Website.</h1>
+        <h1 class="hero-title"><span class="line"><span class="w" style="--i:0">You</span> <span class="w" style="--i:1">Run</span> <span class="w" style="--i:2">the</span> <span class="w" style="--i:3">Business.</span></span> <span class="line line-gold"><span class="w" style="--i:4">I</span> <span class="w" style="--i:5">Run</span> <span class="w" style="--i:6">the</span> <span class="w" style="--i:7">Website.</span></span></h1>
         <p class="hero-sub">
           Your website, your Google Business Profile, and the details ChatGPT reads — kept current by one person you can actually reach. Your hours change, you email me, and it's live the same day. No CMS, no login, no copy to write.
         </p>
@@ -643,6 +645,8 @@
           </div>
         </div>
       </div>
+      <div class="console-wrap">
+      <div class="console-float">
       <div class="agent-console">
         <div class="console-header">
           <span class="console-dot red"></span>
@@ -687,6 +691,24 @@
             <span class="agent-detail">No CMS, no dashboard, no password to remember</span>
           </div>
         </div>
+        <div class="console-sync">
+          <svg class="sync-lines" viewBox="0 0 300 34" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M150 0 C150 18, 50 14, 50 34"/>
+            <path d="M150 0 L150 34"/>
+            <path d="M150 0 C150 18, 250 14, 250 34"/>
+            <path class="spark" style="--n:0" pathLength="110" d="M150 0 C150 18, 50 14, 50 34"/>
+            <path class="spark" style="--n:1" pathLength="110" d="M150 0 L150 34"/>
+            <path class="spark" style="--n:2" pathLength="110" d="M150 0 C150 18, 250 14, 250 34"/>
+          </svg>
+          <div class="sync-nodes">
+            <span class="sync-node" style="--n:0"><i class="fa-solid fa-globe" aria-hidden="true"></i>Website</span>
+            <span class="sync-node" style="--n:1"><i class="fa-brands fa-google" aria-hidden="true"></i>Google profile</span>
+            <span class="sync-node" style="--n:2"><i class="fa-solid fa-code" aria-hidden="true"></i>Data AI reads</span>
+          </div>
+          <p class="sync-caption">Every change lands in all three</p>
+        </div>
+      </div>
+      </div>
       </div>
     </div>
   </div>
@@ -697,11 +719,11 @@
   <div class="container">
     <div class="quote-bar">
       <div class="quote-card">
-        <p class="quote-text">"66% of small business owners say lack of time is their greatest obstacle online."</p>
+        <p class="quote-text">"<span data-count>66%</span> of small business owners say lack of time is their greatest obstacle online."</p>
         <span class="quote-source">— CFIB, Small Business Digital Presence</span>
       </div>
       <div class="quote-card">
-        <p class="quote-text">"ChatGPT recommended just 1.2% of the 350,000 business locations SOCi checked."</p>
+        <p class="quote-text">"ChatGPT recommended just <span data-count>1.2%</span> of the <span data-count>350,000</span> business locations SOCi checked."</p>
         <span class="quote-source">— SOCi 2026 Local Visibility Index</span>
       </div>
     </div>
@@ -1172,6 +1194,8 @@
     });
   });
 </script>
+
+<script src="/assets/js/motion.js" defer></script>
 
 </body>
 </html>
