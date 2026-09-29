@@ -73,7 +73,7 @@
       "@type": "Service",
       "@id": "https://gentoolinkwebservices.com/services.html#service-care-plan",
       "name": "Website Care Plan",
-      "description": "A monthly plan that keeps a small business website, Google Business Profile, and structured data current, with managed hosting, backups, and security included. Lean Care Plan $95 CAD per month with two small edits per quarter; Growth Care Plan $175 per month with a monthly edit allowance and priority turnaround. A website built elsewhere is taken over for a one-time $400 setup covering the move to managed hosting, a Google Business Profile tune-up, Bing submission, a structured data check, and the AI Visibility Baseline (checked at setup and again about 60 days later). Changes are sent by email and are usually live the same day; there is no CMS and no client login. Month to month, no contract.",
+      "description": "A monthly plan that keeps a small business website, Google Business Profile, and structured data current, with managed hosting, backups, and security included. Lean Care Plan $95 CAD per month with two small edits per quarter; Growth Care Plan $175 per month with a monthly edit allowance and priority turnaround. A website built elsewhere is taken over for a one-time $400 setup covering the move to managed hosting, a Google Business Profile tune-up, Bing submission, a structured data check, and the AI Visibility Baseline (checked at setup and again about 60 days later). Changes are sent by text or email and are usually live the same day; there is no CMS and no client login. Month to month, no contract.",
       "provider": {
         "@id": "https://gentoolinkwebservices.com/#organization"
       },
@@ -559,9 +559,9 @@
         <ul class="compare-list compare-ours">
           <li>I write the copy. You talk to me for an hour about what you actually do; I turn that into the site.</li>
           <li>There is no login. There is nothing for you to learn, and nothing to forget.</li>
-          <li>Your hours change, you email me, and it's live the same day. That's the whole process.</li>
+          <li>Your hours change, you text or email me, and it's live the same day. That's the whole process.</li>
           <li>Full structured data on every page, so ChatGPT and Google know what you do and which towns you serve.</li>
-          <li>You email me. I'm in Vanderhoof, not a call centre in another province.</li>
+          <li>You text or email me. I'm in Vanderhoof, not a call centre in another province.</li>
           <li>You own the domain, the hosting account, and the files. Nothing is held hostage.</li>
         </ul>
       </div>
@@ -785,7 +785,7 @@
       <source srcset="/assets/images/gentoolink-logo.webp" type="image/webp">
       <img src="/assets/images/gentoolink-logo.png" alt="Gentoolink Web Services" class="footer-logo" loading="lazy">
     </picture>
-    <p class="footer-tagline">Your website, kept current. <span>Just send an email.</span></p>
+    <p class="footer-tagline">Your website, kept current. <span>Just send a text or an email.</span></p>
     <nav aria-label="Footer navigation" style="margin-bottom: 12px;">
       <span style="display:flex;gap:20px;justify-content:center;flex-wrap:wrap;">
         <a href="services.html" style="font-size:13px;color:var(--text-subtle);">Services</a>
@@ -849,15 +849,15 @@
   });
 </script>
 
-<!-- Email Ken: the one contact shortcut, where a chat widget used to be -->
-<a class="email-fab" href="mailto:ken@gentoolinkwebservices.com?subject=About%20my%20website">
+<!-- Text or email Ken: the one contact shortcut. "Text" shows on phones only -->
+<div class="contact-fab">
   <picture>
     <source srcset="/assets/images/ken-profile-240.webp" type="image/webp">
     <img src="/assets/images/ken-profile-240.jpg" alt="" width="32" height="32">
   </picture>
-  <span>Email Ken</span>
-  <i class="fa-solid fa-envelope" aria-hidden="true"></i>
-</a>
+  <a class="fab-text" href="sms:+16042187290?&amp;body=Hi%20Ken%2C%20this%20is%20%5Byour%20name%5D%20from%20%5Byour%20business%5D.%20Website%3A%20%5Byour%20site%5D.%20I%27m%20texting%20about%3A%20" aria-label="Text Ken (texts only, no calls)"><i class="fa-solid fa-comment-sms" aria-hidden="true"></i>Text</a>
+  <a class="fab-email" href="mailto:ken@gentoolinkwebservices.com?subject=About%20my%20website"><i class="fa-solid fa-envelope" aria-hidden="true"></i>Email<span class="fab-name"> Ken</span></a>
+</div>
 
 <script src="/assets/js/motion.js" defer></script>
 

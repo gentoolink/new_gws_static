@@ -580,13 +580,13 @@ nav { transition: padding 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
 .never-list li::after { transition: transform 0.5s cubic-bezier(0.5, 0, 0.3, 1) calc(var(--d, 0s) + 0.45s); }
 .motion .never-list li.rv:not(.in)::after { transform: scaleX(0); }
 
-/* ─── Email Ken button ───────────────────────────────── */
+/* ─── Text or email Ken button ───────────────────────────────── */
 /* Fill mode is backwards, not both, so once it has landed the magnetic pull
    in motion.js (an inline transform) is free to move it. */
 
-.email-fab { overflow: hidden; isolation: isolate; }
+.contact-fab { overflow: hidden; isolation: isolate; }
 
-.email-fab::after {
+.contact-fab::after {
   content: '';
   position: absolute;
   top: 0;
@@ -599,14 +599,14 @@ nav { transition: padding 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
   pointer-events: none;
 }
 
-.motion .email-fab {
+.motion .contact-fab {
   animation: fab-in 0.8s cubic-bezier(0.3, 1.5, 0.5, 1) 1.6s backwards;
 }
 
-.motion .email-fab::after { animation: shine-idle 8s ease 4s infinite; }
-.motion .email-fab:hover::after { animation: shine 0.75s ease; }
+.motion .contact-fab::after { animation: shine-idle 8s ease 4s infinite; }
+.motion .contact-fab:hover::after { animation: shine 0.75s ease; }
 
-.motion .email-fab i { animation: wiggle 8s ease-in-out 3s infinite; }
+.motion .contact-fab .fab-email i { animation: wiggle 8s ease-in-out 3s infinite; }
 
 @keyframes fab-in {
   from { opacity: 0; transform: translateY(30px) scale(0.6); }

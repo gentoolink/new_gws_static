@@ -2682,24 +2682,22 @@ section[id] { scroll-margin-top: 84px; }
   transform-origin: 0 50%;
 }
 
-/* ─── Email Ken button ────────────────────────────────── */
+/* ─── Text or email Ken button ───────────────────────── */
 /* Fixed shortcut on every page. It replaced a chat widget: the pitch is one
-   person you can email, so the corner of the screen says exactly that. */
+   person you can reach, so the corner of the screen says exactly that. Two
+   halves on phones (Text | Email); on a computer, where a text link has
+   nowhere to go, just "Email Ken". The number is texts only, no calls. */
 
-.email-fab {
+.contact-fab {
   position: fixed;
   right: 20px;
   bottom: 20px;
   z-index: 150;
   display: inline-flex;
   align-items: center;
-  gap: 10px;
-  padding: 6px 18px 6px 6px;
+  gap: 2px;
+  padding: 5px 6px 5px 5px;
   background: var(--gold-grad);
-  color: #14100a;
-  font-size: 14.5px;
-  font-weight: 700;
-  letter-spacing: 0.01em;
   border-radius: 999px;
   box-shadow:
     0 12px 30px -10px rgba(0, 0, 0, 0.8),
@@ -2708,31 +2706,61 @@ section[id] { scroll-margin-top: 84px; }
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.email-fab:hover {
-  text-decoration: none;
-  transform: translateY(-2px);
+.contact-fab:hover {
   box-shadow:
     0 14px 34px -10px rgba(0, 0, 0, 0.8),
     0 6px 30px rgba(232, 182, 76, 0.55),
     0 1px 0 rgba(255, 255, 255, 0.3) inset;
 }
 
-.email-fab img {
+.contact-fab img {
   display: block;
   width: 32px;
   height: 32px;
+  margin-right: 4px;
   border-radius: 50%;
   object-fit: cover;
   border: 2px solid rgba(20, 16, 10, 0.35);
 }
 
-.email-fab i { font-size: 13px; }
+.contact-fab a {
+  display: inline-flex;
+  align-items: center;
+  padding: 7px 12px;
+  border-radius: 999px;
+  color: #14100a;
+  font-size: 14.5px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  text-decoration: none;
+  transition: background 0.15s ease;
+}
+
+.contact-fab a:hover {
+  background: rgba(20, 16, 10, 0.12);
+  text-decoration: none;
+}
+
+.contact-fab i { font-size: 13px; margin-right: 8px; }
+
+/* The layout trims the name's leading space, so the gap is a margin. */
+.contact-fab .fab-name { margin-left: 0.3em; }
+
+.contact-fab .fab-text { display: none; }
+
+/* Phones and tablets: show Text beside Email, with a hairline between */
+@media (hover: none) and (pointer: coarse) {
+  .contact-fab .fab-text { display: inline-flex; }
+  .contact-fab .fab-text + .fab-email { box-shadow: -1px 0 0 rgba(20, 16, 10, 0.25); }
+  .contact-fab .fab-name { display: none; }
+}
 
 @media (max-width: 768px) {
   footer { padding-bottom: 96px; }
 }
 
 @media (max-width: 480px) {
-  .email-fab { right: 14px; bottom: 14px; padding: 5px 15px 5px 5px; font-size: 13.5px; gap: 8px; }
-  .email-fab img { width: 28px; height: 28px; }
+  .contact-fab { right: 14px; bottom: 14px; }
+  .contact-fab a { font-size: 13.5px; padding: 6px 11px; }
+  .contact-fab img { width: 28px; height: 28px; }
 }

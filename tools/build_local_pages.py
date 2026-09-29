@@ -203,15 +203,15 @@ SHELL = """<!DOCTYPE html>
   });
 </script>
 
-<!-- Email Ken: the one contact shortcut, where a chat widget used to be -->
-<a class="email-fab" href="mailto:ken@gentoolinkwebservices.com?subject=About%20my%20website">
+<!-- Text or email Ken: the one contact shortcut. "Text" shows on phones only -->
+<div class="contact-fab">
   <picture>
     <source srcset="/assets/images/ken-profile-240.webp" type="image/webp">
     <img src="/assets/images/ken-profile-240.jpg" alt="" width="32" height="32">
   </picture>
-  <span>Email Ken</span>
-  <i class="fa-solid fa-envelope" aria-hidden="true"></i>
-</a>
+  <a class="fab-text" href="sms:+16042187290?&amp;body=Hi%20Ken%2C%20this%20is%20%5Byour%20name%5D%20from%20%5Byour%20business%5D.%20Website%3A%20%5Byour%20site%5D.%20I%27m%20texting%20about%3A%20" aria-label="Text Ken (texts only, no calls)"><i class="fa-solid fa-comment-sms" aria-hidden="true"></i>Text</a>
+  <a class="fab-email" href="mailto:ken@gentoolinkwebservices.com?subject=About%20my%20website"><i class="fa-solid fa-envelope" aria-hidden="true"></i>Email<span class="fab-name"> Ken</span></a>
+</div>
 
 <script src="/assets/js/motion.js" defer></script>
 
@@ -995,7 +995,7 @@ SERVICES = [
         "eyebrow": "Hosting &amp; Care Plans",
         "h1": "Someone to Email When the Site Needs Changing",
         "hero_sub": "Most small business websites are built once and then quietly abandoned — no backups, no updates, and nobody to call when the hours change or something breaks.",
-        "hero_trust": "Already have a site? The takeover is $400 to set it right, then $95/month with the edits included. Hosting alone from $45/month. You email me; I make the change. No lock-in.",
+        "hero_trust": "Already have a site? The takeover is $400 to set it right, then $95/month with the edits included. Hosting alone from $45/month. You text or email me; I make the change. No lock-in.",
         "cta_label": "Take Over My Site",
         "low_price": "45",
         "problem_h2": "The site was finished. Then nothing happened to it for four years.",
@@ -1010,7 +1010,7 @@ SERVICES = [
             ("Managed hosting", "Fast, monitored hosting with SSL kept current. You are not administering a server or renewing a certificate at midnight."),
             ("Backups that get tested", "Regular automated backups, and a restore path that has actually been checked rather than assumed."),
             ("Security monitoring", "Uptime and integrity monitoring, so a problem gets caught before a customer finds it for you."),
-            ("Edits by email", "Send the change you want in plain English. No CMS login, no ticket system, no training session."),
+            ("Edits by text or email", "Send the change you want in plain English. No CMS login, no ticket system, no training session."),
             ("Someone who knows your site", "The same person every time, who already knows how your site is built and does not need it re-explained."),
         ],
         "explainer": {
@@ -1586,7 +1586,7 @@ def build_city(c):
       <h2>{cta_h2}</h2>
       <p class="lead">{cta_lead}</p>
       <a href="contact.html" class="btn-primary" style="font-size: 17px; padding: 16px 36px; margin-top: 12px; display: inline-block;">Get My Free Spot-Check</a>
-      <p style="margin-top: 20px; font-size: 14px; color: var(--text-subtle);">Or email <a href="mailto:ken@gentoolinkwebservices.com">ken@gentoolinkwebservices.com</a> · call or text 604-218-7290</p>
+      <p style="margin-top: 20px; font-size: 14px; color: var(--text-subtle);">Or email <a href="mailto:ken@gentoolinkwebservices.com">ken@gentoolinkwebservices.com</a> · text <a href="sms:+16042187290">604-218-7290</a> (texts only, no calls)</p>
     </div>
   </div>
 </section>
@@ -1778,7 +1778,7 @@ def build_industry(ind):
       <h2>Want one like it?</h2>
       <p class="lead">Tell me about your business and I'll come back with what your site would look like and exactly what it costs. No deposit, no pressure — and if a new site isn't what you need, I'll tell you that too.</p>
       <a href="contact.html" class="btn-primary" style="font-size: 17px; padding: 16px 36px; margin-top: 12px; display: inline-block;">Start My Website</a>
-      <p style="margin-top: 20px; font-size: 14px; color: var(--text-subtle);">Or email <a href="mailto:ken@gentoolinkwebservices.com">ken@gentoolinkwebservices.com</a> · call or text 604-218-7290</p>
+      <p style="margin-top: 20px; font-size: 14px; color: var(--text-subtle);">Or email <a href="mailto:ken@gentoolinkwebservices.com">ken@gentoolinkwebservices.com</a> · text <a href="sms:+16042187290">604-218-7290</a> (texts only, no calls)</p>
     </div>
   </div>
 </section>
@@ -1987,7 +1987,7 @@ def build_service(s):
       <h2>{s["cta_h2"]}</h2>
       <p class="lead">{s["cta_body"]}</p>
       <a href="contact.html" class="btn-primary" style="font-size: 17px; padding: 16px 36px; margin-top: 12px; display: inline-block;">{s["cta_btn"]}</a>
-      <p style="margin-top: 20px; font-size: 14px; color: var(--text-subtle);">Or email <a href="mailto:ken@gentoolinkwebservices.com">ken@gentoolinkwebservices.com</a> · call or text 604-218-7290</p>
+      <p style="margin-top: 20px; font-size: 14px; color: var(--text-subtle);">Or email <a href="mailto:ken@gentoolinkwebservices.com">ken@gentoolinkwebservices.com</a> · text <a href="sms:+16042187290">604-218-7290</a> (texts only, no calls)</p>
     </div>
   </div>
 </section>

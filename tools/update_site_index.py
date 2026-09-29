@@ -35,6 +35,7 @@ MECHANICAL = re.compile(
     r'/assets/(css|js)/motion\.(css|js)|classList\.add\(\'motion\'\)|'
     r'[Bb]otpress|bpcontent\.cloud|email-fab|Email Ken|ken-profile-240\.|'
     r'fa-envelope" aria-hidden|'
+    r'contact-fab|fab-text|fab-email|Text or email Ken|'
     r'^</?(div|span|a|picture)>$|^$'
 )
 
