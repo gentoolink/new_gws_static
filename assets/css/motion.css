@@ -579,3 +579,43 @@ nav { transition: padding 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
 /* the never-list strikes itself through, one pill at a time */
 .never-list li::after { transition: transform 0.5s cubic-bezier(0.5, 0, 0.3, 1) calc(var(--d, 0s) + 0.45s); }
 .motion .never-list li.rv:not(.in)::after { transform: scaleX(0); }
+
+/* ─── Email Ken button ───────────────────────────────── */
+/* Fill mode is backwards, not both, so once it has landed the magnetic pull
+   in motion.js (an inline transform) is free to move it. */
+
+.email-fab { overflow: hidden; isolation: isolate; }
+
+.email-fab::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -60%;
+  width: 40%;
+  background: linear-gradient(100deg, transparent, rgba(255, 255, 255, 0.6), transparent);
+  transform: skewX(-20deg);
+  z-index: -1;
+  pointer-events: none;
+}
+
+.motion .email-fab {
+  animation: fab-in 0.8s cubic-bezier(0.3, 1.5, 0.5, 1) 1.6s backwards;
+}
+
+.motion .email-fab::after { animation: shine-idle 8s ease 4s infinite; }
+.motion .email-fab:hover::after { animation: shine 0.75s ease; }
+
+.motion .email-fab i { animation: wiggle 8s ease-in-out 3s infinite; }
+
+@keyframes fab-in {
+  from { opacity: 0; transform: translateY(30px) scale(0.6); }
+}
+
+@keyframes wiggle {
+  0%, 88%, 100% { transform: none; }
+  90% { transform: rotate(-14deg) scale(1.15); }
+  92% { transform: rotate(12deg) scale(1.15); }
+  94% { transform: rotate(-8deg); }
+  96% { transform: rotate(4deg); }
+}

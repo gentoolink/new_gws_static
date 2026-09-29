@@ -33,7 +33,9 @@ MECHANICAL = re.compile(
     r'web-design-(prince-george|vanderhoof|fort-st-james|fraser-lake|'
     r'burns-lake|quesnel)\.html">|'
     r'/assets/(css|js)/motion\.(css|js)|classList\.add\(\'motion\'\)|'
-    r'^</?(div|span)>$|^$'
+    r'[Bb]otpress|bpcontent\.cloud|email-fab|Email Ken|ken-profile-240\.|'
+    r'fa-envelope" aria-hidden|'
+    r'^</?(div|span|a|picture)>$|^$'
 )
 
 

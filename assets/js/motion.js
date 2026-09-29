@@ -303,7 +303,7 @@
 
   /* ─── Magnetic buttons ────────────────────────────── */
 
-  document.querySelectorAll('.btn-primary, .btn-secondary, .nav-cta').forEach(function (btn) {
+  document.querySelectorAll('.btn-primary, .btn-secondary, .nav-cta, .email-fab').forEach(function (btn) {
     btn.classList.add('magnetic');
     btn.addEventListener('pointermove', function (e) {
       var r = btn.getBoundingClientRect();

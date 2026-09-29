@@ -2681,3 +2681,58 @@ section[id] { scroll-margin-top: 84px; }
   opacity: 0.85;
   transform-origin: 0 50%;
 }
+
+/* ─── Email Ken button ────────────────────────────────── */
+/* Fixed shortcut on every page. It replaced a chat widget: the pitch is one
+   person you can email, so the corner of the screen says exactly that. */
+
+.email-fab {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 150;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 18px 6px 6px;
+  background: var(--gold-grad);
+  color: #14100a;
+  font-size: 14.5px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  border-radius: 999px;
+  box-shadow:
+    0 12px 30px -10px rgba(0, 0, 0, 0.8),
+    0 4px 22px rgba(232, 182, 76, 0.35),
+    0 1px 0 rgba(255, 255, 255, 0.3) inset;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.email-fab:hover {
+  text-decoration: none;
+  transform: translateY(-2px);
+  box-shadow:
+    0 14px 34px -10px rgba(0, 0, 0, 0.8),
+    0 6px 30px rgba(232, 182, 76, 0.55),
+    0 1px 0 rgba(255, 255, 255, 0.3) inset;
+}
+
+.email-fab img {
+  display: block;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgba(20, 16, 10, 0.35);
+}
+
+.email-fab i { font-size: 13px; }
+
+@media (max-width: 768px) {
+  footer { padding-bottom: 96px; }
+}
+
+@media (max-width: 480px) {
+  .email-fab { right: 14px; bottom: 14px; padding: 5px 15px 5px 5px; font-size: 13.5px; gap: 8px; }
+  .email-fab img { width: 28px; height: 28px; }
+}
